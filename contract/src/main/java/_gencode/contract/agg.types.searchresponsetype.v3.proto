@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package com.ctrip.flight.intl.agg.types.searchresponsetype.v3;
+import "BaijiCommonTypes.proto";
+import "agg.additionproduct.v3.proto";
+import "agg.flighttypes.v3.proto";
+import "agg.messagetypes.v3.proto";
+option java_package = "com.ctrip.flight.intl.agg.types.searchresponsetype.v3";
+option java_multiple_files = true;
+
+message SearchResponseType
+{
+	com.ctrip.soa.ResponseStatusType ResponseStatus = 1 ;
+	com.ctrip.flight.intl.agg.messagetypes.v3.ResponseHeaderType ResponseHeader = 2 ;
+	SearchResultType SearchResult = 3 ;
+	com.ctrip.flight.intl.agg.messagetypes.v3.ErrorResultType ErrorResult = 4 ;
+	//变化 删除responseID
+}
+
+message SearchResultType
+{
+	repeated FlightProductGroupType FlightProductGroup = 1 ;
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.FlightType Flight = 2 ;
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.BaggageType Baggage = 3 ;
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.TextRemarkType TextRemark = 4 ;
+	string SearchCriteriaToken = 6 ;
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 7 ;
+	// repeated PriceAttributeType PriceAttribute = 8 ;
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.AgencyType Agency = 8 ; //变化 新增票台Ref
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.AirlineInfoType Airline =9 ; //变化 新增航司Ref
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.CityInfoType City =10 ; //变化 新增城市Ref
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.AirportInfoType Airport =11 ; //变化 新增机场Ref
+
+}
+
+message FlightProductGroupType
+{
+	repeated FlightRefType FlightRefCombination = 1 ;
+	repeated PriceType Price = 2 ;
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 4 ;
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.VirtualFlightRemarkType VirtualFlightRemark = 7 ;
+	bool hasMoreGrade = 8 ;
+	//变化 删除flightProductGroupID
+	/*
+	None=0
+	FlyerOrderVisible=1
+	FlyerOrderInvisible=2
+	FlyerOrderRapid=3
+	*/
+	int32 FlyerFlag = 9; // 变化 枚举改为int；从PriceType中移动过来
+	string UnaccompaniedAgeRange = 10 ; // 变化 从PriceType中移动过来
+	string Flag = 11; // 新增
+}
+
+message FlightRefType
+{
+	string FlightID = 1 ;
+	int32 SegmentNo = 2 ;
+	int32 SequenceNo = 3 ;
+	string MarrySeg = 4 ;
+	bool mainSegment = 5 ; //变化 int改为bool
+}
+
+message PriceType
+{
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.FlightSegmentType FlightSegment = 1 ;
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.ProductDetailType ProductDetail = 2 ;
+	// 变化 FlyerFlag移动到FlightProductGroupType中
+	string RouteSearchToken = 4 ;
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.BaggageRefType BaggageRef = 5 ;
+	// 变化 PenaltyRules移动到ProductDetailType中
+	double SortIndicator = 7 ;
+	repeated com.ctrip.flight.intl.agg.additionproduct.v3.TicketPackageProductType TicketPackageProduct = 8 ;
+	// 变化 UnaccompaniedAgeRange移动到FlightProductGroupType中
+	// string UnaccompaniedAgeRange = 9 ;
+	repeated int32 PriceAttributeID = 10 ;
+}
+
+/*
+message PriceAttributeType
+{
+	string PriceAttributeID = 1 ;
+	string Name = 2 ;
+	string Value = 3 ;
+}
+*/
+

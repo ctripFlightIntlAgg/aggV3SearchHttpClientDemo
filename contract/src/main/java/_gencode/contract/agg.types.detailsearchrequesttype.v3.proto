@@ -1,0 +1,12 @@
+syntax = "proto3";
+package com.ctrip.flight.intl.agg.types.detailsearchrequesttype.v3;
+import "agg.messagetypes.v3.proto";
+option java_package = "com.ctrip.flight.intl.agg.types.detailsearchrequesttype.v3";
+option java_multiple_files = true;
+
+message DetailRequestType
+{
+	com.ctrip.flight.intl.agg.messagetypes.v3.RequestHeaderType RequestHeader = 1 ;
+	string SearchCriteriaToken = 2 ;
+	string RouteSearchToken = 3 ;
+}

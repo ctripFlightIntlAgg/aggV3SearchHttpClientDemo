@@ -1,0 +1,87 @@
+syntax = "proto3";
+package com.ctrip.flight.intl.agg.messagetypes.v3;
+option java_package = "com.ctrip.flight.intl.agg.messagetypes.v3";
+option java_multiple_files = true;
+
+enum ChannelIDType
+{
+	None = 0;
+	FlightOnline = 1;
+	FlightOffline = 2;
+	FlightExternal = 3;
+	FlightIntlOnline = 4;
+	FlightIntlOffline = 5;
+	FltIntlExternal = 6;
+	FlightIntlOnlineSEO = 7;
+	Corporation = 8;
+	CorpOffline = 9;
+	CorpMobile = 10;
+	Vacation = 11;
+	VacationGroup = 12;
+	RestrictedVacation = 13;
+	FitTravel = 14;
+	Mobile = 15;
+	MobileH5 = 16;
+	Hotel = 17;
+	AirHotel = 18;
+	AirHotelIntl = 19;
+	AirHotelIntlEx = 20;
+	AirHotelPackage = 21;
+	EnglishSite = 22;
+	HighRail = 23;
+	Affiliate = 24;
+	Luxury = 25;
+	Customer = 26;
+	Mice = 27;
+	Community = 28;
+	EzTravel = 29;
+	Wingon = 30;
+	Distribution = 31;
+	BIChannel = 32;
+	Finance = 33;
+	ConfirmCustomer = 34;
+	HKSite = 35;
+	KRSite = 36;
+	JPSite = 37;
+	SGSite = 38;
+	TWSite = 39;
+	THSite = 40;
+	Qunar = 41;
+	Skyscanner = 42;
+}
+
+message ErrorResultType
+{
+	int32 ErrorCode = 1 ;
+	string ErrorDesc = 2 ;
+}
+
+message MessageHeaderType
+{
+	//string SourceAppID = 1 ; //变化 删除
+	string SessionID = 2 ;
+	string TransactionID = 3 ;
+	ChannelIDType ChannelID = 4 ;
+	int32 SubChannelID = 5 ;
+	string CustomerID = 6 ;
+	string ClientIP = 8 ;
+	string VID = 9 ; //变化 新增设备ID
+	string RequestID = 10 ; //变化 新增RequestID
+	//变化 删除AgentID
+}
+
+message RequestHeaderType
+{
+	MessageHeaderType MessageHeader = 1 ;
+	int32 LoggingLevel = 2 ;
+	string DiagInput = 3 ;
+}
+
+message ResponseHeaderType
+{
+	MessageHeaderType MessageHeader = 1 ;
+	string ServerIP = 2 ;
+	int32 ReturnCode = 3 ;
+	string DiagOutput = 4 ;
+}
+

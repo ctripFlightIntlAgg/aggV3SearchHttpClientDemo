@@ -1,0 +1,73 @@
+syntax = "proto3";
+package com.ctrip.flight.intl.agg.types.searchrequesttype.v3;
+import "agg.flighttypes.v3.proto";
+import "agg.messagetypes.v3.proto";
+option java_package = "com.ctrip.flight.intl.agg.types.searchrequesttype.v3";
+option java_multiple_files = true;
+
+message SearchRequestType {
+    com.ctrip.flight.intl.agg.messagetypes.v3.RequestHeaderType RequestHeader = 1;
+    SearchCriteriaType SearchCriteria = 2;
+    //	ResultControlType ResultControl = 3 ;
+    SearchContextType SearchContext = 4;
+}
+
+message SearchCriteriaType {
+    repeated com.ctrip.flight.intl.agg.flighttypes.v3.OrigDestRequestType OrigDestRequest = 1;
+    repeated com.ctrip.flight.intl.agg.flighttypes.v3.TravelerRequestType TravelerRequest = 2;
+    repeated string ValidatingCarrier = 3; // 变化 偏好航司名称改为ValidatingCarrier
+    repeated com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClass = 4;
+    repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionOption = 6;
+    string Currency = 7; // 币种
+    AdvancedOptionType AdvancedOption = 8; // 高级搜索参数
+}
+
+message SearchContextType {
+    // 客户端接入stream时，不需要传
+    PartitionSearchControlType PartitionSearchControl = 1;
+    RouteSearchControlType RouteSearchControl = 2;
+}
+
+message PartitionSearchControlType {
+    bool NeedPartitionedSearchResults = 1;
+    string PartitionSearchToken = 2;
+}
+
+message RouteSearchControlType
+{
+    /*
+    None=0
+    AllOrigDests=1
+    AllOrigDestsStrict=2
+    AllOrigDestsExtended=3
+    AllFlightProductStrict=4
+    FlightGroupMorePrice=5
+    */
+	int32 RouteSearchMode = 1 ;
+	string RouteSearchToken = 2 ;
+	int32 OrigDestSeqID = 3 ;
+}
+
+message AdvancedOptionType
+{
+    repeated com.ctrip.flight.intl.agg.flighttypes.v3.FlightCriteriaType FlightCriteria = 1; // 指定查询结果中的航组信息
+    int32 ClientType = 2; // 标识查询调用方
+    int32 CabinClassOption = 3; // 指定航班中的舱等匹配选项：0-默认；1-全航段严格匹配；2-允许降舱匹配；3-允许升舱匹配
+    repeated string BookingChannel = 4;
+    repeated string AgentCode = 5;
+    repeated string ExcludeAgentCode = 6; // 和上述AgentCode互斥
+    repeated string FareBasis = 7;
+    repeated string FareClass = 8;
+    repeated int32 ProductCategory = 9;
+    repeated int32 SubProductCategory = 10;
+    repeated com.ctrip.flight.intl.agg.flighttypes.v3.OrigDestRequestOptionType OrigDestRequestOption = 11; // 和用户程有关的高级参数
+    repeated string InvoiceType = 12; // 报销凭证, 不填表示不限
+}
+
+/*
+message ResultControlType {
+    int32 MaxResultCount = 1;
+    com.ctrip.flight.intl.agg.flighttypes.v3.ProductSortType SortInstruction = 2;
+    int32 TransferType = 3;
+}
+*/

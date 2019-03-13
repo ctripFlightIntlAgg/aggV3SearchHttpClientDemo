@@ -1,0 +1,522 @@
+syntax = "proto3";
+package com.ctrip.flight.intl.agg.additionproduct.v3;
+import "agg.flighttypes.v3.proto";
+option java_package = "com.ctrip.flight.intl.agg.additionproduct.v3";
+option java_multiple_files = true;
+
+message CashBackInfoType
+{
+	int32 CashBack = 1 ;
+	string CashBackFlag = 2 ;
+}
+
+message GiftInfoType
+{
+	int64 GiftID = 1 ;
+	string IconName = 2 ;
+	int32 Quantity = 3 ;
+	int32 ShowType = 4 ;
+}
+
+message PackageExtensionFieldType
+{
+	int32 ProductActionMode = 1 ;
+	string ProductRemark = 2 ;
+}
+
+message RecommendedInfoType
+{
+	string Name = 1 ;
+	string ShortName = 2 ;
+	string Desc = 3 ;
+}
+
+message XProductPreposeInfoType
+{
+    //前置政策ID
+	int64 PolicyId = 1 ;
+	//前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士)
+	int32 ProductType = 2 ;
+	//行程号
+	int32 SegmentNo = 3 ;
+	//营销类型(1赠送,2立减,3定价销售)
+	int32 MarketingType = 5 ;
+	//营销金额
+	double MarketingAmount = 6 ;
+	//优惠券面价
+	int32 CouponPrice = 7 ;
+	//子产品类型
+	int32 SubProductType = 8 ;
+	/*
+    1，通用券-小飞机国际三选一基础配置表主键addtionProductInfoId；
+    2，巴士-邻近城市ID
+    3，接送机-活动Code
+    */
+	string AdditionInfoId = 9 ;
+	/*
+    1，接送机-车的类型1：奔驰E；2：豪华型；3：舒适型；
+    2，通用券-1：列表页展示；其它：价格维度展示
+    */
+	string AdditionInfoType = 10 ;
+}
+
+message MemberPointType
+{
+	string MemberPointAirline = 1 ;
+	int32 MemberPointValue = 2 ;
+}
+
+message PromotionInfoType
+{
+	// com.ctrip.flight.intl.agg.flighttypes.v3.TravelerCategoryCodeType TravelerCategoryCode = 1 ; 变化 替换为乘客资质
+	com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1 ;
+	repeated GiftInfoType GiftInfo = 2 ;
+	CashBackInfoType CashBackInfo = 3 ;
+}
+
+message TicketPackageProductType
+{
+    int32 ProductDetailIndex = 1 ;
+	AncillariesInfoType AncillariesInfo = 2 ;
+	int64 AirlinePackageID = 3 ;
+	repeated MemberPointType MemberPoint = 4 ;
+    int32 RecommendPrdType = 5 ;
+    PackageExtensionFieldType ExtensionField = 6 ;
+    //todo confirm    bool IsMemberPrice
+	RecommendedInfoType RecommendedInfo = 7;
+    // 以上信息底层引擎输出，以下产品由agg匹配输出
+	repeated PromotionInfoType PromotionInfo = 8 ;
+	repeated XProductPreposeInfoType XProductPreposeInfo = 9 ;
+    bool IsSupportFFP = 10 ;
+    int32 CrossSaleHotel = 11 ;
+    repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtraMarketingInfo = 12 ;
+}
+
+message AncillariesInfoType
+{
+	bool HasBaggageService = 1 ;
+	bool UnFreeBaggage = 2 ;
+	int32 CheckInServiceStatus = 3 ;
+}
+
+/*以下是废弃定义，仅用于查询*/
+/*
+message PickUpInfoType
+{
+	int32 PickUpNo = 1 ;
+	int32 CarType = 2 ;
+	string Code = 3 ;
+	int32 MarketingType = 4 ;
+	double Price = 5 ;
+	int32 SaleMethod = 6 ;
+}
+*/
+
+/*
+message PreposePolicyType
+{
+	int32 MarketingType = 1 ;
+	int32 MarketingMoney = 2 ;
+	int32 SaleMethod = 3 ;
+	int64 PolicyId = 4 ;
+}
+*/
+
+/*
+message ServiceFeatureListType
+{
+	repeated int32 ServiceFeatureID = 1 ;
+}
+*/
+
+/*
+message TextInfoType
+{
+	string TextCn = 1 ;
+	string TextEn = 2 ;
+	string TextHtml = 3 ;
+}
+*/
+
+/*
+message UpgradeProductInfoType
+{
+	int64 ProductId = 1 ;
+	int32 FlightSegmentNo = 2 ;
+	int32 FlightSequenceNo = 3 ;
+	string NewSeatClass = 4 ;
+	com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType NewSeatGrade = 5;
+	double AdultNetPrice = 6 ;
+	double AdultSalesPrice = 7 ;
+	double ChildNetPrice = 8 ;
+	double ChildSalesPrice = 9 ;
+	string TourCode = 10 ;
+	string ChangeWay = 11 ;
+	bool Refundable = 12 ;
+	int32 StartDate = 13 ;
+	int64 EndDate = 14 ;
+	string MemoInfo = 15 ;
+	int32 WorkDayOfWeek = 16 ;
+	string ExcludeWorkingDay = 17 ;
+	bool OfferLounge = 18 ;
+}
+*/
+
+/*
+message UpgradeProductListType
+{
+	repeated UpgradeProductInfoType UpgradeProductInfo = 1 ;
+}
+*/
+
+/*
+message VendorType
+{
+	int32 VendorIndex = 1 ;
+	int32 VendorID = 2 ;
+	string VendorName = 3 ;
+	string VendorAttorney = 4 ;
+}
+*/
+
+/*
+message XRefundReroutFeeType
+{
+	double FeeAmount = 1 ;
+	double FeeRate = 2 ;
+	int32 WindowBeginHour = 3 ;
+	int32 WindowEndHour = 4 ;
+	bool IsRefundOrReroutAllowed = 5 ;
+}
+*/
+
+/*
+message FlightCarTransportationType
+{
+	int64 ID = 1 ;
+	int32 OrigDestSeg = 2 ;
+	int32 RouteSeg = 3 ;
+	int32 DepStationID = 4 ;
+	string DepStation = 5 ;
+	int32 ArrStationID = 6 ;
+	string ArrStation = 7 ;
+	int32 Transportation = 8 ;
+	int32 DrivingTime = 9 ;
+	string WorkTime = 10 ;
+	int32 BufferTime = 11 ;
+	double AdultPrice = 12 ;
+	double AdultSalePrice = 13 ;
+	string AdultCurrency = 14 ;
+	double ChildPrice = 15 ;
+	double ChildSalePrice = 16 ;
+	string ChildCurrency = 17 ;
+	double InfantPrice = 18 ;
+	double InfantSalePrice = 19 ;
+	string InfantCurrency = 20 ;
+	string Address = 21 ;
+	string Phone = 22 ;
+	string Notation = 23 ;
+	string RefoundRule = 24 ;
+	string SupplierName = 25 ;
+	int32 SupplierID = 26 ;
+	PreposePolicyType PreposePolicy = 27 ;
+	repeated AgeLimitType AgeLimits = 28 ;
+}
+*/
+
+/*
+message AgeLimitType
+{
+	com.ctrip.flight.intl.agg.flighttypes.v3.TravelerCategoryCodeType PassengerType = 1 ;
+	int32 AgeMin = 2 ;
+	int32 AgeMax = 3 ;
+}
+*/
+
+/*
+message FlightPickupCouponType
+{
+	int64 CouponID = 1 ;
+	string CouponName = 2 ;
+	string CouponDesc = 3 ;
+	string CouponProductRule = 4 ;
+	double CouponSalePrice = 5 ;
+	double CouponPrintPrice = 6 ;
+	int32 CouponType = 7 ;
+	string TickRefundInfo = 8 ;
+	string ProductType = 9 ;
+	int32 RuleID = 10 ;
+	PreposePolicyType PreposePolicy = 11 ;
+	double DicountPrice = 12 ;
+}
+*/
+
+/*
+message GeneralCouponType
+{
+	string ProductType = 1 ;
+	string SubProductType = 2 ;
+	int64 CouponID = 3 ;
+	string CouponName = 4 ;
+	string CouponDesc = 5 ;
+	string CouponProductRule = 6 ;
+	double CouponSalePrice = 7 ;
+	double CouponPrintPrice = 8 ;
+	int32 CouponType = 9 ;
+	string TickRefundInfo = 10 ;
+	int32 RuleID = 11 ;
+	double DicountPrice = 12 ;
+	PreposePolicyType PreposePolicy = 13 ;
+	int32 CalcMode = 14 ;
+}
+*/
+
+/*
+message GiftDetailInfoType
+{
+	int64 GiftID = 1 ;
+	string IconName = 2 ;
+	int32 Quantity = 3 ;
+	/
+	PerPerson = 0;
+    PerOrder = 1;
+    /
+	int32 Unit = 4 ; //变化 枚举改为int
+	double Value = 5 ;
+	int32 Type = 6 ;
+	string TypeName = 7 ;
+	string CouponStrategyID = 8 ;
+	TextInfoType Description = 9 ;
+	TextInfoType DetailDescription = 10 ;
+	string TourCode = 11 ;
+	int32 CanUseTimes = 12 ;
+}
+*/
+
+/*
+message HotelCouponListType
+{
+	repeated FlightPickupCouponType HotelCouponInfo = 1 ;
+}
+*/
+
+/*
+message AirlineAncillariesCheckInType
+{
+	int32 SegmentNo = 1 ;
+	int32 FlightSeq = 2 ;
+	string ReservationID = 3 ;
+	int32 AgentID = 4 ;
+	string FlightNo = 5 ;
+	string DepartAirport = 6 ;
+	string ArrivalAirport = 7 ;
+	int64 DepartDate = 8 ;
+	double SalePrice = 9 ;
+	double CostPrice = 10 ;
+	int64 OpenCheckInTime = 11 ;
+	int64 CloseCheckInTime = 12 ;
+	int32 MinAge = 13 ;
+	int32 Status = 14 ;
+	string Tag = 15 ;
+	string BookingChannel = 16 ;
+	double OfflineCheckInSalePrice = 17 ;
+	string Currency = 18 ;
+	string OfflineCurrency = 19 ;
+}
+*/
+
+/*
+message CheckInKeyType
+{
+	int32 SegmentNo = 1 ;
+	string Key = 2 ;
+}
+*/
+
+/*
+message ExchangeCouponListType
+{
+	repeated FlightPickupCouponType ExchangeCouponInfo = 1 ;
+}
+*/
+
+/*
+message FlightCarTransportationListType
+{
+	repeated FlightCarTransportationType FlightCarTransportation = 1 ;
+}
+*/
+
+/*
+message FlightPickupCouponListType
+{
+	repeated FlightPickupCouponType FlightPickupCouponInfo = 1 ;
+}
+*/
+
+/*
+message GeneralCouponListType
+{
+	repeated GeneralCouponType GeneralCouponInfo = 1 ;
+}
+*/
+
+/*
+message GiftDetailInfoListType
+{
+	repeated GiftDetailInfoType GiftDetailInfo = 1 ;
+}
+*/
+
+/*
+message MemberLevelListType
+{
+	repeated int32 MemberLevelID = 1 ;
+}
+*/
+
+/*
+message PhotoType
+{
+	string PhotoURL = 1 ;
+	string PhotoDescription = 2 ;
+}
+*/
+
+/*
+message ProductCouponType
+{
+	FlightPickupCouponListType FlightPickupCouponList = 1 ;
+	HotelCouponListType HotelCouponList = 2 ;
+	ExchangeCouponListType ExchangeCouponList = 3 ;
+	GeneralCouponListType GeneralCouponList = 4 ;
+}
+*/
+
+/*
+message PackageListType
+{
+	repeated PackageType Package = 1 ;
+}
+*/
+
+/*
+message FinancialCouponPackageType
+{
+	string CityCode = 1 ;
+	string AirportCode = 2 ;
+	int32 SegmentID = 3 ;
+	PackageListType PackageList = 4 ;
+}
+*/
+
+/*
+message FinancialCouponPackageListType
+{
+	repeated FinancialCouponPackageType FinancialCouponPackage = 1 ;
+}
+*/
+
+/*
+message PackageType
+{
+	int64 PackageID = 1 ;
+	string PackageName = 2 ;
+	double PackagePrice = 3 ;
+	double PackageMarketingPrice = 4 ;
+	double PackageFloorPrice = 5 ;
+	string CustomerRefundRule = 6 ;
+	string CustomerReroutRule = 7 ;
+	CouponGroupListType CouponGroupList = 8 ;
+}
+*/
+
+/*
+message CouponGroupListType
+{
+	repeated CouponGroupType CouponGroup = 1 ;
+}
+*/
+
+/*
+message CouponGroupType
+{
+	int64 GoStoreID = 1 ;
+	CouponInfoListType CouponInfoList = 2 ;
+}
+*/
+
+/*
+message CouponInfoListType
+{
+	repeated CouponInfoType CouponInfo = 1 ;
+}
+*/
+
+/*
+message CouponInfoType
+{
+	double Price = 1 ;
+	double MarcketingPrice = 2 ;
+	double FloorPrice = 3 ;
+	CouponClassInfoType ClassInfo = 4 ;
+	CouponDiscountInfoType DiscountInfo = 5 ;
+	BrandListType BrandList = 6 ;
+	CategoryListType CategoryList = 7 ;
+}
+*/
+
+/*
+message CouponClassInfoType
+{
+	int64 CouponClassID = 1 ;
+	string ShowName = 2 ;
+	int32 OfferType = 3 ;
+	string OfferMethod = 4 ;
+	UseChannelType UseChannelList = 5 ;
+	int32 UseType = 6 ;
+	int64 EffectStartTime = 7 ;
+	int64 EffectEndTime = 8 ;
+}
+*/
+
+/*
+message CouponDiscountInfoType
+{
+	string UsageDescription = 1 ;
+	string OfferRule = 2 ;
+	string CurrencyType = 3 ;
+	string UsageDescriptionPlainText = 4 ;
+}
+*/
+
+/*
+message CategoryListType
+{
+	repeated string Category = 1 ;
+}
+*/
+
+/*
+message BrandType
+{
+	int64 BrandID = 1 ;
+	string BrandNameCN = 2 ;
+	string BrandNameGLB = 3 ;
+	string LogoURL = 4 ;
+}
+*/
+
+/*
+message BrandListType
+{
+	repeated BrandType Brand = 1 ;
+}
+*/
+
+/*
+message UseChannelType
+{
+	repeated int32 UseChannel = 1 ;
+}
+*/

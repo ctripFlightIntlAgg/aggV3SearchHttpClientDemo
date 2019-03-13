@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package com.ctrip.soa;
+option java_package="com.ctrip.soa";
+option java_multiple_files = true;
+
+message ResponseStatusType {
+	DateTime Timestamp = 1;
+	AckCodeType Ack = 2;
+	ErrorDataType Errors = 3;
+	string Build = 4;
+	string Version = 5;
+	repeated ExtensionType Extension = 6;
+}
+
+message DateTime {
+	sint64 value = 1;
+	int32 scale = 2;
+}
+
+enum AckCodeType {
+	Success = 0;
+	Failure = 1;
+	Warning = 2;
+	PartialFailure = 3;
+}
+
+message ErrorDataType {
+	string Message = 1;
+	string ErrorCode = 2;
+	string StackTrace = 3;
+	SeverityCodeType SeverityCode = 4;
+	repeated ErrorFieldType ErrorFields = 5;
+	ErrorClassificationCodeType ErrorClassification = 6;
+}
+
+enum ErrorClassificationCodeType {
+	ServiceError = 0;
+	ValidationError = 1;
+	FrameworkError = 2;
+	SLAError = 3;
+	SecurityError = 4;
+}
+
+enum SeverityCodeType {
+	// prefix Severity to avoid conflict with AckCodeType's Warning
+	SeverityError = 0;
+	SeverityWarning = 1;
+}
+
+message ErrorFieldType {
+	string FieldName = 1;
+	string ErrorCode = 2;
+	string Message = 3;
+}
+
+message ExtensionType {
+	string Id = 1;
+	string Version = 2;
+	string ContentType = 3;
+	string Value = 4;
+}

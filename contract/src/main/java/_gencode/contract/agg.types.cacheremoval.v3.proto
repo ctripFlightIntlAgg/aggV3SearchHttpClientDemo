@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.ctrip.flight.intl.agg.types.cacheremovaltype.v3;
+import "agg.messagetypes.v3.proto";
+import "BaijiCommonTypes.proto";
+option java_package = "com.ctrip.flight.intl.agg.types.cacheremovaltype.v3";
+option java_multiple_files = true;
+
+message CacheRemovalRequestType
+{
+	com.ctrip.flight.intl.agg.messagetypes.v3.RequestHeaderType RequestHeader = 1 ;
+	repeated string SearchCacheKey = 2 ;
+	int32 RemoveCacheMode = 3; // 需要清除的缓存模式：1：清除列表缓存；2：清除反查缓存；3：清除列表和反查缓存
+}
+
+message CacheRemovalResponseType
+{
+	com.ctrip.soa.ResponseStatusType ResponseStatus = 1 ;
+}
