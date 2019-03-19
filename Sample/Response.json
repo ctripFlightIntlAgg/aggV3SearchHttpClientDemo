@@ -1,0 +1,564 @@
+{
+  "ResponseStatus": {
+    "Timestamp": "2019-03-19T09:54:21.508",
+    "Ack": "Success",
+    "Errors": [],
+    "Build": null,
+    "Version": null,
+    "Extension": [
+      {
+        "Id": "100015306-0a0546ec-431385-99045",
+        "Version": null,
+        "ContentType": "plugin.traceId",
+        "Value": null
+      }
+    ]
+  },
+  "ResponseHeader": {
+    "MessageHeader": {
+      "SessionID": "0",
+      "TransactionID": "0",
+      "ChannelID": "Affiliate",
+      "SubChannelID": 0,
+      "CustomerID": "",
+      "ClientIP": "",
+      "VID": "",
+      "RequestID": ""
+    },
+    "ServerIP": "",
+    "ReturnCode": 0,
+    "DiagOutput": "Consolidator(SUCCESS:Success)"
+  },
+  "SearchResult": {
+    "FlightProductGroup": [
+      {
+        "FlightRefCombination": [
+          {
+            "FlightID": "2",
+            "SegmentNo": 1,
+            "SequenceNo": 1,
+            "MarrySeg": "",
+            "mainSegment": true
+          },
+          {
+            "FlightID": "1",
+            "SegmentNo": 1,
+            "SequenceNo": 2,
+            "MarrySeg": "",
+            "mainSegment": false
+          }
+        ],
+        "Price": [
+          {
+            "FlightSegment": [
+              {
+                "ProductDetailIndex": 0,
+                "FCSequence": 1,
+                "SeatClass": "Y",
+                "CabinClass": "Y",
+                "SeatSource": 0,
+                "SeatCount": 9,
+                "BookingToken": "",
+                "StockID": 0
+              },
+              {
+                "ProductDetailIndex": 0,
+                "FCSequence": 1,
+                "SeatClass": "K",
+                "CabinClass": "Y",
+                "SeatSource": 0,
+                "SeatCount": 9,
+                "BookingToken": "",
+                "StockID": 0
+              }
+            ],
+            "ProductDetail": [
+              {
+                "BookingChannel": "CSD-WS",
+                "PriceInfo": [
+                  {
+                    "TravelerEligibility": "ADT",
+                    "AgentCode": "HYDP",
+                    "OfficialName": "",
+                    "TicketRemark": "",
+                    "TicketingTimeLimit": {
+                      "TimeLimitType": 2,
+                      "LimitTime": 1440,
+                      "AverageTicketingTime": -1.0
+                    },
+                    "PassengerRestriction": {
+                      "MinPassengerCount": 1,
+                      "MaxPassengerCount": 9,
+                      "NationalityInclude": "",
+                      "NationalityExclude": "",
+                      "MaxAgeLimitition": 0,
+                      "MinAgeLimitition": 0
+                    },
+                    "PriceDetail": null,
+                    "OriginalPriceDetail": {
+                      "Currency": "CNY",
+                      "SalePrice": 4299.0,
+                      "Tax": 406.0,
+                      "PublishPrice": 4094.0,
+                      "AccountPrice": 4094.0,
+                      "NetPrice": 4094.0
+                    },
+                    "Expression": "OZ@HYDP@0/OZ@HYDP@-100",
+                    "Exchange": 1.0,
+                    "OfficeNo": "CSD",
+                    "Tag": [
+                      {
+                        "Key": "CommitionRate",
+                        "Value": "0.0"
+                      },
+                      {
+                        "Key": "GDSRebate",
+                        "Value": "0.0"
+                      },
+                      {
+                        "Key": "PolicyKey",
+                        "Value": "0,0,-100"
+                      },
+                      {
+                        "Key": "IsAutomaticTicket",
+                        "Value": "F"
+                      },
+                      {
+                        "Key": "TicketingTimeLimit",
+                        "Value": "2|1440|0|0"
+                      },
+                      {
+                        "Key": "CommitionSource",
+                        "Value": "3"
+                      }
+                    ],
+                    "DiscountPrice": 0.0,
+                    "TextRemarkId": 1,
+                    "IATANumber": "",
+                    "QTECmdPostfix": "",
+                    "XSFSICmd": ""
+                  }
+                ],
+                "ValidatingCarrier": "OZ",
+                "ProductCategory": 1,
+                "SubProductCategory": 8,
+                "InvoiceType": "F",
+                "PenaltiesKey": "Cg4KCTEwMDAxNjcyNhIBMBKNAwpSCAESA05LRxoDSEtHIgJLQSoEWU9XMjIDUFVCOgFZQhMyMDE5LTAzLTIyVDE0OjE1OjAwShMyMDE5LTAzLTIyVDE3OjAwOjAwUgVLQTgxMVoBMQpVCAISA0hLRxoDSUNOIgJPWioGS09TS1JTMgNQVUI6AUtCEzIwMTktMDMtMjNUMDE6MjA6MDBKEzIwMTktMDMtMjNUMDU6NTA6MDBSBk9aOTY0MloBMRKrAQoTMjAxOS0wMy0yMlQxNDoxNTowMBIESFlEUCIWCgtBaXJwb3J0UGFpchIHTktHfElDTiISCg1Gcm9tTWFpbkNhYmluEgFLIlIKDkZhcmVSdWxlRm9yS2V5EkBIWURQfE5LR3xTRUx8MjAxOS0wMy0yMnx8MXwwfDAkT1ojRXhjbHVzaXZlIzIjMCMwI0tBODExWS9PWjk2NDJLIg4KCFRyaXBUeXBlEgJPVxoyCgJPWhoVCgNDTlkSDgoDQURUEQAAAAAA/K9AIhUKA0FEVBIOEgNDTlkhAAAAAABgeUA=",
+                "PriceUnit": {
+                  "Fare": [
+                    {
+                      "FCSequence": 1,
+                      "FareInfo": {
+                        "FareID": "",
+                        "FareBasis": "YOW2",
+                        "FareSource": 0,
+                        "OwnerCarrier": "",
+                        "FareType": 16,
+                        "AccountCode": "",
+                        "TicketDesignator": "",
+                        "TourCode": ""
+                      }
+                    },
+                    {
+                      "FCSequence": 1,
+                      "FareInfo": {
+                        "FareID": "",
+                        "FareBasis": "YOW2",
+                        "FareSource": 0,
+                        "OwnerCarrier": "",
+                        "FareType": 16,
+                        "AccountCode": "",
+                        "TicketDesignator": "",
+                        "TourCode": ""
+                      }
+                    }
+                  ],
+                  "CarrierTicketingDeadline": "2019-03-20 17:53:44",
+                  "NeedQTE": true,
+                  "NeedPnr": true,
+                  "TextRemarkId": 0
+                },
+                "PenaltyRules": {
+                  "IsReplaceCtripRule": false,
+                  "PenaltyRemark": [
+                    {
+                      "SegmentNo": 1,
+                      "NonRefund": "H",
+                      "NonReroute": "H",
+                      "RefundRemarkID": "2",
+                      "RerouteRemarkID": "3",
+                      "NoShowRemarkID": "",
+                      "RemarkID": "1"
+                    }
+                  ]
+                },
+                "Tag": [
+                  {
+                    "Key": "ItineraryKey",
+                    "Value": "52989222563649860_54_2"
+                  },
+                  {
+                    "Key": "TripType",
+                    "Value": "OW"
+                  },
+                  {
+                    "Key": "RegularFare",
+                    "Value": "true"
+                  },
+                  {
+                    "Key": "PriceFeature",
+                    "Value": "NORMAL"
+                  },
+                  {
+                    "Key": "PrivateFareType",
+                    "Value": "1,16|1,16"
+                  },
+                  {
+                    "Key": "ProductAttributes",
+                    "Value": "10004,10004"
+                  },
+                  {
+                    "Key": "FareAttribute",
+                    "Value": ""
+                  },
+                  {
+                    "Key": "ProductFlag",
+                    "Value": "512"
+                  },
+                  {
+                    "Key": "PosCodes",
+                    "Value": "HK|HK"
+                  },
+                  {
+                    "Key": "PUSequence",
+                    "Value": "1|1"
+                  },
+                  {
+                    "Key": "RestrictedType",
+                    "Value": "false|false"
+                  }
+                ]
+              }
+            ],
+            "RouteSearchToken": "8000000000I0iW0M03AmIn0bffN0bgcZn800000000000000000080000QFJ000G001w0Z9000dfW8000000000Q(Consolidator|KA811,1,,22-OZ9642,1,RS,23|Y,Y-Y,K|0|4299,406,HYDP-OZ|ADT|)",
+            "BaggageRef": [
+              {
+                "SegmentNo": 1,
+                "TravelerEligibility": "ADT",
+                "ProductDetailIndex": 0,
+                "Baggage": [
+                  {
+                    "BaggageID": "2",
+                    "BaggageSize": null,
+                    "Type": 0,
+                    "SalePrice": 0.0,
+                    "Token": ""
+                  },
+                  {
+                    "BaggageID": "1",
+                    "BaggageSize": null,
+                    "Type": 1,
+                    "SalePrice": 0.0,
+                    "Token": ""
+                  }
+                ]
+              }
+            ],
+            "SortIndicator": 0.0,
+            "TicketPackageProduct": [
+              {
+                "ProductDetailIndex": 0,
+                "AncillariesInfo": {
+                  "HasBaggageService": false,
+                  "UnFreeBaggage": false,
+                  "CheckInServiceStatus": 0
+                },
+                "AirlinePackageID": 0,
+                "MemberPoint": [],
+                "RecommendPrdType": 0,
+                "ExtensionField": null,
+                "RecommendedInfo": null,
+                "PromotionInfo": [],
+                "XProductPreposeInfo": [
+                  {
+                    "PolicyId": 14984,
+                    "ProductType": 7,
+                    "SegmentNo": 1,
+                    "MarketingType": 2,
+                    "MarketingAmount": 20.0,
+                    "CouponPrice": 100,
+                    "SubProductType": 264,
+                    "AdditionInfoId": "1317",
+                    "AdditionInfoType": "0"
+                  },
+                  {
+                    "PolicyId": 14947,
+                    "ProductType": 7,
+                    "SegmentNo": 1,
+                    "MarketingType": 1,
+                    "MarketingAmount": 0.0,
+                    "CouponPrice": 30,
+                    "SubProductType": 265,
+                    "AdditionInfoId": "1950",
+                    "AdditionInfoType": ""
+                  },
+                  {
+                    "PolicyId": 14985,
+                    "ProductType": 7,
+                    "SegmentNo": 1,
+                    "MarketingType": 3,
+                    "MarketingAmount": 80.0,
+                    "CouponPrice": 100,
+                    "SubProductType": 258,
+                    "AdditionInfoId": "1554",
+                    "AdditionInfoType": "0"
+                  }
+                ],
+                "IsSupportFFP": false,
+                "CrossSaleHotel": 1,
+                "ExtraMarketingInfo": []
+              }
+            ],
+            "PriceAttributeID": [
+              4,
+              8,
+              9,
+              11,
+              13,
+              0,
+              19,
+              23
+            ]
+          }
+        ],
+        "Tag": [],
+        "VirtualFlightRemark": [],
+        "hasMoreGrade": false,
+        "FlyerFlag": 0,
+        "UnaccompaniedAgeRange": "0-15-16",
+        "Flag": "",
+        "ChoicenessTag": 0
+      }
+    ],
+    "Flight": [
+      {
+        "FlightID": "1",
+        "MarketingCarrierCode": "OZ",
+        "FlightNo": "OZ9642",
+        "OperatingCarrierCode": "RS",
+        "OperatingFlightNo": "RS532",
+        "DepartureCityCode": "HKG",
+        "ArrivalCityCode": "SEL",
+        "DepartureAirportCode": "HKG",
+        "ArrivalAirportCode": "ICN",
+        "DepartureTerminal": "",
+        "ArrivalTerminal": "T1",
+        "TakeoffDateTime": "2019-03-23 01:20:00",
+        "ArrivalDateTime": "2019-03-23 05:50:00",
+        "EquipmentCode": "321",
+        "Stop": [],
+        "Duration": 210,
+        "ArrivalDays": 0,
+        "Tag": [
+          {
+            "Key": "building",
+            "Value": "0,1529"
+          }
+        ],
+        "TransportType": 0,
+        "Supplier": ""
+      },
+      {
+        "FlightID": "2",
+        "MarketingCarrierCode": "KA",
+        "FlightNo": "KA811",
+        "OperatingCarrierCode": "",
+        "OperatingFlightNo": "",
+        "DepartureCityCode": "NKG",
+        "ArrivalCityCode": "HKG",
+        "DepartureAirportCode": "NKG",
+        "ArrivalAirportCode": "HKG",
+        "DepartureTerminal": "",
+        "ArrivalTerminal": "T1",
+        "TakeoffDateTime": "2019-03-22 14:15:00",
+        "ArrivalDateTime": "2019-03-22 17:00:00",
+        "EquipmentCode": "333",
+        "Stop": [],
+        "Duration": 165,
+        "ArrivalDays": 0,
+        "Tag": [
+          {
+            "Key": "building",
+            "Value": "0,39"
+          }
+        ],
+        "TransportType": 0,
+        "Supplier": ""
+      }
+    ],
+    "Baggage": [
+      {
+        "BaggageID": "1",
+        "BaggageCN": "NKG-HKG: 成人:以航司客规为准;|HKG-SEL: 成人:以航司客规为准;",
+        "BaggageGLB": "NKG-HKG: Baggage is subject to Airline's regulations for ADT;|HKG-SEL: Baggage is subject to Airline's regulations for ADT;",
+        "BaggageDetail": [
+          {
+            "Amount": -1,
+            "Unit": "PC",
+            "Type": "Piece"
+          },
+          {
+            "Amount": -1,
+            "Unit": "KG",
+            "Type": "Weight"
+          }
+        ],
+        "ExtentionFileds": null
+      },
+      {
+        "BaggageID": "2",
+        "BaggageCN": "成人:NKG-HKG:0件；|成人:HKG-SEL:0件",
+        "BaggageGLB": "NKG-HKG:0 PIECE；|HKG-SEL:0 PIECE",
+        "BaggageDetail": [
+          {
+            "Amount": 0,
+            "Unit": "PC",
+            "Type": "Piece"
+          },
+          {
+            "Amount": 0,
+            "Unit": "KG",
+            "Type": "Weight"
+          }
+        ],
+        "ExtentionFileds": null
+      }
+    ],
+    "TextRemark": [
+      {
+        "RemarkID": "1",
+        "TextCN": "不可加订婴儿票；$_$",
+        "TextGLB": ""
+      },
+      {
+        "RemarkID": "2",
+        "TextCN": "全部未使用退票费：599CNY；",
+        "TextGLB": "Ticket unused refund fee : 599CNY; "
+      },
+      {
+        "RemarkID": "3",
+        "TextCN": "起飞前改期费：343CNY；",
+        "TextGLB": "Before departure changes fee : 343CNY; "
+      }
+    ],
+    "SearchCriteriaToken": "KLUv_QBQCQIACwgBEM7lARjTggMggPjJlZotDBMIARABGAEUGAMgASgBMABDKAAwADgAQABIAFAAgAEAkAEAqAEAuAEAREgAUAA=",
+    "Tag": [
+      {
+        "Key": "SearchCacheKey",
+        "Value": "KLUv_QBQCQIACwgBEM7lARjTggMggPjJlZotDBMIARABGAEUGAMgASgBMABDKAAwADgAQABIAFAAgAEAkAEAqAEAuAEAREgAUAA=~Q29uc29saWRhdG9yfHx8"
+      },
+      {
+        "Key": "TripType",
+        "Value": "OW"
+      },
+      {
+        "Key": "SearchDateTime",
+        "Value": "2019-03-19 09:54:21"
+      },
+      {
+        "Key": "SearchTransNo",
+        "Value": "0"
+      },
+      {
+        "Key": "OriginalRoute",
+        "Value": "{\n  \"flightWay\" : \"S\",\n  \"fltList\" : [ {\n    \"dcityCode\" : \"NKG\",\n    \"acityCode\" : \"SEL\",\n    \"NO\" : 1\n  } ]\n}"
+      },
+      {
+        "Key": "JavaVersion",
+        "Value": "true"
+      }
+    ],
+    "Agency": [
+      {
+        "AgencyID": 1522,
+        "AgencyCode": "HYDP",
+        "CityID": 2,
+        "CityCode": "SHA",
+        "AgencyName": ""
+      }
+    ],
+    "Airline": [
+      {
+        "AirlineCode": "KA",
+        "AirlineName": "国泰港龙航空",
+        "Alliance": "寰宇一家",
+        "IsLcc": false
+      },
+      {
+        "AirlineCode": "RS",
+        "AirlineName": "首尔航空",
+        "Alliance": "",
+        "IsLcc": false
+      },
+      {
+        "AirlineCode": "OZ",
+        "AirlineName": "韩亚航空",
+        "Alliance": "星空联盟",
+        "IsLcc": false
+      }
+    ],
+    "City": [
+      {
+        "CityID": 274,
+        "CityCode": "SEL",
+        "CityName": "首尔",
+        "CityNameGLB": "Seoul",
+        "ProvinceID": 0,
+        "CountryID": 42,
+        "CountryName": "韩国",
+        "CountryNameGLB": "South Korea",
+        "IsDomestic": false
+      },
+      {
+        "CityID": 12,
+        "CityCode": "NKG",
+        "CityName": "南京",
+        "CityNameGLB": "Nanjing",
+        "ProvinceID": 15,
+        "CountryID": 1,
+        "CountryName": "中国",
+        "CountryNameGLB": "china",
+        "IsDomestic": true
+      },
+      {
+        "CityID": 58,
+        "CityCode": "HKG",
+        "CityName": "香港",
+        "CityNameGLB": "Hong Kong",
+        "ProvinceID": 32,
+        "CountryID": 1,
+        "CountryName": "中国",
+        "CountryNameGLB": "china",
+        "IsDomestic": false
+      }
+    ],
+    "Airport": [
+      {
+        "PortCode": "ICN",
+        "PortName": "仁川国际机场",
+        "PortNameGLB": "Incheon International Airport"
+      },
+      {
+        "PortCode": "NKG",
+        "PortName": "禄口国际机场",
+        "PortNameGLB": "Lukou International Airport"
+      },
+      {
+        "PortCode": "HKG",
+        "PortName": "香港国际机场",
+        "PortNameGLB": "Hong Kong International Airport"
+      }
+    ]
+  },
+  "ErrorResult": null
+}

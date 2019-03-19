@@ -1,0 +1,41 @@
+{
+  "RequestHeader": {
+    "MessageHeader": {
+      "SessionID": "0",
+      "TransactionID": "0",
+      "ChannelID": "Affiliate",
+      "SubChannelID": 0,
+      "CustomerID": "",
+      "ClientIP": "",
+      "VID": null,
+      "RequestID": ""
+    },
+    "LoggingLevel": 0,
+    "DiagInput": ""
+  },
+  "SearchCriteria": {
+    "OrigDestRequest": [
+      {
+        "Date": "2019-03-22 00:00:00",
+        "ORIG": "NKG",
+        "DEST": "SEL"
+      }
+    ],
+    "TravelerRequest": [
+      {
+        "Eligibility": "ADT",
+        "TravelerCount": 1,
+        "Nationality": ""
+      }
+    ],
+    "ValidatingCarrier": [],
+    "CabinClass": [
+      "Y",
+      "W"
+    ],
+    "ExtensionOption": [],
+    "Currency": "",
+    "AdvancedOption": null
+  },
+  "SearchContext": null
+}
