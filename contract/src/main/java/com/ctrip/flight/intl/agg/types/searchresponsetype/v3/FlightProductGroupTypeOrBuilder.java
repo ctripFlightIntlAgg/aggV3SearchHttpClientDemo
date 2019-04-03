@@ -159,4 +159,13 @@ public interface FlightProductGroupTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getFlagBytes();
+
+  /**
+   * <pre>
+   * 新增
+   * </pre>
+   *
+   * <code>int32 ChoicenessTag = 12;</code>
+   */
+  int getChoicenessTag();
 }

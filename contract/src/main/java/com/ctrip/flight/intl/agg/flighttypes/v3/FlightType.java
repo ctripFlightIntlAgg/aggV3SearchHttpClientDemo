@@ -35,6 +35,7 @@ private static final long serialVersionUID = 0L;
     arrivalDays_ = 0;
     tag_ = java.util.Collections.emptyList();
     transportType_ = 0;
+    supplier_ = "";
   }
 
   @java.lang.Override
@@ -176,6 +177,12 @@ private static final long serialVersionUID = 0L;
           case 152: {
 
             transportType_ = input.readInt32();
+            break;
+          }
+          case 162: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            supplier_ = s;
             break;
           }
           default: {
@@ -858,6 +865,48 @@ private static final long serialVersionUID = 0L;
     return transportType_;
   }
 
+  public static final int SUPPLIER_FIELD_NUMBER = 20;
+  private volatile java.lang.Object supplier_;
+  /**
+   * <pre>
+   *虚拟航班供应商
+   * </pre>
+   *
+   * <code>string Supplier = 20;</code>
+   */
+  public java.lang.String getSupplier() {
+    java.lang.Object ref = supplier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      supplier_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *虚拟航班供应商
+   * </pre>
+   *
+   * <code>string Supplier = 20;</code>
+   */
+  public com.google.protobuf.ByteString
+      getSupplierBytes() {
+    java.lang.Object ref = supplier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      supplier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -928,6 +977,9 @@ private static final long serialVersionUID = 0L;
     }
     if (transportType_ != 0) {
       output.writeInt32(19, transportType_);
+    }
+    if (!getSupplierBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, supplier_);
     }
     unknownFields.writeTo(output);
   }
@@ -1000,6 +1052,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(19, transportType_);
     }
+    if (!getSupplierBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, supplier_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1054,6 +1109,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTagList());
     result = result && (getTransportType()
         == other.getTransportType());
+    result = result && getSupplier()
+        .equals(other.getSupplier());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1107,6 +1164,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TRANSPORTTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getTransportType();
+    hash = (37 * hash) + SUPPLIER_FIELD_NUMBER;
+    hash = (53 * hash) + getSupplier().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1288,6 +1347,8 @@ private static final long serialVersionUID = 0L;
       }
       transportType_ = 0;
 
+      supplier_ = "";
+
       return this;
     }
 
@@ -1351,6 +1412,7 @@ private static final long serialVersionUID = 0L;
         result.tag_ = tagBuilder_.build();
       }
       result.transportType_ = transportType_;
+      result.supplier_ = supplier_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1516,6 +1578,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTransportType() != 0) {
         setTransportType(other.getTransportType());
+      }
+      if (!other.getSupplier().isEmpty()) {
+        supplier_ = other.supplier_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3239,6 +3305,95 @@ private static final long serialVersionUID = 0L;
     public Builder clearTransportType() {
       
       transportType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object supplier_ = "";
+    /**
+     * <pre>
+     *虚拟航班供应商
+     * </pre>
+     *
+     * <code>string Supplier = 20;</code>
+     */
+    public java.lang.String getSupplier() {
+      java.lang.Object ref = supplier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        supplier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *虚拟航班供应商
+     * </pre>
+     *
+     * <code>string Supplier = 20;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSupplierBytes() {
+      java.lang.Object ref = supplier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        supplier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *虚拟航班供应商
+     * </pre>
+     *
+     * <code>string Supplier = 20;</code>
+     */
+    public Builder setSupplier(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      supplier_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *虚拟航班供应商
+     * </pre>
+     *
+     * <code>string Supplier = 20;</code>
+     */
+    public Builder clearSupplier() {
+      
+      supplier_ = getDefaultInstance().getSupplier();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *虚拟航班供应商
+     * </pre>
+     *
+     * <code>string Supplier = 20;</code>
+     */
+    public Builder setSupplierBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      supplier_ = value;
       onChanged();
       return this;
     }

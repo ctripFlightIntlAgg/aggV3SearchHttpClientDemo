@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     airline_ = java.util.Collections.emptyList();
     city_ = java.util.Collections.emptyList();
     airport_ = java.util.Collections.emptyList();
+    service_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -139,6 +140,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.AirportInfoType.parser(), extensionRegistry));
             break;
           }
+          case 98: {
+            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+              service_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType>();
+              mutable_bitField0_ |= 0x00000400;
+            }
+            service_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -180,6 +190,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
         airport_ = java.util.Collections.unmodifiableList(airport_);
+      }
+      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+        service_ = java.util.Collections.unmodifiableList(service_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -628,6 +641,61 @@ private static final long serialVersionUID = 0L;
     return airport_.get(index);
   }
 
+  public static final int SERVICE_FIELD_NUMBER = 12;
+  private java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType> service_;
+  /**
+   * <pre>
+   *变化  新增权益Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType> getServiceList() {
+    return service_;
+  }
+  /**
+   * <pre>
+   *变化  新增权益Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ServiceTypeOrBuilder> 
+      getServiceOrBuilderList() {
+    return service_;
+  }
+  /**
+   * <pre>
+   *变化  新增权益Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+   */
+  public int getServiceCount() {
+    return service_.size();
+  }
+  /**
+   * <pre>
+   *变化  新增权益Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+   */
+  public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType getService(int index) {
+    return service_.get(index);
+  }
+  /**
+   * <pre>
+   *变化  新增权益Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+   */
+  public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceTypeOrBuilder getServiceOrBuilder(
+      int index) {
+    return service_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -671,6 +739,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < airport_.size(); i++) {
       output.writeMessage(11, airport_.get(i));
+    }
+    for (int i = 0; i < service_.size(); i++) {
+      output.writeMessage(12, service_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -720,6 +791,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, airport_.get(i));
     }
+    for (int i = 0; i < service_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, service_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -756,6 +831,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCityList());
     result = result && getAirportList()
         .equals(other.getAirportList());
+    result = result && getServiceList()
+        .equals(other.getServiceList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -804,6 +881,10 @@ private static final long serialVersionUID = 0L;
     if (getAirportCount() > 0) {
       hash = (37 * hash) + AIRPORT_FIELD_NUMBER;
       hash = (53 * hash) + getAirportList().hashCode();
+    }
+    if (getServiceCount() > 0) {
+      hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -942,6 +1023,7 @@ private static final long serialVersionUID = 0L;
         getAirlineFieldBuilder();
         getCityFieldBuilder();
         getAirportFieldBuilder();
+        getServiceFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1002,6 +1084,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000200);
       } else {
         airportBuilder_.clear();
+      }
+      if (serviceBuilder_ == null) {
+        service_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      } else {
+        serviceBuilder_.clear();
       }
       return this;
     }
@@ -1112,6 +1200,15 @@ private static final long serialVersionUID = 0L;
         result.airport_ = airport_;
       } else {
         result.airport_ = airportBuilder_.build();
+      }
+      if (serviceBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          service_ = java.util.Collections.unmodifiableList(service_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.service_ = service_;
+      } else {
+        result.service_ = serviceBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1397,6 +1494,32 @@ private static final long serialVersionUID = 0L;
                  getAirportFieldBuilder() : null;
           } else {
             airportBuilder_.addAllMessages(other.airport_);
+          }
+        }
+      }
+      if (serviceBuilder_ == null) {
+        if (!other.service_.isEmpty()) {
+          if (service_.isEmpty()) {
+            service_ = other.service_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureServiceIsMutable();
+            service_.addAll(other.service_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.service_.isEmpty()) {
+          if (serviceBuilder_.isEmpty()) {
+            serviceBuilder_.dispose();
+            serviceBuilder_ = null;
+            service_ = other.service_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            serviceBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getServiceFieldBuilder() : null;
+          } else {
+            serviceBuilder_.addAllMessages(other.service_);
           }
         }
       }
@@ -3945,6 +4068,318 @@ private static final long serialVersionUID = 0L;
         airport_ = null;
       }
       return airportBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType> service_ =
+      java.util.Collections.emptyList();
+    private void ensureServiceIsMutable() {
+      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+        service_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType>(service_);
+        bitField0_ |= 0x00000400;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceTypeOrBuilder> serviceBuilder_;
+
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType> getServiceList() {
+      if (serviceBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(service_);
+      } else {
+        return serviceBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public int getServiceCount() {
+      if (serviceBuilder_ == null) {
+        return service_.size();
+      } else {
+        return serviceBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType getService(int index) {
+      if (serviceBuilder_ == null) {
+        return service_.get(index);
+      } else {
+        return serviceBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public Builder setService(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType value) {
+      if (serviceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceIsMutable();
+        service_.set(index, value);
+        onChanged();
+      } else {
+        serviceBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public Builder setService(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.Builder builderForValue) {
+      if (serviceBuilder_ == null) {
+        ensureServiceIsMutable();
+        service_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        serviceBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public Builder addService(com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType value) {
+      if (serviceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceIsMutable();
+        service_.add(value);
+        onChanged();
+      } else {
+        serviceBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public Builder addService(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType value) {
+      if (serviceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceIsMutable();
+        service_.add(index, value);
+        onChanged();
+      } else {
+        serviceBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public Builder addService(
+        com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.Builder builderForValue) {
+      if (serviceBuilder_ == null) {
+        ensureServiceIsMutable();
+        service_.add(builderForValue.build());
+        onChanged();
+      } else {
+        serviceBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public Builder addService(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.Builder builderForValue) {
+      if (serviceBuilder_ == null) {
+        ensureServiceIsMutable();
+        service_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        serviceBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public Builder addAllService(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType> values) {
+      if (serviceBuilder_ == null) {
+        ensureServiceIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, service_);
+        onChanged();
+      } else {
+        serviceBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public Builder clearService() {
+      if (serviceBuilder_ == null) {
+        service_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        serviceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public Builder removeService(int index) {
+      if (serviceBuilder_ == null) {
+        ensureServiceIsMutable();
+        service_.remove(index);
+        onChanged();
+      } else {
+        serviceBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.Builder getServiceBuilder(
+        int index) {
+      return getServiceFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceTypeOrBuilder getServiceOrBuilder(
+        int index) {
+      if (serviceBuilder_ == null) {
+        return service_.get(index);  } else {
+        return serviceBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ServiceTypeOrBuilder> 
+         getServiceOrBuilderList() {
+      if (serviceBuilder_ != null) {
+        return serviceBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(service_);
+      }
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.Builder addServiceBuilder() {
+      return getServiceFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.Builder addServiceBuilder(
+        int index) {
+      return getServiceFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     *变化  新增权益Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.Builder> 
+         getServiceBuilderList() {
+      return getServiceFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceTypeOrBuilder> 
+        getServiceFieldBuilder() {
+      if (serviceBuilder_ == null) {
+        serviceBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceTypeOrBuilder>(
+                service_,
+                ((bitField0_ & 0x00000400) == 0x00000400),
+                getParentForChildren(),
+                isClean());
+        service_ = null;
+      }
+      return serviceBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

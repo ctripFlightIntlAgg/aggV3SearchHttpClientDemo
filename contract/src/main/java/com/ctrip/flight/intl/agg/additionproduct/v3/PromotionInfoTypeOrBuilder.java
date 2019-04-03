@@ -8,21 +8,13 @@ public interface PromotionInfoTypeOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * com.ctrip.flight.intl.agg.flighttypes.v3.TravelerCategoryCodeType TravelerCategoryCode = 1 ; 变化 替换为乘客资质
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1;</code>
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 1;</code>
    */
-  int getTravelerEligibilityValue();
+  int getAgeTypeValue();
   /**
-   * <pre>
-   * com.ctrip.flight.intl.agg.flighttypes.v3.TravelerCategoryCodeType TravelerCategoryCode = 1 ; 变化 替换为乘客资质
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1;</code>
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 1;</code>
    */
-  com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType getTravelerEligibility();
+  com.ctrip.flight.intl.agg.flighttypes.v3.AgeType getAgeType();
 
   /**
    * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.GiftInfoType GiftInfo = 2;</code>

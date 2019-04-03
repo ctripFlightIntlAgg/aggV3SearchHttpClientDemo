@@ -61,7 +61,7 @@ public final class AggTypesSearchresponsetypeV3 {
       "trip.flight.intl.agg.types.searchrespons" +
       "etype.v3.SearchResultType\022O\n\013ErrorResult" +
       "\030\004 \001(\0132:.com.ctrip.flight.intl.agg.messa" +
-      "getypes.v3.ErrorResultType\"\343\005\n\020SearchRes" +
+      "getypes.v3.ErrorResultType\"\257\006\n\020SearchRes" +
       "ultType\022i\n\022FlightProductGroup\030\001 \003(\0132M.co" +
       "m.ctrip.flight.intl.agg.types.searchresp" +
       "onsetype.v3.FlightProductGroupType\022D\n\006Fl" +
@@ -80,34 +80,36 @@ public final class AggTypesSearchresponsetypeV3 {
       "om.ctrip.flight.intl.agg.flighttypes.v3." +
       "CityInfoType\022J\n\007Airport\030\013 \003(\01329.com.ctri" +
       "p.flight.intl.agg.flighttypes.v3.Airport" +
-      "InfoType\"\314\003\n\026FlightProductGroupType\022b\n\024F" +
-      "lightRefCombination\030\001 \003(\0132D.com.ctrip.fl" +
-      "ight.intl.agg.types.searchresponsetype.v" +
-      "3.FlightRefType\022O\n\005Price\030\002 \003(\0132@.com.ctr" +
-      "ip.flight.intl.agg.types.searchresponset" +
-      "ype.v3.PriceType\022G\n\003Tag\030\004 \003(\0132:.com.ctri" +
-      "p.flight.intl.agg.flighttypes.v3.KeyValu" +
-      "ePairType\022^\n\023VirtualFlightRemark\030\007 \003(\0132A" +
-      ".com.ctrip.flight.intl.agg.flighttypes.v" +
-      "3.VirtualFlightRemarkType\022\024\n\014hasMoreGrad" +
-      "e\030\010 \001(\010\022\021\n\tFlyerFlag\030\t \001(\005\022\035\n\025Unaccompan" +
-      "iedAgeRange\030\n \001(\t\022\014\n\004Flag\030\013 \001(\t\"o\n\rFligh" +
-      "tRefType\022\020\n\010FlightID\030\001 \001(\t\022\021\n\tSegmentNo\030" +
-      "\002 \001(\005\022\022\n\nSequenceNo\030\003 \001(\005\022\020\n\010MarrySeg\030\004 " +
-      "\001(\t\022\023\n\013mainSegment\030\005 \001(\010\"\262\003\n\tPriceType\022R" +
-      "\n\rFlightSegment\030\001 \003(\0132;.com.ctrip.flight" +
-      ".intl.agg.flighttypes.v3.FlightSegmentTy" +
-      "pe\022R\n\rProductDetail\030\002 \003(\0132;.com.ctrip.fl" +
-      "ight.intl.agg.flighttypes.v3.ProductDeta" +
-      "ilType\022\030\n\020RouteSearchToken\030\004 \001(\t\022L\n\nBagg" +
-      "ageRef\030\005 \003(\01328.com.ctrip.flight.intl.agg" +
-      ".flighttypes.v3.BaggageRefType\022\025\n\rSortIn" +
-      "dicator\030\007 \001(\001\022d\n\024TicketPackageProduct\030\010 " +
-      "\003(\0132F.com.ctrip.flight.intl.agg.addition" +
-      "product.v3.TicketPackageProductType\022\030\n\020P" +
-      "riceAttributeID\030\n \003(\005B9\n5com.ctrip.fligh" +
-      "t.intl.agg.types.searchresponsetype.v3P\001" +
-      "b\006proto3"
+      "InfoType\022J\n\007Service\030\014 \003(\01329.com.ctrip.fl" +
+      "ight.intl.agg.additionproduct.v3.Service" +
+      "Type\"\343\003\n\026FlightProductGroupType\022b\n\024Fligh" +
+      "tRefCombination\030\001 \003(\0132D.com.ctrip.flight" +
+      ".intl.agg.types.searchresponsetype.v3.Fl" +
+      "ightRefType\022O\n\005Price\030\002 \003(\0132@.com.ctrip.f" +
+      "light.intl.agg.types.searchresponsetype." +
+      "v3.PriceType\022G\n\003Tag\030\004 \003(\0132:.com.ctrip.fl" +
+      "ight.intl.agg.flighttypes.v3.KeyValuePai" +
+      "rType\022^\n\023VirtualFlightRemark\030\007 \003(\0132A.com" +
+      ".ctrip.flight.intl.agg.flighttypes.v3.Vi" +
+      "rtualFlightRemarkType\022\024\n\014hasMoreGrade\030\010 " +
+      "\001(\010\022\021\n\tFlyerFlag\030\t \001(\005\022\035\n\025UnaccompaniedA" +
+      "geRange\030\n \001(\t\022\014\n\004Flag\030\013 \001(\t\022\025\n\rChoicenes" +
+      "sTag\030\014 \001(\005\"o\n\rFlightRefType\022\020\n\010FlightID\030" +
+      "\001 \001(\t\022\021\n\tSegmentNo\030\002 \001(\005\022\022\n\nSequenceNo\030\003" +
+      " \001(\005\022\020\n\010MarrySeg\030\004 \001(\t\022\023\n\013mainSegment\030\005 " +
+      "\001(\010\"\262\003\n\tPriceType\022R\n\rFlightSegment\030\001 \003(\013" +
+      "2;.com.ctrip.flight.intl.agg.flighttypes" +
+      ".v3.FlightSegmentType\022R\n\rProductDetail\030\002" +
+      " \003(\0132;.com.ctrip.flight.intl.agg.flightt" +
+      "ypes.v3.ProductDetailType\022\030\n\020RouteSearch" +
+      "Token\030\004 \001(\t\022L\n\nBaggageRef\030\005 \003(\01328.com.ct" +
+      "rip.flight.intl.agg.flighttypes.v3.Bagga" +
+      "geRefType\022\025\n\rSortIndicator\030\007 \001(\001\022d\n\024Tick" +
+      "etPackageProduct\030\010 \003(\0132F.com.ctrip.fligh" +
+      "t.intl.agg.additionproduct.v3.TicketPack" +
+      "ageProductType\022\030\n\020PriceAttributeID\030\n \003(\005" +
+      "B9\n5com.ctrip.flight.intl.agg.types.sear" +
+      "chresponsetype.v3P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -136,13 +138,13 @@ public final class AggTypesSearchresponsetypeV3 {
     internal_static_com_ctrip_flight_intl_agg_types_searchresponsetype_v3_SearchResultType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_types_searchresponsetype_v3_SearchResultType_descriptor,
-        new java.lang.String[] { "FlightProductGroup", "Flight", "Baggage", "TextRemark", "SearchCriteriaToken", "Tag", "Agency", "Airline", "City", "Airport", });
+        new java.lang.String[] { "FlightProductGroup", "Flight", "Baggage", "TextRemark", "SearchCriteriaToken", "Tag", "Agency", "Airline", "City", "Airport", "Service", });
     internal_static_com_ctrip_flight_intl_agg_types_searchresponsetype_v3_FlightProductGroupType_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_ctrip_flight_intl_agg_types_searchresponsetype_v3_FlightProductGroupType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_types_searchresponsetype_v3_FlightProductGroupType_descriptor,
-        new java.lang.String[] { "FlightRefCombination", "Price", "Tag", "VirtualFlightRemark", "HasMoreGrade", "FlyerFlag", "UnaccompaniedAgeRange", "Flag", });
+        new java.lang.String[] { "FlightRefCombination", "Price", "Tag", "VirtualFlightRemark", "HasMoreGrade", "FlyerFlag", "UnaccompaniedAgeRange", "Flag", "ChoicenessTag", });
     internal_static_com_ctrip_flight_intl_agg_types_searchresponsetype_v3_FlightRefType_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_ctrip_flight_intl_agg_types_searchresponsetype_v3_FlightRefType_fieldAccessorTable = new

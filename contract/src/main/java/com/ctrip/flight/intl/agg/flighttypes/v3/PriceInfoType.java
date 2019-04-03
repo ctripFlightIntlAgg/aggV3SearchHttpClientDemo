@@ -16,8 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PriceInfoType() {
-    travelerEligibility_ = 0;
-    agentCode_ = "";
+    travelerEligibility_ = "";
     officialName_ = "";
     ticketRemark_ = "";
     expression_ = "";
@@ -29,6 +28,8 @@ private static final long serialVersionUID = 0L;
     iATANumber_ = "";
     qTECmdPostfix_ = "";
     xSFSICmd_ = "";
+    ageType_ = 0;
+    agencyID_ = 0;
   }
 
   @java.lang.Override
@@ -55,16 +56,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
-
-            travelerEligibility_ = rawValue;
-            break;
-          }
-          case 18: {
+          case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            agentCode_ = s;
+            travelerEligibility_ = s;
             break;
           }
           case 26: {
@@ -149,9 +144,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 98: {
-            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
               tag_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType>();
-              mutable_bitField0_ |= 0x00000800;
+              mutable_bitField0_ |= 0x00000400;
             }
             tag_.add(
                 input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.parser(), extensionRegistry));
@@ -185,6 +180,17 @@ private static final long serialVersionUID = 0L;
             xSFSICmd_ = s;
             break;
           }
+          case 144: {
+            int rawValue = input.readEnum();
+
+            ageType_ = rawValue;
+            break;
+          }
+          case 152: {
+
+            agencyID_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -200,7 +206,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
         tag_ = java.util.Collections.unmodifiableList(tag_);
       }
       this.unknownFields = unknownFields.build();
@@ -222,66 +228,41 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int TRAVELERELIGIBILITY_FIELD_NUMBER = 1;
-  private int travelerEligibility_;
+  private volatile java.lang.Object travelerEligibility_;
   /**
    * <pre>
    *变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
    * </pre>
    *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1;</code>
+   * <code>string TravelerEligibility = 1;</code>
    */
-  public int getTravelerEligibilityValue() {
-    return travelerEligibility_;
-  }
-  /**
-   * <pre>
-   *变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1;</code>
-   */
-  public com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType getTravelerEligibility() {
-    @SuppressWarnings("deprecation")
-    com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType result = com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType.valueOf(travelerEligibility_);
-    return result == null ? com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType.UNRECOGNIZED : result;
-  }
-
-  public static final int AGENTCODE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object agentCode_;
-  /**
-   * <pre>
-   *TravelerCategoryCodeType TravelerCategoryCode = 1; //变化 删除
-   * </pre>
-   *
-   * <code>string AgentCode = 2;</code>
-   */
-  public java.lang.String getAgentCode() {
-    java.lang.Object ref = agentCode_;
+  public java.lang.String getTravelerEligibility() {
+    java.lang.Object ref = travelerEligibility_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      agentCode_ = s;
+      travelerEligibility_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   *TravelerCategoryCodeType TravelerCategoryCode = 1; //变化 删除
+   *变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
    * </pre>
    *
-   * <code>string AgentCode = 2;</code>
+   * <code>string TravelerEligibility = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getAgentCodeBytes() {
-    java.lang.Object ref = agentCode_;
+      getTravelerEligibilityBytes() {
+    java.lang.Object ref = travelerEligibility_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      agentCode_ = b;
+      travelerEligibility_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -700,6 +681,36 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int AGETYPE_FIELD_NUMBER = 18;
+  private int ageType_;
+  /**
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 18;</code>
+   */
+  public int getAgeTypeValue() {
+    return ageType_;
+  }
+  /**
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 18;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.AgeType getAgeType() {
+    @SuppressWarnings("deprecation")
+    com.ctrip.flight.intl.agg.flighttypes.v3.AgeType result = com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.valueOf(ageType_);
+    return result == null ? com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.UNRECOGNIZED : result;
+  }
+
+  public static final int AGENCYID_FIELD_NUMBER = 19;
+  private int agencyID_;
+  /**
+   * <pre>
+   * 通过id关联AgencyType
+   * </pre>
+   *
+   * <code>int32 AgencyID = 19;</code>
+   */
+  public int getAgencyID() {
+    return agencyID_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -714,11 +725,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (travelerEligibility_ != com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType.ADT.getNumber()) {
-      output.writeEnum(1, travelerEligibility_);
-    }
-    if (!getAgentCodeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, agentCode_);
+    if (!getTravelerEligibilityBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, travelerEligibility_);
     }
     if (!getOfficialNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, officialName_);
@@ -765,6 +773,12 @@ private static final long serialVersionUID = 0L;
     if (!getXSFSICmdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, xSFSICmd_);
     }
+    if (ageType_ != com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.ADT.getNumber()) {
+      output.writeEnum(18, ageType_);
+    }
+    if (agencyID_ != 0) {
+      output.writeInt32(19, agencyID_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -774,12 +788,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (travelerEligibility_ != com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType.ADT.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, travelerEligibility_);
-    }
-    if (!getAgentCodeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, agentCode_);
+    if (!getTravelerEligibilityBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, travelerEligibility_);
     }
     if (!getOfficialNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, officialName_);
@@ -834,6 +844,14 @@ private static final long serialVersionUID = 0L;
     if (!getXSFSICmdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, xSFSICmd_);
     }
+    if (ageType_ != com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.ADT.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(18, ageType_);
+    }
+    if (agencyID_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(19, agencyID_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -850,9 +868,8 @@ private static final long serialVersionUID = 0L;
     com.ctrip.flight.intl.agg.flighttypes.v3.PriceInfoType other = (com.ctrip.flight.intl.agg.flighttypes.v3.PriceInfoType) obj;
 
     boolean result = true;
-    result = result && travelerEligibility_ == other.travelerEligibility_;
-    result = result && getAgentCode()
-        .equals(other.getAgentCode());
+    result = result && getTravelerEligibility()
+        .equals(other.getTravelerEligibility());
     result = result && getOfficialName()
         .equals(other.getOfficialName());
     result = result && getTicketRemark()
@@ -899,6 +916,9 @@ private static final long serialVersionUID = 0L;
         .equals(other.getQTECmdPostfix());
     result = result && getXSFSICmd()
         .equals(other.getXSFSICmd());
+    result = result && ageType_ == other.ageType_;
+    result = result && (getAgencyID()
+        == other.getAgencyID());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -911,9 +931,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TRAVELERELIGIBILITY_FIELD_NUMBER;
-    hash = (53 * hash) + travelerEligibility_;
-    hash = (37 * hash) + AGENTCODE_FIELD_NUMBER;
-    hash = (53 * hash) + getAgentCode().hashCode();
+    hash = (53 * hash) + getTravelerEligibility().hashCode();
     hash = (37 * hash) + OFFICIALNAME_FIELD_NUMBER;
     hash = (53 * hash) + getOfficialName().hashCode();
     hash = (37 * hash) + TICKETREMARK_FIELD_NUMBER;
@@ -956,6 +974,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getQTECmdPostfix().hashCode();
     hash = (37 * hash) + XSFSICMD_FIELD_NUMBER;
     hash = (53 * hash) + getXSFSICmd().hashCode();
+    hash = (37 * hash) + AGETYPE_FIELD_NUMBER;
+    hash = (53 * hash) + ageType_;
+    hash = (37 * hash) + AGENCYID_FIELD_NUMBER;
+    hash = (53 * hash) + getAgencyID();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1090,9 +1112,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      travelerEligibility_ = 0;
-
-      agentCode_ = "";
+      travelerEligibility_ = "";
 
       officialName_ = "";
 
@@ -1130,7 +1150,7 @@ private static final long serialVersionUID = 0L;
 
       if (tagBuilder_ == null) {
         tag_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000400);
       } else {
         tagBuilder_.clear();
       }
@@ -1143,6 +1163,10 @@ private static final long serialVersionUID = 0L;
       qTECmdPostfix_ = "";
 
       xSFSICmd_ = "";
+
+      ageType_ = 0;
+
+      agencyID_ = 0;
 
       return this;
     }
@@ -1173,7 +1197,6 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.travelerEligibility_ = travelerEligibility_;
-      result.agentCode_ = agentCode_;
       result.officialName_ = officialName_;
       result.ticketRemark_ = ticketRemark_;
       if (ticketingTimeLimitBuilder_ == null) {
@@ -1200,9 +1223,9 @@ private static final long serialVersionUID = 0L;
       result.exchange_ = exchange_;
       result.officeNo_ = officeNo_;
       if (tagBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
           tag_ = java.util.Collections.unmodifiableList(tag_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.tag_ = tag_;
       } else {
@@ -1213,6 +1236,8 @@ private static final long serialVersionUID = 0L;
       result.iATANumber_ = iATANumber_;
       result.qTECmdPostfix_ = qTECmdPostfix_;
       result.xSFSICmd_ = xSFSICmd_;
+      result.ageType_ = ageType_;
+      result.agencyID_ = agencyID_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1262,11 +1287,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.ctrip.flight.intl.agg.flighttypes.v3.PriceInfoType other) {
       if (other == com.ctrip.flight.intl.agg.flighttypes.v3.PriceInfoType.getDefaultInstance()) return this;
-      if (other.travelerEligibility_ != 0) {
-        setTravelerEligibilityValue(other.getTravelerEligibilityValue());
-      }
-      if (!other.getAgentCode().isEmpty()) {
-        agentCode_ = other.agentCode_;
+      if (!other.getTravelerEligibility().isEmpty()) {
+        travelerEligibility_ = other.travelerEligibility_;
         onChanged();
       }
       if (!other.getOfficialName().isEmpty()) {
@@ -1304,7 +1326,7 @@ private static final long serialVersionUID = 0L;
         if (!other.tag_.isEmpty()) {
           if (tag_.isEmpty()) {
             tag_ = other.tag_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureTagIsMutable();
             tag_.addAll(other.tag_);
@@ -1317,7 +1339,7 @@ private static final long serialVersionUID = 0L;
             tagBuilder_.dispose();
             tagBuilder_ = null;
             tag_ = other.tag_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00000400);
             tagBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTagFieldBuilder() : null;
@@ -1343,6 +1365,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getXSFSICmd().isEmpty()) {
         xSFSICmd_ = other.xSFSICmd_;
         onChanged();
+      }
+      if (other.ageType_ != 0) {
+        setAgeTypeValue(other.getAgeTypeValue());
+      }
+      if (other.getAgencyID() != 0) {
+        setAgencyID(other.getAgencyID());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1374,25 +1402,59 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int travelerEligibility_ = 0;
+    private java.lang.Object travelerEligibility_ = "";
     /**
      * <pre>
      *变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
      * </pre>
      *
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1;</code>
+     * <code>string TravelerEligibility = 1;</code>
      */
-    public int getTravelerEligibilityValue() {
-      return travelerEligibility_;
+    public java.lang.String getTravelerEligibility() {
+      java.lang.Object ref = travelerEligibility_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        travelerEligibility_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      *变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
      * </pre>
      *
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1;</code>
+     * <code>string TravelerEligibility = 1;</code>
      */
-    public Builder setTravelerEligibilityValue(int value) {
+    public com.google.protobuf.ByteString
+        getTravelerEligibilityBytes() {
+      java.lang.Object ref = travelerEligibility_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        travelerEligibility_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
+     * </pre>
+     *
+     * <code>string TravelerEligibility = 1;</code>
+     */
+    public Builder setTravelerEligibility(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       travelerEligibility_ = value;
       onChanged();
       return this;
@@ -1402,128 +1464,29 @@ private static final long serialVersionUID = 0L;
      *变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
      * </pre>
      *
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1;</code>
-     */
-    public com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType getTravelerEligibility() {
-      @SuppressWarnings("deprecation")
-      com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType result = com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType.valueOf(travelerEligibility_);
-      return result == null ? com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     *变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1;</code>
-     */
-    public Builder setTravelerEligibility(com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      travelerEligibility_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1;</code>
+     * <code>string TravelerEligibility = 1;</code>
      */
     public Builder clearTravelerEligibility() {
       
-      travelerEligibility_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object agentCode_ = "";
-    /**
-     * <pre>
-     *TravelerCategoryCodeType TravelerCategoryCode = 1; //变化 删除
-     * </pre>
-     *
-     * <code>string AgentCode = 2;</code>
-     */
-    public java.lang.String getAgentCode() {
-      java.lang.Object ref = agentCode_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        agentCode_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     *TravelerCategoryCodeType TravelerCategoryCode = 1; //变化 删除
-     * </pre>
-     *
-     * <code>string AgentCode = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getAgentCodeBytes() {
-      java.lang.Object ref = agentCode_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        agentCode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     *TravelerCategoryCodeType TravelerCategoryCode = 1; //变化 删除
-     * </pre>
-     *
-     * <code>string AgentCode = 2;</code>
-     */
-    public Builder setAgentCode(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      agentCode_ = value;
+      travelerEligibility_ = getDefaultInstance().getTravelerEligibility();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     *TravelerCategoryCodeType TravelerCategoryCode = 1; //变化 删除
+     *变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
      * </pre>
      *
-     * <code>string AgentCode = 2;</code>
+     * <code>string TravelerEligibility = 1;</code>
      */
-    public Builder clearAgentCode() {
-      
-      agentCode_ = getDefaultInstance().getAgentCode();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *TravelerCategoryCodeType TravelerCategoryCode = 1; //变化 删除
-     * </pre>
-     *
-     * <code>string AgentCode = 2;</code>
-     */
-    public Builder setAgentCodeBytes(
+    public Builder setTravelerEligibilityBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      agentCode_ = value;
+      travelerEligibility_ = value;
       onChanged();
       return this;
     }
@@ -2321,9 +2284,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> tag_ =
       java.util.Collections.emptyList();
     private void ensureTagIsMutable() {
-      if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
         tag_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType>(tag_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
        }
     }
 
@@ -2473,7 +2436,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearTag() {
       if (tagBuilder_ == null) {
         tag_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         tagBuilder_.clear();
@@ -2550,7 +2513,7 @@ private static final long serialVersionUID = 0L;
         tagBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder>(
                 tag_,
-                ((bitField0_ & 0x00000800) == 0x00000800),
+                ((bitField0_ & 0x00000400) == 0x00000400),
                 getParentForChildren(),
                 isClean());
         tag_ = null;
@@ -2865,6 +2828,89 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       xSFSICmd_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int ageType_ = 0;
+    /**
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 18;</code>
+     */
+    public int getAgeTypeValue() {
+      return ageType_;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 18;</code>
+     */
+    public Builder setAgeTypeValue(int value) {
+      ageType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 18;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.AgeType getAgeType() {
+      @SuppressWarnings("deprecation")
+      com.ctrip.flight.intl.agg.flighttypes.v3.AgeType result = com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.valueOf(ageType_);
+      return result == null ? com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 18;</code>
+     */
+    public Builder setAgeType(com.ctrip.flight.intl.agg.flighttypes.v3.AgeType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      ageType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 18;</code>
+     */
+    public Builder clearAgeType() {
+      
+      ageType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int agencyID_ ;
+    /**
+     * <pre>
+     * 通过id关联AgencyType
+     * </pre>
+     *
+     * <code>int32 AgencyID = 19;</code>
+     */
+    public int getAgencyID() {
+      return agencyID_;
+    }
+    /**
+     * <pre>
+     * 通过id关联AgencyType
+     * </pre>
+     *
+     * <code>int32 AgencyID = 19;</code>
+     */
+    public Builder setAgencyID(int value) {
+      
+      agencyID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 通过id关联AgencyType
+     * </pre>
+     *
+     * <code>int32 AgencyID = 19;</code>
+     */
+    public Builder clearAgencyID() {
+      
+      agencyID_ = 0;
       onChanged();
       return this;
     }

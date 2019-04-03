@@ -312,4 +312,48 @@ public interface SearchResultTypeOrBuilder extends
    */
   com.ctrip.flight.intl.agg.flighttypes.v3.AirportInfoTypeOrBuilder getAirportOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   *变化  新增权益Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType> 
+      getServiceList();
+  /**
+   * <pre>
+   *变化  新增权益Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+   */
+  com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType getService(int index);
+  /**
+   * <pre>
+   *变化  新增权益Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+   */
+  int getServiceCount();
+  /**
+   * <pre>
+   *变化  新增权益Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ServiceTypeOrBuilder> 
+      getServiceOrBuilderList();
+  /**
+   * <pre>
+   *变化  新增权益Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12;</code>
+   */
+  com.ctrip.flight.intl.agg.additionproduct.v3.ServiceTypeOrBuilder getServiceOrBuilder(
+      int index);
 }

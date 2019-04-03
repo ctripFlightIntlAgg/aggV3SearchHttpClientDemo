@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private BaggageRefType() {
     segmentNo_ = 0;
-    travelerEligibility_ = 0;
+    ageType_ = 0;
     productDetailIndex_ = 0;
     baggage_ = java.util.Collections.emptyList();
   }
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
           case 16: {
             int rawValue = input.readEnum();
 
-            travelerEligibility_ = rawValue;
+            ageType_ = rawValue;
             break;
           }
           case 24: {
@@ -116,38 +116,26 @@ private static final long serialVersionUID = 0L;
     return segmentNo_;
   }
 
-  public static final int TRAVELERELIGIBILITY_FIELD_NUMBER = 2;
-  private int travelerEligibility_;
+  public static final int AGETYPE_FIELD_NUMBER = 2;
+  private int ageType_;
   /**
-   * <pre>
-   * 变化 乘客类型替换为资质
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 2;</code>
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 2;</code>
    */
-  public int getTravelerEligibilityValue() {
-    return travelerEligibility_;
+  public int getAgeTypeValue() {
+    return ageType_;
   }
   /**
-   * <pre>
-   * 变化 乘客类型替换为资质
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 2;</code>
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 2;</code>
    */
-  public com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType getTravelerEligibility() {
+  public com.ctrip.flight.intl.agg.flighttypes.v3.AgeType getAgeType() {
     @SuppressWarnings("deprecation")
-    com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType result = com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType.valueOf(travelerEligibility_);
-    return result == null ? com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType.UNRECOGNIZED : result;
+    com.ctrip.flight.intl.agg.flighttypes.v3.AgeType result = com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.valueOf(ageType_);
+    return result == null ? com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.UNRECOGNIZED : result;
   }
 
   public static final int PRODUCTDETAILINDEX_FIELD_NUMBER = 3;
   private int productDetailIndex_;
   /**
-   * <pre>
-   * TravelerCategoryCodeType TravelerCategoryCode = 3;
-   * </pre>
-   *
    * <code>int32 ProductDetailIndex = 3;</code>
    */
   public int getProductDetailIndex() {
@@ -206,8 +194,8 @@ private static final long serialVersionUID = 0L;
     if (segmentNo_ != 0) {
       output.writeInt32(1, segmentNo_);
     }
-    if (travelerEligibility_ != com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType.ADT.getNumber()) {
-      output.writeEnum(2, travelerEligibility_);
+    if (ageType_ != com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.ADT.getNumber()) {
+      output.writeEnum(2, ageType_);
     }
     if (productDetailIndex_ != 0) {
       output.writeInt32(3, productDetailIndex_);
@@ -228,9 +216,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, segmentNo_);
     }
-    if (travelerEligibility_ != com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType.ADT.getNumber()) {
+    if (ageType_ != com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.ADT.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, travelerEligibility_);
+        .computeEnumSize(2, ageType_);
     }
     if (productDetailIndex_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -258,7 +246,7 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getSegmentNo()
         == other.getSegmentNo());
-    result = result && travelerEligibility_ == other.travelerEligibility_;
+    result = result && ageType_ == other.ageType_;
     result = result && (getProductDetailIndex()
         == other.getProductDetailIndex());
     result = result && getBaggageList()
@@ -276,8 +264,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SEGMENTNO_FIELD_NUMBER;
     hash = (53 * hash) + getSegmentNo();
-    hash = (37 * hash) + TRAVELERELIGIBILITY_FIELD_NUMBER;
-    hash = (53 * hash) + travelerEligibility_;
+    hash = (37 * hash) + AGETYPE_FIELD_NUMBER;
+    hash = (53 * hash) + ageType_;
     hash = (37 * hash) + PRODUCTDETAILINDEX_FIELD_NUMBER;
     hash = (53 * hash) + getProductDetailIndex();
     if (getBaggageCount() > 0) {
@@ -420,7 +408,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       segmentNo_ = 0;
 
-      travelerEligibility_ = 0;
+      ageType_ = 0;
 
       productDetailIndex_ = 0;
 
@@ -459,7 +447,7 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.segmentNo_ = segmentNo_;
-      result.travelerEligibility_ = travelerEligibility_;
+      result.ageType_ = ageType_;
       result.productDetailIndex_ = productDetailIndex_;
       if (baggageBuilder_ == null) {
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
@@ -522,8 +510,8 @@ private static final long serialVersionUID = 0L;
       if (other.getSegmentNo() != 0) {
         setSegmentNo(other.getSegmentNo());
       }
-      if (other.travelerEligibility_ != 0) {
-        setTravelerEligibilityValue(other.getTravelerEligibilityValue());
+      if (other.ageType_ != 0) {
+        setAgeTypeValue(other.getAgeTypeValue());
       }
       if (other.getProductDetailIndex() != 0) {
         setProductDetailIndex(other.getProductDetailIndex());
@@ -610,87 +598,59 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int travelerEligibility_ = 0;
+    private int ageType_ = 0;
     /**
-     * <pre>
-     * 变化 乘客类型替换为资质
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 2;</code>
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 2;</code>
      */
-    public int getTravelerEligibilityValue() {
-      return travelerEligibility_;
+    public int getAgeTypeValue() {
+      return ageType_;
     }
     /**
-     * <pre>
-     * 变化 乘客类型替换为资质
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 2;</code>
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 2;</code>
      */
-    public Builder setTravelerEligibilityValue(int value) {
-      travelerEligibility_ = value;
+    public Builder setAgeTypeValue(int value) {
+      ageType_ = value;
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 变化 乘客类型替换为资质
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 2;</code>
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 2;</code>
      */
-    public com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType getTravelerEligibility() {
+    public com.ctrip.flight.intl.agg.flighttypes.v3.AgeType getAgeType() {
       @SuppressWarnings("deprecation")
-      com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType result = com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType.valueOf(travelerEligibility_);
-      return result == null ? com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType.UNRECOGNIZED : result;
+      com.ctrip.flight.intl.agg.flighttypes.v3.AgeType result = com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.valueOf(ageType_);
+      return result == null ? com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.UNRECOGNIZED : result;
     }
     /**
-     * <pre>
-     * 变化 乘客类型替换为资质
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 2;</code>
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 2;</code>
      */
-    public Builder setTravelerEligibility(com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType value) {
+    public Builder setAgeType(com.ctrip.flight.intl.agg.flighttypes.v3.AgeType value) {
       if (value == null) {
         throw new NullPointerException();
       }
       
-      travelerEligibility_ = value.getNumber();
+      ageType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * 变化 乘客类型替换为资质
-     * </pre>
-     *
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 2;</code>
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 2;</code>
      */
-    public Builder clearTravelerEligibility() {
+    public Builder clearAgeType() {
       
-      travelerEligibility_ = 0;
+      ageType_ = 0;
       onChanged();
       return this;
     }
 
     private int productDetailIndex_ ;
     /**
-     * <pre>
-     * TravelerCategoryCodeType TravelerCategoryCode = 3;
-     * </pre>
-     *
      * <code>int32 ProductDetailIndex = 3;</code>
      */
     public int getProductDetailIndex() {
       return productDetailIndex_;
     }
     /**
-     * <pre>
-     * TravelerCategoryCodeType TravelerCategoryCode = 3;
-     * </pre>
-     *
      * <code>int32 ProductDetailIndex = 3;</code>
      */
     public Builder setProductDetailIndex(int value) {
@@ -700,10 +660,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * TravelerCategoryCodeType TravelerCategoryCode = 3;
-     * </pre>
-     *
      * <code>int32 ProductDetailIndex = 3;</code>
      */
     public Builder clearProductDetailIndex() {

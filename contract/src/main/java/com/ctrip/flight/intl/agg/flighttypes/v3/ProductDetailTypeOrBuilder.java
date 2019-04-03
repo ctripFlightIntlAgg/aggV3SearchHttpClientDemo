@@ -117,26 +117,14 @@ public interface ProductDetailTypeOrBuilder extends
       getPenaltiesKeyBytes();
 
   /**
-   * <pre>
-   *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-   * </pre>
-   *
    * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
    */
   boolean hasPriceUnit();
   /**
-   * <pre>
-   *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-   * </pre>
-   *
    * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
    */
   com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType getPriceUnit();
   /**
-   * <pre>
-   *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-   * </pre>
-   *
    * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
    */
   com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitTypeOrBuilder getPriceUnitOrBuilder();

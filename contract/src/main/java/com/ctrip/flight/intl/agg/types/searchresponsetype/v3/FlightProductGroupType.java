@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     flyerFlag_ = 0;
     unaccompaniedAgeRange_ = "";
     flag_ = "";
+    choicenessTag_ = 0;
   }
 
   @java.lang.Override
@@ -106,6 +107,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             flag_ = s;
+            break;
+          }
+          case 96: {
+
+            choicenessTag_ = input.readInt32();
             break;
           }
           default: {
@@ -406,6 +412,19 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CHOICENESSTAG_FIELD_NUMBER = 12;
+  private int choicenessTag_;
+  /**
+   * <pre>
+   * 新增
+   * </pre>
+   *
+   * <code>int32 ChoicenessTag = 12;</code>
+   */
+  public int getChoicenessTag() {
+    return choicenessTag_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -443,6 +462,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getFlagBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, flag_);
+    }
+    if (choicenessTag_ != 0) {
+      output.writeInt32(12, choicenessTag_);
     }
     unknownFields.writeTo(output);
   }
@@ -483,6 +505,10 @@ private static final long serialVersionUID = 0L;
     if (!getFlagBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, flag_);
     }
+    if (choicenessTag_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(12, choicenessTag_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -515,6 +541,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUnaccompaniedAgeRange());
     result = result && getFlag()
         .equals(other.getFlag());
+    result = result && (getChoicenessTag()
+        == other.getChoicenessTag());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -551,6 +579,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUnaccompaniedAgeRange().hashCode();
     hash = (37 * hash) + FLAG_FIELD_NUMBER;
     hash = (53 * hash) + getFlag().hashCode();
+    hash = (37 * hash) + CHOICENESSTAG_FIELD_NUMBER;
+    hash = (53 * hash) + getChoicenessTag();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -720,6 +750,8 @@ private static final long serialVersionUID = 0L;
 
       flag_ = "";
 
+      choicenessTag_ = 0;
+
       return this;
     }
 
@@ -788,6 +820,7 @@ private static final long serialVersionUID = 0L;
       result.flyerFlag_ = flyerFlag_;
       result.unaccompaniedAgeRange_ = unaccompaniedAgeRange_;
       result.flag_ = flag_;
+      result.choicenessTag_ = choicenessTag_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -954,6 +987,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getFlag().isEmpty()) {
         flag_ = other.flag_;
         onChanged();
+      }
+      if (other.getChoicenessTag() != 0) {
+        setChoicenessTag(other.getChoicenessTag());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2204,6 +2240,44 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       flag_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int choicenessTag_ ;
+    /**
+     * <pre>
+     * 新增
+     * </pre>
+     *
+     * <code>int32 ChoicenessTag = 12;</code>
+     */
+    public int getChoicenessTag() {
+      return choicenessTag_;
+    }
+    /**
+     * <pre>
+     * 新增
+     * </pre>
+     *
+     * <code>int32 ChoicenessTag = 12;</code>
+     */
+    public Builder setChoicenessTag(int value) {
+      
+      choicenessTag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 新增
+     * </pre>
+     *
+     * <code>int32 ChoicenessTag = 12;</code>
+     */
+    public Builder clearChoicenessTag() {
+      
+      choicenessTag_ = 0;
       onChanged();
       return this;
     }

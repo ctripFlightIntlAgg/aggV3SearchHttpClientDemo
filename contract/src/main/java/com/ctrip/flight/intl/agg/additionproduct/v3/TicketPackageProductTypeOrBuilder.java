@@ -198,4 +198,28 @@ public interface TicketPackageProductTypeOrBuilder extends
    */
   com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtraMarketingInfoOrBuilder(
       int index);
+
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType> 
+      getServiceRefList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+   */
+  com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType getServiceRef(int index);
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+   */
+  int getServiceRefCount();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefTypeOrBuilder> 
+      getServiceRefOrBuilderList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+   */
+  com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefTypeOrBuilder getServiceRefOrBuilder(
+      int index);
 }

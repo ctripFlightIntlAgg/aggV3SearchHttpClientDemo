@@ -1,9 +1,9 @@
 package com.ctrip.intlflight.search.demo;
 
 
+import com.ctrip.flight.intl.agg.flighttypes.v3.AgeType;
 import com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType;
 import com.ctrip.flight.intl.agg.flighttypes.v3.OrigDestRequestType;
-import com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType;
 import com.ctrip.flight.intl.agg.flighttypes.v3.TravelerRequestType;
 import com.ctrip.flight.intl.agg.messagetypes.v3.ChannelIDType;
 import com.ctrip.flight.intl.agg.messagetypes.v3.MessageHeaderType;
@@ -44,7 +44,7 @@ public class MessageHelper {
         request.setSearchContext(contextType);
         SearchCriteriaType.Builder criteriaType = SearchCriteriaType.newBuilder();
         criteriaType.addOrigDestRequest(OrigDestRequestType.newBuilder().setDate(LocalDateTime.now().plusDays(10).format(dateTimeFormatter)).setORIG("SHA").setDEST("HKG"));
-        criteriaType.addTravelerRequest(TravelerRequestType.newBuilder().setEligibility(TravelerEligibilityCodeType.ADT).setTravelerCount(1));
+        criteriaType.addTravelerRequest(TravelerRequestType.newBuilder().setAgeTypeValue(AgeType.ADT.getNumber()).setTravelerCount(1));
         criteriaType.addCabinClass(CabinClassType.Y);
         request.setSearchCriteria(criteriaType);
         return request.build();

@@ -394,30 +394,18 @@ private static final long serialVersionUID = 0L;
   public static final int PRICEUNIT_FIELD_NUMBER = 10;
   private com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType priceUnit_;
   /**
-   * <pre>
-   *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-   * </pre>
-   *
    * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
    */
   public boolean hasPriceUnit() {
     return priceUnit_ != null;
   }
   /**
-   * <pre>
-   *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-   * </pre>
-   *
    * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
    */
   public com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType getPriceUnit() {
     return priceUnit_ == null ? com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType.getDefaultInstance() : priceUnit_;
   }
   /**
-   * <pre>
-   *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-   * </pre>
-   *
    * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
    */
   public com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitTypeOrBuilder getPriceUnitOrBuilder() {
@@ -1727,20 +1715,12 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType, com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitTypeOrBuilder> priceUnitBuilder_;
     /**
-     * <pre>
-     *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
      */
     public boolean hasPriceUnit() {
       return priceUnitBuilder_ != null || priceUnit_ != null;
     }
     /**
-     * <pre>
-     *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
      */
     public com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType getPriceUnit() {
@@ -1751,10 +1731,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
      */
     public Builder setPriceUnit(com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType value) {
@@ -1771,10 +1747,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
      */
     public Builder setPriceUnit(
@@ -1789,10 +1761,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
      */
     public Builder mergePriceUnit(com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType value) {
@@ -1811,10 +1779,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
      */
     public Builder clearPriceUnit() {
@@ -1829,10 +1793,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
      */
     public com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType.Builder getPriceUnitBuilder() {
@@ -1841,10 +1801,6 @@ private static final long serialVersionUID = 0L;
       return getPriceUnitFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
      */
     public com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitTypeOrBuilder getPriceUnitOrBuilder() {
@@ -1856,10 +1812,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.PriceUnitType PriceUnit = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

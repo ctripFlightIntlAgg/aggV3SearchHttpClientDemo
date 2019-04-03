@@ -12,35 +12,18 @@ public interface PriceInfoTypeOrBuilder extends
    *变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
    * </pre>
    *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1;</code>
+   * <code>string TravelerEligibility = 1;</code>
    */
-  int getTravelerEligibilityValue();
+  java.lang.String getTravelerEligibility();
   /**
    * <pre>
    *变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
    * </pre>
    *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1;</code>
-   */
-  com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType getTravelerEligibility();
-
-  /**
-   * <pre>
-   *TravelerCategoryCodeType TravelerCategoryCode = 1; //变化 删除
-   * </pre>
-   *
-   * <code>string AgentCode = 2;</code>
-   */
-  java.lang.String getAgentCode();
-  /**
-   * <pre>
-   *TravelerCategoryCodeType TravelerCategoryCode = 1; //变化 删除
-   * </pre>
-   *
-   * <code>string AgentCode = 2;</code>
+   * <code>string TravelerEligibility = 1;</code>
    */
   com.google.protobuf.ByteString
-      getAgentCodeBytes();
+      getTravelerEligibilityBytes();
 
   /**
    * <pre>
@@ -230,4 +213,22 @@ public interface PriceInfoTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getXSFSICmdBytes();
+
+  /**
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 18;</code>
+   */
+  int getAgeTypeValue();
+  /**
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 18;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.AgeType getAgeType();
+
+  /**
+   * <pre>
+   * 通过id关联AgencyType
+   * </pre>
+   *
+   * <code>int32 AgencyID = 19;</code>
+   */
+  int getAgencyID();
 }

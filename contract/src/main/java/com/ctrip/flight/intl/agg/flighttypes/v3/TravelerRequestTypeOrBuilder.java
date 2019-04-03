@@ -10,21 +10,19 @@ public interface TravelerRequestTypeOrBuilder extends
   /**
    * <pre>
    * 不支持指定ADT
-   * com.ctrip.flight.intl.agg.flighttypes.v3.TravelerCategoryCodeType TravelerCategoryCode = 1;
    * </pre>
    *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType Eligibility = 1;</code>
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 1;</code>
    */
-  int getEligibilityValue();
+  int getAgeTypeValue();
   /**
    * <pre>
    * 不支持指定ADT
-   * com.ctrip.flight.intl.agg.flighttypes.v3.TravelerCategoryCodeType TravelerCategoryCode = 1;
    * </pre>
    *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType Eligibility = 1;</code>
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 1;</code>
    */
-  com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType getEligibility();
+  com.ctrip.flight.intl.agg.flighttypes.v3.AgeType getAgeType();
 
   /**
    * <code>int32 TravelerCount = 2;</code>

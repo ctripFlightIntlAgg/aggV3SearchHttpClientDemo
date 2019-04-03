@@ -13,27 +13,15 @@ public interface BaggageRefTypeOrBuilder extends
   int getSegmentNo();
 
   /**
-   * <pre>
-   * 变化 乘客类型替换为资质
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 2;</code>
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 2;</code>
    */
-  int getTravelerEligibilityValue();
+  int getAgeTypeValue();
   /**
-   * <pre>
-   * 变化 乘客类型替换为资质
-   * </pre>
-   *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 2;</code>
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 2;</code>
    */
-  com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType getTravelerEligibility();
+  com.ctrip.flight.intl.agg.flighttypes.v3.AgeType getAgeType();
 
   /**
-   * <pre>
-   * TravelerCategoryCodeType TravelerCategoryCode = 3;
-   * </pre>
-   *
    * <code>int32 ProductDetailIndex = 3;</code>
    */
   int getProductDetailIndex();

@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     isSupportFFP_ = false;
     crossSaleHotel_ = 0;
     extraMarketingInfo_ = java.util.Collections.emptyList();
+    serviceRef_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -151,6 +152,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.parser(), extensionRegistry));
             break;
           }
+          case 106: {
+            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+              serviceRef_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType>();
+              mutable_bitField0_ |= 0x00001000;
+            }
+            serviceRef_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -177,6 +187,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
         extraMarketingInfo_ = java.util.Collections.unmodifiableList(extraMarketingInfo_);
+      }
+      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+        serviceRef_ = java.util.Collections.unmodifiableList(serviceRef_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -476,6 +489,41 @@ private static final long serialVersionUID = 0L;
     return extraMarketingInfo_.get(index);
   }
 
+  public static final int SERVICEREF_FIELD_NUMBER = 13;
+  private java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType> serviceRef_;
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType> getServiceRefList() {
+    return serviceRef_;
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefTypeOrBuilder> 
+      getServiceRefOrBuilderList() {
+    return serviceRef_;
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+   */
+  public int getServiceRefCount() {
+    return serviceRef_.size();
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+   */
+  public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType getServiceRef(int index) {
+    return serviceRef_.get(index);
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+   */
+  public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefTypeOrBuilder getServiceRefOrBuilder(
+      int index) {
+    return serviceRef_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -525,6 +573,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < extraMarketingInfo_.size(); i++) {
       output.writeMessage(12, extraMarketingInfo_.get(i));
+    }
+    for (int i = 0; i < serviceRef_.size(); i++) {
+      output.writeMessage(13, serviceRef_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -583,6 +634,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, extraMarketingInfo_.get(i));
     }
+    for (int i = 0; i < serviceRef_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, serviceRef_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -632,6 +687,8 @@ private static final long serialVersionUID = 0L;
         == other.getCrossSaleHotel());
     result = result && getExtraMarketingInfoList()
         .equals(other.getExtraMarketingInfoList());
+    result = result && getServiceRefList()
+        .equals(other.getServiceRefList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -682,6 +739,10 @@ private static final long serialVersionUID = 0L;
     if (getExtraMarketingInfoCount() > 0) {
       hash = (37 * hash) + EXTRAMARKETINGINFO_FIELD_NUMBER;
       hash = (53 * hash) + getExtraMarketingInfoList().hashCode();
+    }
+    if (getServiceRefCount() > 0) {
+      hash = (37 * hash) + SERVICEREF_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceRefList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -815,6 +876,7 @@ private static final long serialVersionUID = 0L;
         getPromotionInfoFieldBuilder();
         getXProductPreposeInfoFieldBuilder();
         getExtraMarketingInfoFieldBuilder();
+        getServiceRefFieldBuilder();
       }
     }
     @java.lang.Override
@@ -871,6 +933,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         extraMarketingInfoBuilder_.clear();
+      }
+      if (serviceRefBuilder_ == null) {
+        serviceRef_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+      } else {
+        serviceRefBuilder_.clear();
       }
       return this;
     }
@@ -955,6 +1023,15 @@ private static final long serialVersionUID = 0L;
         result.extraMarketingInfo_ = extraMarketingInfo_;
       } else {
         result.extraMarketingInfo_ = extraMarketingInfoBuilder_.build();
+      }
+      if (serviceRefBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          serviceRef_ = java.util.Collections.unmodifiableList(serviceRef_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.serviceRef_ = serviceRef_;
+      } else {
+        result.serviceRef_ = serviceRefBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1130,6 +1207,32 @@ private static final long serialVersionUID = 0L;
                  getExtraMarketingInfoFieldBuilder() : null;
           } else {
             extraMarketingInfoBuilder_.addAllMessages(other.extraMarketingInfo_);
+          }
+        }
+      }
+      if (serviceRefBuilder_ == null) {
+        if (!other.serviceRef_.isEmpty()) {
+          if (serviceRef_.isEmpty()) {
+            serviceRef_ = other.serviceRef_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureServiceRefIsMutable();
+            serviceRef_.addAll(other.serviceRef_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.serviceRef_.isEmpty()) {
+          if (serviceRefBuilder_.isEmpty()) {
+            serviceRefBuilder_.dispose();
+            serviceRefBuilder_ = null;
+            serviceRef_ = other.serviceRef_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            serviceRefBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getServiceRefFieldBuilder() : null;
+          } else {
+            serviceRefBuilder_.addAllMessages(other.serviceRef_);
           }
         }
       }
@@ -2710,6 +2813,246 @@ private static final long serialVersionUID = 0L;
         extraMarketingInfo_ = null;
       }
       return extraMarketingInfoBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType> serviceRef_ =
+      java.util.Collections.emptyList();
+    private void ensureServiceRefIsMutable() {
+      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+        serviceRef_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType>(serviceRef_);
+        bitField0_ |= 0x00001000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefTypeOrBuilder> serviceRefBuilder_;
+
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType> getServiceRefList() {
+      if (serviceRefBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(serviceRef_);
+      } else {
+        return serviceRefBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public int getServiceRefCount() {
+      if (serviceRefBuilder_ == null) {
+        return serviceRef_.size();
+      } else {
+        return serviceRefBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType getServiceRef(int index) {
+      if (serviceRefBuilder_ == null) {
+        return serviceRef_.get(index);
+      } else {
+        return serviceRefBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public Builder setServiceRef(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType value) {
+      if (serviceRefBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceRefIsMutable();
+        serviceRef_.set(index, value);
+        onChanged();
+      } else {
+        serviceRefBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public Builder setServiceRef(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.Builder builderForValue) {
+      if (serviceRefBuilder_ == null) {
+        ensureServiceRefIsMutable();
+        serviceRef_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        serviceRefBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public Builder addServiceRef(com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType value) {
+      if (serviceRefBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceRefIsMutable();
+        serviceRef_.add(value);
+        onChanged();
+      } else {
+        serviceRefBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public Builder addServiceRef(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType value) {
+      if (serviceRefBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceRefIsMutable();
+        serviceRef_.add(index, value);
+        onChanged();
+      } else {
+        serviceRefBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public Builder addServiceRef(
+        com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.Builder builderForValue) {
+      if (serviceRefBuilder_ == null) {
+        ensureServiceRefIsMutable();
+        serviceRef_.add(builderForValue.build());
+        onChanged();
+      } else {
+        serviceRefBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public Builder addServiceRef(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.Builder builderForValue) {
+      if (serviceRefBuilder_ == null) {
+        ensureServiceRefIsMutable();
+        serviceRef_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        serviceRefBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public Builder addAllServiceRef(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType> values) {
+      if (serviceRefBuilder_ == null) {
+        ensureServiceRefIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, serviceRef_);
+        onChanged();
+      } else {
+        serviceRefBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public Builder clearServiceRef() {
+      if (serviceRefBuilder_ == null) {
+        serviceRef_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        serviceRefBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public Builder removeServiceRef(int index) {
+      if (serviceRefBuilder_ == null) {
+        ensureServiceRefIsMutable();
+        serviceRef_.remove(index);
+        onChanged();
+      } else {
+        serviceRefBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.Builder getServiceRefBuilder(
+        int index) {
+      return getServiceRefFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefTypeOrBuilder getServiceRefOrBuilder(
+        int index) {
+      if (serviceRefBuilder_ == null) {
+        return serviceRef_.get(index);  } else {
+        return serviceRefBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefTypeOrBuilder> 
+         getServiceRefOrBuilderList() {
+      if (serviceRefBuilder_ != null) {
+        return serviceRefBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(serviceRef_);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.Builder addServiceRefBuilder() {
+      return getServiceRefFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.Builder addServiceRefBuilder(
+        int index) {
+      return getServiceRefFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType ServiceRef = 13;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.Builder> 
+         getServiceRefBuilderList() {
+      return getServiceRefFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefTypeOrBuilder> 
+        getServiceRefFieldBuilder() {
+      if (serviceRefBuilder_ == null) {
+        serviceRefBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefTypeOrBuilder>(
+                serviceRef_,
+                ((bitField0_ & 0x00001000) == 0x00001000),
+                getParentForChildren(),
+                isClean());
+        serviceRef_ = null;
+      }
+      return serviceRefBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

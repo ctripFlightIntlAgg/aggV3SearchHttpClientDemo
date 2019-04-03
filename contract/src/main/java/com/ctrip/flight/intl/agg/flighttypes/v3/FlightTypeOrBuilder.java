@@ -277,4 +277,22 @@ public interface FlightTypeOrBuilder extends
    * <code>int32 TransportType = 19;</code>
    */
   int getTransportType();
+
+  /**
+   * <pre>
+   *虚拟航班供应商
+   * </pre>
+   *
+   * <code>string Supplier = 20;</code>
+   */
+  java.lang.String getSupplier();
+  /**
+   * <pre>
+   *虚拟航班供应商
+   * </pre>
+   *
+   * <code>string Supplier = 20;</code>
+   */
+  com.google.protobuf.ByteString
+      getSupplierBytes();
 }
