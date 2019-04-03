@@ -30,6 +30,7 @@ message SearchResultType
 	repeated com.ctrip.flight.intl.agg.flighttypes.v3.AirlineInfoType Airline =9 ; //变化 新增航司Ref
 	repeated com.ctrip.flight.intl.agg.flighttypes.v3.CityInfoType City =10 ; //变化 新增城市Ref
 	repeated com.ctrip.flight.intl.agg.flighttypes.v3.AirportInfoType Airport =11 ; //变化 新增机场Ref
+	repeated com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12; //变化  新增权益Ref
 
 }
 
@@ -50,6 +51,7 @@ message FlightProductGroupType
 	int32 FlyerFlag = 9; // 变化 枚举改为int；从PriceType中移动过来
 	string UnaccompaniedAgeRange = 10 ; // 变化 从PriceType中移动过来
 	string Flag = 11; // 新增
+	int32 ChoicenessTag = 12; // 新增
 }
 
 message FlightRefType

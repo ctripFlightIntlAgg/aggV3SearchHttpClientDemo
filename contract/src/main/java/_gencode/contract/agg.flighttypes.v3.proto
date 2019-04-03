@@ -16,15 +16,6 @@ enum CabinClassType
 	F = 3;
 }
 
-enum TravelerEligibilityCodeType
-{
-	ADT = 0;	//Adult
-	CNN = 1;	//Accompanied Child
-	INF = 2;    //Infant without a Seat
-	STU = 3;	//Student
-	YTH = 4;	//Youth Confirmed
-}
-
 message OrigDestRequestType
 {
     // 客户端需要指定日期格式
@@ -35,8 +26,7 @@ message OrigDestRequestType
 
 message TravelerRequestType {
     // 不支持指定ADT
-    // com.ctrip.flight.intl.agg.flighttypes.v3.TravelerCategoryCodeType TravelerCategoryCode = 1;
-    TravelerEligibilityCodeType Eligibility = 1; //直接用底层定义
+    com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 1;
     int32 TravelerCount = 2;
     string Nationality = 3;
 }
@@ -248,8 +238,7 @@ message PriceUnitType
 message BaggageRefType
 {
 	int32 SegmentNo = 1 ;
-	TravelerEligibilityCodeType TravelerEligibility = 2; // 变化 乘客类型替换为资质
-	// TravelerCategoryCodeType TravelerCategoryCode = 3;
+	AgeType AgeType = 2 ;
 	int32 ProductDetailIndex = 3 ;
 	repeated BaggageInfoType Baggage = 4 ;
 }
@@ -278,13 +267,12 @@ message FlightType
 	交通工具类型：0-飞机，1-火车，2-汽车，3-水上飞机
 	*/
 	int32 TransportType = 19 ;
+	string Supplier = 20;//虚拟航班供应商
 }
 
 message PriceInfoType
 {
-    TravelerEligibilityCodeType TravelerEligibility = 1 ; //变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
-	//TravelerCategoryCodeType TravelerCategoryCode = 1; //变化 删除
-	string AgentCode = 2 ; //变化 通过ref应用
+    string TravelerEligibility = 1 ; //变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
 	string OfficialName = 3; //变化 原有agency节点下PriceInfo相关的字段迁移到这里，只有供应商名称，iata号码的信息放在IATANumber节点中
 	string TicketRemark = 4 ;
 	TicketingTimeLimitType TicketingTimeLimit = 5 ;
@@ -301,6 +289,8 @@ message PriceInfoType
 	string IATANumber = 15;
 	string QTECmdPostfix = 16 ; // 新增，从PriceUnit迁移过来
 	string XSFSICmd = 17 ; // 新增，从PriceUnit迁移过来
+	com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 18;
+	int32 AgencyID = 19;  // 通过id关联AgencyType
 }
 
 message ProductDetailType
@@ -338,7 +328,6 @@ message ProductDetailType
 	int32 SubProductCategory = 6; //变化 枚举改为int
 	string InvoiceType = 7 ;
 	string PenaltiesKey = 8 ;
-	//com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 9 ; //变化 迁移到PriceInfo
 	PriceUnitType PriceUnit = 10 ;
 	PenaltyRulesType PenaltyRules = 11 ; // 变化 从PriceType中移动过来
 	repeated KeyValuePairType Tag = 12 ;
@@ -384,4 +373,11 @@ message IntRange
 {
 	int32 Start = 1;
 	int32 End = 2;
+}
+
+enum AgeType
+{
+	ADT = 0; // 成人
+	CHD = 1; // 儿童
+	INF = 2; // 婴儿
 }

@@ -68,8 +68,7 @@ message MemberPointType
 
 message PromotionInfoType
 {
-	// com.ctrip.flight.intl.agg.flighttypes.v3.TravelerCategoryCodeType TravelerCategoryCode = 1 ; 变化 替换为乘客资质
-	com.ctrip.flight.intl.agg.flighttypes.v3.TravelerEligibilityCodeType TravelerEligibility = 1 ;
+	com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 1 ;
 	repeated GiftInfoType GiftInfo = 2 ;
 	CashBackInfoType CashBackInfo = 3 ;
 }
@@ -90,6 +89,7 @@ message TicketPackageProductType
     bool IsSupportFFP = 10 ;
     int32 CrossSaleHotel = 11 ;
     repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtraMarketingInfo = 12 ;
+    repeated ServiceRefType ServiceRef= 13;
 }
 
 message AncillariesInfoType
@@ -97,6 +97,38 @@ message AncillariesInfoType
 	bool HasBaggageService = 1 ;
 	bool UnFreeBaggage = 2 ;
 	int32 CheckInServiceStatus = 3 ;
+}
+
+// 乘客权益信息
+message ServiceRefType
+{
+	// 乘客类型
+	com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 1;
+	// 品牌权益索引列表
+	repeated BrandedFareRefType BrandedFareRef = 2;
+	// 普通权益索引号
+	int32 NormalServiceRefNum = 3;
+}
+
+message BrandedFareRefType
+{
+	// 航程号，去程1  回程2
+	int32 SegmentNo = 1;
+	// 索引号
+	int32 RefNum = 2;
+}
+
+// 权益详情
+message ServiceType
+{
+	int32 RefNum = 1;
+	// 品牌名字	没有品牌运价传默认值
+	string BrandName = 2;
+	// 品牌等级	没有品牌运价传默认值
+	int32 BrandTier  = 3;
+	// 具体权益信息列表
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ServiceDetail = 4;
+
 }
 
 /*以下是废弃定义，仅用于查询*/
