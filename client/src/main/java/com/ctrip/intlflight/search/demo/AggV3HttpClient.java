@@ -17,6 +17,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 
 /**
  * @author tiantianhuang
@@ -38,13 +39,14 @@ public class AggV3HttpClient {
     public static void main(String[] args) {
         try {
             // url说明详见Readme
-            String baseUri = "https://apiproxy.ctrip.com/apiproxy/soa2/16427/zstd-protobuf-3/search";
+            URL url = new URL("https://apiproxy.ctrip.com/apiproxy/soa2/16427/zstd-protobuf-3/search");
 
             // 非生产环境不需要使用gateway验证
             initForProd();
 
-            String completeURI = app.updateRequestUri(baseUri);
-            HttpPost request = new HttpPost(completeURI);
+            String completeURI = app.updateRequestUri(url.getPath());
+            URL completeURL = new URL(url.getProtocol(), url.getHost(), completeURI);
+            HttpPost request = new HttpPost(completeURL.toString());
 
             InputStream inputStream = convertRequest(MessageHelper.buildSearchRequest("test"));
             InputStreamEntity entity = new InputStreamEntity(inputStream, inputStream.available());
@@ -79,7 +81,8 @@ public class AggV3HttpClient {
     private static void initForProd() {
         try {
             appTokenManager = new AppTokenManager();
-            app = new CerberusApp(236L, "8d154e5326a7478c", "b1ee02da162f3c6d8b8708004f5c3fff24b5e2e281e7ed1d6e22b1d1f7236002");
+           // app = new CerberusApp(236L, "8d154e5326a7478c", "b1ee02da162f3c6d8b8708004f5c3fff24b5e2e281e7ed1d6e22b1d1f7236002");
+            app = new CerberusApp(272L, "94bb273fcabc46f4", "4e9010d527de104a4d0b84996ea9fb6924eb91bc1674050b0212ccc813f482d5");
             appTokenManager.addApp(app);
             appTokenManager.start();
         } catch (Exception e) {
