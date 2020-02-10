@@ -1,9 +1,6 @@
    
 >更多介绍见AGG查询接口v3+接入指南
 
->For more infomation, please visit: https://cerberus.ctrip.com/api/files/en/doc.html
-
-
 # 一、client主入口: AggV3HttpClient
 
 ##列表查询接口访问URL
