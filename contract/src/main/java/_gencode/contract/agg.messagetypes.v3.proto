@@ -48,6 +48,7 @@ enum ChannelIDType
 	THSite = 40;
 	Qunar = 41;
 	Skyscanner = 42;
+	Travix = 43;
 }
 
 message ErrorResultType
@@ -83,5 +84,6 @@ message ResponseHeaderType
 	string ServerIP = 2 ;
 	int32 ReturnCode = 3 ;
 	string DiagOutput = 4 ;
+	int32 NoResultCode = 5 ; // 无结果code, 等于0无意义
 }
 
