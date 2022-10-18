@@ -49,4 +49,66 @@ public interface PriceDetailTypeOrBuilder extends
    * <code>double NetPrice = 6;</code>
    */
   double getNetPrice();
+
+  /**
+   * <pre>
+   * SalePrice收款方
+   * </pre>
+   *
+   * <code>int32 SalePricePayee = 7;</code>
+   */
+  int getSalePricePayee();
+
+  /**
+   * <pre>
+   * Tax收款方
+   * </pre>
+   *
+   * <code>int32 TaxPayee = 8;</code>
+   */
+  int getTaxPayee();
+
+  /**
+   * <pre>
+   * 服务费明细列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType> 
+      getServiceFeeList();
+  /**
+   * <pre>
+   * 服务费明细列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType getServiceFee(int index);
+  /**
+   * <pre>
+   * 服务费明细列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+   */
+  int getServiceFeeCount();
+  /**
+   * <pre>
+   * 服务费明细列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeTypeOrBuilder> 
+      getServiceFeeOrBuilderList();
+  /**
+   * <pre>
+   * 服务费明细列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeTypeOrBuilder getServiceFeeOrBuilder(
+      int index);
 }

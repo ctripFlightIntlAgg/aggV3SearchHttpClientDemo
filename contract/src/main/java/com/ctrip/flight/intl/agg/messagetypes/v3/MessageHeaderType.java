@@ -24,6 +24,12 @@ private static final long serialVersionUID = 0L;
     clientIP_ = "";
     vID_ = "";
     requestID_ = "";
+    devicePlatform_ = "";
+    deviceType_ = "";
+    platformType_ = "";
+    devicePlatformVersion_ = "";
+    clientID_ = "";
+    alliancesID_ = "";
   }
 
   @java.lang.Override
@@ -95,6 +101,42 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             requestID_ = s;
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            devicePlatform_ = s;
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deviceType_ = s;
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            platformType_ = s;
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            devicePlatformVersion_ = s;
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            clientID_ = s;
+            break;
+          }
+          case 130: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            alliancesID_ = s;
             break;
           }
           default: {
@@ -383,6 +425,260 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DEVICEPLATFORM_FIELD_NUMBER = 11;
+  private volatile java.lang.Object devicePlatform_;
+  /**
+   * <pre>
+   * 设备系统(ios/android/其他)
+   * </pre>
+   *
+   * <code>string DevicePlatform = 11;</code>
+   */
+  public java.lang.String getDevicePlatform() {
+    java.lang.Object ref = devicePlatform_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      devicePlatform_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 设备系统(ios/android/其他)
+   * </pre>
+   *
+   * <code>string DevicePlatform = 11;</code>
+   */
+  public com.google.protobuf.ByteString
+      getDevicePlatformBytes() {
+    java.lang.Object ref = devicePlatform_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      devicePlatform_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEVICETYPE_FIELD_NUMBER = 12;
+  private volatile java.lang.Object deviceType_;
+  /**
+   * <pre>
+   * 设备类型 desktop/mobile/tablet
+   * </pre>
+   *
+   * <code>string DeviceType = 12;</code>
+   */
+  public java.lang.String getDeviceType() {
+    java.lang.Object ref = deviceType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deviceType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 设备类型 desktop/mobile/tablet
+   * </pre>
+   *
+   * <code>string DeviceType = 12;</code>
+   */
+  public com.google.protobuf.ByteString
+      getDeviceTypeBytes() {
+    java.lang.Object ref = deviceType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      deviceType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PLATFORMTYPE_FIELD_NUMBER = 13;
+  private volatile java.lang.Object platformType_;
+  /**
+   * <pre>
+   * 平台类型 app/web
+   * </pre>
+   *
+   * <code>string PlatformType = 13;</code>
+   */
+  public java.lang.String getPlatformType() {
+    java.lang.Object ref = platformType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      platformType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 平台类型 app/web
+   * </pre>
+   *
+   * <code>string PlatformType = 13;</code>
+   */
+  public com.google.protobuf.ByteString
+      getPlatformTypeBytes() {
+    java.lang.Object ref = platformType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      platformType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEVICEPLATFORMVERSION_FIELD_NUMBER = 14;
+  private volatile java.lang.Object devicePlatformVersion_;
+  /**
+   * <pre>
+   * 设备操作系统版本号；eg:15.0.2
+   * </pre>
+   *
+   * <code>string DevicePlatformVersion = 14;</code>
+   */
+  public java.lang.String getDevicePlatformVersion() {
+    java.lang.Object ref = devicePlatformVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      devicePlatformVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 设备操作系统版本号；eg:15.0.2
+   * </pre>
+   *
+   * <code>string DevicePlatformVersion = 14;</code>
+   */
+  public com.google.protobuf.ByteString
+      getDevicePlatformVersionBytes() {
+    java.lang.Object ref = devicePlatformVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      devicePlatformVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLIENTID_FIELD_NUMBER = 15;
+  private volatile java.lang.Object clientID_;
+  /**
+   * <pre>
+   * ClientID app使用
+   * </pre>
+   *
+   * <code>string ClientID = 15;</code>
+   */
+  public java.lang.String getClientID() {
+    java.lang.Object ref = clientID_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientID_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * ClientID app使用
+   * </pre>
+   *
+   * <code>string ClientID = 15;</code>
+   */
+  public com.google.protobuf.ByteString
+      getClientIDBytes() {
+    java.lang.Object ref = clientID_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      clientID_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ALLIANCESID_FIELD_NUMBER = 16;
+  private volatile java.lang.Object alliancesID_;
+  /**
+   * <pre>
+   *变化 删除AgentID
+   * 调用方场景id; eg:google、ppc、seo等
+   * </pre>
+   *
+   * <code>string AlliancesID = 16;</code>
+   */
+  public java.lang.String getAlliancesID() {
+    java.lang.Object ref = alliancesID_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      alliancesID_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *变化 删除AgentID
+   * 调用方场景id; eg:google、ppc、seo等
+   * </pre>
+   *
+   * <code>string AlliancesID = 16;</code>
+   */
+  public com.google.protobuf.ByteString
+      getAlliancesIDBytes() {
+    java.lang.Object ref = alliancesID_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      alliancesID_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -421,6 +717,24 @@ private static final long serialVersionUID = 0L;
     if (!getRequestIDBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, requestID_);
     }
+    if (!getDevicePlatformBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, devicePlatform_);
+    }
+    if (!getDeviceTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, deviceType_);
+    }
+    if (!getPlatformTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, platformType_);
+    }
+    if (!getDevicePlatformVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, devicePlatformVersion_);
+    }
+    if (!getClientIDBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, clientID_);
+    }
+    if (!getAlliancesIDBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, alliancesID_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -456,6 +770,24 @@ private static final long serialVersionUID = 0L;
     if (!getRequestIDBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, requestID_);
     }
+    if (!getDevicePlatformBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, devicePlatform_);
+    }
+    if (!getDeviceTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, deviceType_);
+    }
+    if (!getPlatformTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, platformType_);
+    }
+    if (!getDevicePlatformVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, devicePlatformVersion_);
+    }
+    if (!getClientIDBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, clientID_);
+    }
+    if (!getAlliancesIDBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, alliancesID_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -487,6 +819,18 @@ private static final long serialVersionUID = 0L;
         .equals(other.getVID());
     result = result && getRequestID()
         .equals(other.getRequestID());
+    result = result && getDevicePlatform()
+        .equals(other.getDevicePlatform());
+    result = result && getDeviceType()
+        .equals(other.getDeviceType());
+    result = result && getPlatformType()
+        .equals(other.getPlatformType());
+    result = result && getDevicePlatformVersion()
+        .equals(other.getDevicePlatformVersion());
+    result = result && getClientID()
+        .equals(other.getClientID());
+    result = result && getAlliancesID()
+        .equals(other.getAlliancesID());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -514,6 +858,18 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getVID().hashCode();
     hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestID().hashCode();
+    hash = (37 * hash) + DEVICEPLATFORM_FIELD_NUMBER;
+    hash = (53 * hash) + getDevicePlatform().hashCode();
+    hash = (37 * hash) + DEVICETYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getDeviceType().hashCode();
+    hash = (37 * hash) + PLATFORMTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getPlatformType().hashCode();
+    hash = (37 * hash) + DEVICEPLATFORMVERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getDevicePlatformVersion().hashCode();
+    hash = (37 * hash) + CLIENTID_FIELD_NUMBER;
+    hash = (53 * hash) + getClientID().hashCode();
+    hash = (37 * hash) + ALLIANCESID_FIELD_NUMBER;
+    hash = (53 * hash) + getAlliancesID().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -663,6 +1019,18 @@ private static final long serialVersionUID = 0L;
 
       requestID_ = "";
 
+      devicePlatform_ = "";
+
+      deviceType_ = "";
+
+      platformType_ = "";
+
+      devicePlatformVersion_ = "";
+
+      clientID_ = "";
+
+      alliancesID_ = "";
+
       return this;
     }
 
@@ -697,6 +1065,12 @@ private static final long serialVersionUID = 0L;
       result.clientIP_ = clientIP_;
       result.vID_ = vID_;
       result.requestID_ = requestID_;
+      result.devicePlatform_ = devicePlatform_;
+      result.deviceType_ = deviceType_;
+      result.platformType_ = platformType_;
+      result.devicePlatformVersion_ = devicePlatformVersion_;
+      result.clientID_ = clientID_;
+      result.alliancesID_ = alliancesID_;
       onBuilt();
       return result;
     }
@@ -773,6 +1147,30 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getRequestID().isEmpty()) {
         requestID_ = other.requestID_;
+        onChanged();
+      }
+      if (!other.getDevicePlatform().isEmpty()) {
+        devicePlatform_ = other.devicePlatform_;
+        onChanged();
+      }
+      if (!other.getDeviceType().isEmpty()) {
+        deviceType_ = other.deviceType_;
+        onChanged();
+      }
+      if (!other.getPlatformType().isEmpty()) {
+        platformType_ = other.platformType_;
+        onChanged();
+      }
+      if (!other.getDevicePlatformVersion().isEmpty()) {
+        devicePlatformVersion_ = other.devicePlatformVersion_;
+        onChanged();
+      }
+      if (!other.getClientID().isEmpty()) {
+        clientID_ = other.clientID_;
+        onChanged();
+      }
+      if (!other.getAlliancesID().isEmpty()) {
+        alliancesID_ = other.alliancesID_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1345,6 +1743,545 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       requestID_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object devicePlatform_ = "";
+    /**
+     * <pre>
+     * 设备系统(ios/android/其他)
+     * </pre>
+     *
+     * <code>string DevicePlatform = 11;</code>
+     */
+    public java.lang.String getDevicePlatform() {
+      java.lang.Object ref = devicePlatform_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        devicePlatform_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 设备系统(ios/android/其他)
+     * </pre>
+     *
+     * <code>string DevicePlatform = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDevicePlatformBytes() {
+      java.lang.Object ref = devicePlatform_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        devicePlatform_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 设备系统(ios/android/其他)
+     * </pre>
+     *
+     * <code>string DevicePlatform = 11;</code>
+     */
+    public Builder setDevicePlatform(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      devicePlatform_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 设备系统(ios/android/其他)
+     * </pre>
+     *
+     * <code>string DevicePlatform = 11;</code>
+     */
+    public Builder clearDevicePlatform() {
+      
+      devicePlatform_ = getDefaultInstance().getDevicePlatform();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 设备系统(ios/android/其他)
+     * </pre>
+     *
+     * <code>string DevicePlatform = 11;</code>
+     */
+    public Builder setDevicePlatformBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      devicePlatform_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object deviceType_ = "";
+    /**
+     * <pre>
+     * 设备类型 desktop/mobile/tablet
+     * </pre>
+     *
+     * <code>string DeviceType = 12;</code>
+     */
+    public java.lang.String getDeviceType() {
+      java.lang.Object ref = deviceType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 设备类型 desktop/mobile/tablet
+     * </pre>
+     *
+     * <code>string DeviceType = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceTypeBytes() {
+      java.lang.Object ref = deviceType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 设备类型 desktop/mobile/tablet
+     * </pre>
+     *
+     * <code>string DeviceType = 12;</code>
+     */
+    public Builder setDeviceType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deviceType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 设备类型 desktop/mobile/tablet
+     * </pre>
+     *
+     * <code>string DeviceType = 12;</code>
+     */
+    public Builder clearDeviceType() {
+      
+      deviceType_ = getDefaultInstance().getDeviceType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 设备类型 desktop/mobile/tablet
+     * </pre>
+     *
+     * <code>string DeviceType = 12;</code>
+     */
+    public Builder setDeviceTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deviceType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object platformType_ = "";
+    /**
+     * <pre>
+     * 平台类型 app/web
+     * </pre>
+     *
+     * <code>string PlatformType = 13;</code>
+     */
+    public java.lang.String getPlatformType() {
+      java.lang.Object ref = platformType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        platformType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 平台类型 app/web
+     * </pre>
+     *
+     * <code>string PlatformType = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPlatformTypeBytes() {
+      java.lang.Object ref = platformType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        platformType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 平台类型 app/web
+     * </pre>
+     *
+     * <code>string PlatformType = 13;</code>
+     */
+    public Builder setPlatformType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      platformType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 平台类型 app/web
+     * </pre>
+     *
+     * <code>string PlatformType = 13;</code>
+     */
+    public Builder clearPlatformType() {
+      
+      platformType_ = getDefaultInstance().getPlatformType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 平台类型 app/web
+     * </pre>
+     *
+     * <code>string PlatformType = 13;</code>
+     */
+    public Builder setPlatformTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      platformType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object devicePlatformVersion_ = "";
+    /**
+     * <pre>
+     * 设备操作系统版本号；eg:15.0.2
+     * </pre>
+     *
+     * <code>string DevicePlatformVersion = 14;</code>
+     */
+    public java.lang.String getDevicePlatformVersion() {
+      java.lang.Object ref = devicePlatformVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        devicePlatformVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 设备操作系统版本号；eg:15.0.2
+     * </pre>
+     *
+     * <code>string DevicePlatformVersion = 14;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDevicePlatformVersionBytes() {
+      java.lang.Object ref = devicePlatformVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        devicePlatformVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 设备操作系统版本号；eg:15.0.2
+     * </pre>
+     *
+     * <code>string DevicePlatformVersion = 14;</code>
+     */
+    public Builder setDevicePlatformVersion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      devicePlatformVersion_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 设备操作系统版本号；eg:15.0.2
+     * </pre>
+     *
+     * <code>string DevicePlatformVersion = 14;</code>
+     */
+    public Builder clearDevicePlatformVersion() {
+      
+      devicePlatformVersion_ = getDefaultInstance().getDevicePlatformVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 设备操作系统版本号；eg:15.0.2
+     * </pre>
+     *
+     * <code>string DevicePlatformVersion = 14;</code>
+     */
+    public Builder setDevicePlatformVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      devicePlatformVersion_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientID_ = "";
+    /**
+     * <pre>
+     * ClientID app使用
+     * </pre>
+     *
+     * <code>string ClientID = 15;</code>
+     */
+    public java.lang.String getClientID() {
+      java.lang.Object ref = clientID_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientID_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * ClientID app使用
+     * </pre>
+     *
+     * <code>string ClientID = 15;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientIDBytes() {
+      java.lang.Object ref = clientID_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * ClientID app使用
+     * </pre>
+     *
+     * <code>string ClientID = 15;</code>
+     */
+    public Builder setClientID(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      clientID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * ClientID app使用
+     * </pre>
+     *
+     * <code>string ClientID = 15;</code>
+     */
+    public Builder clearClientID() {
+      
+      clientID_ = getDefaultInstance().getClientID();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * ClientID app使用
+     * </pre>
+     *
+     * <code>string ClientID = 15;</code>
+     */
+    public Builder setClientIDBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      clientID_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object alliancesID_ = "";
+    /**
+     * <pre>
+     *变化 删除AgentID
+     * 调用方场景id; eg:google、ppc、seo等
+     * </pre>
+     *
+     * <code>string AlliancesID = 16;</code>
+     */
+    public java.lang.String getAlliancesID() {
+      java.lang.Object ref = alliancesID_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        alliancesID_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *变化 删除AgentID
+     * 调用方场景id; eg:google、ppc、seo等
+     * </pre>
+     *
+     * <code>string AlliancesID = 16;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAlliancesIDBytes() {
+      java.lang.Object ref = alliancesID_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        alliancesID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *变化 删除AgentID
+     * 调用方场景id; eg:google、ppc、seo等
+     * </pre>
+     *
+     * <code>string AlliancesID = 16;</code>
+     */
+    public Builder setAlliancesID(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      alliancesID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *变化 删除AgentID
+     * 调用方场景id; eg:google、ppc、seo等
+     * </pre>
+     *
+     * <code>string AlliancesID = 16;</code>
+     */
+    public Builder clearAlliancesID() {
+      
+      alliancesID_ = getDefaultInstance().getAlliancesID();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *变化 删除AgentID
+     * 调用方场景id; eg:google、ppc、seo等
+     * </pre>
+     *
+     * <code>string AlliancesID = 16;</code>
+     */
+    public Builder setAlliancesIDBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      alliancesID_ = value;
       onChanged();
       return this;
     }

@@ -24,6 +24,8 @@ private static final long serialVersionUID = 0L;
     brandName_ = "";
     brandTier_ = 0;
     serviceDetail_ = java.util.Collections.emptyList();
+    serviceDetailId_ = java.util.Collections.emptyList();
+    ctripBrandTier_ = 0;
   }
 
   @java.lang.Override
@@ -75,6 +77,32 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.parser(), extensionRegistry));
             break;
           }
+          case 40: {
+            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              serviceDetailId_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            serviceDetailId_.add(input.readInt32());
+            break;
+          }
+          case 42: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
+              serviceDetailId_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              serviceDetailId_.add(input.readInt32());
+            }
+            input.popLimit(limit);
+            break;
+          }
+          case 48: {
+
+            ctripBrandTier_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -92,6 +120,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         serviceDetail_ = java.util.Collections.unmodifiableList(serviceDetail_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+        serviceDetailId_ = java.util.Collections.unmodifiableList(serviceDetailId_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -230,6 +261,54 @@ private static final long serialVersionUID = 0L;
     return serviceDetail_.get(index);
   }
 
+  public static final int SERVICEDETAILID_FIELD_NUMBER = 5;
+  private java.util.List<java.lang.Integer> serviceDetailId_;
+  /**
+   * <pre>
+   * 品牌运价对应的权益属性ID
+   * </pre>
+   *
+   * <code>repeated int32 ServiceDetailId = 5;</code>
+   */
+  public java.util.List<java.lang.Integer>
+      getServiceDetailIdList() {
+    return serviceDetailId_;
+  }
+  /**
+   * <pre>
+   * 品牌运价对应的权益属性ID
+   * </pre>
+   *
+   * <code>repeated int32 ServiceDetailId = 5;</code>
+   */
+  public int getServiceDetailIdCount() {
+    return serviceDetailId_.size();
+  }
+  /**
+   * <pre>
+   * 品牌运价对应的权益属性ID
+   * </pre>
+   *
+   * <code>repeated int32 ServiceDetailId = 5;</code>
+   */
+  public int getServiceDetailId(int index) {
+    return serviceDetailId_.get(index);
+  }
+  private int serviceDetailIdMemoizedSerializedSize = -1;
+
+  public static final int CTRIPBRANDTIER_FIELD_NUMBER = 6;
+  private int ctripBrandTier_;
+  /**
+   * <pre>
+   * 携程品牌运价等级
+   * </pre>
+   *
+   * <code>int32 CtripBrandTier = 6;</code>
+   */
+  public int getCtripBrandTier() {
+    return ctripBrandTier_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -244,6 +323,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (refNum_ != 0) {
       output.writeInt32(1, refNum_);
     }
@@ -255,6 +335,16 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < serviceDetail_.size(); i++) {
       output.writeMessage(4, serviceDetail_.get(i));
+    }
+    if (getServiceDetailIdList().size() > 0) {
+      output.writeUInt32NoTag(42);
+      output.writeUInt32NoTag(serviceDetailIdMemoizedSerializedSize);
+    }
+    for (int i = 0; i < serviceDetailId_.size(); i++) {
+      output.writeInt32NoTag(serviceDetailId_.get(i));
+    }
+    if (ctripBrandTier_ != 0) {
+      output.writeInt32(6, ctripBrandTier_);
     }
     unknownFields.writeTo(output);
   }
@@ -280,6 +370,24 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, serviceDetail_.get(i));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < serviceDetailId_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeInt32SizeNoTag(serviceDetailId_.get(i));
+      }
+      size += dataSize;
+      if (!getServiceDetailIdList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      serviceDetailIdMemoizedSerializedSize = dataSize;
+    }
+    if (ctripBrandTier_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(6, ctripBrandTier_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -304,6 +412,10 @@ private static final long serialVersionUID = 0L;
         == other.getBrandTier());
     result = result && getServiceDetailList()
         .equals(other.getServiceDetailList());
+    result = result && getServiceDetailIdList()
+        .equals(other.getServiceDetailIdList());
+    result = result && (getCtripBrandTier()
+        == other.getCtripBrandTier());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -325,6 +437,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SERVICEDETAIL_FIELD_NUMBER;
       hash = (53 * hash) + getServiceDetailList().hashCode();
     }
+    if (getServiceDetailIdCount() > 0) {
+      hash = (37 * hash) + SERVICEDETAILID_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceDetailIdList().hashCode();
+    }
+    hash = (37 * hash) + CTRIPBRANDTIER_FIELD_NUMBER;
+    hash = (53 * hash) + getCtripBrandTier();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -475,6 +593,10 @@ private static final long serialVersionUID = 0L;
       } else {
         serviceDetailBuilder_.clear();
       }
+      serviceDetailId_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ctripBrandTier_ = 0;
+
       return this;
     }
 
@@ -515,6 +637,12 @@ private static final long serialVersionUID = 0L;
       } else {
         result.serviceDetail_ = serviceDetailBuilder_.build();
       }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        serviceDetailId_ = java.util.Collections.unmodifiableList(serviceDetailId_);
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.serviceDetailId_ = serviceDetailId_;
+      result.ctripBrandTier_ = ctripBrandTier_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -599,6 +727,19 @@ private static final long serialVersionUID = 0L;
             serviceDetailBuilder_.addAllMessages(other.serviceDetail_);
           }
         }
+      }
+      if (!other.serviceDetailId_.isEmpty()) {
+        if (serviceDetailId_.isEmpty()) {
+          serviceDetailId_ = other.serviceDetailId_;
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          ensureServiceDetailIdIsMutable();
+          serviceDetailId_.addAll(other.serviceDetailId_);
+        }
+        onChanged();
+      }
+      if (other.getCtripBrandTier() != 0) {
+        setCtripBrandTier(other.getCtripBrandTier());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1093,6 +1234,138 @@ private static final long serialVersionUID = 0L;
         serviceDetail_ = null;
       }
       return serviceDetailBuilder_;
+    }
+
+    private java.util.List<java.lang.Integer> serviceDetailId_ = java.util.Collections.emptyList();
+    private void ensureServiceDetailIdIsMutable() {
+      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        serviceDetailId_ = new java.util.ArrayList<java.lang.Integer>(serviceDetailId_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+    /**
+     * <pre>
+     * 品牌运价对应的权益属性ID
+     * </pre>
+     *
+     * <code>repeated int32 ServiceDetailId = 5;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getServiceDetailIdList() {
+      return java.util.Collections.unmodifiableList(serviceDetailId_);
+    }
+    /**
+     * <pre>
+     * 品牌运价对应的权益属性ID
+     * </pre>
+     *
+     * <code>repeated int32 ServiceDetailId = 5;</code>
+     */
+    public int getServiceDetailIdCount() {
+      return serviceDetailId_.size();
+    }
+    /**
+     * <pre>
+     * 品牌运价对应的权益属性ID
+     * </pre>
+     *
+     * <code>repeated int32 ServiceDetailId = 5;</code>
+     */
+    public int getServiceDetailId(int index) {
+      return serviceDetailId_.get(index);
+    }
+    /**
+     * <pre>
+     * 品牌运价对应的权益属性ID
+     * </pre>
+     *
+     * <code>repeated int32 ServiceDetailId = 5;</code>
+     */
+    public Builder setServiceDetailId(
+        int index, int value) {
+      ensureServiceDetailIdIsMutable();
+      serviceDetailId_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 品牌运价对应的权益属性ID
+     * </pre>
+     *
+     * <code>repeated int32 ServiceDetailId = 5;</code>
+     */
+    public Builder addServiceDetailId(int value) {
+      ensureServiceDetailIdIsMutable();
+      serviceDetailId_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 品牌运价对应的权益属性ID
+     * </pre>
+     *
+     * <code>repeated int32 ServiceDetailId = 5;</code>
+     */
+    public Builder addAllServiceDetailId(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureServiceDetailIdIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, serviceDetailId_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 品牌运价对应的权益属性ID
+     * </pre>
+     *
+     * <code>repeated int32 ServiceDetailId = 5;</code>
+     */
+    public Builder clearServiceDetailId() {
+      serviceDetailId_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    private int ctripBrandTier_ ;
+    /**
+     * <pre>
+     * 携程品牌运价等级
+     * </pre>
+     *
+     * <code>int32 CtripBrandTier = 6;</code>
+     */
+    public int getCtripBrandTier() {
+      return ctripBrandTier_;
+    }
+    /**
+     * <pre>
+     * 携程品牌运价等级
+     * </pre>
+     *
+     * <code>int32 CtripBrandTier = 6;</code>
+     */
+    public Builder setCtripBrandTier(int value) {
+      
+      ctripBrandTier_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 携程品牌运价等级
+     * </pre>
+     *
+     * <code>int32 CtripBrandTier = 6;</code>
+     */
+    public Builder clearCtripBrandTier() {
+      
+      ctripBrandTier_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

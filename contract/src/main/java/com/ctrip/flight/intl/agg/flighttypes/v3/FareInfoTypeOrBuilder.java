@@ -76,4 +76,69 @@ public interface FareInfoTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTourCodeBytes();
+
+  /**
+   * <code>string Eligibility = 9;</code>
+   */
+  java.lang.String getEligibility();
+  /**
+   * <code>string Eligibility = 9;</code>
+   */
+  com.google.protobuf.ByteString
+      getEligibilityBytes();
+
+  /**
+   * <pre>
+   * 运价区域
+   * </pre>
+   *
+   * <code>int32 TariffNo = 10;</code>
+   */
+  int getTariffNo();
+
+  /**
+   * <pre>
+   * 运价规则
+   * </pre>
+   *
+   * <code>string FareRule = 11;</code>
+   */
+  java.lang.String getFareRule();
+  /**
+   * <pre>
+   * 运价规则
+   * </pre>
+   *
+   * <code>string FareRule = 11;</code>
+   */
+  com.google.protobuf.ByteString
+      getFareRuleBytes();
+
+  /**
+   * <pre>
+   * 运价FTC
+   * </pre>
+   *
+   * <code>string FareTypeCode = 12;</code>
+   */
+  java.lang.String getFareTypeCode();
+  /**
+   * <pre>
+   * 运价FTC
+   * </pre>
+   *
+   * <code>string FareTypeCode = 12;</code>
+   */
+  com.google.protobuf.ByteString
+      getFareTypeCodeBytes();
+
+  /**
+   * <code>string FareClass = 13;</code>
+   */
+  java.lang.String getFareClass();
+  /**
+   * <code>string FareClass = 13;</code>
+   */
+  com.google.protobuf.ByteString
+      getFareClassBytes();
 }

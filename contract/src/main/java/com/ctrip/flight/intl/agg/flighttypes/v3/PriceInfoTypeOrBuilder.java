@@ -231,4 +231,116 @@ public interface PriceInfoTypeOrBuilder extends
    * <code>int32 AgencyID = 19;</code>
    */
   int getAgencyID();
+
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 20;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> 
+      getExtendFieldsList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 20;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtendFields(int index);
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 20;</code>
+   */
+  int getExtendFieldsCount();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 20;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+      getExtendFieldsOrBuilderList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 20;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtendFieldsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 后返类型
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.RebateInfoType RebateInfo = 21;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.RebateInfoType> 
+      getRebateInfoList();
+  /**
+   * <pre>
+   * 后返类型
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.RebateInfoType RebateInfo = 21;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.RebateInfoType getRebateInfo(int index);
+  /**
+   * <pre>
+   * 后返类型
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.RebateInfoType RebateInfo = 21;</code>
+   */
+  int getRebateInfoCount();
+  /**
+   * <pre>
+   * 后返类型
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.RebateInfoType RebateInfo = 21;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.RebateInfoTypeOrBuilder> 
+      getRebateInfoOrBuilderList();
+  /**
+   * <pre>
+   * 后返类型
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.RebateInfoType RebateInfo = 21;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.RebateInfoTypeOrBuilder getRebateInfoOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardFeeType CreditCardFee = 22;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardFeeType> 
+      getCreditCardFeeList();
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardFeeType CreditCardFee = 22;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardFeeType getCreditCardFee(int index);
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardFeeType CreditCardFee = 22;</code>
+   */
+  int getCreditCardFeeCount();
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardFeeType CreditCardFee = 22;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardFeeTypeOrBuilder> 
+      getCreditCardFeeOrBuilderList();
+  /**
+   * <pre>
+   * 卡费费用
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardFeeType CreditCardFee = 22;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardFeeTypeOrBuilder getCreditCardFeeOrBuilder(
+      int index);
 }

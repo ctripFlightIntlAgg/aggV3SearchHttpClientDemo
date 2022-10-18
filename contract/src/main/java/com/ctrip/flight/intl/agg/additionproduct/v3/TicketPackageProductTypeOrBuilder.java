@@ -222,4 +222,35 @@ public interface TicketPackageProductTypeOrBuilder extends
    */
   com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefTypeOrBuilder getServiceRefOrBuilder(
       int index);
+
+  /**
+   * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+   */
+  boolean hasMemberPrivilege();
+  /**
+   * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+   */
+  com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType getMemberPrivilege();
+  /**
+   * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+   */
+  com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeTypeOrBuilder getMemberPrivilegeOrBuilder();
+
+  /**
+   * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+   */
+  boolean hasPriceReduction();
+  /**
+   * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+   */
+  com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType getPriceReduction();
+  /**
+   * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+   */
+  com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionTypeOrBuilder getPriceReductionOrBuilder();
+
+  /**
+   * <code>int64 RecommendPrdType2 = 16;</code>
+   */
+  long getRecommendPrdType2();
 }

@@ -18,7 +18,6 @@ private static final long serialVersionUID = 0L;
   private AdvancedOptionType() {
     flightCriteria_ = java.util.Collections.emptyList();
     clientType_ = 0;
-    cabinClassOption_ = 0;
     bookingChannel_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     agentCode_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     excludeAgentCode_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -68,60 +67,55 @@ private static final long serialVersionUID = 0L;
             clientType_ = input.readInt32();
             break;
           }
-          case 24: {
-
-            cabinClassOption_ = input.readInt32();
-            break;
-          }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
               bookingChannel_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000004;
             }
             bookingChannel_.add(s);
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
               agentCode_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000008;
             }
             agentCode_.add(s);
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
               excludeAgentCode_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000010;
             }
             excludeAgentCode_.add(s);
             break;
           }
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
               fareBasis_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000020;
             }
             fareBasis_.add(s);
             break;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
               fareClass_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000080;
+              mutable_bitField0_ |= 0x00000040;
             }
             fareClass_.add(s);
             break;
           }
           case 72: {
-            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
               productCategory_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000100;
+              mutable_bitField0_ |= 0x00000080;
             }
             productCategory_.add(input.readInt32());
             break;
@@ -129,9 +123,9 @@ private static final long serialVersionUID = 0L;
           case 74: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100) && input.getBytesUntilLimit() > 0) {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080) && input.getBytesUntilLimit() > 0) {
               productCategory_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000100;
+              mutable_bitField0_ |= 0x00000080;
             }
             while (input.getBytesUntilLimit() > 0) {
               productCategory_.add(input.readInt32());
@@ -140,9 +134,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 80: {
-            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
               subProductCategory_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000200;
+              mutable_bitField0_ |= 0x00000100;
             }
             subProductCategory_.add(input.readInt32());
             break;
@@ -150,9 +144,9 @@ private static final long serialVersionUID = 0L;
           case 82: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200) && input.getBytesUntilLimit() > 0) {
+            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100) && input.getBytesUntilLimit() > 0) {
               subProductCategory_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000200;
+              mutable_bitField0_ |= 0x00000100;
             }
             while (input.getBytesUntilLimit() > 0) {
               subProductCategory_.add(input.readInt32());
@@ -161,9 +155,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
               origDestRequestOption_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.OrigDestRequestOptionType>();
-              mutable_bitField0_ |= 0x00000400;
+              mutable_bitField0_ |= 0x00000200;
             }
             origDestRequestOption_.add(
                 input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.OrigDestRequestOptionType.parser(), extensionRegistry));
@@ -171,9 +165,9 @@ private static final long serialVersionUID = 0L;
           }
           case 98: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
               invoiceType_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000800;
+              mutable_bitField0_ |= 0x00000400;
             }
             invoiceType_.add(s);
             break;
@@ -196,31 +190,31 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         flightCriteria_ = java.util.Collections.unmodifiableList(flightCriteria_);
       }
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         bookingChannel_ = bookingChannel_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         agentCode_ = agentCode_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
         excludeAgentCode_ = excludeAgentCode_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         fareBasis_ = fareBasis_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
         fareClass_ = fareClass_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         productCategory_ = java.util.Collections.unmodifiableList(productCategory_);
       }
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
         subProductCategory_ = java.util.Collections.unmodifiableList(subProductCategory_);
       }
-      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
         origDestRequestOption_ = java.util.Collections.unmodifiableList(origDestRequestOption_);
       }
-      if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
         invoiceType_ = invoiceType_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -307,19 +301,6 @@ private static final long serialVersionUID = 0L;
    */
   public int getClientType() {
     return clientType_;
-  }
-
-  public static final int CABINCLASSOPTION_FIELD_NUMBER = 3;
-  private int cabinClassOption_;
-  /**
-   * <pre>
-   * 指定航班中的舱等匹配选项：0-默认；1-全航段严格匹配；2-允许降舱匹配；3-允许升舱匹配
-   * </pre>
-   *
-   * <code>int32 CabinClassOption = 3;</code>
-   */
-  public int getCabinClassOption() {
-    return cabinClassOption_;
   }
 
   public static final int BOOKINGCHANNEL_FIELD_NUMBER = 4;
@@ -650,9 +631,6 @@ private static final long serialVersionUID = 0L;
     if (clientType_ != 0) {
       output.writeInt32(2, clientType_);
     }
-    if (cabinClassOption_ != 0) {
-      output.writeInt32(3, cabinClassOption_);
-    }
     for (int i = 0; i < bookingChannel_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, bookingChannel_.getRaw(i));
     }
@@ -704,10 +682,6 @@ private static final long serialVersionUID = 0L;
     if (clientType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, clientType_);
-    }
-    if (cabinClassOption_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, cabinClassOption_);
     }
     {
       int dataSize = 0;
@@ -809,8 +783,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getFlightCriteriaList());
     result = result && (getClientType()
         == other.getClientType());
-    result = result && (getCabinClassOption()
-        == other.getCabinClassOption());
     result = result && getBookingChannelList()
         .equals(other.getBookingChannelList());
     result = result && getAgentCodeList()
@@ -846,8 +818,6 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + CLIENTTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getClientType();
-    hash = (37 * hash) + CABINCLASSOPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getCabinClassOption();
     if (getBookingChannelCount() > 0) {
       hash = (37 * hash) + BOOKINGCHANNEL_FIELD_NUMBER;
       hash = (53 * hash) + getBookingChannelList().hashCode();
@@ -1027,30 +997,28 @@ private static final long serialVersionUID = 0L;
       }
       clientType_ = 0;
 
-      cabinClassOption_ = 0;
-
       bookingChannel_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       agentCode_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       excludeAgentCode_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       fareBasis_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       fareClass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       productCategory_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       subProductCategory_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (origDestRequestOptionBuilder_ == null) {
         origDestRequestOption_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
       } else {
         origDestRequestOptionBuilder_.clear();
       }
       invoiceType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -1089,54 +1057,53 @@ private static final long serialVersionUID = 0L;
         result.flightCriteria_ = flightCriteriaBuilder_.build();
       }
       result.clientType_ = clientType_;
-      result.cabinClassOption_ = cabinClassOption_;
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         bookingChannel_ = bookingChannel_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.bookingChannel_ = bookingChannel_;
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         agentCode_ = agentCode_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.agentCode_ = agentCode_;
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         excludeAgentCode_ = excludeAgentCode_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.excludeAgentCode_ = excludeAgentCode_;
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         fareBasis_ = fareBasis_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.fareBasis_ = fareBasis_;
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         fareClass_ = fareClass_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.fareClass_ = fareClass_;
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         productCategory_ = java.util.Collections.unmodifiableList(productCategory_);
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.productCategory_ = productCategory_;
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         subProductCategory_ = java.util.Collections.unmodifiableList(subProductCategory_);
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.subProductCategory_ = subProductCategory_;
       if (origDestRequestOptionBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((bitField0_ & 0x00000200) == 0x00000200)) {
           origDestRequestOption_ = java.util.Collections.unmodifiableList(origDestRequestOption_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.origDestRequestOption_ = origDestRequestOption_;
       } else {
         result.origDestRequestOption_ = origDestRequestOptionBuilder_.build();
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         invoiceType_ = invoiceType_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.invoiceType_ = invoiceType_;
       result.bitField0_ = to_bitField0_;
@@ -1217,13 +1184,10 @@ private static final long serialVersionUID = 0L;
       if (other.getClientType() != 0) {
         setClientType(other.getClientType());
       }
-      if (other.getCabinClassOption() != 0) {
-        setCabinClassOption(other.getCabinClassOption());
-      }
       if (!other.bookingChannel_.isEmpty()) {
         if (bookingChannel_.isEmpty()) {
           bookingChannel_ = other.bookingChannel_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureBookingChannelIsMutable();
           bookingChannel_.addAll(other.bookingChannel_);
@@ -1233,7 +1197,7 @@ private static final long serialVersionUID = 0L;
       if (!other.agentCode_.isEmpty()) {
         if (agentCode_.isEmpty()) {
           agentCode_ = other.agentCode_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureAgentCodeIsMutable();
           agentCode_.addAll(other.agentCode_);
@@ -1243,7 +1207,7 @@ private static final long serialVersionUID = 0L;
       if (!other.excludeAgentCode_.isEmpty()) {
         if (excludeAgentCode_.isEmpty()) {
           excludeAgentCode_ = other.excludeAgentCode_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureExcludeAgentCodeIsMutable();
           excludeAgentCode_.addAll(other.excludeAgentCode_);
@@ -1253,7 +1217,7 @@ private static final long serialVersionUID = 0L;
       if (!other.fareBasis_.isEmpty()) {
         if (fareBasis_.isEmpty()) {
           fareBasis_ = other.fareBasis_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureFareBasisIsMutable();
           fareBasis_.addAll(other.fareBasis_);
@@ -1263,7 +1227,7 @@ private static final long serialVersionUID = 0L;
       if (!other.fareClass_.isEmpty()) {
         if (fareClass_.isEmpty()) {
           fareClass_ = other.fareClass_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureFareClassIsMutable();
           fareClass_.addAll(other.fareClass_);
@@ -1273,7 +1237,7 @@ private static final long serialVersionUID = 0L;
       if (!other.productCategory_.isEmpty()) {
         if (productCategory_.isEmpty()) {
           productCategory_ = other.productCategory_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureProductCategoryIsMutable();
           productCategory_.addAll(other.productCategory_);
@@ -1283,7 +1247,7 @@ private static final long serialVersionUID = 0L;
       if (!other.subProductCategory_.isEmpty()) {
         if (subProductCategory_.isEmpty()) {
           subProductCategory_ = other.subProductCategory_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureSubProductCategoryIsMutable();
           subProductCategory_.addAll(other.subProductCategory_);
@@ -1294,7 +1258,7 @@ private static final long serialVersionUID = 0L;
         if (!other.origDestRequestOption_.isEmpty()) {
           if (origDestRequestOption_.isEmpty()) {
             origDestRequestOption_ = other.origDestRequestOption_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureOrigDestRequestOptionIsMutable();
             origDestRequestOption_.addAll(other.origDestRequestOption_);
@@ -1307,7 +1271,7 @@ private static final long serialVersionUID = 0L;
             origDestRequestOptionBuilder_.dispose();
             origDestRequestOptionBuilder_ = null;
             origDestRequestOption_ = other.origDestRequestOption_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000200);
             origDestRequestOptionBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getOrigDestRequestOptionFieldBuilder() : null;
@@ -1319,7 +1283,7 @@ private static final long serialVersionUID = 0L;
       if (!other.invoiceType_.isEmpty()) {
         if (invoiceType_.isEmpty()) {
           invoiceType_ = other.invoiceType_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureInvoiceTypeIsMutable();
           invoiceType_.addAll(other.invoiceType_);
@@ -1706,49 +1670,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int cabinClassOption_ ;
-    /**
-     * <pre>
-     * 指定航班中的舱等匹配选项：0-默认；1-全航段严格匹配；2-允许降舱匹配；3-允许升舱匹配
-     * </pre>
-     *
-     * <code>int32 CabinClassOption = 3;</code>
-     */
-    public int getCabinClassOption() {
-      return cabinClassOption_;
-    }
-    /**
-     * <pre>
-     * 指定航班中的舱等匹配选项：0-默认；1-全航段严格匹配；2-允许降舱匹配；3-允许升舱匹配
-     * </pre>
-     *
-     * <code>int32 CabinClassOption = 3;</code>
-     */
-    public Builder setCabinClassOption(int value) {
-      
-      cabinClassOption_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 指定航班中的舱等匹配选项：0-默认；1-全航段严格匹配；2-允许降舱匹配；3-允许升舱匹配
-     * </pre>
-     *
-     * <code>int32 CabinClassOption = 3;</code>
-     */
-    public Builder clearCabinClassOption() {
-      
-      cabinClassOption_ = 0;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.LazyStringList bookingChannel_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureBookingChannelIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
         bookingChannel_ = new com.google.protobuf.LazyStringArrayList(bookingChannel_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
        }
     }
     /**
@@ -1819,7 +1745,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearBookingChannel() {
       bookingChannel_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1840,9 +1766,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList agentCode_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAgentCodeIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         agentCode_ = new com.google.protobuf.LazyStringArrayList(agentCode_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
        }
     }
     /**
@@ -1913,7 +1839,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAgentCode() {
       agentCode_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1934,9 +1860,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList excludeAgentCode_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureExcludeAgentCodeIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
         excludeAgentCode_ = new com.google.protobuf.LazyStringArrayList(excludeAgentCode_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
        }
     }
     /**
@@ -2039,7 +1965,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearExcludeAgentCode() {
       excludeAgentCode_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2064,9 +1990,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList fareBasis_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureFareBasisIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         fareBasis_ = new com.google.protobuf.LazyStringArrayList(fareBasis_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
        }
     }
     /**
@@ -2137,7 +2063,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearFareBasis() {
       fareBasis_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2158,9 +2084,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList fareClass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureFareClassIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
         fareClass_ = new com.google.protobuf.LazyStringArrayList(fareClass_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
        }
     }
     /**
@@ -2231,7 +2157,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearFareClass() {
       fareClass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2252,9 +2178,9 @@ private static final long serialVersionUID = 0L;
 
     private java.util.List<java.lang.Integer> productCategory_ = java.util.Collections.emptyList();
     private void ensureProductCategoryIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
         productCategory_ = new java.util.ArrayList<java.lang.Integer>(productCategory_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
        }
     }
     /**
@@ -2311,16 +2237,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearProductCategory() {
       productCategory_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
 
     private java.util.List<java.lang.Integer> subProductCategory_ = java.util.Collections.emptyList();
     private void ensureSubProductCategoryIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
         subProductCategory_ = new java.util.ArrayList<java.lang.Integer>(subProductCategory_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
        }
     }
     /**
@@ -2377,7 +2303,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSubProductCategory() {
       subProductCategory_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2385,9 +2311,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.OrigDestRequestOptionType> origDestRequestOption_ =
       java.util.Collections.emptyList();
     private void ensureOrigDestRequestOptionIsMutable() {
-      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
         origDestRequestOption_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.OrigDestRequestOptionType>(origDestRequestOption_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
        }
     }
 
@@ -2581,7 +2507,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearOrigDestRequestOption() {
       if (origDestRequestOptionBuilder_ == null) {
         origDestRequestOption_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         origDestRequestOptionBuilder_.clear();
@@ -2686,7 +2612,7 @@ private static final long serialVersionUID = 0L;
         origDestRequestOptionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.ctrip.flight.intl.agg.flighttypes.v3.OrigDestRequestOptionType, com.ctrip.flight.intl.agg.flighttypes.v3.OrigDestRequestOptionType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.OrigDestRequestOptionTypeOrBuilder>(
                 origDestRequestOption_,
-                ((bitField0_ & 0x00000400) == 0x00000400),
+                ((bitField0_ & 0x00000200) == 0x00000200),
                 getParentForChildren(),
                 isClean());
         origDestRequestOption_ = null;
@@ -2696,9 +2622,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList invoiceType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureInvoiceTypeIsMutable() {
-      if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
         invoiceType_ = new com.google.protobuf.LazyStringArrayList(invoiceType_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
        }
     }
     /**
@@ -2801,7 +2727,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearInvoiceType() {
       invoiceType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }

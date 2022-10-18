@@ -62,27 +62,33 @@ public interface BaggageTypeOrBuilder extends
       int index);
 
   /**
-   * <pre>
-   * int32 Type = 6 ; 迁移到BaggageInfoType中
-   * </pre>
-   *
    * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
    */
   boolean hasExtentionFileds();
   /**
-   * <pre>
-   * int32 Type = 6 ; 迁移到BaggageInfoType中
-   * </pre>
-   *
    * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
    */
   com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType getExtentionFileds();
+  /**
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsTypeOrBuilder getExtentionFiledsOrBuilder();
+
   /**
    * <pre>
    * int32 Type = 6 ; 迁移到BaggageInfoType中
    * </pre>
    *
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
+   * <code>string BaggageEN = 6;</code>
    */
-  com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsTypeOrBuilder getExtentionFiledsOrBuilder();
+  java.lang.String getBaggageEN();
+  /**
+   * <pre>
+   * int32 Type = 6 ; 迁移到BaggageInfoType中
+   * </pre>
+   *
+   * <code>string BaggageEN = 6;</code>
+   */
+  com.google.protobuf.ByteString
+      getBaggageENBytes();
 }

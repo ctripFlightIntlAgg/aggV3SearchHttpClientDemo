@@ -295,4 +295,48 @@ public interface FlightTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSupplierBytes();
+
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 21;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> 
+      getExtendFieldsList();
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 21;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtendFields(int index);
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 21;</code>
+   */
+  int getExtendFieldsCount();
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 21;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+      getExtendFieldsOrBuilderList();
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 21;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtendFieldsOrBuilder(
+      int index);
 }

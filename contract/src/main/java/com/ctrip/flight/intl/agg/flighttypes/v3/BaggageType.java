@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     baggageCN_ = "";
     baggageGLB_ = "";
     baggageDetail_ = java.util.Collections.emptyList();
+    baggageEN_ = "";
   }
 
   @java.lang.Override
@@ -84,6 +85,12 @@ private static final long serialVersionUID = 0L;
               extentionFileds_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            baggageEN_ = s;
             break;
           }
           default: {
@@ -262,34 +269,64 @@ private static final long serialVersionUID = 0L;
   public static final int EXTENTIONFILEDS_FIELD_NUMBER = 5;
   private com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType extentionFileds_;
   /**
-   * <pre>
-   * int32 Type = 6 ; 迁移到BaggageInfoType中
-   * </pre>
-   *
    * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
    */
   public boolean hasExtentionFileds() {
     return extentionFileds_ != null;
   }
   /**
-   * <pre>
-   * int32 Type = 6 ; 迁移到BaggageInfoType中
-   * </pre>
-   *
    * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
    */
   public com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType getExtentionFileds() {
     return extentionFileds_ == null ? com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType.getDefaultInstance() : extentionFileds_;
   }
   /**
-   * <pre>
-   * int32 Type = 6 ; 迁移到BaggageInfoType中
-   * </pre>
-   *
    * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
    */
   public com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsTypeOrBuilder getExtentionFiledsOrBuilder() {
     return getExtentionFileds();
+  }
+
+  public static final int BAGGAGEEN_FIELD_NUMBER = 6;
+  private volatile java.lang.Object baggageEN_;
+  /**
+   * <pre>
+   * int32 Type = 6 ; 迁移到BaggageInfoType中
+   * </pre>
+   *
+   * <code>string BaggageEN = 6;</code>
+   */
+  public java.lang.String getBaggageEN() {
+    java.lang.Object ref = baggageEN_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      baggageEN_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * int32 Type = 6 ; 迁移到BaggageInfoType中
+   * </pre>
+   *
+   * <code>string BaggageEN = 6;</code>
+   */
+  public com.google.protobuf.ByteString
+      getBaggageENBytes() {
+    java.lang.Object ref = baggageEN_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      baggageEN_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -321,6 +358,9 @@ private static final long serialVersionUID = 0L;
     if (extentionFileds_ != null) {
       output.writeMessage(5, getExtentionFileds());
     }
+    if (!getBaggageENBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, baggageEN_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -346,6 +386,9 @@ private static final long serialVersionUID = 0L;
     if (extentionFileds_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getExtentionFileds());
+    }
+    if (!getBaggageENBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, baggageEN_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -376,6 +419,8 @@ private static final long serialVersionUID = 0L;
       result = result && getExtentionFileds()
           .equals(other.getExtentionFileds());
     }
+    result = result && getBaggageEN()
+        .equals(other.getBaggageEN());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -401,6 +446,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EXTENTIONFILEDS_FIELD_NUMBER;
       hash = (53 * hash) + getExtentionFileds().hashCode();
     }
+    hash = (37 * hash) + BAGGAGEEN_FIELD_NUMBER;
+    hash = (53 * hash) + getBaggageEN().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -553,6 +600,8 @@ private static final long serialVersionUID = 0L;
         extentionFileds_ = null;
         extentionFiledsBuilder_ = null;
       }
+      baggageEN_ = "";
+
       return this;
     }
 
@@ -598,6 +647,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.extentionFileds_ = extentionFiledsBuilder_.build();
       }
+      result.baggageEN_ = baggageEN_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -687,6 +737,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasExtentionFileds()) {
         mergeExtentionFileds(other.getExtentionFileds());
+      }
+      if (!other.getBaggageEN().isEmpty()) {
+        baggageEN_ = other.baggageEN_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1169,20 +1223,12 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType, com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsTypeOrBuilder> extentionFiledsBuilder_;
     /**
-     * <pre>
-     * int32 Type = 6 ; 迁移到BaggageInfoType中
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
      */
     public boolean hasExtentionFileds() {
       return extentionFiledsBuilder_ != null || extentionFileds_ != null;
     }
     /**
-     * <pre>
-     * int32 Type = 6 ; 迁移到BaggageInfoType中
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
      */
     public com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType getExtentionFileds() {
@@ -1193,10 +1239,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * int32 Type = 6 ; 迁移到BaggageInfoType中
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
      */
     public Builder setExtentionFileds(com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType value) {
@@ -1213,10 +1255,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * int32 Type = 6 ; 迁移到BaggageInfoType中
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
      */
     public Builder setExtentionFileds(
@@ -1231,10 +1269,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * int32 Type = 6 ; 迁移到BaggageInfoType中
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
      */
     public Builder mergeExtentionFileds(com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType value) {
@@ -1253,10 +1287,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * int32 Type = 6 ; 迁移到BaggageInfoType中
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
      */
     public Builder clearExtentionFileds() {
@@ -1271,10 +1301,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * int32 Type = 6 ; 迁移到BaggageInfoType中
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
      */
     public com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType.Builder getExtentionFiledsBuilder() {
@@ -1283,10 +1309,6 @@ private static final long serialVersionUID = 0L;
       return getExtentionFiledsFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * int32 Type = 6 ; 迁移到BaggageInfoType中
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
      */
     public com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsTypeOrBuilder getExtentionFiledsOrBuilder() {
@@ -1298,10 +1320,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * int32 Type = 6 ; 迁移到BaggageInfoType中
-     * </pre>
-     *
      * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.BaggageExtensionFiledsType ExtentionFileds = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1316,6 +1334,95 @@ private static final long serialVersionUID = 0L;
         extentionFileds_ = null;
       }
       return extentionFiledsBuilder_;
+    }
+
+    private java.lang.Object baggageEN_ = "";
+    /**
+     * <pre>
+     * int32 Type = 6 ; 迁移到BaggageInfoType中
+     * </pre>
+     *
+     * <code>string BaggageEN = 6;</code>
+     */
+    public java.lang.String getBaggageEN() {
+      java.lang.Object ref = baggageEN_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        baggageEN_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * int32 Type = 6 ; 迁移到BaggageInfoType中
+     * </pre>
+     *
+     * <code>string BaggageEN = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBaggageENBytes() {
+      java.lang.Object ref = baggageEN_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        baggageEN_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * int32 Type = 6 ; 迁移到BaggageInfoType中
+     * </pre>
+     *
+     * <code>string BaggageEN = 6;</code>
+     */
+    public Builder setBaggageEN(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      baggageEN_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * int32 Type = 6 ; 迁移到BaggageInfoType中
+     * </pre>
+     *
+     * <code>string BaggageEN = 6;</code>
+     */
+    public Builder clearBaggageEN() {
+      
+      baggageEN_ = getDefaultInstance().getBaggageEN();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * int32 Type = 6 ; 迁移到BaggageInfoType中
+     * </pre>
+     *
+     * <code>string BaggageEN = 6;</code>
+     */
+    public Builder setBaggageENBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      baggageEN_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

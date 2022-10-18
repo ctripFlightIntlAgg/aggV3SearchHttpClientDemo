@@ -168,4 +168,37 @@ public interface FlightProductGroupTypeOrBuilder extends
    * <code>int32 ChoicenessTag = 12;</code>
    */
   int getChoicenessTag();
+
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 13;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> 
+      getExtendFieldsList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 13;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtendFields(int index);
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 13;</code>
+   */
+  int getExtendFieldsCount();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 13;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+      getExtendFieldsOrBuilderList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 13;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtendFieldsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 值越小优先级越高
+   * </pre>
+   *
+   * <code>double Priority = 14;</code>
+   */
+  double getPriority();
 }

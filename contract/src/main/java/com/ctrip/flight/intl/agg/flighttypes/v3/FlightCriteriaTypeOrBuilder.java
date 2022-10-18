@@ -47,15 +47,6 @@ public interface FlightCriteriaTypeOrBuilder extends
       getOperatingFlightNoBytes();
 
   /**
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClass = 5;</code>
-   */
-  int getCabinClassValue();
-  /**
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClass = 5;</code>
-   */
-  com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType getCabinClass();
-
-  /**
    * <code>string SeatClass = 6;</code>
    */
   java.lang.String getSeatClass();
@@ -94,4 +85,46 @@ public interface FlightCriteriaTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDepartureDateBytes();
+
+  /**
+   * <pre>
+   * 新的舱等字段，跟总舱等保持一致的list形式
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType> getCabinClassesList();
+  /**
+   * <pre>
+   * 新的舱等字段，跟总舱等保持一致的list形式
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+   */
+  int getCabinClassesCount();
+  /**
+   * <pre>
+   * 新的舱等字段，跟总舱等保持一致的list形式
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType getCabinClasses(int index);
+  /**
+   * <pre>
+   * 新的舱等字段，跟总舱等保持一致的list形式
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+   */
+  java.util.List<java.lang.Integer>
+  getCabinClassesValueList();
+  /**
+   * <pre>
+   * 新的舱等字段，跟总舱等保持一致的list形式
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+   */
+  int getCabinClassesValue(int index);
 }

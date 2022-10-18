@@ -4,24 +4,22 @@ option java_package = "com.ctrip.flight.intl.agg.flighttypes.v3";
 option java_multiple_files = true;
 
 //变化 修改枚举值
-enum CabinClassType
-{
+enum CabinClassType {
     //Economy
-	Y = 0;
-	//Premium
-	W = 1;
-	//Business
-	C = 2;
-	//First
-	F = 3;
+    Y = 0;
+    //Premium
+    W = 1;
+    //Business
+    C = 2;
+    //First
+    F = 3;
 }
 
-message OrigDestRequestType
-{
+message OrigDestRequestType {
     // 客户端需要指定日期格式
-	string Date = 1 ;
-	string ORIG = 2 ;
-	string DEST = 3 ;
+    string Date = 1;
+    string ORIG = 2;
+    string DEST = 3;
 }
 
 message TravelerRequestType {
@@ -31,275 +29,288 @@ message TravelerRequestType {
     string Nationality = 3;
 }
 
-message AgencyType
-{
-	int32 AgencyID = 1 ;
-	string AgencyCode = 2 ;
-	int32 CityID = 3 ;
-	string CityCode = 4 ;
-	string AgencyName = 5 ;
-	// string OfficialName = 6 ;   // 变化 和具体的价格有关系，迁移到PriceInfo
+message AgencyType {
+    int32 AgencyID = 1;
+    string AgencyCode = 2;
+    int32 CityID = 3;
+    string CityCode = 4;
+    string AgencyName = 5;
+    // string OfficialName = 6 ;   // 变化 和具体的价格有关系，迁移到PriceInfo
 }
 
-message AirlineInfoType
-{
-	string AirlineCode = 1 ;
-	string AirlineName = 2 ;
-	string Alliance = 3 ;
-	bool IsLcc = 4 ;
+message AirlineInfoType {
+    string AirlineCode = 1;
+    string AirlineName = 2;
+    string Alliance = 3;
+    bool IsLcc = 4;
+    string AirlineNameGLB = 5;
 }
 
-message AirportInfoType
-{
-	// string Terminal = 1 ; 变化 航站楼和具体航班有关系，迁移到FlightType
-	string PortCode = 1 ;
-	string PortName = 2 ;
-	string PortNameGLB = 3 ;
+message AirportInfoType {
+    // string Terminal = 1 ; 变化 航站楼和具体航班有关系，迁移到FlightType
+    string PortCode = 1;
+    string PortName = 2;
+    string PortNameGLB = 3;
 }
 
-message BaggageDetailType
-{
-	int32 Amount = 1 ;
-	string Unit = 2 ;
-	string Type = 3 ;
+message BaggageDetailType {
+    int32 Amount = 1;
+    string Unit = 2;
+    string Type = 3;
 }
 
-message BaggageExtensionFiledsType
-{
-	bool ContainFreeBaggage = 1 ;
+message BaggageExtensionFiledsType {
+    bool ContainFreeBaggage = 1;
 }
 
-message BaggageSizeType
-{
+message BaggageSizeType {
     /*
     尺寸大小，格式：180CM 或者 10*12*14CM
     */
-	string Size = 1 ;
-	/*
-	尺寸限制类型。1：三边之和；2：长*宽*高
-	*/
-	int32 SizeLimitType = 2 ;
+    string Size = 1;
+    /*
+    尺寸限制类型。1：三边之和；2：长*宽*高
+    */
+    int32 SizeLimitType = 2;
 }
 
-message CityInfoType
-{
-	int32 CityID = 1 ;
-	string CityCode = 2 ;
-	string CityName = 3 ;
-	string CityNameGLB = 4 ;
-	int32 ProvinceID = 5 ;
-	int32 CountryID = 6 ;
-	string CountryName = 7 ;
-	string CountryNameGLB = 8 ;
-	bool IsDomestic = 9 ;
+message CityInfoType {
+    int32 CityID = 1;
+    string CityCode = 2;
+    string CityName = 3;
+    string CityNameGLB = 4;
+    int32 ProvinceID = 5;
+    int32 CountryID = 6;
+    string CountryName = 7;
+    string CountryNameGLB = 8;
+    bool IsDomestic = 9;
 }
 
-message FareInfoType
-{
-	string FareID = 1 ;
-	string FareBasis = 2 ;
-	int32 FareSource = 3 ;
-	string OwnerCarrier = 4 ;
-	int32 FareType = 5 ;
-	string AccountCode = 6 ;
-	string TicketDesignator = 7 ;
-	string TourCode = 8 ;
+message FareInfoType {
+    string FareID = 1;
+    string FareBasis = 2;
+    int32 FareSource = 3;
+    string OwnerCarrier = 4;
+    int32 FareType = 5;
+    string AccountCode = 6;
+    string TicketDesignator = 7;
+    string TourCode = 8;
+    string Eligibility = 9;
+    // 运价区域
+    int32 TariffNo = 10;
+    // 运价规则
+    string FareRule = 11;
+    // 运价FTC
+    string FareTypeCode = 12;
+    string FareClass = 13;
 }
 
-message FareType
-{
-	int32 FCSequence = 1 ;
-	FareInfoType FareInfo = 2 ;
+message FareType {
+    int32 FCSequence = 1;
+    FareInfoType FareInfo = 2;
+    repeated com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;
+    int32 PUSequence = 4;
 }
 
-message FlightSegmentType
-{
-	int32 ProductDetailIndex = 1 ;
-	int32 FCSequence = 2 ;
-	string SeatClass = 3 ;
-	CabinClassType CabinClass = 4; //变化 输出客户端时改为输出简称：Y, W, F, C 其中W是超级经济舱
-	int32 SeatSource = 5 ;
-	int32 SeatCount = 6 ;
-	string BookingToken = 7 ;
-	int64 StockID = 8 ;
+message FlightSegmentType {
+    int32 ProductDetailIndex = 1;
+    int32 FCSequence = 2;
+    string SeatClass = 3;
+    CabinClassType CabinClass = 4; //变化 输出客户端时改为输出简称：Y, W, F, C 其中W是超级经济舱
+    int32 SeatSource = 5;
+    int32 SeatCount = 6;
+    string BookingToken = 7;
+    int64 StockID = 8;
+    int32 PUSequence = 9;
 }
 
-message KeyValuePairType
-{
-	string Key = 1 ;
-	string Value = 2 ;
+message KeyValuePairType {
+    string Key = 1;
+    string Value = 2;
 }
 
-message PassengerRestrictionType
-{
-	int32 MinPassengerCount = 1 ;
-	int32 MaxPassengerCount = 2 ;
-	string NationalityInclude = 3 ;
-	string NationalityExclude = 4 ;
-	int32 MaxAgeLimitition = 5 ;
-	int32 MinAgeLimitition = 6 ;
+message PassengerRestrictionType {
+    int32 MinPassengerCount = 1;
+    int32 MaxPassengerCount = 2;
+    string NationalityInclude = 3;
+    string NationalityExclude = 4;
+    int32 MaxAgeLimitition = 5;
+    int32 MinAgeLimitition = 6;
 }
 
-message PenaltyRemarkType
-{
-	int32 SegmentNo = 1 ;
-	string NonRefund = 2 ;
-	string NonReroute = 3 ;
-	string RefundRemarkID = 4 ;
-	string RerouteRemarkID = 5 ;
-	string NoShowRemarkID = 6 ;
-	string RemarkID = 7 ;
+message PenaltyRemarkType {
+    int32 SegmentNo = 1;
+    string NonRefund = 2;
+    string NonReroute = 3;
+    string RefundRemarkID = 4;
+    string RerouteRemarkID = 5;
+    string NoShowRemarkID = 6;
+    string RemarkID = 7;
 }
 
-message PicType
-{
-	string PicSmall = 1 ;
-	string PicLarge = 2 ;
-	string Title = 3 ;
-	string Desc = 4 ;
+message PicType {
+    string PicSmall = 1;
+    string PicLarge = 2;
+    string Title = 3;
+    string Desc = 4;
 }
 
-message PriceDetailType
-{
-	string Currency = 1 ;   //变化 使用CNY表示人民币币种
-	double SalePrice = 2 ;
-	double Tax = 3 ;
-	double PublishPrice = 4 ;
-	double AccountPrice = 5 ;
-	double NetPrice = 6 ;
+message PriceDetailType {
+    string Currency = 1; //变化 使用CNY表示人民币币种
+    double SalePrice = 2;
+    double Tax = 3;
+    double PublishPrice = 4;
+    double AccountPrice = 5;
+    double NetPrice = 6;
+    int32 SalePricePayee = 7; // SalePrice收款方
+    int32 TaxPayee = 8; // Tax收款方
+    repeated ServiceFeeType ServiceFee= 9; // 服务费明细列表
 }
 
-message StopType
-{
-	string Airport = 1 ;
-	int32 Duration = 2 ;
-	string ArrivalDateTime = 3 ;
+message StopType {
+    string Airport = 1;
+    int32 Duration = 2;
+    string ArrivalDateTime = 3;
 }
 
-message TextRemarkType
-{
-	string RemarkID = 1 ;
-	string TextCN = 2 ;
-	string TextGLB = 3 ;
+message TextRemarkType {
+    string RemarkID = 1;
+    string TextCN = 2;
+    string TextGLB = 3;
+    string TextEN = 4;
 }
 
-message TicketingTimeLimitType
-{
-	/*
-	出票保护时限类型，0:订单生成出票单后,1:航班起飞时间前
-	*/
-	int32 TimeLimitType = 1 ;
-	int32 LimitTime = 2 ;
-	double AverageTicketingTime = 3 ;
+message TicketingTimeLimitType {
+    /*
+    出票保护时限类型，0:订单生成出票单后,1:航班起飞时间前
+    */
+    int32 TimeLimitType = 1;
+    int32 LimitTime = 2;
+    double AverageTicketingTime = 3;
 }
 
-message VirtualFlightRemarkType
-{
-	int32 SegmentNo = 1 ;
-	int32 SequenceNo = 2 ;
-	string CheckInRemarkID = 3 ;
-	string PreTransRemarkID = 4 ;
-	string NextTransRemarkID = 5 ;
+message VirtualFlightRemarkType {
+    int32 SegmentNo = 1;
+    int32 SequenceNo = 2;
+    string CheckInRemarkID = 3;
+    string PreTransRemarkID = 4;
+    string NextTransRemarkID = 5;
 }
 
-message BaggageInfoType
-{
-	string BaggageID = 1 ;
-	BaggageSizeType BaggageSize = 2 ;
-	/*
-	0=托运、1=手提、2=打包
-	*/
-	int32 Type = 3 ; // 从BaggageType迁移过来
-	double SalePrice = 4; // 行李额价格
-	string Token = 5; // 反查Token
+message BaggageInfoType {
+    string BaggageID = 1;
+    BaggageSizeType BaggageSize = 2;
+    /*
+    0=托运、1=手提、2=打包
+    */
+    int32 Type = 3; // 从BaggageType迁移过来
+    double SalePrice = 4; // 行李额价格
+    string Token = 5; // 反查Token
 }
 
-message BaggageType
-{
-	string BaggageID = 1 ;
-	string BaggageCN = 2 ;
-	string BaggageGLB = 3 ;
-	repeated BaggageDetailType BaggageDetail = 4 ;
-	BaggageExtensionFiledsType ExtentionFileds = 5 ;
-	// int32 Type = 6 ; 迁移到BaggageInfoType中
+message BaggageType {
+    string BaggageID = 1;
+    string BaggageCN = 2;
+    string BaggageGLB = 3;
+    repeated BaggageDetailType BaggageDetail = 4;
+    BaggageExtensionFiledsType ExtentionFileds = 5;
+    string BaggageEN = 6;
+    // int32 Type = 6 ; 迁移到BaggageInfoType中
 }
 
-message PriceUnitType
-{
-	repeated FareType Fare = 1 ;
-	string CarrierTicketingDeadline = 2 ;
-	// string QTECmdPostfix = 3 ; 迁移到PriceInfo
-	bool NeedQTE = 3 ;
-	bool NeedPnr = 4 ;
-	int32 TextRemarkId = 5 ;
-	// string XSFSICmd = 7 ; 迁移到PriceInfo
+message PriceUnitType {
+    repeated FareType Fare = 1;
+    string CarrierTicketingDeadline = 2;
+    // string QTECmdPostfix = 3 ; 迁移到PriceInfo
+    bool NeedQTE = 3;
+    bool NeedPnr = 4;
+    int32 TextRemarkId = 5;
+    // string XSFSICmd = 7 ; 迁移到PriceInfo
 }
 
-message BaggageRefType
-{
-	int32 SegmentNo = 1 ;
-	AgeType AgeType = 2 ;
-	int32 ProductDetailIndex = 3 ;
-	repeated BaggageInfoType Baggage = 4 ;
+message BaggageRefType {
+    int32 SegmentNo = 1;
+    AgeType AgeType = 2;
+    int32 ProductDetailIndex = 3;
+    repeated BaggageInfoType Baggage = 4;
 }
 
-message FlightType
-{
-	string FlightID = 1 ;
-	string MarketingCarrierCode = 2 ; //变化 AirlineInfoType
-	string FlightNo = 3 ;
-	string OperatingCarrierCode = 4 ; //变化 AirlineInfoType
-	string OperatingFlightNo = 5 ;
-	string DepartureCityCode = 6 ; //变化 string CityInfoType
-	string ArrivalCityCode = 7 ; //变化 string CityInfoType
-	string DepartureAirportCode = 8 ; //变化 AirportInfoType
-	string ArrivalAirportCode = 9 ; //变化 AirportInfoType
-	string DepartureTerminal = 10 ; // 变化 从AirportInfoType迁移过来
-	string ArrivalTerminal = 11 ; // 变化 从AirportInfoType迁移过来
-	string TakeoffDateTime = 12 ;
-	string ArrivalDateTime = 13 ;
-	string EquipmentCode = 14 ;
-	repeated StopType Stop = 15 ;
-	int32 Duration = 16 ;
-	int32 ArrivalDays = 17 ;
-	repeated KeyValuePairType Tag = 18 ;
-	/*
-	交通工具类型：0-飞机，1-火车，2-汽车，3-水上飞机
-	*/
-	int32 TransportType = 19 ;
-	string Supplier = 20;//虚拟航班供应商
+message FlightType {
+    string FlightID = 1;
+    string MarketingCarrierCode = 2; //变化 AirlineInfoType
+    string FlightNo = 3;
+    string OperatingCarrierCode = 4; //变化 AirlineInfoType
+    string OperatingFlightNo = 5;
+    string DepartureCityCode = 6; //变化 string CityInfoType
+    string ArrivalCityCode = 7; //变化 string CityInfoType
+    string DepartureAirportCode = 8; //变化 AirportInfoType
+    string ArrivalAirportCode = 9; //变化 AirportInfoType
+    string DepartureTerminal = 10; // 变化 从AirportInfoType迁移过来
+    string ArrivalTerminal = 11; // 变化 从AirportInfoType迁移过来
+    string TakeoffDateTime = 12;
+    string ArrivalDateTime = 13;
+    string EquipmentCode = 14;
+    repeated StopType Stop = 15;
+    int32 Duration = 16;
+    int32 ArrivalDays = 17;
+    repeated KeyValuePairType Tag = 18;
+    /*
+    交通工具类型：0-飞机，1-火车，2-汽车，3-水上飞机
+    */
+    int32 TransportType = 19;
+    string Supplier = 20; //虚拟航班供应商
+    repeated KeyValuePairType ExtendFields = 21; //ExtendFields
 }
 
-message PriceInfoType
-{
-    string TravelerEligibility = 1 ; //变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
-	string OfficialName = 3; //变化 原有agency节点下PriceInfo相关的字段迁移到这里，只有供应商名称，iata号码的信息放在IATANumber节点中
-	string TicketRemark = 4 ;
-	TicketingTimeLimitType TicketingTimeLimit = 5 ;
-	PassengerRestrictionType PassengerRestriction = 6 ;
-	PriceDetailType PriceDetail = 7 ;
-	PriceDetailType OriginalPriceDetail = 8 ;
-	string Expression = 9 ;
-	double Exchange = 10 ;
-	string OfficeNo = 11 ;
-	repeated KeyValuePairType Tag = 12 ;
-	//int32 CommitionSource = 12 ;  //只有needdetail吐出，放在tag中
-	double DiscountPrice = 13 ;
-	int32 TextRemarkId = 14 ;
-	string IATANumber = 15;
-	string QTECmdPostfix = 16 ; // 新增，从PriceUnit迁移过来
-	string XSFSICmd = 17 ; // 新增，从PriceUnit迁移过来
-	com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 18;
-	int32 AgencyID = 19;  // 通过id关联AgencyType
+message PriceInfoType {
+    string TravelerEligibility = 1; //变化 把ProductDetail.TravelerEligibility迁移到PriceInfo下，并使用底层返回的原始值
+    string OfficialName = 3; //变化 原有agency节点下PriceInfo相关的字段迁移到这里，只有供应商名称，iata号码的信息放在IATANumber节点中
+    string TicketRemark = 4;
+    TicketingTimeLimitType TicketingTimeLimit = 5;
+    PassengerRestrictionType PassengerRestriction = 6;
+    PriceDetailType PriceDetail = 7;
+    PriceDetailType OriginalPriceDetail = 8;
+    string Expression = 9;
+    double Exchange = 10;
+    string OfficeNo = 11;
+    repeated KeyValuePairType Tag = 12;
+    //int32 CommitionSource = 12 ;  //只有needdetail吐出，放在tag中
+    double DiscountPrice = 13;
+    int32 TextRemarkId = 14;
+    string IATANumber = 15;
+    string QTECmdPostfix = 16; // 新增，从PriceUnit迁移过来
+    string XSFSICmd = 17; // 新增，从PriceUnit迁移过来
+    com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 18;
+    int32 AgencyID = 19; // 通过id关联AgencyType
+    repeated KeyValuePairType ExtendFields = 20;
+
+    repeated RebateInfoType RebateInfo = 21;  // 后返类型
+
+    // 卡费费用
+    repeated CreditCardFeeType CreditCardFee = 22;
 }
 
-message ProductDetailType
-{
-	string BookingChannel = 1 ;
-	repeated PriceInfoType PriceInfo = 2 ;
-	string ValidatingCarrier = 3 ;
-	// string ValidatingCarrierName = 4 ; // 根据ValidatingCarrier从airline ref中取得，删除
-	/*
+message RebateInfoType {
+    string Type = 1;
+    double Amount = 2;
+    string Currency = 3;
+    repeated int64 rebatePolicyIDs = 4;
+    double ActualAmount = 5;
+}
+
+message CreditCardFeeType {
+    // 卡组织
+    string CreditCardType = 1;
+    // 销售币种加价
+    double Amount = 2;
+}
+
+message ProductDetailType {
+    string BookingChannel = 1;
+    repeated PriceInfoType PriceInfo = 2;
+    string ValidatingCarrier = 3;
+    // string ValidatingCarrierName = 4 ; // 根据ValidatingCarrier从airline ref中取得，删除
+    /*
     None = 0;
     Exclusive = 1;
     Cloud = 2;
@@ -307,77 +318,142 @@ message ProductDetailType
     LowestPrice = 8;
     FlagShipStore = 16;
     */
-	int32 ProductCategory = 5; //变化 枚举改为int
-	/*
-	None = 0;
-	Platforms = 1;
-	PlatformsPrivate = 2;
-	OverseasPrivate = 3;
-	Overseas = 4;
-	Owner = 5;
-	Pseat = 6;
-	RTSeat = 7;
-	CSD = 8;
-	CSDPrivate = 9;
-	Airline = 10;
-	LowestPrice = 11;
-	KWPrivate = 12;
-	CSDPublish = 13;
-	OSeat = 14;
-	*/
-	int32 SubProductCategory = 6; //变化 枚举改为int
-	string InvoiceType = 7 ;
-	string PenaltiesKey = 8 ;
-	PriceUnitType PriceUnit = 10 ;
-	PenaltyRulesType PenaltyRules = 11 ; // 变化 从PriceType中移动过来
-	repeated KeyValuePairType Tag = 12 ;
+    int32 ProductCategory = 5; //变化 枚举改为int
+    /*
+    None = 0;
+    Platforms = 1;
+    PlatformsPrivate = 2;
+    OverseasPrivate = 3;
+    Overseas = 4;
+    Owner = 5;
+    Pseat = 6;
+    RTSeat = 7;
+    CSD = 8;
+    CSDPrivate = 9;
+    Airline = 10;
+    LowestPrice = 11;
+    KWPrivate = 12;
+    CSDPublish = 13;
+    OSeat = 14;
+    */
+    int32 SubProductCategory = 6; //变化 枚举改为int
+    string InvoiceType = 7;
+    string PenaltiesKey = 8;
+    PriceUnitType PriceUnit = 10;
+    PenaltyRulesType PenaltyRules = 11; // 变化 从PriceType中移动过来
+    repeated KeyValuePairType Tag = 12;
+    int32 CacheInfoID = 13;
+    RestrictionType Restriction = 14; // 限制
+    repeated KeyValuePairType ExtendFields = 15; //ExtendFields
+    int32 NoIdentityCardInd = 16; // 无证件标识 0:不支持无证件 1:支持无证件
+    string AgencyLicenseUrl = 17; // 供应商资质信息
 }
 
-message PenaltyRulesType
-{
-	bool IsReplaceCtripRule = 1 ;
-	repeated PenaltyRemarkType PenaltyRemark = 2 ;   // 五个直连引擎还吐出PenaltyRules：CS-WS/JS-WS/IJ-WS/GSD-WS/G5D-WS
+message PenaltyRulesType {
+    bool IsReplaceCtripRule = 1;
+    repeated PenaltyRemarkType PenaltyRemark = 2; // 五个直连引擎还吐出PenaltyRules：CS-WS/JS-WS/IJ-WS/GSD-WS/G5D-WS
 }
 
-message FlightCriteriaType
-{
-	int32 OrigDestSeqNo = 1; // 用户程标识，例：1-去程，2-回程
-	string FlightNo = 2;
-	string OperatingCarrier = 3;
-	string OperatingFlightNo = 4;
-	CabinClassType CabinClass = 5;
-	string SeatClass = 6;
-	string DepartureAirport = 7;
-	string ArrivalAirport = 8;
-	string DepartureDate = 9;
+message FlightCriteriaType {
+    int32 OrigDestSeqNo = 1; // 用户程标识，例：1-去程，2-回程
+    string FlightNo = 2;
+    string OperatingCarrier = 3;
+    string OperatingFlightNo = 4;
+    string SeatClass = 6;
+    string DepartureAirport = 7;
+    string ArrivalAirport = 8;
+    string DepartureDate = 9;
+    repeated CabinClassType CabinClasses = 10; // 新的舱等字段，跟总舱等保持一致的list形式
 }
 
-message OrigDestRequestOptionType
-{
-	TransferOptionType TransferOption = 1; // 中转参数，不填表示不限制
-	repeated CabinClassType CabinClass = 2; // 舱等
-	IntRange DepartureTimeRange = 3; // 只支持小时范围(0到24)，如3-5，表示第一程出发时间在3:00-5:00;不填则不限出发时间
-	IntRange ArrivalTimeRange = 4; // 只支持小时范围(0到24)，如3-5，表示最后一程到达时间在3:00-5:00; 不填则不限到达时间
-	string Carrier = 5; // 指定用户程的航司（默认MC/OC）
-	repeated string FlightNo = 6; // 指定用户程包含的航班号(默认MC/OC)
+message OrigDestRequestOptionType {
+    TransferOptionType TransferOption = 1; // 中转参数，不填表示不限制
+    repeated CabinClassType CabinClass = 2; // 舱等
+    IntRange DepartureTimeRange = 3; // 只支持小时范围(0到24)，如3-5，表示第一程出发时间在3:00-5:00;不填则不限出发时间
+    IntRange ArrivalTimeRange = 4; // 只支持小时范围(0到24)，如3-5，表示最后一程到达时间在3:00-5:00; 不填则不限到达时间
+    string Carrier = 5; // 指定用户程的航司（默认MC/OC）
+    repeated string FlightNo = 6; // 指定用户程包含的航班号(默认MC/OC)
 }
 
-message TransferOptionType
-{
-	int32 TransferType = 1; // 0:不限制  1：直飞  2：中转
-	repeated string TransferCity = 2; //表示行程包含这个中转点；不填表示中转点不限
-	IntRange TransferTimeRange = 3; // 只支持一个中转时长范围,如a-b，表示中转时长在[a,b]分钟内；不填表示时长不限
+message TransferOptionType {
+    int32 TransferType = 1; // 0:不限制  1：直飞  2：中转
+    repeated string TransferCity = 2; //表示行程包含这个中转点；不填表示中转点不限
+    IntRange TransferTimeRange = 3; // 只支持一个中转时长范围,如a-b，表示中转时长在[a,b]分钟内；不填表示时长不限
 }
 
-message IntRange
-{
-	int32 Start = 1;
-	int32 End = 2;
+message IntRange {
+    int32 Start = 1;
+    int32 End = 2;
 }
 
-enum AgeType
-{
-	ADT = 0; // 成人
-	CHD = 1; // 儿童
-	INF = 2; // 婴儿
+message CacheInfoType{
+    int32 CacheInfoID = 1;
+    int32 AgeInMillisecond = 2;
+    string traceId = 3;
+}
+
+enum AgeType {
+    ADT = 0; // 成人
+    CHD = 1; // 儿童
+    INF = 2; // 婴儿
+}
+
+message RestrictionType{
+    repeated string LanguageOfGovernmentIssuedPhotoId = 1; // 使用本地证件预订票的语言
+    PaymentAgencyModelInfoType PaymentAgencyModelInfo = 2; // 限制客人使用自身信用卡支付的信息
+    IntRangeType PassengerCountRange = 3; // 票维度的人数范围限制(婴儿不算人头)
+}
+
+message PaymentAgencyModelInfoType {
+    repeated int32 CreditCardPaymentInfoID = 1; // 信用卡支付的信息索引
+    repeated PaymentDiscountRefType PaymentDiscountRef = 2; // 支付卡让利信息
+}
+
+message PaymentDiscountRefType {
+    repeated int32 PaymentDiscountID = 1; // 折扣索引列表
+    string PaymentWay = 2; // 支付卡类型
+}
+
+message PaymentDiscountType {
+    int32 PaymentDiscountID = 1; // id
+    double DiscountTotalFee = 2; // 让利总费用=所有乘客让利之和
+    string Currency = 3; // 币种
+    int32 DiscountSettle = 4; // 让利支付方式
+    string BankCode = 5; // 发卡行(空表示不限)
+    string CardLevel = 6; // 让利卡等级(空表示不限)
+    repeated DiscountDetailType DiscountDetail = 7; // 让利明细
+}
+
+message DiscountDetailType {
+    string DiscountType = 1; // 让利类型（自定义）
+    double DiscountFee = 2; // 让利费用
+}
+
+message CreditCardPaymentInfoType {
+    int32 RefNum = 1; // 索引号
+    string CreditCardType = 2; // 可用的信用卡组织
+    ObFeeType AdultFee = 3; // 成人卡费
+    ObFeeType ChildFee = 4; // 儿童卡费
+    ObFeeType InfantFee = 5; // 婴儿卡费
+}
+
+message ObFeeType {
+    int32 Payee = 1; // ObFee收款方
+    double MinAmount = 2; // 最小费用
+    double MaxAmount = 3; // 最大费用
+    string Currency = 4; // 对应币种
+}
+
+message ServiceFeeType {
+    int32 Category = 1; // 服务费种类 1.携程订位服务费
+    int32 Payee = 2; // 服务费收款方
+    double Amount = 3; // 金额值
+}
+
+// 整数范围类型
+message IntRangeType {
+    // 下限，Integer.MIN_VALUE表示不限
+    int32 Min = 1;
+    // 上限，Integer.MAX_VALUE表示不限
+    int32 Max = 2;
 }

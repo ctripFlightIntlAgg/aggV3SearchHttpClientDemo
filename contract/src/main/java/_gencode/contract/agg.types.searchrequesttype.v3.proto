@@ -20,6 +20,7 @@ message SearchCriteriaType {
     repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionOption = 6;
     string Currency = 7; // 币种
     AdvancedOptionType AdvancedOption = 8; // 高级搜索参数
+    string Language = 9; // 语种(Locale格式)
 }
 
 message SearchContextType {
@@ -52,7 +53,6 @@ message AdvancedOptionType
 {
     repeated com.ctrip.flight.intl.agg.flighttypes.v3.FlightCriteriaType FlightCriteria = 1; // 指定查询结果中的航组信息
     int32 ClientType = 2; // 标识查询调用方
-    int32 CabinClassOption = 3; // 指定航班中的舱等匹配选项：0-默认；1-全航段严格匹配；2-允许降舱匹配；3-允许升舱匹配
     repeated string BookingChannel = 4;
     repeated string AgentCode = 5;
     repeated string ExcludeAgentCode = 6; // 和上述AgentCode互斥

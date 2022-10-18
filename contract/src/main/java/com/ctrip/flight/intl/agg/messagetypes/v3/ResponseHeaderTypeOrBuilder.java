@@ -44,4 +44,13 @@ public interface ResponseHeaderTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDiagOutputBytes();
+
+  /**
+   * <pre>
+   * 无结果code, 等于0无意义
+   * </pre>
+   *
+   * <code>int32 NoResultCode = 5;</code>
+   */
+  int getNoResultCode();
 }

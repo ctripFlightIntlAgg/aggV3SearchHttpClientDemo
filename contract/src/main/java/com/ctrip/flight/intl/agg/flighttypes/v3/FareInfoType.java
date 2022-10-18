@@ -24,6 +24,11 @@ private static final long serialVersionUID = 0L;
     accountCode_ = "";
     ticketDesignator_ = "";
     tourCode_ = "";
+    eligibility_ = "";
+    tariffNo_ = 0;
+    fareRule_ = "";
+    fareTypeCode_ = "";
+    fareClass_ = "";
   }
 
   @java.lang.Override
@@ -94,6 +99,35 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             tourCode_ = s;
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            eligibility_ = s;
+            break;
+          }
+          case 80: {
+
+            tariffNo_ = input.readInt32();
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            fareRule_ = s;
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            fareTypeCode_ = s;
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            fareClass_ = s;
             break;
           }
           default: {
@@ -350,6 +384,171 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ELIGIBILITY_FIELD_NUMBER = 9;
+  private volatile java.lang.Object eligibility_;
+  /**
+   * <code>string Eligibility = 9;</code>
+   */
+  public java.lang.String getEligibility() {
+    java.lang.Object ref = eligibility_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      eligibility_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string Eligibility = 9;</code>
+   */
+  public com.google.protobuf.ByteString
+      getEligibilityBytes() {
+    java.lang.Object ref = eligibility_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      eligibility_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TARIFFNO_FIELD_NUMBER = 10;
+  private int tariffNo_;
+  /**
+   * <pre>
+   * 运价区域
+   * </pre>
+   *
+   * <code>int32 TariffNo = 10;</code>
+   */
+  public int getTariffNo() {
+    return tariffNo_;
+  }
+
+  public static final int FARERULE_FIELD_NUMBER = 11;
+  private volatile java.lang.Object fareRule_;
+  /**
+   * <pre>
+   * 运价规则
+   * </pre>
+   *
+   * <code>string FareRule = 11;</code>
+   */
+  public java.lang.String getFareRule() {
+    java.lang.Object ref = fareRule_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fareRule_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 运价规则
+   * </pre>
+   *
+   * <code>string FareRule = 11;</code>
+   */
+  public com.google.protobuf.ByteString
+      getFareRuleBytes() {
+    java.lang.Object ref = fareRule_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      fareRule_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FARETYPECODE_FIELD_NUMBER = 12;
+  private volatile java.lang.Object fareTypeCode_;
+  /**
+   * <pre>
+   * 运价FTC
+   * </pre>
+   *
+   * <code>string FareTypeCode = 12;</code>
+   */
+  public java.lang.String getFareTypeCode() {
+    java.lang.Object ref = fareTypeCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fareTypeCode_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 运价FTC
+   * </pre>
+   *
+   * <code>string FareTypeCode = 12;</code>
+   */
+  public com.google.protobuf.ByteString
+      getFareTypeCodeBytes() {
+    java.lang.Object ref = fareTypeCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      fareTypeCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FARECLASS_FIELD_NUMBER = 13;
+  private volatile java.lang.Object fareClass_;
+  /**
+   * <code>string FareClass = 13;</code>
+   */
+  public java.lang.String getFareClass() {
+    java.lang.Object ref = fareClass_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fareClass_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string FareClass = 13;</code>
+   */
+  public com.google.protobuf.ByteString
+      getFareClassBytes() {
+    java.lang.Object ref = fareClass_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      fareClass_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -388,6 +587,21 @@ private static final long serialVersionUID = 0L;
     if (!getTourCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tourCode_);
     }
+    if (!getEligibilityBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, eligibility_);
+    }
+    if (tariffNo_ != 0) {
+      output.writeInt32(10, tariffNo_);
+    }
+    if (!getFareRuleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, fareRule_);
+    }
+    if (!getFareTypeCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, fareTypeCode_);
+    }
+    if (!getFareClassBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, fareClass_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -423,6 +637,22 @@ private static final long serialVersionUID = 0L;
     if (!getTourCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, tourCode_);
     }
+    if (!getEligibilityBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, eligibility_);
+    }
+    if (tariffNo_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(10, tariffNo_);
+    }
+    if (!getFareRuleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, fareRule_);
+    }
+    if (!getFareTypeCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, fareTypeCode_);
+    }
+    if (!getFareClassBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, fareClass_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -455,6 +685,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTicketDesignator());
     result = result && getTourCode()
         .equals(other.getTourCode());
+    result = result && getEligibility()
+        .equals(other.getEligibility());
+    result = result && (getTariffNo()
+        == other.getTariffNo());
+    result = result && getFareRule()
+        .equals(other.getFareRule());
+    result = result && getFareTypeCode()
+        .equals(other.getFareTypeCode());
+    result = result && getFareClass()
+        .equals(other.getFareClass());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -482,6 +722,16 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTicketDesignator().hashCode();
     hash = (37 * hash) + TOURCODE_FIELD_NUMBER;
     hash = (53 * hash) + getTourCode().hashCode();
+    hash = (37 * hash) + ELIGIBILITY_FIELD_NUMBER;
+    hash = (53 * hash) + getEligibility().hashCode();
+    hash = (37 * hash) + TARIFFNO_FIELD_NUMBER;
+    hash = (53 * hash) + getTariffNo();
+    hash = (37 * hash) + FARERULE_FIELD_NUMBER;
+    hash = (53 * hash) + getFareRule().hashCode();
+    hash = (37 * hash) + FARETYPECODE_FIELD_NUMBER;
+    hash = (53 * hash) + getFareTypeCode().hashCode();
+    hash = (37 * hash) + FARECLASS_FIELD_NUMBER;
+    hash = (53 * hash) + getFareClass().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -631,6 +881,16 @@ private static final long serialVersionUID = 0L;
 
       tourCode_ = "";
 
+      eligibility_ = "";
+
+      tariffNo_ = 0;
+
+      fareRule_ = "";
+
+      fareTypeCode_ = "";
+
+      fareClass_ = "";
+
       return this;
     }
 
@@ -665,6 +925,11 @@ private static final long serialVersionUID = 0L;
       result.accountCode_ = accountCode_;
       result.ticketDesignator_ = ticketDesignator_;
       result.tourCode_ = tourCode_;
+      result.eligibility_ = eligibility_;
+      result.tariffNo_ = tariffNo_;
+      result.fareRule_ = fareRule_;
+      result.fareTypeCode_ = fareTypeCode_;
+      result.fareClass_ = fareClass_;
       onBuilt();
       return result;
     }
@@ -741,6 +1006,25 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getTourCode().isEmpty()) {
         tourCode_ = other.tourCode_;
+        onChanged();
+      }
+      if (!other.getEligibility().isEmpty()) {
+        eligibility_ = other.eligibility_;
+        onChanged();
+      }
+      if (other.getTariffNo() != 0) {
+        setTariffNo(other.getTariffNo());
+      }
+      if (!other.getFareRule().isEmpty()) {
+        fareRule_ = other.fareRule_;
+        onChanged();
+      }
+      if (!other.getFareTypeCode().isEmpty()) {
+        fareTypeCode_ = other.fareTypeCode_;
+        onChanged();
+      }
+      if (!other.getFareClass().isEmpty()) {
+        fareClass_ = other.fareClass_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1234,6 +1518,360 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       tourCode_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object eligibility_ = "";
+    /**
+     * <code>string Eligibility = 9;</code>
+     */
+    public java.lang.String getEligibility() {
+      java.lang.Object ref = eligibility_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        eligibility_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string Eligibility = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEligibilityBytes() {
+      java.lang.Object ref = eligibility_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        eligibility_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string Eligibility = 9;</code>
+     */
+    public Builder setEligibility(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      eligibility_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string Eligibility = 9;</code>
+     */
+    public Builder clearEligibility() {
+      
+      eligibility_ = getDefaultInstance().getEligibility();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string Eligibility = 9;</code>
+     */
+    public Builder setEligibilityBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      eligibility_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int tariffNo_ ;
+    /**
+     * <pre>
+     * 运价区域
+     * </pre>
+     *
+     * <code>int32 TariffNo = 10;</code>
+     */
+    public int getTariffNo() {
+      return tariffNo_;
+    }
+    /**
+     * <pre>
+     * 运价区域
+     * </pre>
+     *
+     * <code>int32 TariffNo = 10;</code>
+     */
+    public Builder setTariffNo(int value) {
+      
+      tariffNo_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 运价区域
+     * </pre>
+     *
+     * <code>int32 TariffNo = 10;</code>
+     */
+    public Builder clearTariffNo() {
+      
+      tariffNo_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object fareRule_ = "";
+    /**
+     * <pre>
+     * 运价规则
+     * </pre>
+     *
+     * <code>string FareRule = 11;</code>
+     */
+    public java.lang.String getFareRule() {
+      java.lang.Object ref = fareRule_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fareRule_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 运价规则
+     * </pre>
+     *
+     * <code>string FareRule = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFareRuleBytes() {
+      java.lang.Object ref = fareRule_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fareRule_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 运价规则
+     * </pre>
+     *
+     * <code>string FareRule = 11;</code>
+     */
+    public Builder setFareRule(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fareRule_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 运价规则
+     * </pre>
+     *
+     * <code>string FareRule = 11;</code>
+     */
+    public Builder clearFareRule() {
+      
+      fareRule_ = getDefaultInstance().getFareRule();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 运价规则
+     * </pre>
+     *
+     * <code>string FareRule = 11;</code>
+     */
+    public Builder setFareRuleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fareRule_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object fareTypeCode_ = "";
+    /**
+     * <pre>
+     * 运价FTC
+     * </pre>
+     *
+     * <code>string FareTypeCode = 12;</code>
+     */
+    public java.lang.String getFareTypeCode() {
+      java.lang.Object ref = fareTypeCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fareTypeCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 运价FTC
+     * </pre>
+     *
+     * <code>string FareTypeCode = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFareTypeCodeBytes() {
+      java.lang.Object ref = fareTypeCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fareTypeCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 运价FTC
+     * </pre>
+     *
+     * <code>string FareTypeCode = 12;</code>
+     */
+    public Builder setFareTypeCode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fareTypeCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 运价FTC
+     * </pre>
+     *
+     * <code>string FareTypeCode = 12;</code>
+     */
+    public Builder clearFareTypeCode() {
+      
+      fareTypeCode_ = getDefaultInstance().getFareTypeCode();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 运价FTC
+     * </pre>
+     *
+     * <code>string FareTypeCode = 12;</code>
+     */
+    public Builder setFareTypeCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fareTypeCode_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object fareClass_ = "";
+    /**
+     * <code>string FareClass = 13;</code>
+     */
+    public java.lang.String getFareClass() {
+      java.lang.Object ref = fareClass_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fareClass_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string FareClass = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFareClassBytes() {
+      java.lang.Object ref = fareClass_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fareClass_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string FareClass = 13;</code>
+     */
+    public Builder setFareClass(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fareClass_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string FareClass = 13;</code>
+     */
+    public Builder clearFareClass() {
+      
+      fareClass_ = getDefaultInstance().getFareClass();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string FareClass = 13;</code>
+     */
+    public Builder setFareClassBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fareClass_ = value;
       onChanged();
       return this;
     }

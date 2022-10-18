@@ -22,6 +22,9 @@ private static final long serialVersionUID = 0L;
     publishPrice_ = 0D;
     accountPrice_ = 0D;
     netPrice_ = 0D;
+    salePricePayee_ = 0;
+    taxPayee_ = 0;
+    serviceFee_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -79,6 +82,25 @@ private static final long serialVersionUID = 0L;
             netPrice_ = input.readDouble();
             break;
           }
+          case 56: {
+
+            salePricePayee_ = input.readInt32();
+            break;
+          }
+          case 64: {
+
+            taxPayee_ = input.readInt32();
+            break;
+          }
+          case 74: {
+            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              serviceFee_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType>();
+              mutable_bitField0_ |= 0x00000100;
+            }
+            serviceFee_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -94,6 +116,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        serviceFee_ = java.util.Collections.unmodifiableList(serviceFee_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -111,6 +136,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.intl.agg.flighttypes.v3.PriceDetailType.class, com.ctrip.flight.intl.agg.flighttypes.v3.PriceDetailType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CURRENCY_FIELD_NUMBER = 1;
   private volatile java.lang.Object currency_;
   /**
@@ -198,6 +224,87 @@ private static final long serialVersionUID = 0L;
     return netPrice_;
   }
 
+  public static final int SALEPRICEPAYEE_FIELD_NUMBER = 7;
+  private int salePricePayee_;
+  /**
+   * <pre>
+   * SalePrice收款方
+   * </pre>
+   *
+   * <code>int32 SalePricePayee = 7;</code>
+   */
+  public int getSalePricePayee() {
+    return salePricePayee_;
+  }
+
+  public static final int TAXPAYEE_FIELD_NUMBER = 8;
+  private int taxPayee_;
+  /**
+   * <pre>
+   * Tax收款方
+   * </pre>
+   *
+   * <code>int32 TaxPayee = 8;</code>
+   */
+  public int getTaxPayee() {
+    return taxPayee_;
+  }
+
+  public static final int SERVICEFEE_FIELD_NUMBER = 9;
+  private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType> serviceFee_;
+  /**
+   * <pre>
+   * 服务费明细列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType> getServiceFeeList() {
+    return serviceFee_;
+  }
+  /**
+   * <pre>
+   * 服务费明细列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeTypeOrBuilder> 
+      getServiceFeeOrBuilderList() {
+    return serviceFee_;
+  }
+  /**
+   * <pre>
+   * 服务费明细列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+   */
+  public int getServiceFeeCount() {
+    return serviceFee_.size();
+  }
+  /**
+   * <pre>
+   * 服务费明细列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType getServiceFee(int index) {
+    return serviceFee_.get(index);
+  }
+  /**
+   * <pre>
+   * 服务费明细列表
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeTypeOrBuilder getServiceFeeOrBuilder(
+      int index) {
+    return serviceFee_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -230,6 +337,15 @@ private static final long serialVersionUID = 0L;
     if (netPrice_ != 0D) {
       output.writeDouble(6, netPrice_);
     }
+    if (salePricePayee_ != 0) {
+      output.writeInt32(7, salePricePayee_);
+    }
+    if (taxPayee_ != 0) {
+      output.writeInt32(8, taxPayee_);
+    }
+    for (int i = 0; i < serviceFee_.size(); i++) {
+      output.writeMessage(9, serviceFee_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -261,6 +377,18 @@ private static final long serialVersionUID = 0L;
     if (netPrice_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(6, netPrice_);
+    }
+    if (salePricePayee_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(7, salePricePayee_);
+    }
+    if (taxPayee_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(8, taxPayee_);
+    }
+    for (int i = 0; i < serviceFee_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, serviceFee_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -300,6 +428,12 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getNetPrice())
         == java.lang.Double.doubleToLongBits(
             other.getNetPrice()));
+    result = result && (getSalePricePayee()
+        == other.getSalePricePayee());
+    result = result && (getTaxPayee()
+        == other.getTaxPayee());
+    result = result && getServiceFeeList()
+        .equals(other.getServiceFeeList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -328,6 +462,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + NETPRICE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getNetPrice()));
+    hash = (37 * hash) + SALEPRICEPAYEE_FIELD_NUMBER;
+    hash = (53 * hash) + getSalePricePayee();
+    hash = (37 * hash) + TAXPAYEE_FIELD_NUMBER;
+    hash = (53 * hash) + getTaxPayee();
+    if (getServiceFeeCount() > 0) {
+      hash = (37 * hash) + SERVICEFEE_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceFeeList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -456,6 +598,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getServiceFeeFieldBuilder();
       }
     }
     @java.lang.Override
@@ -473,6 +616,16 @@ private static final long serialVersionUID = 0L;
 
       netPrice_ = 0D;
 
+      salePricePayee_ = 0;
+
+      taxPayee_ = 0;
+
+      if (serviceFeeBuilder_ == null) {
+        serviceFee_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      } else {
+        serviceFeeBuilder_.clear();
+      }
       return this;
     }
 
@@ -499,12 +652,26 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.intl.agg.flighttypes.v3.PriceDetailType buildPartial() {
       com.ctrip.flight.intl.agg.flighttypes.v3.PriceDetailType result = new com.ctrip.flight.intl.agg.flighttypes.v3.PriceDetailType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.currency_ = currency_;
       result.salePrice_ = salePrice_;
       result.tax_ = tax_;
       result.publishPrice_ = publishPrice_;
       result.accountPrice_ = accountPrice_;
       result.netPrice_ = netPrice_;
+      result.salePricePayee_ = salePricePayee_;
+      result.taxPayee_ = taxPayee_;
+      if (serviceFeeBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          serviceFee_ = java.util.Collections.unmodifiableList(serviceFee_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.serviceFee_ = serviceFee_;
+      } else {
+        result.serviceFee_ = serviceFeeBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -572,6 +739,38 @@ private static final long serialVersionUID = 0L;
       if (other.getNetPrice() != 0D) {
         setNetPrice(other.getNetPrice());
       }
+      if (other.getSalePricePayee() != 0) {
+        setSalePricePayee(other.getSalePricePayee());
+      }
+      if (other.getTaxPayee() != 0) {
+        setTaxPayee(other.getTaxPayee());
+      }
+      if (serviceFeeBuilder_ == null) {
+        if (!other.serviceFee_.isEmpty()) {
+          if (serviceFee_.isEmpty()) {
+            serviceFee_ = other.serviceFee_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureServiceFeeIsMutable();
+            serviceFee_.addAll(other.serviceFee_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.serviceFee_.isEmpty()) {
+          if (serviceFeeBuilder_.isEmpty()) {
+            serviceFeeBuilder_.dispose();
+            serviceFeeBuilder_ = null;
+            serviceFee_ = other.serviceFee_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            serviceFeeBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getServiceFeeFieldBuilder() : null;
+          } else {
+            serviceFeeBuilder_.addAllMessages(other.serviceFee_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -600,6 +799,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object currency_ = "";
     /**
@@ -818,6 +1018,394 @@ private static final long serialVersionUID = 0L;
       netPrice_ = 0D;
       onChanged();
       return this;
+    }
+
+    private int salePricePayee_ ;
+    /**
+     * <pre>
+     * SalePrice收款方
+     * </pre>
+     *
+     * <code>int32 SalePricePayee = 7;</code>
+     */
+    public int getSalePricePayee() {
+      return salePricePayee_;
+    }
+    /**
+     * <pre>
+     * SalePrice收款方
+     * </pre>
+     *
+     * <code>int32 SalePricePayee = 7;</code>
+     */
+    public Builder setSalePricePayee(int value) {
+      
+      salePricePayee_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * SalePrice收款方
+     * </pre>
+     *
+     * <code>int32 SalePricePayee = 7;</code>
+     */
+    public Builder clearSalePricePayee() {
+      
+      salePricePayee_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int taxPayee_ ;
+    /**
+     * <pre>
+     * Tax收款方
+     * </pre>
+     *
+     * <code>int32 TaxPayee = 8;</code>
+     */
+    public int getTaxPayee() {
+      return taxPayee_;
+    }
+    /**
+     * <pre>
+     * Tax收款方
+     * </pre>
+     *
+     * <code>int32 TaxPayee = 8;</code>
+     */
+    public Builder setTaxPayee(int value) {
+      
+      taxPayee_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tax收款方
+     * </pre>
+     *
+     * <code>int32 TaxPayee = 8;</code>
+     */
+    public Builder clearTaxPayee() {
+      
+      taxPayee_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType> serviceFee_ =
+      java.util.Collections.emptyList();
+    private void ensureServiceFeeIsMutable() {
+      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        serviceFee_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType>(serviceFee_);
+        bitField0_ |= 0x00000100;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType, com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeTypeOrBuilder> serviceFeeBuilder_;
+
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType> getServiceFeeList() {
+      if (serviceFeeBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(serviceFee_);
+      } else {
+        return serviceFeeBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public int getServiceFeeCount() {
+      if (serviceFeeBuilder_ == null) {
+        return serviceFee_.size();
+      } else {
+        return serviceFeeBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType getServiceFee(int index) {
+      if (serviceFeeBuilder_ == null) {
+        return serviceFee_.get(index);
+      } else {
+        return serviceFeeBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public Builder setServiceFee(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType value) {
+      if (serviceFeeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceFeeIsMutable();
+        serviceFee_.set(index, value);
+        onChanged();
+      } else {
+        serviceFeeBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public Builder setServiceFee(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.Builder builderForValue) {
+      if (serviceFeeBuilder_ == null) {
+        ensureServiceFeeIsMutable();
+        serviceFee_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        serviceFeeBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public Builder addServiceFee(com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType value) {
+      if (serviceFeeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceFeeIsMutable();
+        serviceFee_.add(value);
+        onChanged();
+      } else {
+        serviceFeeBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public Builder addServiceFee(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType value) {
+      if (serviceFeeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceFeeIsMutable();
+        serviceFee_.add(index, value);
+        onChanged();
+      } else {
+        serviceFeeBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public Builder addServiceFee(
+        com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.Builder builderForValue) {
+      if (serviceFeeBuilder_ == null) {
+        ensureServiceFeeIsMutable();
+        serviceFee_.add(builderForValue.build());
+        onChanged();
+      } else {
+        serviceFeeBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public Builder addServiceFee(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.Builder builderForValue) {
+      if (serviceFeeBuilder_ == null) {
+        ensureServiceFeeIsMutable();
+        serviceFee_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        serviceFeeBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public Builder addAllServiceFee(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType> values) {
+      if (serviceFeeBuilder_ == null) {
+        ensureServiceFeeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, serviceFee_);
+        onChanged();
+      } else {
+        serviceFeeBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public Builder clearServiceFee() {
+      if (serviceFeeBuilder_ == null) {
+        serviceFee_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        serviceFeeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public Builder removeServiceFee(int index) {
+      if (serviceFeeBuilder_ == null) {
+        ensureServiceFeeIsMutable();
+        serviceFee_.remove(index);
+        onChanged();
+      } else {
+        serviceFeeBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.Builder getServiceFeeBuilder(
+        int index) {
+      return getServiceFeeFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeTypeOrBuilder getServiceFeeOrBuilder(
+        int index) {
+      if (serviceFeeBuilder_ == null) {
+        return serviceFee_.get(index);  } else {
+        return serviceFeeBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeTypeOrBuilder> 
+         getServiceFeeOrBuilderList() {
+      if (serviceFeeBuilder_ != null) {
+        return serviceFeeBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(serviceFee_);
+      }
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.Builder addServiceFeeBuilder() {
+      return getServiceFeeFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.Builder addServiceFeeBuilder(
+        int index) {
+      return getServiceFeeFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 服务费明细列表
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType ServiceFee = 9;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.Builder> 
+         getServiceFeeBuilderList() {
+      return getServiceFeeFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType, com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeTypeOrBuilder> 
+        getServiceFeeFieldBuilder() {
+      if (serviceFeeBuilder_ == null) {
+        serviceFeeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType, com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.ServiceFeeTypeOrBuilder>(
+                serviceFee_,
+                ((bitField0_ & 0x00000100) == 0x00000100),
+                getParentForChildren(),
+                isClean());
+        serviceFee_ = null;
+      }
+      return serviceFeeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

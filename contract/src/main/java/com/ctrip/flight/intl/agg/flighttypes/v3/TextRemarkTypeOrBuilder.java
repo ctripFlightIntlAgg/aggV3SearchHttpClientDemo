@@ -36,4 +36,14 @@ public interface TextRemarkTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTextGLBBytes();
+
+  /**
+   * <code>string TextEN = 4;</code>
+   */
+  java.lang.String getTextEN();
+  /**
+   * <code>string TextEN = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getTextENBytes();
 }

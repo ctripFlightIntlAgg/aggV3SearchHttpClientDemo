@@ -61,15 +61,6 @@ public interface AdvancedOptionTypeOrBuilder extends
   int getClientType();
 
   /**
-   * <pre>
-   * 指定航班中的舱等匹配选项：0-默认；1-全航段严格匹配；2-允许降舱匹配；3-允许升舱匹配
-   * </pre>
-   *
-   * <code>int32 CabinClassOption = 3;</code>
-   */
-  int getCabinClassOption();
-
-  /**
    * <code>repeated string BookingChannel = 4;</code>
    */
   java.util.List<java.lang.String>

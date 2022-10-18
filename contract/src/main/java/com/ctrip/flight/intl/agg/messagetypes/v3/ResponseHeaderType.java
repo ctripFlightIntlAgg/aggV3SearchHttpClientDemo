@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     serverIP_ = "";
     returnCode_ = 0;
     diagOutput_ = "";
+    noResultCode_ = 0;
   }
 
   @java.lang.Override
@@ -73,6 +74,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             diagOutput_ = s;
+            break;
+          }
+          case 40: {
+
+            noResultCode_ = input.readInt32();
             break;
           }
           default: {
@@ -205,6 +211,19 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int NORESULTCODE_FIELD_NUMBER = 5;
+  private int noResultCode_;
+  /**
+   * <pre>
+   * 无结果code, 等于0无意义
+   * </pre>
+   *
+   * <code>int32 NoResultCode = 5;</code>
+   */
+  public int getNoResultCode() {
+    return noResultCode_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -231,6 +250,9 @@ private static final long serialVersionUID = 0L;
     if (!getDiagOutputBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, diagOutput_);
     }
+    if (noResultCode_ != 0) {
+      output.writeInt32(5, noResultCode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -253,6 +275,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDiagOutputBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, diagOutput_);
+    }
+    if (noResultCode_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(5, noResultCode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -281,6 +307,8 @@ private static final long serialVersionUID = 0L;
         == other.getReturnCode());
     result = result && getDiagOutput()
         .equals(other.getDiagOutput());
+    result = result && (getNoResultCode()
+        == other.getNoResultCode());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -302,6 +330,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getReturnCode();
     hash = (37 * hash) + DIAGOUTPUT_FIELD_NUMBER;
     hash = (53 * hash) + getDiagOutput().hashCode();
+    hash = (37 * hash) + NORESULTCODE_FIELD_NUMBER;
+    hash = (53 * hash) + getNoResultCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -447,6 +477,8 @@ private static final long serialVersionUID = 0L;
 
       diagOutput_ = "";
 
+      noResultCode_ = 0;
+
       return this;
     }
 
@@ -481,6 +513,7 @@ private static final long serialVersionUID = 0L;
       result.serverIP_ = serverIP_;
       result.returnCode_ = returnCode_;
       result.diagOutput_ = diagOutput_;
+      result.noResultCode_ = noResultCode_;
       onBuilt();
       return result;
     }
@@ -542,6 +575,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getDiagOutput().isEmpty()) {
         diagOutput_ = other.diagOutput_;
         onChanged();
+      }
+      if (other.getNoResultCode() != 0) {
+        setNoResultCode(other.getNoResultCode());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -849,6 +885,44 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       diagOutput_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int noResultCode_ ;
+    /**
+     * <pre>
+     * 无结果code, 等于0无意义
+     * </pre>
+     *
+     * <code>int32 NoResultCode = 5;</code>
+     */
+    public int getNoResultCode() {
+      return noResultCode_;
+    }
+    /**
+     * <pre>
+     * 无结果code, 等于0无意义
+     * </pre>
+     *
+     * <code>int32 NoResultCode = 5;</code>
+     */
+    public Builder setNoResultCode(int value) {
+      
+      noResultCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 无结果code, 等于0无意义
+     * </pre>
+     *
+     * <code>int32 NoResultCode = 5;</code>
+     */
+    public Builder clearNoResultCode() {
+      
+      noResultCode_ = 0;
       onChanged();
       return this;
     }

@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     sequenceNo_ = 0;
     marrySeg_ = "";
     mainSegment_ = false;
+    tag_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -74,6 +75,15 @@ private static final long serialVersionUID = 0L;
             mainSegment_ = input.readBool();
             break;
           }
+          case 50: {
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              tag_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType>();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            tag_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -89,6 +99,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        tag_ = java.util.Collections.unmodifiableList(tag_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -106,6 +119,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.intl.agg.types.searchresponsetype.v3.FlightRefType.class, com.ctrip.flight.intl.agg.types.searchresponsetype.v3.FlightRefType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int FLIGHTID_FIELD_NUMBER = 1;
   private volatile java.lang.Object flightID_;
   /**
@@ -205,6 +219,41 @@ private static final long serialVersionUID = 0L;
     return mainSegment_;
   }
 
+  public static final int TAG_FIELD_NUMBER = 6;
+  private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> tag_;
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> getTagList() {
+    return tag_;
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+      getTagOrBuilderList() {
+    return tag_;
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+   */
+  public int getTagCount() {
+    return tag_.size();
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getTag(int index) {
+    return tag_.get(index);
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getTagOrBuilder(
+      int index) {
+    return tag_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -234,6 +283,9 @@ private static final long serialVersionUID = 0L;
     if (mainSegment_ != false) {
       output.writeBool(5, mainSegment_);
     }
+    for (int i = 0; i < tag_.size(); i++) {
+      output.writeMessage(6, tag_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -261,6 +313,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, mainSegment_);
     }
+    for (int i = 0; i < tag_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, tag_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -287,6 +343,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMarrySeg());
     result = result && (getMainSegment()
         == other.getMainSegment());
+    result = result && getTagList()
+        .equals(other.getTagList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -309,6 +367,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MAINSEGMENT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getMainSegment());
+    if (getTagCount() > 0) {
+      hash = (37 * hash) + TAG_FIELD_NUMBER;
+      hash = (53 * hash) + getTagList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -437,6 +499,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getTagFieldBuilder();
       }
     }
     @java.lang.Override
@@ -452,6 +515,12 @@ private static final long serialVersionUID = 0L;
 
       mainSegment_ = false;
 
+      if (tagBuilder_ == null) {
+        tag_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      } else {
+        tagBuilder_.clear();
+      }
       return this;
     }
 
@@ -478,11 +547,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.intl.agg.types.searchresponsetype.v3.FlightRefType buildPartial() {
       com.ctrip.flight.intl.agg.types.searchresponsetype.v3.FlightRefType result = new com.ctrip.flight.intl.agg.types.searchresponsetype.v3.FlightRefType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.flightID_ = flightID_;
       result.segmentNo_ = segmentNo_;
       result.sequenceNo_ = sequenceNo_;
       result.marrySeg_ = marrySeg_;
       result.mainSegment_ = mainSegment_;
+      if (tagBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          tag_ = java.util.Collections.unmodifiableList(tag_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.tag_ = tag_;
+      } else {
+        result.tag_ = tagBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -548,6 +629,32 @@ private static final long serialVersionUID = 0L;
       if (other.getMainSegment() != false) {
         setMainSegment(other.getMainSegment());
       }
+      if (tagBuilder_ == null) {
+        if (!other.tag_.isEmpty()) {
+          if (tag_.isEmpty()) {
+            tag_ = other.tag_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureTagIsMutable();
+            tag_.addAll(other.tag_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tag_.isEmpty()) {
+          if (tagBuilder_.isEmpty()) {
+            tagBuilder_.dispose();
+            tagBuilder_ = null;
+            tag_ = other.tag_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            tagBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTagFieldBuilder() : null;
+          } else {
+            tagBuilder_.addAllMessages(other.tag_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -576,6 +683,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object flightID_ = "";
     /**
@@ -803,6 +911,246 @@ private static final long serialVersionUID = 0L;
       mainSegment_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> tag_ =
+      java.util.Collections.emptyList();
+    private void ensureTagIsMutable() {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        tag_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType>(tag_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> tagBuilder_;
+
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> getTagList() {
+      if (tagBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(tag_);
+      } else {
+        return tagBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public int getTagCount() {
+      if (tagBuilder_ == null) {
+        return tag_.size();
+      } else {
+        return tagBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getTag(int index) {
+      if (tagBuilder_ == null) {
+        return tag_.get(index);
+      } else {
+        return tagBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public Builder setTag(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (tagBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagIsMutable();
+        tag_.set(index, value);
+        onChanged();
+      } else {
+        tagBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public Builder setTag(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        tag_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        tagBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public Builder addTag(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (tagBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagIsMutable();
+        tag_.add(value);
+        onChanged();
+      } else {
+        tagBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public Builder addTag(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (tagBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagIsMutable();
+        tag_.add(index, value);
+        onChanged();
+      } else {
+        tagBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public Builder addTag(
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        tag_.add(builderForValue.build());
+        onChanged();
+      } else {
+        tagBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public Builder addTag(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        tag_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        tagBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public Builder addAllTag(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> values) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tag_);
+        onChanged();
+      } else {
+        tagBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public Builder clearTag() {
+      if (tagBuilder_ == null) {
+        tag_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        tagBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public Builder removeTag(int index) {
+      if (tagBuilder_ == null) {
+        ensureTagIsMutable();
+        tag_.remove(index);
+        onChanged();
+      } else {
+        tagBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder getTagBuilder(
+        int index) {
+      return getTagFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getTagOrBuilder(
+        int index) {
+      if (tagBuilder_ == null) {
+        return tag_.get(index);  } else {
+        return tagBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+         getTagOrBuilderList() {
+      if (tagBuilder_ != null) {
+        return tagBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tag_);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder addTagBuilder() {
+      return getTagFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder addTagBuilder(
+        int index) {
+      return getTagFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder> 
+         getTagBuilderList() {
+      return getTagFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+        getTagFieldBuilder() {
+      if (tagBuilder_ == null) {
+        tagBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder>(
+                tag_,
+                ((bitField0_ & 0x00000020) == 0x00000020),
+                getParentForChildren(),
+                isClean());
+        tag_ = null;
+      }
+      return tagBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

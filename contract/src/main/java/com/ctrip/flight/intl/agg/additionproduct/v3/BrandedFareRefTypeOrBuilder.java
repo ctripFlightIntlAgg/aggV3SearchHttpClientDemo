@@ -24,4 +24,13 @@ public interface BrandedFareRefTypeOrBuilder extends
    * <code>int32 RefNum = 2;</code>
    */
   int getRefNum();
+
+  /**
+   * <pre>
+   * 航段号
+   * </pre>
+   *
+   * <code>int32 SequenceNo = 3;</code>
+   */
+  int getSequenceNo();
 }

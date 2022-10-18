@@ -104,4 +104,114 @@ public interface MessageHeaderTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRequestIDBytes();
+
+  /**
+   * <pre>
+   * 设备系统(ios/android/其他)
+   * </pre>
+   *
+   * <code>string DevicePlatform = 11;</code>
+   */
+  java.lang.String getDevicePlatform();
+  /**
+   * <pre>
+   * 设备系统(ios/android/其他)
+   * </pre>
+   *
+   * <code>string DevicePlatform = 11;</code>
+   */
+  com.google.protobuf.ByteString
+      getDevicePlatformBytes();
+
+  /**
+   * <pre>
+   * 设备类型 desktop/mobile/tablet
+   * </pre>
+   *
+   * <code>string DeviceType = 12;</code>
+   */
+  java.lang.String getDeviceType();
+  /**
+   * <pre>
+   * 设备类型 desktop/mobile/tablet
+   * </pre>
+   *
+   * <code>string DeviceType = 12;</code>
+   */
+  com.google.protobuf.ByteString
+      getDeviceTypeBytes();
+
+  /**
+   * <pre>
+   * 平台类型 app/web
+   * </pre>
+   *
+   * <code>string PlatformType = 13;</code>
+   */
+  java.lang.String getPlatformType();
+  /**
+   * <pre>
+   * 平台类型 app/web
+   * </pre>
+   *
+   * <code>string PlatformType = 13;</code>
+   */
+  com.google.protobuf.ByteString
+      getPlatformTypeBytes();
+
+  /**
+   * <pre>
+   * 设备操作系统版本号；eg:15.0.2
+   * </pre>
+   *
+   * <code>string DevicePlatformVersion = 14;</code>
+   */
+  java.lang.String getDevicePlatformVersion();
+  /**
+   * <pre>
+   * 设备操作系统版本号；eg:15.0.2
+   * </pre>
+   *
+   * <code>string DevicePlatformVersion = 14;</code>
+   */
+  com.google.protobuf.ByteString
+      getDevicePlatformVersionBytes();
+
+  /**
+   * <pre>
+   * ClientID app使用
+   * </pre>
+   *
+   * <code>string ClientID = 15;</code>
+   */
+  java.lang.String getClientID();
+  /**
+   * <pre>
+   * ClientID app使用
+   * </pre>
+   *
+   * <code>string ClientID = 15;</code>
+   */
+  com.google.protobuf.ByteString
+      getClientIDBytes();
+
+  /**
+   * <pre>
+   *变化 删除AgentID
+   * 调用方场景id; eg:google、ppc、seo等
+   * </pre>
+   *
+   * <code>string AlliancesID = 16;</code>
+   */
+  java.lang.String getAlliancesID();
+  /**
+   * <pre>
+   *变化 删除AgentID
+   * 调用方场景id; eg:google、ppc、seo等
+   * </pre>
+   *
+   * <code>string AlliancesID = 16;</code>
+   */
+  com.google.protobuf.ByteString
+      getAlliancesIDBytes();
 }

@@ -68,7 +68,14 @@ message MessageHeaderType
 	string ClientIP = 8 ;
 	string VID = 9 ; //变化 新增设备ID
 	string RequestID = 10 ; //变化 新增RequestID
+	string DevicePlatform = 11; // 设备系统(ios/android/其他)
+	string DeviceType = 12; // 设备类型 desktop/mobile/tablet
+	string PlatformType = 13; // 平台类型 app/web
+	string DevicePlatformVersion = 14; // 设备操作系统版本号；eg:15.0.2
+	string ClientID = 15; // ClientID app使用
 	//变化 删除AgentID
+	// 调用方场景id; eg:google、ppc、seo等
+	string AlliancesID = 16;
 }
 
 message RequestHeaderType

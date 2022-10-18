@@ -64,7 +64,7 @@ public final class AggTypesSearchrequesttypeV3 {
       "uesttype.v3.SearchCriteriaType\022^\n\rSearch" +
       "Context\030\004 \001(\0132G.com.ctrip.flight.intl.ag" +
       "g.types.searchrequesttype.v3.SearchConte" +
-      "xtType\"\366\003\n\022SearchCriteriaType\022V\n\017OrigDes" +
+      "xtType\"\210\004\n\022SearchCriteriaType\022V\n\017OrigDes" +
       "tRequest\030\001 \003(\0132=.com.ctrip.flight.intl.a" +
       "gg.flighttypes.v3.OrigDestRequestType\022V\n" +
       "\017TravelerRequest\030\002 \003(\0132=.com.ctrip.fligh" +
@@ -76,31 +76,31 @@ public final class AggTypesSearchrequesttypeV3 {
       "agg.flighttypes.v3.KeyValuePairType\022\020\n\010C" +
       "urrency\030\007 \001(\t\022`\n\016AdvancedOption\030\010 \001(\0132H." +
       "com.ctrip.flight.intl.agg.types.searchre" +
-      "questtype.v3.AdvancedOptionType\"\357\001\n\021Sear" +
-      "chContextType\022p\n\026PartitionSearchControl\030" +
-      "\001 \001(\0132P.com.ctrip.flight.intl.agg.types." +
-      "searchrequesttype.v3.PartitionSearchCont" +
-      "rolType\022h\n\022RouteSearchControl\030\002 \001(\0132L.co" +
-      "m.ctrip.flight.intl.agg.types.searchrequ" +
-      "esttype.v3.RouteSearchControlType\"`\n\032Par" +
-      "titionSearchControlType\022$\n\034NeedPartition" +
-      "edSearchResults\030\001 \001(\010\022\034\n\024PartitionSearch" +
-      "Token\030\002 \001(\t\"b\n\026RouteSearchControlType\022\027\n" +
-      "\017RouteSearchMode\030\001 \001(\005\022\030\n\020RouteSearchTok" +
-      "en\030\002 \001(\t\022\025\n\rOrigDestSeqID\030\003 \001(\005\"\261\003\n\022Adva" +
-      "ncedOptionType\022T\n\016FlightCriteria\030\001 \003(\0132<" +
-      ".com.ctrip.flight.intl.agg.flighttypes.v" +
-      "3.FlightCriteriaType\022\022\n\nClientType\030\002 \001(\005" +
-      "\022\030\n\020CabinClassOption\030\003 \001(\005\022\026\n\016BookingCha" +
-      "nnel\030\004 \003(\t\022\021\n\tAgentCode\030\005 \003(\t\022\030\n\020Exclude" +
-      "AgentCode\030\006 \003(\t\022\021\n\tFareBasis\030\007 \003(\t\022\021\n\tFa" +
-      "reClass\030\010 \003(\t\022\027\n\017ProductCategory\030\t \003(\005\022\032" +
-      "\n\022SubProductCategory\030\n \003(\005\022b\n\025OrigDestRe" +
-      "questOption\030\013 \003(\0132C.com.ctrip.flight.int" +
-      "l.agg.flighttypes.v3.OrigDestRequestOpti" +
-      "onType\022\023\n\013InvoiceType\030\014 \003(\tB8\n4com.ctrip" +
-      ".flight.intl.agg.types.searchrequesttype" +
-      ".v3P\001b\006proto3"
+      "questtype.v3.AdvancedOptionType\022\020\n\010Langu" +
+      "age\030\t \001(\t\"\357\001\n\021SearchContextType\022p\n\026Parti" +
+      "tionSearchControl\030\001 \001(\0132P.com.ctrip.flig" +
+      "ht.intl.agg.types.searchrequesttype.v3.P" +
+      "artitionSearchControlType\022h\n\022RouteSearch" +
+      "Control\030\002 \001(\0132L.com.ctrip.flight.intl.ag" +
+      "g.types.searchrequesttype.v3.RouteSearch" +
+      "ControlType\"`\n\032PartitionSearchControlTyp" +
+      "e\022$\n\034NeedPartitionedSearchResults\030\001 \001(\010\022" +
+      "\034\n\024PartitionSearchToken\030\002 \001(\t\"b\n\026RouteSe" +
+      "archControlType\022\027\n\017RouteSearchMode\030\001 \001(\005" +
+      "\022\030\n\020RouteSearchToken\030\002 \001(\t\022\025\n\rOrigDestSe" +
+      "qID\030\003 \001(\005\"\227\003\n\022AdvancedOptionType\022T\n\016Flig" +
+      "htCriteria\030\001 \003(\0132<.com.ctrip.flight.intl" +
+      ".agg.flighttypes.v3.FlightCriteriaType\022\022" +
+      "\n\nClientType\030\002 \001(\005\022\026\n\016BookingChannel\030\004 \003" +
+      "(\t\022\021\n\tAgentCode\030\005 \003(\t\022\030\n\020ExcludeAgentCod" +
+      "e\030\006 \003(\t\022\021\n\tFareBasis\030\007 \003(\t\022\021\n\tFareClass\030" +
+      "\010 \003(\t\022\027\n\017ProductCategory\030\t \003(\005\022\032\n\022SubPro" +
+      "ductCategory\030\n \003(\005\022b\n\025OrigDestRequestOpt" +
+      "ion\030\013 \003(\0132C.com.ctrip.flight.intl.agg.fl" +
+      "ighttypes.v3.OrigDestRequestOptionType\022\023" +
+      "\n\013InvoiceType\030\014 \003(\tB8\n4com.ctrip.flight." +
+      "intl.agg.types.searchrequesttype.v3P\001b\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -127,7 +127,7 @@ public final class AggTypesSearchrequesttypeV3 {
     internal_static_com_ctrip_flight_intl_agg_types_searchrequesttype_v3_SearchCriteriaType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_types_searchrequesttype_v3_SearchCriteriaType_descriptor,
-        new java.lang.String[] { "OrigDestRequest", "TravelerRequest", "ValidatingCarrier", "CabinClass", "ExtensionOption", "Currency", "AdvancedOption", });
+        new java.lang.String[] { "OrigDestRequest", "TravelerRequest", "ValidatingCarrier", "CabinClass", "ExtensionOption", "Currency", "AdvancedOption", "Language", });
     internal_static_com_ctrip_flight_intl_agg_types_searchrequesttype_v3_SearchContextType_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_ctrip_flight_intl_agg_types_searchrequesttype_v3_SearchContextType_fieldAccessorTable = new
@@ -151,7 +151,7 @@ public final class AggTypesSearchrequesttypeV3 {
     internal_static_com_ctrip_flight_intl_agg_types_searchrequesttype_v3_AdvancedOptionType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_types_searchrequesttype_v3_AdvancedOptionType_descriptor,
-        new java.lang.String[] { "FlightCriteria", "ClientType", "CabinClassOption", "BookingChannel", "AgentCode", "ExcludeAgentCode", "FareBasis", "FareClass", "ProductCategory", "SubProductCategory", "OrigDestRequestOption", "InvoiceType", });
+        new java.lang.String[] { "FlightCriteria", "ClientType", "BookingChannel", "AgentCode", "ExcludeAgentCode", "FareBasis", "FareClass", "ProductCategory", "SubProductCategory", "OrigDestRequestOption", "InvoiceType", });
     com.ctrip.flight.intl.agg.flighttypes.v3.AggFlighttypesV3.getDescriptor();
     com.ctrip.flight.intl.agg.messagetypes.v3.AggMessagetypesV3.getDescriptor();
   }

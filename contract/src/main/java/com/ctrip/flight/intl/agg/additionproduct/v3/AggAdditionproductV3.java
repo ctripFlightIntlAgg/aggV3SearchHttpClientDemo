@@ -40,6 +40,21 @@ public final class AggAdditionproductV3 {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_XProductPreposeInfoType_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ProductFeeDetailType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ProductFeeDetailType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServicePackageRelatedProductType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServicePackageRelatedProductType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServiceDiscountType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServiceDiscountType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_MemberPointType_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -54,6 +69,16 @@ public final class AggAdditionproductV3 {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_TicketPackageProductType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_MemberPrivilegeType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_MemberPrivilegeType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_PriceReductionType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_PriceReductionType_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_AncillariesInfoType_descriptor;
   static final 
@@ -92,56 +117,94 @@ public final class AggAdditionproductV3 {
       "pe\030\004 \001(\005\"M\n\031PackageExtensionFieldType\022\031\n" +
       "\021ProductActionMode\030\001 \001(\005\022\025\n\rProductRemar" +
       "k\030\002 \001(\t\"D\n\023RecommendedInfoType\022\014\n\004Name\030\001" +
-      " \001(\t\022\021\n\tShortName\030\002 \001(\t\022\014\n\004Desc\030\003 \001(\t\"\342\001" +
+      " \001(\t\022\021\n\tShortName\030\002 \001(\t\022\014\n\004Desc\030\003 \001(\t\"\356\004" +
       "\n\027XProductPreposeInfoType\022\020\n\010PolicyId\030\001 " +
       "\001(\003\022\023\n\013ProductType\030\002 \001(\005\022\021\n\tSegmentNo\030\003 " +
       "\001(\005\022\025\n\rMarketingType\030\005 \001(\005\022\027\n\017MarketingA" +
       "mount\030\006 \001(\001\022\023\n\013CouponPrice\030\007 \001(\005\022\026\n\016SubP" +
       "roductType\030\010 \001(\005\022\026\n\016AdditionInfoId\030\t \001(\t" +
-      "\022\030\n\020AdditionInfoType\030\n \001(\t\"G\n\017MemberPoin" +
-      "tType\022\032\n\022MemberPointAirline\030\001 \001(\t\022\030\n\020Mem" +
-      "berPointValue\030\002 \001(\005\"\373\001\n\021PromotionInfoTyp" +
-      "e\022B\n\007AgeType\030\001 \001(\01621.com.ctrip.flight.in" +
-      "tl.agg.flighttypes.v3.AgeType\022L\n\010GiftInf" +
-      "o\030\002 \003(\0132:.com.ctrip.flight.intl.agg.addi" +
-      "tionproduct.v3.GiftInfoType\022T\n\014CashBackI" +
-      "nfo\030\003 \001(\0132>.com.ctrip.flight.intl.agg.ad" +
-      "ditionproduct.v3.CashBackInfoType\"\353\006\n\030Ti" +
-      "cketPackageProductType\022\032\n\022ProductDetailI" +
-      "ndex\030\001 \001(\005\022Z\n\017AncillariesInfo\030\002 \001(\0132A.co" +
-      "m.ctrip.flight.intl.agg.additionproduct." +
-      "v3.AncillariesInfoType\022\030\n\020AirlinePackage" +
-      "ID\030\003 \001(\003\022R\n\013MemberPoint\030\004 \003(\0132=.com.ctri" +
-      "p.flight.intl.agg.additionproduct.v3.Mem" +
-      "berPointType\022\030\n\020RecommendPrdType\030\005 \001(\005\022_" +
-      "\n\016ExtensionField\030\006 \001(\0132G.com.ctrip.fligh" +
-      "t.intl.agg.additionproduct.v3.PackageExt" +
-      "ensionFieldType\022Z\n\017RecommendedInfo\030\007 \001(\013" +
-      "2A.com.ctrip.flight.intl.agg.additionpro" +
-      "duct.v3.RecommendedInfoType\022V\n\rPromotion" +
-      "Info\030\010 \003(\0132?.com.ctrip.flight.intl.agg.a" +
-      "dditionproduct.v3.PromotionInfoType\022b\n\023X" +
-      "ProductPreposeInfo\030\t \003(\0132E.com.ctrip.fli" +
-      "ght.intl.agg.additionproduct.v3.XProduct" +
-      "PreposeInfoType\022\024\n\014IsSupportFFP\030\n \001(\010\022\026\n" +
-      "\016CrossSaleHotel\030\013 \001(\005\022V\n\022ExtraMarketingI" +
-      "nfo\030\014 \003(\0132:.com.ctrip.flight.intl.agg.fl" +
-      "ighttypes.v3.KeyValuePairType\022P\n\nService" +
-      "Ref\030\r \003(\0132<.com.ctrip.flight.intl.agg.ad" +
-      "ditionproduct.v3.ServiceRefType\"e\n\023Ancil" +
-      "lariesInfoType\022\031\n\021HasBaggageService\030\001 \001(" +
-      "\010\022\025\n\rUnFreeBaggage\030\002 \001(\010\022\034\n\024CheckInServi" +
-      "ceStatus\030\003 \001(\005\"\313\001\n\016ServiceRefType\022B\n\007Age" +
-      "Type\030\001 \001(\01621.com.ctrip.flight.intl.agg.f" +
-      "lighttypes.v3.AgeType\022X\n\016BrandedFareRef\030" +
-      "\002 \003(\0132@.com.ctrip.flight.intl.agg.additi" +
-      "onproduct.v3.BrandedFareRefType\022\033\n\023Norma" +
-      "lServiceRefNum\030\003 \001(\005\"7\n\022BrandedFareRefTy" +
-      "pe\022\021\n\tSegmentNo\030\001 \001(\005\022\016\n\006RefNum\030\002 \001(\005\"\226\001" +
-      "\n\013ServiceType\022\016\n\006RefNum\030\001 \001(\005\022\021\n\tBrandNa" +
-      "me\030\002 \001(\t\022\021\n\tBrandTier\030\003 \001(\005\022Q\n\rServiceDe" +
-      "tail\030\004 \003(\0132:.com.ctrip.flight.intl.agg.f" +
-      "lighttypes.v3.KeyValuePairTypeB0\n,com.ct" +
+      "\022\030\n\020AdditionInfoType\030\n \001(\t\022\023\n\013PolicyToke" +
+      "n\030\013 \001(\t\022\022\n\nSequenceNo\030\014 \001(\005\022\023\n\013ProductNa" +
+      "me\030\r \001(\t\022Q\n\rExtensionInfo\030\016 \003(\0132:.com.ct" +
+      "rip.flight.intl.agg.flighttypes.v3.KeyVa" +
+      "luePairType\022\\\n\020ProductFeeDetail\030\017 \003(\0132B." +
+      "com.ctrip.flight.intl.agg.additionproduc" +
+      "t.v3.ProductFeeDetailType\022Z\n\017ServiceDisc" +
+      "ount\030\020 \003(\0132A.com.ctrip.flight.intl.agg.a" +
+      "dditionproduct.v3.ServiceDiscountType\022\022\n" +
+      "\nExpiryTime\030\021 \001(\005\022\026\n\016ExpiryTimeUnit\030\022 \001(" +
+      "\t\022\023\n\013BindingType\030\023 \001(\005\"\376\001\n\024ProductFeeDet" +
+      "ailType\022B\n\007AgeType\030\001 \003(\01621.com.ctrip.fli" +
+      "ght.intl.agg.flighttypes.v3.AgeType\022\027\n\017M" +
+      "arketingAmount\030\002 \001(\001\022\023\n\013PolicyToken\030\003 \001(" +
+      "\t\022t\n\034ServicePackageRelatedProduct\030\004 \003(\0132" +
+      "N.com.ctrip.flight.intl.agg.additionprod" +
+      "uct.v3.ServicePackageRelatedProductType\"" +
+      "^\n ServicePackageRelatedProductType\022\023\n\013P" +
+      "roductType\030\001 \001(\t\022\026\n\016SubProductType\030\002 \001(\005" +
+      "\022\r\n\005Token\030\003 \001(\t\"\256\002\n\023ServiceDiscountType\022" +
+      "\014\n\004Item\030\001 \001(\005\022\026\n\016DiscountAmount\030\002 \001(\001\022B\n" +
+      "\007AgeType\030\003 \001(\01621.com.ctrip.flight.intl.a" +
+      "gg.flighttypes.v3.AgeType\022\024\n\014DiscountMod" +
+      "e\030\004 \001(\005\022\024\n\014DiscountRate\030\005 \001(\001\022\022\n\nLimitTi" +
+      "mes\030\006 \001(\005\022\033\n\023TotalDiscountAmount\030\007 \001(\001\022\037" +
+      "\n\027SingleMinDiscountAmount\030\010 \001(\001\022\037\n\027Singl" +
+      "eMaxDiscountAmount\030\t \001(\001\022\016\n\006Period\030\n \001(\005" +
+      "\"G\n\017MemberPointType\022\032\n\022MemberPointAirlin" +
+      "e\030\001 \001(\t\022\030\n\020MemberPointValue\030\002 \001(\005\"\373\001\n\021Pr" +
+      "omotionInfoType\022B\n\007AgeType\030\001 \001(\01621.com.c" +
+      "trip.flight.intl.agg.flighttypes.v3.AgeT" +
+      "ype\022L\n\010GiftInfo\030\002 \003(\0132:.com.ctrip.flight" +
+      ".intl.agg.additionproduct.v3.GiftInfoTyp" +
+      "e\022T\n\014CashBackInfo\030\003 \001(\0132>.com.ctrip.flig" +
+      "ht.intl.agg.additionproduct.v3.CashBackI" +
+      "nfoType\"\274\010\n\030TicketPackageProductType\022\032\n\022" +
+      "ProductDetailIndex\030\001 \001(\005\022Z\n\017AncillariesI" +
+      "nfo\030\002 \001(\0132A.com.ctrip.flight.intl.agg.ad" +
+      "ditionproduct.v3.AncillariesInfoType\022\030\n\020" +
+      "AirlinePackageID\030\003 \001(\003\022R\n\013MemberPoint\030\004 " +
+      "\003(\0132=.com.ctrip.flight.intl.agg.addition" +
+      "product.v3.MemberPointType\022\030\n\020RecommendP" +
+      "rdType\030\005 \001(\005\022_\n\016ExtensionField\030\006 \001(\0132G.c" +
+      "om.ctrip.flight.intl.agg.additionproduct" +
+      ".v3.PackageExtensionFieldType\022Z\n\017Recomme" +
+      "ndedInfo\030\007 \001(\0132A.com.ctrip.flight.intl.a" +
+      "gg.additionproduct.v3.RecommendedInfoTyp" +
+      "e\022V\n\rPromotionInfo\030\010 \003(\0132?.com.ctrip.fli" +
+      "ght.intl.agg.additionproduct.v3.Promotio" +
+      "nInfoType\022b\n\023XProductPreposeInfo\030\t \003(\0132E" +
+      ".com.ctrip.flight.intl.agg.additionprodu" +
+      "ct.v3.XProductPreposeInfoType\022\024\n\014IsSuppo" +
+      "rtFFP\030\n \001(\010\022\026\n\016CrossSaleHotel\030\013 \001(\005\022V\n\022E" +
+      "xtraMarketingInfo\030\014 \003(\0132:.com.ctrip.flig" +
+      "ht.intl.agg.flighttypes.v3.KeyValuePairT" +
+      "ype\022P\n\nServiceRef\030\r \003(\0132<.com.ctrip.flig" +
+      "ht.intl.agg.additionproduct.v3.ServiceRe" +
+      "fType\022Z\n\017MemberPrivilege\030\016 \001(\0132A.com.ctr" +
+      "ip.flight.intl.agg.additionproduct.v3.Me" +
+      "mberPrivilegeType\022X\n\016PriceReduction\030\017 \001(" +
+      "\0132@.com.ctrip.flight.intl.agg.additionpr" +
+      "oduct.v3.PriceReductionType\022\031\n\021Recommend" +
+      "PrdType2\030\020 \001(\003\";\n\023MemberPrivilegeType\022\023\n" +
+      "\013PromotionId\030\001 \001(\003\022\017\n\007ForUser\030\002 \001(\t\"}\n\022P" +
+      "riceReductionType\022\023\n\013PromotionId\030\001 \001(\003\022\017" +
+      "\n\007ForUser\030\002 \001(\t\022\025\n\rDiscountMoney\030\003 \001(\001\022\022" +
+      "\n\nCouponCode\030\004 \001(\t\022\026\n\016SelectedGroups\030\005 \001" +
+      "(\005\"e\n\023AncillariesInfoType\022\031\n\021HasBaggageS" +
+      "ervice\030\001 \001(\010\022\025\n\rUnFreeBaggage\030\002 \001(\010\022\034\n\024C" +
+      "heckInServiceStatus\030\003 \001(\005\"\313\001\n\016ServiceRef" +
+      "Type\022B\n\007AgeType\030\001 \001(\01621.com.ctrip.flight" +
+      ".intl.agg.flighttypes.v3.AgeType\022X\n\016Bran" +
+      "dedFareRef\030\002 \003(\0132@.com.ctrip.flight.intl" +
+      ".agg.additionproduct.v3.BrandedFareRefTy" +
+      "pe\022\033\n\023NormalServiceRefNum\030\003 \001(\005\"K\n\022Brand" +
+      "edFareRefType\022\021\n\tSegmentNo\030\001 \001(\005\022\016\n\006RefN" +
+      "um\030\002 \001(\005\022\022\n\nSequenceNo\030\003 \001(\005\"\307\001\n\013Service" +
+      "Type\022\016\n\006RefNum\030\001 \001(\005\022\021\n\tBrandName\030\002 \001(\t\022" +
+      "\021\n\tBrandTier\030\003 \001(\005\022Q\n\rServiceDetail\030\004 \003(" +
+      "\0132:.com.ctrip.flight.intl.agg.flighttype" +
+      "s.v3.KeyValuePairType\022\027\n\017ServiceDetailId" +
+      "\030\005 \003(\005\022\026\n\016CtripBrandTier\030\006 \001(\005B0\n,com.ct" +
       "rip.flight.intl.agg.additionproduct.v3P\001" +
       "b\006proto3"
     };
@@ -187,49 +250,79 @@ public final class AggAdditionproductV3 {
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_XProductPreposeInfoType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_XProductPreposeInfoType_descriptor,
-        new java.lang.String[] { "PolicyId", "ProductType", "SegmentNo", "MarketingType", "MarketingAmount", "CouponPrice", "SubProductType", "AdditionInfoId", "AdditionInfoType", });
-    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_MemberPointType_descriptor =
+        new java.lang.String[] { "PolicyId", "ProductType", "SegmentNo", "MarketingType", "MarketingAmount", "CouponPrice", "SubProductType", "AdditionInfoId", "AdditionInfoType", "PolicyToken", "SequenceNo", "ProductName", "ExtensionInfo", "ProductFeeDetail", "ServiceDiscount", "ExpiryTime", "ExpiryTimeUnit", "BindingType", });
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ProductFeeDetailType_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ProductFeeDetailType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ProductFeeDetailType_descriptor,
+        new java.lang.String[] { "AgeType", "MarketingAmount", "PolicyToken", "ServicePackageRelatedProduct", });
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServicePackageRelatedProductType_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServicePackageRelatedProductType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServicePackageRelatedProductType_descriptor,
+        new java.lang.String[] { "ProductType", "SubProductType", "Token", });
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServiceDiscountType_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServiceDiscountType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServiceDiscountType_descriptor,
+        new java.lang.String[] { "Item", "DiscountAmount", "AgeType", "DiscountMode", "DiscountRate", "LimitTimes", "TotalDiscountAmount", "SingleMinDiscountAmount", "SingleMaxDiscountAmount", "Period", });
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_MemberPointType_descriptor =
+      getDescriptor().getMessageTypes().get(8);
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_MemberPointType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_MemberPointType_descriptor,
         new java.lang.String[] { "MemberPointAirline", "MemberPointValue", });
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_PromotionInfoType_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_PromotionInfoType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_PromotionInfoType_descriptor,
         new java.lang.String[] { "AgeType", "GiftInfo", "CashBackInfo", });
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_TicketPackageProductType_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_TicketPackageProductType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_TicketPackageProductType_descriptor,
-        new java.lang.String[] { "ProductDetailIndex", "AncillariesInfo", "AirlinePackageID", "MemberPoint", "RecommendPrdType", "ExtensionField", "RecommendedInfo", "PromotionInfo", "XProductPreposeInfo", "IsSupportFFP", "CrossSaleHotel", "ExtraMarketingInfo", "ServiceRef", });
+        new java.lang.String[] { "ProductDetailIndex", "AncillariesInfo", "AirlinePackageID", "MemberPoint", "RecommendPrdType", "ExtensionField", "RecommendedInfo", "PromotionInfo", "XProductPreposeInfo", "IsSupportFFP", "CrossSaleHotel", "ExtraMarketingInfo", "ServiceRef", "MemberPrivilege", "PriceReduction", "RecommendPrdType2", });
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_MemberPrivilegeType_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_MemberPrivilegeType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_MemberPrivilegeType_descriptor,
+        new java.lang.String[] { "PromotionId", "ForUser", });
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_PriceReductionType_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_PriceReductionType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_PriceReductionType_descriptor,
+        new java.lang.String[] { "PromotionId", "ForUser", "DiscountMoney", "CouponCode", "SelectedGroups", });
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_AncillariesInfoType_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_AncillariesInfoType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_AncillariesInfoType_descriptor,
         new java.lang.String[] { "HasBaggageService", "UnFreeBaggage", "CheckInServiceStatus", });
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServiceRefType_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServiceRefType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServiceRefType_descriptor,
         new java.lang.String[] { "AgeType", "BrandedFareRef", "NormalServiceRefNum", });
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_BrandedFareRefType_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_BrandedFareRefType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_BrandedFareRefType_descriptor,
-        new java.lang.String[] { "SegmentNo", "RefNum", });
+        new java.lang.String[] { "SegmentNo", "RefNum", "SequenceNo", });
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServiceType_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServiceType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_additionproduct_v3_ServiceType_descriptor,
-        new java.lang.String[] { "RefNum", "BrandName", "BrandTier", "ServiceDetail", });
+        new java.lang.String[] { "RefNum", "BrandName", "BrandTier", "ServiceDetail", "ServiceDetailId", "CtripBrandTier", });
     com.ctrip.flight.intl.agg.flighttypes.v3.AggFlighttypesV3.getDescriptor();
   }
 

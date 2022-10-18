@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private BrandedFareRefType() {
     segmentNo_ = 0;
     refNum_ = 0;
+    sequenceNo_ = 0;
   }
 
   @java.lang.Override
@@ -52,6 +53,11 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             refNum_ = input.readInt32();
+            break;
+          }
+          case 24: {
+
+            sequenceNo_ = input.readInt32();
             break;
           }
           default: {
@@ -112,6 +118,19 @@ private static final long serialVersionUID = 0L;
     return refNum_;
   }
 
+  public static final int SEQUENCENO_FIELD_NUMBER = 3;
+  private int sequenceNo_;
+  /**
+   * <pre>
+   * 航段号
+   * </pre>
+   *
+   * <code>int32 SequenceNo = 3;</code>
+   */
+  public int getSequenceNo() {
+    return sequenceNo_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -132,6 +151,9 @@ private static final long serialVersionUID = 0L;
     if (refNum_ != 0) {
       output.writeInt32(2, refNum_);
     }
+    if (sequenceNo_ != 0) {
+      output.writeInt32(3, sequenceNo_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -148,6 +170,10 @@ private static final long serialVersionUID = 0L;
     if (refNum_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, refNum_);
+    }
+    if (sequenceNo_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, sequenceNo_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -169,6 +195,8 @@ private static final long serialVersionUID = 0L;
         == other.getSegmentNo());
     result = result && (getRefNum()
         == other.getRefNum());
+    result = result && (getSequenceNo()
+        == other.getSequenceNo());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -184,6 +212,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSegmentNo();
     hash = (37 * hash) + REFNUM_FIELD_NUMBER;
     hash = (53 * hash) + getRefNum();
+    hash = (37 * hash) + SEQUENCENO_FIELD_NUMBER;
+    hash = (53 * hash) + getSequenceNo();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -321,6 +351,8 @@ private static final long serialVersionUID = 0L;
 
       refNum_ = 0;
 
+      sequenceNo_ = 0;
+
       return this;
     }
 
@@ -349,6 +381,7 @@ private static final long serialVersionUID = 0L;
       com.ctrip.flight.intl.agg.additionproduct.v3.BrandedFareRefType result = new com.ctrip.flight.intl.agg.additionproduct.v3.BrandedFareRefType(this);
       result.segmentNo_ = segmentNo_;
       result.refNum_ = refNum_;
+      result.sequenceNo_ = sequenceNo_;
       onBuilt();
       return result;
     }
@@ -402,6 +435,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRefNum() != 0) {
         setRefNum(other.getRefNum());
+      }
+      if (other.getSequenceNo() != 0) {
+        setSequenceNo(other.getSequenceNo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -504,6 +540,44 @@ private static final long serialVersionUID = 0L;
     public Builder clearRefNum() {
       
       refNum_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int sequenceNo_ ;
+    /**
+     * <pre>
+     * 航段号
+     * </pre>
+     *
+     * <code>int32 SequenceNo = 3;</code>
+     */
+    public int getSequenceNo() {
+      return sequenceNo_;
+    }
+    /**
+     * <pre>
+     * 航段号
+     * </pre>
+     *
+     * <code>int32 SequenceNo = 3;</code>
+     */
+    public Builder setSequenceNo(int value) {
+      
+      sequenceNo_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 航段号
+     * </pre>
+     *
+     * <code>int32 SequenceNo = 3;</code>
+     */
+    public Builder clearSequenceNo() {
+      
+      sequenceNo_ = 0;
       onChanged();
       return this;
     }

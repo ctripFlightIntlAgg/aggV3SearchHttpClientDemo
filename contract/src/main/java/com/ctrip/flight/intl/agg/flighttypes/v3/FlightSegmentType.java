@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     seatCount_ = 0;
     bookingToken_ = "";
     stockID_ = 0L;
+    pUSequence_ = 0;
   }
 
   @java.lang.Override
@@ -91,6 +92,11 @@ private static final long serialVersionUID = 0L;
           case 64: {
 
             stockID_ = input.readInt64();
+            break;
+          }
+          case 72: {
+
+            pUSequence_ = input.readInt32();
             break;
           }
           default: {
@@ -263,6 +269,15 @@ private static final long serialVersionUID = 0L;
     return stockID_;
   }
 
+  public static final int PUSEQUENCE_FIELD_NUMBER = 9;
+  private int pUSequence_;
+  /**
+   * <code>int32 PUSequence = 9;</code>
+   */
+  public int getPUSequence() {
+    return pUSequence_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -300,6 +315,9 @@ private static final long serialVersionUID = 0L;
     }
     if (stockID_ != 0L) {
       output.writeInt64(8, stockID_);
+    }
+    if (pUSequence_ != 0) {
+      output.writeInt32(9, pUSequence_);
     }
     unknownFields.writeTo(output);
   }
@@ -340,6 +358,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(8, stockID_);
     }
+    if (pUSequence_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(9, pUSequence_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -371,6 +393,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBookingToken());
     result = result && (getStockID()
         == other.getStockID());
+    result = result && (getPUSequence()
+        == other.getPUSequence());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -399,6 +423,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + STOCKID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getStockID());
+    hash = (37 * hash) + PUSEQUENCE_FIELD_NUMBER;
+    hash = (53 * hash) + getPUSequence();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -548,6 +574,8 @@ private static final long serialVersionUID = 0L;
 
       stockID_ = 0L;
 
+      pUSequence_ = 0;
+
       return this;
     }
 
@@ -582,6 +610,7 @@ private static final long serialVersionUID = 0L;
       result.seatCount_ = seatCount_;
       result.bookingToken_ = bookingToken_;
       result.stockID_ = stockID_;
+      result.pUSequence_ = pUSequence_;
       onBuilt();
       return result;
     }
@@ -655,6 +684,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStockID() != 0L) {
         setStockID(other.getStockID());
+      }
+      if (other.getPUSequence() != 0) {
+        setPUSequence(other.getPUSequence());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1014,6 +1046,32 @@ private static final long serialVersionUID = 0L;
     public Builder clearStockID() {
       
       stockID_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int pUSequence_ ;
+    /**
+     * <code>int32 PUSequence = 9;</code>
+     */
+    public int getPUSequence() {
+      return pUSequence_;
+    }
+    /**
+     * <code>int32 PUSequence = 9;</code>
+     */
+    public Builder setPUSequence(int value) {
+      
+      pUSequence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 PUSequence = 9;</code>
+     */
+    public Builder clearPUSequence() {
+      
+      pUSequence_ = 0;
       onChanged();
       return this;
     }

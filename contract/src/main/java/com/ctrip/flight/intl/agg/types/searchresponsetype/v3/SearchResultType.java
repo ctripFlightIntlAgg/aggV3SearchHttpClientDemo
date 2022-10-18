@@ -27,6 +27,11 @@ private static final long serialVersionUID = 0L;
     city_ = java.util.Collections.emptyList();
     airport_ = java.util.Collections.emptyList();
     service_ = java.util.Collections.emptyList();
+    cacheInfo_ = java.util.Collections.emptyList();
+    creditCardPaymentInfo_ = java.util.Collections.emptyList();
+    extendFields_ = java.util.Collections.emptyList();
+    paymentDiscount_ = java.util.Collections.emptyList();
+    xproductSearchKey_ = "";
   }
 
   @java.lang.Override
@@ -149,6 +154,48 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType.parser(), extensionRegistry));
             break;
           }
+          case 106: {
+            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+              cacheInfo_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType>();
+              mutable_bitField0_ |= 0x00000800;
+            }
+            cacheInfo_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.parser(), extensionRegistry));
+            break;
+          }
+          case 114: {
+            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+              creditCardPaymentInfo_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType>();
+              mutable_bitField0_ |= 0x00001000;
+            }
+            creditCardPaymentInfo_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.parser(), extensionRegistry));
+            break;
+          }
+          case 122: {
+            if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+              extendFields_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType>();
+              mutable_bitField0_ |= 0x00002000;
+            }
+            extendFields_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.parser(), extensionRegistry));
+            break;
+          }
+          case 130: {
+            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+              paymentDiscount_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType>();
+              mutable_bitField0_ |= 0x00004000;
+            }
+            paymentDiscount_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.parser(), extensionRegistry));
+            break;
+          }
+          case 138: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            xproductSearchKey_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -193,6 +240,18 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
         service_ = java.util.Collections.unmodifiableList(service_);
+      }
+      if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+        cacheInfo_ = java.util.Collections.unmodifiableList(cacheInfo_);
+      }
+      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+        creditCardPaymentInfo_ = java.util.Collections.unmodifiableList(creditCardPaymentInfo_);
+      }
+      if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+        extendFields_ = java.util.Collections.unmodifiableList(extendFields_);
+      }
+      if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+        paymentDiscount_ = java.util.Collections.unmodifiableList(paymentDiscount_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -696,6 +755,228 @@ private static final long serialVersionUID = 0L;
     return service_.get(index);
   }
 
+  public static final int CACHEINFO_FIELD_NUMBER = 13;
+  private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType> cacheInfo_;
+  /**
+   * <pre>
+   * 新增缓存响应Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType> getCacheInfoList() {
+    return cacheInfo_;
+  }
+  /**
+   * <pre>
+   * 新增缓存响应Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoTypeOrBuilder> 
+      getCacheInfoOrBuilderList() {
+    return cacheInfo_;
+  }
+  /**
+   * <pre>
+   * 新增缓存响应Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+   */
+  public int getCacheInfoCount() {
+    return cacheInfo_.size();
+  }
+  /**
+   * <pre>
+   * 新增缓存响应Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType getCacheInfo(int index) {
+    return cacheInfo_.get(index);
+  }
+  /**
+   * <pre>
+   * 新增缓存响应Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoTypeOrBuilder getCacheInfoOrBuilder(
+      int index) {
+    return cacheInfo_.get(index);
+  }
+
+  public static final int CREDITCARDPAYMENTINFO_FIELD_NUMBER = 14;
+  private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType> creditCardPaymentInfo_;
+  /**
+   * <pre>
+   * 信用卡支付信息Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType> getCreditCardPaymentInfoList() {
+    return creditCardPaymentInfo_;
+  }
+  /**
+   * <pre>
+   * 信用卡支付信息Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoTypeOrBuilder> 
+      getCreditCardPaymentInfoOrBuilderList() {
+    return creditCardPaymentInfo_;
+  }
+  /**
+   * <pre>
+   * 信用卡支付信息Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+   */
+  public int getCreditCardPaymentInfoCount() {
+    return creditCardPaymentInfo_.size();
+  }
+  /**
+   * <pre>
+   * 信用卡支付信息Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType getCreditCardPaymentInfo(int index) {
+    return creditCardPaymentInfo_.get(index);
+  }
+  /**
+   * <pre>
+   * 信用卡支付信息Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoTypeOrBuilder getCreditCardPaymentInfoOrBuilder(
+      int index) {
+    return creditCardPaymentInfo_.get(index);
+  }
+
+  public static final int EXTENDFIELDS_FIELD_NUMBER = 15;
+  private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> extendFields_;
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> getExtendFieldsList() {
+    return extendFields_;
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+      getExtendFieldsOrBuilderList() {
+    return extendFields_;
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  public int getExtendFieldsCount() {
+    return extendFields_.size();
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtendFields(int index) {
+    return extendFields_.get(index);
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtendFieldsOrBuilder(
+      int index) {
+    return extendFields_.get(index);
+  }
+
+  public static final int PAYMENTDISCOUNT_FIELD_NUMBER = 16;
+  private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType> paymentDiscount_;
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType> getPaymentDiscountList() {
+    return paymentDiscount_;
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountTypeOrBuilder> 
+      getPaymentDiscountOrBuilderList() {
+    return paymentDiscount_;
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+   */
+  public int getPaymentDiscountCount() {
+    return paymentDiscount_.size();
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType getPaymentDiscount(int index) {
+    return paymentDiscount_.get(index);
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountTypeOrBuilder getPaymentDiscountOrBuilder(
+      int index) {
+    return paymentDiscount_.get(index);
+  }
+
+  public static final int XPRODUCTSEARCHKEY_FIELD_NUMBER = 17;
+  private volatile java.lang.Object xproductSearchKey_;
+  /**
+   * <pre>
+   * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+   * </pre>
+   *
+   * <code>string XproductSearchKey = 17;</code>
+   */
+  public java.lang.String getXproductSearchKey() {
+    java.lang.Object ref = xproductSearchKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      xproductSearchKey_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+   * </pre>
+   *
+   * <code>string XproductSearchKey = 17;</code>
+   */
+  public com.google.protobuf.ByteString
+      getXproductSearchKeyBytes() {
+    java.lang.Object ref = xproductSearchKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      xproductSearchKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -742,6 +1023,21 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < service_.size(); i++) {
       output.writeMessage(12, service_.get(i));
+    }
+    for (int i = 0; i < cacheInfo_.size(); i++) {
+      output.writeMessage(13, cacheInfo_.get(i));
+    }
+    for (int i = 0; i < creditCardPaymentInfo_.size(); i++) {
+      output.writeMessage(14, creditCardPaymentInfo_.get(i));
+    }
+    for (int i = 0; i < extendFields_.size(); i++) {
+      output.writeMessage(15, extendFields_.get(i));
+    }
+    for (int i = 0; i < paymentDiscount_.size(); i++) {
+      output.writeMessage(16, paymentDiscount_.get(i));
+    }
+    if (!getXproductSearchKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, xproductSearchKey_);
     }
     unknownFields.writeTo(output);
   }
@@ -795,6 +1091,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, service_.get(i));
     }
+    for (int i = 0; i < cacheInfo_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, cacheInfo_.get(i));
+    }
+    for (int i = 0; i < creditCardPaymentInfo_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, creditCardPaymentInfo_.get(i));
+    }
+    for (int i = 0; i < extendFields_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, extendFields_.get(i));
+    }
+    for (int i = 0; i < paymentDiscount_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, paymentDiscount_.get(i));
+    }
+    if (!getXproductSearchKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, xproductSearchKey_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -833,6 +1148,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAirportList());
     result = result && getServiceList()
         .equals(other.getServiceList());
+    result = result && getCacheInfoList()
+        .equals(other.getCacheInfoList());
+    result = result && getCreditCardPaymentInfoList()
+        .equals(other.getCreditCardPaymentInfoList());
+    result = result && getExtendFieldsList()
+        .equals(other.getExtendFieldsList());
+    result = result && getPaymentDiscountList()
+        .equals(other.getPaymentDiscountList());
+    result = result && getXproductSearchKey()
+        .equals(other.getXproductSearchKey());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -886,6 +1211,24 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SERVICE_FIELD_NUMBER;
       hash = (53 * hash) + getServiceList().hashCode();
     }
+    if (getCacheInfoCount() > 0) {
+      hash = (37 * hash) + CACHEINFO_FIELD_NUMBER;
+      hash = (53 * hash) + getCacheInfoList().hashCode();
+    }
+    if (getCreditCardPaymentInfoCount() > 0) {
+      hash = (37 * hash) + CREDITCARDPAYMENTINFO_FIELD_NUMBER;
+      hash = (53 * hash) + getCreditCardPaymentInfoList().hashCode();
+    }
+    if (getExtendFieldsCount() > 0) {
+      hash = (37 * hash) + EXTENDFIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getExtendFieldsList().hashCode();
+    }
+    if (getPaymentDiscountCount() > 0) {
+      hash = (37 * hash) + PAYMENTDISCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPaymentDiscountList().hashCode();
+    }
+    hash = (37 * hash) + XPRODUCTSEARCHKEY_FIELD_NUMBER;
+    hash = (53 * hash) + getXproductSearchKey().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1024,6 +1367,10 @@ private static final long serialVersionUID = 0L;
         getCityFieldBuilder();
         getAirportFieldBuilder();
         getServiceFieldBuilder();
+        getCacheInfoFieldBuilder();
+        getCreditCardPaymentInfoFieldBuilder();
+        getExtendFieldsFieldBuilder();
+        getPaymentDiscountFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1091,6 +1438,32 @@ private static final long serialVersionUID = 0L;
       } else {
         serviceBuilder_.clear();
       }
+      if (cacheInfoBuilder_ == null) {
+        cacheInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+      } else {
+        cacheInfoBuilder_.clear();
+      }
+      if (creditCardPaymentInfoBuilder_ == null) {
+        creditCardPaymentInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+      } else {
+        creditCardPaymentInfoBuilder_.clear();
+      }
+      if (extendFieldsBuilder_ == null) {
+        extendFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+      } else {
+        extendFieldsBuilder_.clear();
+      }
+      if (paymentDiscountBuilder_ == null) {
+        paymentDiscount_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);
+      } else {
+        paymentDiscountBuilder_.clear();
+      }
+      xproductSearchKey_ = "";
+
       return this;
     }
 
@@ -1210,6 +1583,43 @@ private static final long serialVersionUID = 0L;
       } else {
         result.service_ = serviceBuilder_.build();
       }
+      if (cacheInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+          cacheInfo_ = java.util.Collections.unmodifiableList(cacheInfo_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.cacheInfo_ = cacheInfo_;
+      } else {
+        result.cacheInfo_ = cacheInfoBuilder_.build();
+      }
+      if (creditCardPaymentInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          creditCardPaymentInfo_ = java.util.Collections.unmodifiableList(creditCardPaymentInfo_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.creditCardPaymentInfo_ = creditCardPaymentInfo_;
+      } else {
+        result.creditCardPaymentInfo_ = creditCardPaymentInfoBuilder_.build();
+      }
+      if (extendFieldsBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) == 0x00002000)) {
+          extendFields_ = java.util.Collections.unmodifiableList(extendFields_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.extendFields_ = extendFields_;
+      } else {
+        result.extendFields_ = extendFieldsBuilder_.build();
+      }
+      if (paymentDiscountBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) == 0x00004000)) {
+          paymentDiscount_ = java.util.Collections.unmodifiableList(paymentDiscount_);
+          bitField0_ = (bitField0_ & ~0x00004000);
+        }
+        result.paymentDiscount_ = paymentDiscount_;
+      } else {
+        result.paymentDiscount_ = paymentDiscountBuilder_.build();
+      }
+      result.xproductSearchKey_ = xproductSearchKey_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1522,6 +1932,114 @@ private static final long serialVersionUID = 0L;
             serviceBuilder_.addAllMessages(other.service_);
           }
         }
+      }
+      if (cacheInfoBuilder_ == null) {
+        if (!other.cacheInfo_.isEmpty()) {
+          if (cacheInfo_.isEmpty()) {
+            cacheInfo_ = other.cacheInfo_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensureCacheInfoIsMutable();
+            cacheInfo_.addAll(other.cacheInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.cacheInfo_.isEmpty()) {
+          if (cacheInfoBuilder_.isEmpty()) {
+            cacheInfoBuilder_.dispose();
+            cacheInfoBuilder_ = null;
+            cacheInfo_ = other.cacheInfo_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+            cacheInfoBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCacheInfoFieldBuilder() : null;
+          } else {
+            cacheInfoBuilder_.addAllMessages(other.cacheInfo_);
+          }
+        }
+      }
+      if (creditCardPaymentInfoBuilder_ == null) {
+        if (!other.creditCardPaymentInfo_.isEmpty()) {
+          if (creditCardPaymentInfo_.isEmpty()) {
+            creditCardPaymentInfo_ = other.creditCardPaymentInfo_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureCreditCardPaymentInfoIsMutable();
+            creditCardPaymentInfo_.addAll(other.creditCardPaymentInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.creditCardPaymentInfo_.isEmpty()) {
+          if (creditCardPaymentInfoBuilder_.isEmpty()) {
+            creditCardPaymentInfoBuilder_.dispose();
+            creditCardPaymentInfoBuilder_ = null;
+            creditCardPaymentInfo_ = other.creditCardPaymentInfo_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            creditCardPaymentInfoBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCreditCardPaymentInfoFieldBuilder() : null;
+          } else {
+            creditCardPaymentInfoBuilder_.addAllMessages(other.creditCardPaymentInfo_);
+          }
+        }
+      }
+      if (extendFieldsBuilder_ == null) {
+        if (!other.extendFields_.isEmpty()) {
+          if (extendFields_.isEmpty()) {
+            extendFields_ = other.extendFields_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+          } else {
+            ensureExtendFieldsIsMutable();
+            extendFields_.addAll(other.extendFields_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.extendFields_.isEmpty()) {
+          if (extendFieldsBuilder_.isEmpty()) {
+            extendFieldsBuilder_.dispose();
+            extendFieldsBuilder_ = null;
+            extendFields_ = other.extendFields_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+            extendFieldsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getExtendFieldsFieldBuilder() : null;
+          } else {
+            extendFieldsBuilder_.addAllMessages(other.extendFields_);
+          }
+        }
+      }
+      if (paymentDiscountBuilder_ == null) {
+        if (!other.paymentDiscount_.isEmpty()) {
+          if (paymentDiscount_.isEmpty()) {
+            paymentDiscount_ = other.paymentDiscount_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+          } else {
+            ensurePaymentDiscountIsMutable();
+            paymentDiscount_.addAll(other.paymentDiscount_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.paymentDiscount_.isEmpty()) {
+          if (paymentDiscountBuilder_.isEmpty()) {
+            paymentDiscountBuilder_.dispose();
+            paymentDiscountBuilder_ = null;
+            paymentDiscount_ = other.paymentDiscount_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+            paymentDiscountBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getPaymentDiscountFieldBuilder() : null;
+          } else {
+            paymentDiscountBuilder_.addAllMessages(other.paymentDiscount_);
+          }
+        }
+      }
+      if (!other.getXproductSearchKey().isEmpty()) {
+        xproductSearchKey_ = other.xproductSearchKey_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4380,6 +4898,1199 @@ private static final long serialVersionUID = 0L;
         service_ = null;
       }
       return serviceBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType> cacheInfo_ =
+      java.util.Collections.emptyList();
+    private void ensureCacheInfoIsMutable() {
+      if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+        cacheInfo_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType>(cacheInfo_);
+        bitField0_ |= 0x00000800;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType, com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoTypeOrBuilder> cacheInfoBuilder_;
+
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType> getCacheInfoList() {
+      if (cacheInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(cacheInfo_);
+      } else {
+        return cacheInfoBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public int getCacheInfoCount() {
+      if (cacheInfoBuilder_ == null) {
+        return cacheInfo_.size();
+      } else {
+        return cacheInfoBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType getCacheInfo(int index) {
+      if (cacheInfoBuilder_ == null) {
+        return cacheInfo_.get(index);
+      } else {
+        return cacheInfoBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public Builder setCacheInfo(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType value) {
+      if (cacheInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCacheInfoIsMutable();
+        cacheInfo_.set(index, value);
+        onChanged();
+      } else {
+        cacheInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public Builder setCacheInfo(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.Builder builderForValue) {
+      if (cacheInfoBuilder_ == null) {
+        ensureCacheInfoIsMutable();
+        cacheInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        cacheInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public Builder addCacheInfo(com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType value) {
+      if (cacheInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCacheInfoIsMutable();
+        cacheInfo_.add(value);
+        onChanged();
+      } else {
+        cacheInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public Builder addCacheInfo(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType value) {
+      if (cacheInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCacheInfoIsMutable();
+        cacheInfo_.add(index, value);
+        onChanged();
+      } else {
+        cacheInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public Builder addCacheInfo(
+        com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.Builder builderForValue) {
+      if (cacheInfoBuilder_ == null) {
+        ensureCacheInfoIsMutable();
+        cacheInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        cacheInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public Builder addCacheInfo(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.Builder builderForValue) {
+      if (cacheInfoBuilder_ == null) {
+        ensureCacheInfoIsMutable();
+        cacheInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        cacheInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public Builder addAllCacheInfo(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType> values) {
+      if (cacheInfoBuilder_ == null) {
+        ensureCacheInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cacheInfo_);
+        onChanged();
+      } else {
+        cacheInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public Builder clearCacheInfo() {
+      if (cacheInfoBuilder_ == null) {
+        cacheInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+      } else {
+        cacheInfoBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public Builder removeCacheInfo(int index) {
+      if (cacheInfoBuilder_ == null) {
+        ensureCacheInfoIsMutable();
+        cacheInfo_.remove(index);
+        onChanged();
+      } else {
+        cacheInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.Builder getCacheInfoBuilder(
+        int index) {
+      return getCacheInfoFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoTypeOrBuilder getCacheInfoOrBuilder(
+        int index) {
+      if (cacheInfoBuilder_ == null) {
+        return cacheInfo_.get(index);  } else {
+        return cacheInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoTypeOrBuilder> 
+         getCacheInfoOrBuilderList() {
+      if (cacheInfoBuilder_ != null) {
+        return cacheInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(cacheInfo_);
+      }
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.Builder addCacheInfoBuilder() {
+      return getCacheInfoFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.Builder addCacheInfoBuilder(
+        int index) {
+      return getCacheInfoFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 新增缓存响应Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.Builder> 
+         getCacheInfoBuilderList() {
+      return getCacheInfoFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType, com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoTypeOrBuilder> 
+        getCacheInfoFieldBuilder() {
+      if (cacheInfoBuilder_ == null) {
+        cacheInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType, com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoTypeOrBuilder>(
+                cacheInfo_,
+                ((bitField0_ & 0x00000800) == 0x00000800),
+                getParentForChildren(),
+                isClean());
+        cacheInfo_ = null;
+      }
+      return cacheInfoBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType> creditCardPaymentInfo_ =
+      java.util.Collections.emptyList();
+    private void ensureCreditCardPaymentInfoIsMutable() {
+      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+        creditCardPaymentInfo_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType>(creditCardPaymentInfo_);
+        bitField0_ |= 0x00001000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType, com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoTypeOrBuilder> creditCardPaymentInfoBuilder_;
+
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType> getCreditCardPaymentInfoList() {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(creditCardPaymentInfo_);
+      } else {
+        return creditCardPaymentInfoBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public int getCreditCardPaymentInfoCount() {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        return creditCardPaymentInfo_.size();
+      } else {
+        return creditCardPaymentInfoBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType getCreditCardPaymentInfo(int index) {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        return creditCardPaymentInfo_.get(index);
+      } else {
+        return creditCardPaymentInfoBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public Builder setCreditCardPaymentInfo(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType value) {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreditCardPaymentInfoIsMutable();
+        creditCardPaymentInfo_.set(index, value);
+        onChanged();
+      } else {
+        creditCardPaymentInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public Builder setCreditCardPaymentInfo(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.Builder builderForValue) {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        ensureCreditCardPaymentInfoIsMutable();
+        creditCardPaymentInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        creditCardPaymentInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public Builder addCreditCardPaymentInfo(com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType value) {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreditCardPaymentInfoIsMutable();
+        creditCardPaymentInfo_.add(value);
+        onChanged();
+      } else {
+        creditCardPaymentInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public Builder addCreditCardPaymentInfo(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType value) {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreditCardPaymentInfoIsMutable();
+        creditCardPaymentInfo_.add(index, value);
+        onChanged();
+      } else {
+        creditCardPaymentInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public Builder addCreditCardPaymentInfo(
+        com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.Builder builderForValue) {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        ensureCreditCardPaymentInfoIsMutable();
+        creditCardPaymentInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        creditCardPaymentInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public Builder addCreditCardPaymentInfo(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.Builder builderForValue) {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        ensureCreditCardPaymentInfoIsMutable();
+        creditCardPaymentInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        creditCardPaymentInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public Builder addAllCreditCardPaymentInfo(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType> values) {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        ensureCreditCardPaymentInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, creditCardPaymentInfo_);
+        onChanged();
+      } else {
+        creditCardPaymentInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public Builder clearCreditCardPaymentInfo() {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        creditCardPaymentInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        creditCardPaymentInfoBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public Builder removeCreditCardPaymentInfo(int index) {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        ensureCreditCardPaymentInfoIsMutable();
+        creditCardPaymentInfo_.remove(index);
+        onChanged();
+      } else {
+        creditCardPaymentInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.Builder getCreditCardPaymentInfoBuilder(
+        int index) {
+      return getCreditCardPaymentInfoFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoTypeOrBuilder getCreditCardPaymentInfoOrBuilder(
+        int index) {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        return creditCardPaymentInfo_.get(index);  } else {
+        return creditCardPaymentInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoTypeOrBuilder> 
+         getCreditCardPaymentInfoOrBuilderList() {
+      if (creditCardPaymentInfoBuilder_ != null) {
+        return creditCardPaymentInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(creditCardPaymentInfo_);
+      }
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.Builder addCreditCardPaymentInfoBuilder() {
+      return getCreditCardPaymentInfoFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.Builder addCreditCardPaymentInfoBuilder(
+        int index) {
+      return getCreditCardPaymentInfoFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 信用卡支付信息Ref
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.Builder> 
+         getCreditCardPaymentInfoBuilderList() {
+      return getCreditCardPaymentInfoFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType, com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoTypeOrBuilder> 
+        getCreditCardPaymentInfoFieldBuilder() {
+      if (creditCardPaymentInfoBuilder_ == null) {
+        creditCardPaymentInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType, com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoTypeOrBuilder>(
+                creditCardPaymentInfo_,
+                ((bitField0_ & 0x00001000) == 0x00001000),
+                getParentForChildren(),
+                isClean());
+        creditCardPaymentInfo_ = null;
+      }
+      return creditCardPaymentInfoBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> extendFields_ =
+      java.util.Collections.emptyList();
+    private void ensureExtendFieldsIsMutable() {
+      if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+        extendFields_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType>(extendFields_);
+        bitField0_ |= 0x00002000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> extendFieldsBuilder_;
+
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> getExtendFieldsList() {
+      if (extendFieldsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(extendFields_);
+      } else {
+        return extendFieldsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public int getExtendFieldsCount() {
+      if (extendFieldsBuilder_ == null) {
+        return extendFields_.size();
+      } else {
+        return extendFieldsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtendFields(int index) {
+      if (extendFieldsBuilder_ == null) {
+        return extendFields_.get(index);
+      } else {
+        return extendFieldsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder setExtendFields(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (extendFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExtendFieldsIsMutable();
+        extendFields_.set(index, value);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder setExtendFields(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        extendFields_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        extendFieldsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder addExtendFields(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (extendFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExtendFieldsIsMutable();
+        extendFields_.add(value);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder addExtendFields(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (extendFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExtendFieldsIsMutable();
+        extendFields_.add(index, value);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder addExtendFields(
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        extendFields_.add(builderForValue.build());
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder addExtendFields(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        extendFields_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder addAllExtendFields(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> values) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, extendFields_);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder clearExtendFields() {
+      if (extendFieldsBuilder_ == null) {
+        extendFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder removeExtendFields(int index) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        extendFields_.remove(index);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder getExtendFieldsBuilder(
+        int index) {
+      return getExtendFieldsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtendFieldsOrBuilder(
+        int index) {
+      if (extendFieldsBuilder_ == null) {
+        return extendFields_.get(index);  } else {
+        return extendFieldsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+         getExtendFieldsOrBuilderList() {
+      if (extendFieldsBuilder_ != null) {
+        return extendFieldsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(extendFields_);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder addExtendFieldsBuilder() {
+      return getExtendFieldsFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder addExtendFieldsBuilder(
+        int index) {
+      return getExtendFieldsFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder> 
+         getExtendFieldsBuilderList() {
+      return getExtendFieldsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+        getExtendFieldsFieldBuilder() {
+      if (extendFieldsBuilder_ == null) {
+        extendFieldsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder>(
+                extendFields_,
+                ((bitField0_ & 0x00002000) == 0x00002000),
+                getParentForChildren(),
+                isClean());
+        extendFields_ = null;
+      }
+      return extendFieldsBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType> paymentDiscount_ =
+      java.util.Collections.emptyList();
+    private void ensurePaymentDiscountIsMutable() {
+      if (!((bitField0_ & 0x00004000) == 0x00004000)) {
+        paymentDiscount_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType>(paymentDiscount_);
+        bitField0_ |= 0x00004000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType, com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountTypeOrBuilder> paymentDiscountBuilder_;
+
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType> getPaymentDiscountList() {
+      if (paymentDiscountBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(paymentDiscount_);
+      } else {
+        return paymentDiscountBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public int getPaymentDiscountCount() {
+      if (paymentDiscountBuilder_ == null) {
+        return paymentDiscount_.size();
+      } else {
+        return paymentDiscountBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType getPaymentDiscount(int index) {
+      if (paymentDiscountBuilder_ == null) {
+        return paymentDiscount_.get(index);
+      } else {
+        return paymentDiscountBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public Builder setPaymentDiscount(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType value) {
+      if (paymentDiscountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePaymentDiscountIsMutable();
+        paymentDiscount_.set(index, value);
+        onChanged();
+      } else {
+        paymentDiscountBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public Builder setPaymentDiscount(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.Builder builderForValue) {
+      if (paymentDiscountBuilder_ == null) {
+        ensurePaymentDiscountIsMutable();
+        paymentDiscount_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        paymentDiscountBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public Builder addPaymentDiscount(com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType value) {
+      if (paymentDiscountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePaymentDiscountIsMutable();
+        paymentDiscount_.add(value);
+        onChanged();
+      } else {
+        paymentDiscountBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public Builder addPaymentDiscount(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType value) {
+      if (paymentDiscountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePaymentDiscountIsMutable();
+        paymentDiscount_.add(index, value);
+        onChanged();
+      } else {
+        paymentDiscountBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public Builder addPaymentDiscount(
+        com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.Builder builderForValue) {
+      if (paymentDiscountBuilder_ == null) {
+        ensurePaymentDiscountIsMutable();
+        paymentDiscount_.add(builderForValue.build());
+        onChanged();
+      } else {
+        paymentDiscountBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public Builder addPaymentDiscount(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.Builder builderForValue) {
+      if (paymentDiscountBuilder_ == null) {
+        ensurePaymentDiscountIsMutable();
+        paymentDiscount_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        paymentDiscountBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public Builder addAllPaymentDiscount(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType> values) {
+      if (paymentDiscountBuilder_ == null) {
+        ensurePaymentDiscountIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, paymentDiscount_);
+        onChanged();
+      } else {
+        paymentDiscountBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public Builder clearPaymentDiscount() {
+      if (paymentDiscountBuilder_ == null) {
+        paymentDiscount_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+      } else {
+        paymentDiscountBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public Builder removePaymentDiscount(int index) {
+      if (paymentDiscountBuilder_ == null) {
+        ensurePaymentDiscountIsMutable();
+        paymentDiscount_.remove(index);
+        onChanged();
+      } else {
+        paymentDiscountBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.Builder getPaymentDiscountBuilder(
+        int index) {
+      return getPaymentDiscountFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountTypeOrBuilder getPaymentDiscountOrBuilder(
+        int index) {
+      if (paymentDiscountBuilder_ == null) {
+        return paymentDiscount_.get(index);  } else {
+        return paymentDiscountBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountTypeOrBuilder> 
+         getPaymentDiscountOrBuilderList() {
+      if (paymentDiscountBuilder_ != null) {
+        return paymentDiscountBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(paymentDiscount_);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.Builder addPaymentDiscountBuilder() {
+      return getPaymentDiscountFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.Builder addPaymentDiscountBuilder(
+        int index) {
+      return getPaymentDiscountFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.Builder> 
+         getPaymentDiscountBuilderList() {
+      return getPaymentDiscountFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType, com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountTypeOrBuilder> 
+        getPaymentDiscountFieldBuilder() {
+      if (paymentDiscountBuilder_ == null) {
+        paymentDiscountBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType, com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountTypeOrBuilder>(
+                paymentDiscount_,
+                ((bitField0_ & 0x00004000) == 0x00004000),
+                getParentForChildren(),
+                isClean());
+        paymentDiscount_ = null;
+      }
+      return paymentDiscountBuilder_;
+    }
+
+    private java.lang.Object xproductSearchKey_ = "";
+    /**
+     * <pre>
+     * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+     * </pre>
+     *
+     * <code>string XproductSearchKey = 17;</code>
+     */
+    public java.lang.String getXproductSearchKey() {
+      java.lang.Object ref = xproductSearchKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        xproductSearchKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+     * </pre>
+     *
+     * <code>string XproductSearchKey = 17;</code>
+     */
+    public com.google.protobuf.ByteString
+        getXproductSearchKeyBytes() {
+      java.lang.Object ref = xproductSearchKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        xproductSearchKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+     * </pre>
+     *
+     * <code>string XproductSearchKey = 17;</code>
+     */
+    public Builder setXproductSearchKey(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      xproductSearchKey_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+     * </pre>
+     *
+     * <code>string XproductSearchKey = 17;</code>
+     */
+    public Builder clearXproductSearchKey() {
+      
+      xproductSearchKey_ = getDefaultInstance().getXproductSearchKey();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+     * </pre>
+     *
+     * <code>string XproductSearchKey = 17;</code>
+     */
+    public Builder setXproductSearchKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      xproductSearchKey_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

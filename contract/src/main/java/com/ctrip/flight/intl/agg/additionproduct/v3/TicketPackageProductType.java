@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     crossSaleHotel_ = 0;
     extraMarketingInfo_ = java.util.Collections.emptyList();
     serviceRef_ = java.util.Collections.emptyList();
+    recommendPrdType2_ = 0L;
   }
 
   @java.lang.Override
@@ -159,6 +160,37 @@ private static final long serialVersionUID = 0L;
             }
             serviceRef_.add(
                 input.readMessage(com.ctrip.flight.intl.agg.additionproduct.v3.ServiceRefType.parser(), extensionRegistry));
+            break;
+          }
+          case 114: {
+            com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType.Builder subBuilder = null;
+            if (memberPrivilege_ != null) {
+              subBuilder = memberPrivilege_.toBuilder();
+            }
+            memberPrivilege_ = input.readMessage(com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(memberPrivilege_);
+              memberPrivilege_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 122: {
+            com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType.Builder subBuilder = null;
+            if (priceReduction_ != null) {
+              subBuilder = priceReduction_.toBuilder();
+            }
+            priceReduction_ = input.readMessage(com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(priceReduction_);
+              priceReduction_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 128: {
+
+            recommendPrdType2_ = input.readInt64();
             break;
           }
           default: {
@@ -524,6 +556,57 @@ private static final long serialVersionUID = 0L;
     return serviceRef_.get(index);
   }
 
+  public static final int MEMBERPRIVILEGE_FIELD_NUMBER = 14;
+  private com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType memberPrivilege_;
+  /**
+   * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+   */
+  public boolean hasMemberPrivilege() {
+    return memberPrivilege_ != null;
+  }
+  /**
+   * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+   */
+  public com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType getMemberPrivilege() {
+    return memberPrivilege_ == null ? com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType.getDefaultInstance() : memberPrivilege_;
+  }
+  /**
+   * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+   */
+  public com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeTypeOrBuilder getMemberPrivilegeOrBuilder() {
+    return getMemberPrivilege();
+  }
+
+  public static final int PRICEREDUCTION_FIELD_NUMBER = 15;
+  private com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType priceReduction_;
+  /**
+   * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+   */
+  public boolean hasPriceReduction() {
+    return priceReduction_ != null;
+  }
+  /**
+   * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+   */
+  public com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType getPriceReduction() {
+    return priceReduction_ == null ? com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType.getDefaultInstance() : priceReduction_;
+  }
+  /**
+   * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+   */
+  public com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionTypeOrBuilder getPriceReductionOrBuilder() {
+    return getPriceReduction();
+  }
+
+  public static final int RECOMMENDPRDTYPE2_FIELD_NUMBER = 16;
+  private long recommendPrdType2_;
+  /**
+   * <code>int64 RecommendPrdType2 = 16;</code>
+   */
+  public long getRecommendPrdType2() {
+    return recommendPrdType2_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -576,6 +659,15 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < serviceRef_.size(); i++) {
       output.writeMessage(13, serviceRef_.get(i));
+    }
+    if (memberPrivilege_ != null) {
+      output.writeMessage(14, getMemberPrivilege());
+    }
+    if (priceReduction_ != null) {
+      output.writeMessage(15, getPriceReduction());
+    }
+    if (recommendPrdType2_ != 0L) {
+      output.writeInt64(16, recommendPrdType2_);
     }
     unknownFields.writeTo(output);
   }
@@ -638,6 +730,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, serviceRef_.get(i));
     }
+    if (memberPrivilege_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getMemberPrivilege());
+    }
+    if (priceReduction_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, getPriceReduction());
+    }
+    if (recommendPrdType2_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(16, recommendPrdType2_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -689,6 +793,18 @@ private static final long serialVersionUID = 0L;
         .equals(other.getExtraMarketingInfoList());
     result = result && getServiceRefList()
         .equals(other.getServiceRefList());
+    result = result && (hasMemberPrivilege() == other.hasMemberPrivilege());
+    if (hasMemberPrivilege()) {
+      result = result && getMemberPrivilege()
+          .equals(other.getMemberPrivilege());
+    }
+    result = result && (hasPriceReduction() == other.hasPriceReduction());
+    if (hasPriceReduction()) {
+      result = result && getPriceReduction()
+          .equals(other.getPriceReduction());
+    }
+    result = result && (getRecommendPrdType2()
+        == other.getRecommendPrdType2());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -744,6 +860,17 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SERVICEREF_FIELD_NUMBER;
       hash = (53 * hash) + getServiceRefList().hashCode();
     }
+    if (hasMemberPrivilege()) {
+      hash = (37 * hash) + MEMBERPRIVILEGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMemberPrivilege().hashCode();
+    }
+    if (hasPriceReduction()) {
+      hash = (37 * hash) + PRICEREDUCTION_FIELD_NUMBER;
+      hash = (53 * hash) + getPriceReduction().hashCode();
+    }
+    hash = (37 * hash) + RECOMMENDPRDTYPE2_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getRecommendPrdType2());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -940,6 +1067,20 @@ private static final long serialVersionUID = 0L;
       } else {
         serviceRefBuilder_.clear();
       }
+      if (memberPrivilegeBuilder_ == null) {
+        memberPrivilege_ = null;
+      } else {
+        memberPrivilege_ = null;
+        memberPrivilegeBuilder_ = null;
+      }
+      if (priceReductionBuilder_ == null) {
+        priceReduction_ = null;
+      } else {
+        priceReduction_ = null;
+        priceReductionBuilder_ = null;
+      }
+      recommendPrdType2_ = 0L;
+
       return this;
     }
 
@@ -1033,6 +1174,17 @@ private static final long serialVersionUID = 0L;
       } else {
         result.serviceRef_ = serviceRefBuilder_.build();
       }
+      if (memberPrivilegeBuilder_ == null) {
+        result.memberPrivilege_ = memberPrivilege_;
+      } else {
+        result.memberPrivilege_ = memberPrivilegeBuilder_.build();
+      }
+      if (priceReductionBuilder_ == null) {
+        result.priceReduction_ = priceReduction_;
+      } else {
+        result.priceReduction_ = priceReductionBuilder_.build();
+      }
+      result.recommendPrdType2_ = recommendPrdType2_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1235,6 +1387,15 @@ private static final long serialVersionUID = 0L;
             serviceRefBuilder_.addAllMessages(other.serviceRef_);
           }
         }
+      }
+      if (other.hasMemberPrivilege()) {
+        mergeMemberPrivilege(other.getMemberPrivilege());
+      }
+      if (other.hasPriceReduction()) {
+        mergePriceReduction(other.getPriceReduction());
+      }
+      if (other.getRecommendPrdType2() != 0L) {
+        setRecommendPrdType2(other.getRecommendPrdType2());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3053,6 +3214,266 @@ private static final long serialVersionUID = 0L;
         serviceRef_ = null;
       }
       return serviceRefBuilder_;
+    }
+
+    private com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType memberPrivilege_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType, com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeTypeOrBuilder> memberPrivilegeBuilder_;
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+     */
+    public boolean hasMemberPrivilege() {
+      return memberPrivilegeBuilder_ != null || memberPrivilege_ != null;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType getMemberPrivilege() {
+      if (memberPrivilegeBuilder_ == null) {
+        return memberPrivilege_ == null ? com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType.getDefaultInstance() : memberPrivilege_;
+      } else {
+        return memberPrivilegeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+     */
+    public Builder setMemberPrivilege(com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType value) {
+      if (memberPrivilegeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        memberPrivilege_ = value;
+        onChanged();
+      } else {
+        memberPrivilegeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+     */
+    public Builder setMemberPrivilege(
+        com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType.Builder builderForValue) {
+      if (memberPrivilegeBuilder_ == null) {
+        memberPrivilege_ = builderForValue.build();
+        onChanged();
+      } else {
+        memberPrivilegeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+     */
+    public Builder mergeMemberPrivilege(com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType value) {
+      if (memberPrivilegeBuilder_ == null) {
+        if (memberPrivilege_ != null) {
+          memberPrivilege_ =
+            com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType.newBuilder(memberPrivilege_).mergeFrom(value).buildPartial();
+        } else {
+          memberPrivilege_ = value;
+        }
+        onChanged();
+      } else {
+        memberPrivilegeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+     */
+    public Builder clearMemberPrivilege() {
+      if (memberPrivilegeBuilder_ == null) {
+        memberPrivilege_ = null;
+        onChanged();
+      } else {
+        memberPrivilege_ = null;
+        memberPrivilegeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType.Builder getMemberPrivilegeBuilder() {
+      
+      onChanged();
+      return getMemberPrivilegeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeTypeOrBuilder getMemberPrivilegeOrBuilder() {
+      if (memberPrivilegeBuilder_ != null) {
+        return memberPrivilegeBuilder_.getMessageOrBuilder();
+      } else {
+        return memberPrivilege_ == null ?
+            com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType.getDefaultInstance() : memberPrivilege_;
+      }
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType MemberPrivilege = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType, com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeTypeOrBuilder> 
+        getMemberPrivilegeFieldBuilder() {
+      if (memberPrivilegeBuilder_ == null) {
+        memberPrivilegeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType, com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.MemberPrivilegeTypeOrBuilder>(
+                getMemberPrivilege(),
+                getParentForChildren(),
+                isClean());
+        memberPrivilege_ = null;
+      }
+      return memberPrivilegeBuilder_;
+    }
+
+    private com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType priceReduction_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType, com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionTypeOrBuilder> priceReductionBuilder_;
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+     */
+    public boolean hasPriceReduction() {
+      return priceReductionBuilder_ != null || priceReduction_ != null;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType getPriceReduction() {
+      if (priceReductionBuilder_ == null) {
+        return priceReduction_ == null ? com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType.getDefaultInstance() : priceReduction_;
+      } else {
+        return priceReductionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+     */
+    public Builder setPriceReduction(com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType value) {
+      if (priceReductionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        priceReduction_ = value;
+        onChanged();
+      } else {
+        priceReductionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+     */
+    public Builder setPriceReduction(
+        com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType.Builder builderForValue) {
+      if (priceReductionBuilder_ == null) {
+        priceReduction_ = builderForValue.build();
+        onChanged();
+      } else {
+        priceReductionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+     */
+    public Builder mergePriceReduction(com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType value) {
+      if (priceReductionBuilder_ == null) {
+        if (priceReduction_ != null) {
+          priceReduction_ =
+            com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType.newBuilder(priceReduction_).mergeFrom(value).buildPartial();
+        } else {
+          priceReduction_ = value;
+        }
+        onChanged();
+      } else {
+        priceReductionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+     */
+    public Builder clearPriceReduction() {
+      if (priceReductionBuilder_ == null) {
+        priceReduction_ = null;
+        onChanged();
+      } else {
+        priceReduction_ = null;
+        priceReductionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType.Builder getPriceReductionBuilder() {
+      
+      onChanged();
+      return getPriceReductionFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionTypeOrBuilder getPriceReductionOrBuilder() {
+      if (priceReductionBuilder_ != null) {
+        return priceReductionBuilder_.getMessageOrBuilder();
+      } else {
+        return priceReduction_ == null ?
+            com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType.getDefaultInstance() : priceReduction_;
+      }
+    }
+    /**
+     * <code>.com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType PriceReduction = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType, com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionTypeOrBuilder> 
+        getPriceReductionFieldBuilder() {
+      if (priceReductionBuilder_ == null) {
+        priceReductionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType, com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.PriceReductionTypeOrBuilder>(
+                getPriceReduction(),
+                getParentForChildren(),
+                isClean());
+        priceReduction_ = null;
+      }
+      return priceReductionBuilder_;
+    }
+
+    private long recommendPrdType2_ ;
+    /**
+     * <code>int64 RecommendPrdType2 = 16;</code>
+     */
+    public long getRecommendPrdType2() {
+      return recommendPrdType2_;
+    }
+    /**
+     * <code>int64 RecommendPrdType2 = 16;</code>
+     */
+    public Builder setRecommendPrdType2(long value) {
+      
+      recommendPrdType2_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 RecommendPrdType2 = 16;</code>
+     */
+    public Builder clearRecommendPrdType2() {
+      
+      recommendPrdType2_ = 0L;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

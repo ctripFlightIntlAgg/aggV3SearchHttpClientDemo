@@ -31,7 +31,11 @@ message SearchResultType
 	repeated com.ctrip.flight.intl.agg.flighttypes.v3.CityInfoType City =10 ; //变化 新增城市Ref
 	repeated com.ctrip.flight.intl.agg.flighttypes.v3.AirportInfoType Airport =11 ; //变化 新增机场Ref
 	repeated com.ctrip.flight.intl.agg.additionproduct.v3.ServiceType Service = 12; //变化  新增权益Ref
-
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13; // 新增缓存响应Ref
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14; // 信用卡支付信息Ref
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15 ;
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;
+	string XproductSearchKey = 17; // X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
 }
 
 message FlightProductGroupType
@@ -52,6 +56,8 @@ message FlightProductGroupType
 	string UnaccompaniedAgeRange = 10 ; // 变化 从PriceType中移动过来
 	string Flag = 11; // 新增
 	int32 ChoicenessTag = 12; // 新增
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 13;
+	double Priority = 14; // 值越小优先级越高
 }
 
 message FlightRefType
@@ -61,6 +67,7 @@ message FlightRefType
 	int32 SequenceNo = 3 ;
 	string MarrySeg = 4 ;
 	bool mainSegment = 5 ; //变化 int改为bool
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType Tag = 6 ;
 }
 
 message PriceType
@@ -76,6 +83,9 @@ message PriceType
 	// 变化 UnaccompaniedAgeRange移动到FlightProductGroupType中
 	// string UnaccompaniedAgeRange = 9 ;
 	repeated int32 PriceAttributeID = 10 ;
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;
+	double Priority = 12; // 值越小优先级越高
+	int32 OfferID = 13; // 运价索引 每次查询唯一
 }
 
 /*

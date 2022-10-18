@@ -150,6 +150,16 @@ public final class AggFlighttypesV3 {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PriceInfoType_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_RebateInfoType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_RebateInfoType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CreditCardFeeType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CreditCardFeeType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ProductDetailType_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -179,6 +189,56 @@ public final class AggFlighttypesV3 {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_IntRange_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CacheInfoType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CacheInfoType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_RestrictionType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_RestrictionType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentAgencyModelInfoType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentAgencyModelInfoType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentDiscountRefType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentDiscountRefType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentDiscountType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentDiscountType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_DiscountDetailType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_DiscountDetailType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CreditCardPaymentInfoType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CreditCardPaymentInfoType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ObFeeType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ObFeeType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ServiceFeeType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ServiceFeeType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_IntRangeType_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_IntRangeType_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -197,149 +257,211 @@ public final class AggFlighttypesV3 {
       "nt\030\002 \001(\005\022\023\n\013Nationality\030\003 \001(\t\"h\n\nAgencyT" +
       "ype\022\020\n\010AgencyID\030\001 \001(\005\022\022\n\nAgencyCode\030\002 \001(" +
       "\t\022\016\n\006CityID\030\003 \001(\005\022\020\n\010CityCode\030\004 \001(\t\022\022\n\nA" +
-      "gencyName\030\005 \001(\t\"\\\n\017AirlineInfoType\022\023\n\013Ai" +
+      "gencyName\030\005 \001(\t\"t\n\017AirlineInfoType\022\023\n\013Ai" +
       "rlineCode\030\001 \001(\t\022\023\n\013AirlineName\030\002 \001(\t\022\020\n\010" +
-      "Alliance\030\003 \001(\t\022\r\n\005IsLcc\030\004 \001(\010\"J\n\017Airport" +
-      "InfoType\022\020\n\010PortCode\030\001 \001(\t\022\020\n\010PortName\030\002" +
-      " \001(\t\022\023\n\013PortNameGLB\030\003 \001(\t\"?\n\021BaggageDeta" +
-      "ilType\022\016\n\006Amount\030\001 \001(\005\022\014\n\004Unit\030\002 \001(\t\022\014\n\004" +
-      "Type\030\003 \001(\t\"8\n\032BaggageExtensionFiledsType" +
-      "\022\032\n\022ContainFreeBaggage\030\001 \001(\010\"6\n\017BaggageS" +
-      "izeType\022\014\n\004Size\030\001 \001(\t\022\025\n\rSizeLimitType\030\002" +
-      " \001(\005\"\277\001\n\014CityInfoType\022\016\n\006CityID\030\001 \001(\005\022\020\n" +
-      "\010CityCode\030\002 \001(\t\022\020\n\010CityName\030\003 \001(\t\022\023\n\013Cit" +
-      "yNameGLB\030\004 \001(\t\022\022\n\nProvinceID\030\005 \001(\005\022\021\n\tCo" +
-      "untryID\030\006 \001(\005\022\023\n\013CountryName\030\007 \001(\t\022\026\n\016Co" +
-      "untryNameGLB\030\010 \001(\t\022\022\n\nIsDomestic\030\t \001(\010\"\256" +
-      "\001\n\014FareInfoType\022\016\n\006FareID\030\001 \001(\t\022\021\n\tFareB" +
-      "asis\030\002 \001(\t\022\022\n\nFareSource\030\003 \001(\005\022\024\n\014OwnerC" +
-      "arrier\030\004 \001(\t\022\020\n\010FareType\030\005 \001(\005\022\023\n\013Accoun" +
-      "tCode\030\006 \001(\t\022\030\n\020TicketDesignator\030\007 \001(\t\022\020\n" +
-      "\010TourCode\030\010 \001(\t\"h\n\010FareType\022\022\n\nFCSequenc" +
-      "e\030\001 \001(\005\022H\n\010FareInfo\030\002 \001(\01326.com.ctrip.fl" +
-      "ight.intl.agg.flighttypes.v3.FareInfoTyp" +
-      "e\"\362\001\n\021FlightSegmentType\022\032\n\022ProductDetail" +
-      "Index\030\001 \001(\005\022\022\n\nFCSequence\030\002 \001(\005\022\021\n\tSeatC" +
-      "lass\030\003 \001(\t\022L\n\nCabinClass\030\004 \001(\01628.com.ctr" +
-      "ip.flight.intl.agg.flighttypes.v3.CabinC" +
-      "lassType\022\022\n\nSeatSource\030\005 \001(\005\022\021\n\tSeatCoun" +
-      "t\030\006 \001(\005\022\024\n\014BookingToken\030\007 \001(\t\022\017\n\007StockID" +
-      "\030\010 \001(\003\".\n\020KeyValuePairType\022\013\n\003Key\030\001 \001(\t\022" +
-      "\r\n\005Value\030\002 \001(\t\"\274\001\n\030PassengerRestrictionT" +
-      "ype\022\031\n\021MinPassengerCount\030\001 \001(\005\022\031\n\021MaxPas" +
-      "sengerCount\030\002 \001(\005\022\032\n\022NationalityInclude\030" +
-      "\003 \001(\t\022\032\n\022NationalityExclude\030\004 \001(\t\022\030\n\020Max" +
-      "AgeLimitition\030\005 \001(\005\022\030\n\020MinAgeLimitition\030" +
-      "\006 \001(\005\"\250\001\n\021PenaltyRemarkType\022\021\n\tSegmentNo" +
-      "\030\001 \001(\005\022\021\n\tNonRefund\030\002 \001(\t\022\022\n\nNonReroute\030" +
-      "\003 \001(\t\022\026\n\016RefundRemarkID\030\004 \001(\t\022\027\n\017Reroute" +
-      "RemarkID\030\005 \001(\t\022\026\n\016NoShowRemarkID\030\006 \001(\t\022\020" +
-      "\n\010RemarkID\030\007 \001(\t\"J\n\007PicType\022\020\n\010PicSmall\030" +
-      "\001 \001(\t\022\020\n\010PicLarge\030\002 \001(\t\022\r\n\005Title\030\003 \001(\t\022\014" +
-      "\n\004Desc\030\004 \001(\t\"\201\001\n\017PriceDetailType\022\020\n\010Curr" +
-      "ency\030\001 \001(\t\022\021\n\tSalePrice\030\002 \001(\001\022\013\n\003Tax\030\003 \001" +
-      "(\001\022\024\n\014PublishPrice\030\004 \001(\001\022\024\n\014AccountPrice" +
-      "\030\005 \001(\001\022\020\n\010NetPrice\030\006 \001(\001\"F\n\010StopType\022\017\n\007" +
-      "Airport\030\001 \001(\t\022\020\n\010Duration\030\002 \001(\005\022\027\n\017Arriv" +
-      "alDateTime\030\003 \001(\t\"C\n\016TextRemarkType\022\020\n\010Re" +
-      "markID\030\001 \001(\t\022\016\n\006TextCN\030\002 \001(\t\022\017\n\007TextGLB\030" +
-      "\003 \001(\t\"`\n\026TicketingTimeLimitType\022\025\n\rTimeL" +
-      "imitType\030\001 \001(\005\022\021\n\tLimitTime\030\002 \001(\005\022\034\n\024Ave" +
-      "rageTicketingTime\030\003 \001(\001\"\216\001\n\027VirtualFligh" +
-      "tRemarkType\022\021\n\tSegmentNo\030\001 \001(\005\022\022\n\nSequen" +
-      "ceNo\030\002 \001(\005\022\027\n\017CheckInRemarkID\030\003 \001(\t\022\030\n\020P" +
-      "reTransRemarkID\030\004 \001(\t\022\031\n\021NextTransRemark" +
-      "ID\030\005 \001(\t\"\244\001\n\017BaggageInfoType\022\021\n\tBaggageI" +
-      "D\030\001 \001(\t\022N\n\013BaggageSize\030\002 \001(\01329.com.ctrip" +
-      ".flight.intl.agg.flighttypes.v3.BaggageS" +
-      "izeType\022\014\n\004Type\030\003 \001(\005\022\021\n\tSalePrice\030\004 \001(\001" +
-      "\022\r\n\005Token\030\005 \001(\t\"\372\001\n\013BaggageType\022\021\n\tBagga" +
-      "geID\030\001 \001(\t\022\021\n\tBaggageCN\030\002 \001(\t\022\022\n\nBaggage" +
-      "GLB\030\003 \001(\t\022R\n\rBaggageDetail\030\004 \003(\0132;.com.c" +
-      "trip.flight.intl.agg.flighttypes.v3.Bagg" +
-      "ageDetailType\022]\n\017ExtentionFileds\030\005 \001(\0132D" +
-      ".com.ctrip.flight.intl.agg.flighttypes.v" +
-      "3.BaggageExtensionFiledsType\"\253\001\n\rPriceUn" +
-      "itType\022@\n\004Fare\030\001 \003(\01322.com.ctrip.flight." +
-      "intl.agg.flighttypes.v3.FareType\022 \n\030Carr" +
-      "ierTicketingDeadline\030\002 \001(\t\022\017\n\007NeedQTE\030\003 " +
-      "\001(\010\022\017\n\007NeedPnr\030\004 \001(\010\022\024\n\014TextRemarkId\030\005 \001" +
-      "(\005\"\317\001\n\016BaggageRefType\022\021\n\tSegmentNo\030\001 \001(\005" +
-      "\022B\n\007AgeType\030\002 \001(\01621.com.ctrip.flight.int" +
-      "l.agg.flighttypes.v3.AgeType\022\032\n\022ProductD" +
-      "etailIndex\030\003 \001(\005\022J\n\007Baggage\030\004 \003(\01329.com." +
-      "ctrip.flight.intl.agg.flighttypes.v3.Bag" +
-      "gageInfoType\"\315\004\n\nFlightType\022\020\n\010FlightID\030" +
-      "\001 \001(\t\022\034\n\024MarketingCarrierCode\030\002 \001(\t\022\020\n\010F" +
-      "lightNo\030\003 \001(\t\022\034\n\024OperatingCarrierCode\030\004 " +
-      "\001(\t\022\031\n\021OperatingFlightNo\030\005 \001(\t\022\031\n\021Depart" +
-      "ureCityCode\030\006 \001(\t\022\027\n\017ArrivalCityCode\030\007 \001" +
-      "(\t\022\034\n\024DepartureAirportCode\030\010 \001(\t\022\032\n\022Arri" +
-      "valAirportCode\030\t \001(\t\022\031\n\021DepartureTermina" +
-      "l\030\n \001(\t\022\027\n\017ArrivalTerminal\030\013 \001(\t\022\027\n\017Take" +
-      "offDateTime\030\014 \001(\t\022\027\n\017ArrivalDateTime\030\r \001" +
-      "(\t\022\025\n\rEquipmentCode\030\016 \001(\t\022@\n\004Stop\030\017 \003(\0132" +
-      "2.com.ctrip.flight.intl.agg.flighttypes." +
-      "v3.StopType\022\020\n\010Duration\030\020 \001(\005\022\023\n\013Arrival" +
-      "Days\030\021 \001(\005\022G\n\003Tag\030\022 \003(\0132:.com.ctrip.flig" +
-      "ht.intl.agg.flighttypes.v3.KeyValuePairT" +
-      "ype\022\025\n\rTransportType\030\023 \001(\005\022\020\n\010Supplier\030\024" +
-      " \001(\t\"\201\006\n\rPriceInfoType\022\033\n\023TravelerEligib" +
-      "ility\030\001 \001(\t\022\024\n\014OfficialName\030\003 \001(\t\022\024\n\014Tic" +
-      "ketRemark\030\004 \001(\t\022\\\n\022TicketingTimeLimit\030\005 " +
-      "\001(\0132@.com.ctrip.flight.intl.agg.flightty" +
-      "pes.v3.TicketingTimeLimitType\022`\n\024Passeng" +
-      "erRestriction\030\006 \001(\0132B.com.ctrip.flight.i" +
-      "ntl.agg.flighttypes.v3.PassengerRestrict" +
-      "ionType\022N\n\013PriceDetail\030\007 \001(\01329.com.ctrip" +
-      ".flight.intl.agg.flighttypes.v3.PriceDet" +
-      "ailType\022V\n\023OriginalPriceDetail\030\010 \001(\01329.c" +
+      "Alliance\030\003 \001(\t\022\r\n\005IsLcc\030\004 \001(\010\022\026\n\016Airline" +
+      "NameGLB\030\005 \001(\t\"J\n\017AirportInfoType\022\020\n\010Port" +
+      "Code\030\001 \001(\t\022\020\n\010PortName\030\002 \001(\t\022\023\n\013PortName" +
+      "GLB\030\003 \001(\t\"?\n\021BaggageDetailType\022\016\n\006Amount" +
+      "\030\001 \001(\005\022\014\n\004Unit\030\002 \001(\t\022\014\n\004Type\030\003 \001(\t\"8\n\032Ba" +
+      "ggageExtensionFiledsType\022\032\n\022ContainFreeB" +
+      "aggage\030\001 \001(\010\"6\n\017BaggageSizeType\022\014\n\004Size\030" +
+      "\001 \001(\t\022\025\n\rSizeLimitType\030\002 \001(\005\"\277\001\n\014CityInf" +
+      "oType\022\016\n\006CityID\030\001 \001(\005\022\020\n\010CityCode\030\002 \001(\t\022" +
+      "\020\n\010CityName\030\003 \001(\t\022\023\n\013CityNameGLB\030\004 \001(\t\022\022" +
+      "\n\nProvinceID\030\005 \001(\005\022\021\n\tCountryID\030\006 \001(\005\022\023\n" +
+      "\013CountryName\030\007 \001(\t\022\026\n\016CountryNameGLB\030\010 \001" +
+      "(\t\022\022\n\nIsDomestic\030\t \001(\010\"\220\002\n\014FareInfoType\022" +
+      "\016\n\006FareID\030\001 \001(\t\022\021\n\tFareBasis\030\002 \001(\t\022\022\n\nFa" +
+      "reSource\030\003 \001(\005\022\024\n\014OwnerCarrier\030\004 \001(\t\022\020\n\010" +
+      "FareType\030\005 \001(\005\022\023\n\013AccountCode\030\006 \001(\t\022\030\n\020T" +
+      "icketDesignator\030\007 \001(\t\022\020\n\010TourCode\030\010 \001(\t\022" +
+      "\023\n\013Eligibility\030\t \001(\t\022\020\n\010TariffNo\030\n \001(\005\022\020" +
+      "\n\010FareRule\030\013 \001(\t\022\024\n\014FareTypeCode\030\014 \001(\t\022\021" +
+      "\n\tFareClass\030\r \001(\t\"\312\001\n\010FareType\022\022\n\nFCSequ" +
+      "ence\030\001 \001(\005\022H\n\010FareInfo\030\002 \001(\01326.com.ctrip" +
+      ".flight.intl.agg.flighttypes.v3.FareInfo" +
+      "Type\022L\n\021ApplicableAgeType\030\003 \003(\01621.com.ct" +
+      "rip.flight.intl.agg.flighttypes.v3.AgeTy" +
+      "pe\022\022\n\nPUSequence\030\004 \001(\005\"\206\002\n\021FlightSegment" +
+      "Type\022\032\n\022ProductDetailIndex\030\001 \001(\005\022\022\n\nFCSe" +
+      "quence\030\002 \001(\005\022\021\n\tSeatClass\030\003 \001(\t\022L\n\nCabin" +
+      "Class\030\004 \001(\01628.com.ctrip.flight.intl.agg." +
+      "flighttypes.v3.CabinClassType\022\022\n\nSeatSou" +
+      "rce\030\005 \001(\005\022\021\n\tSeatCount\030\006 \001(\005\022\024\n\014BookingT" +
+      "oken\030\007 \001(\t\022\017\n\007StockID\030\010 \001(\003\022\022\n\nPUSequenc" +
+      "e\030\t \001(\005\".\n\020KeyValuePairType\022\013\n\003Key\030\001 \001(\t" +
+      "\022\r\n\005Value\030\002 \001(\t\"\274\001\n\030PassengerRestriction" +
+      "Type\022\031\n\021MinPassengerCount\030\001 \001(\005\022\031\n\021MaxPa" +
+      "ssengerCount\030\002 \001(\005\022\032\n\022NationalityInclude" +
+      "\030\003 \001(\t\022\032\n\022NationalityExclude\030\004 \001(\t\022\030\n\020Ma" +
+      "xAgeLimitition\030\005 \001(\005\022\030\n\020MinAgeLimitition" +
+      "\030\006 \001(\005\"\250\001\n\021PenaltyRemarkType\022\021\n\tSegmentN" +
+      "o\030\001 \001(\005\022\021\n\tNonRefund\030\002 \001(\t\022\022\n\nNonReroute" +
+      "\030\003 \001(\t\022\026\n\016RefundRemarkID\030\004 \001(\t\022\027\n\017Rerout" +
+      "eRemarkID\030\005 \001(\t\022\026\n\016NoShowRemarkID\030\006 \001(\t\022" +
+      "\020\n\010RemarkID\030\007 \001(\t\"J\n\007PicType\022\020\n\010PicSmall" +
+      "\030\001 \001(\t\022\020\n\010PicLarge\030\002 \001(\t\022\r\n\005Title\030\003 \001(\t\022" +
+      "\014\n\004Desc\030\004 \001(\t\"\371\001\n\017PriceDetailType\022\020\n\010Cur" +
+      "rency\030\001 \001(\t\022\021\n\tSalePrice\030\002 \001(\001\022\013\n\003Tax\030\003 " +
+      "\001(\001\022\024\n\014PublishPrice\030\004 \001(\001\022\024\n\014AccountPric" +
+      "e\030\005 \001(\001\022\020\n\010NetPrice\030\006 \001(\001\022\026\n\016SalePricePa" +
+      "yee\030\007 \001(\005\022\020\n\010TaxPayee\030\010 \001(\005\022L\n\nServiceFe" +
+      "e\030\t \003(\01328.com.ctrip.flight.intl.agg.flig" +
+      "httypes.v3.ServiceFeeType\"F\n\010StopType\022\017\n" +
+      "\007Airport\030\001 \001(\t\022\020\n\010Duration\030\002 \001(\005\022\027\n\017Arri" +
+      "valDateTime\030\003 \001(\t\"S\n\016TextRemarkType\022\020\n\010R" +
+      "emarkID\030\001 \001(\t\022\016\n\006TextCN\030\002 \001(\t\022\017\n\007TextGLB" +
+      "\030\003 \001(\t\022\016\n\006TextEN\030\004 \001(\t\"`\n\026TicketingTimeL" +
+      "imitType\022\025\n\rTimeLimitType\030\001 \001(\005\022\021\n\tLimit" +
+      "Time\030\002 \001(\005\022\034\n\024AverageTicketingTime\030\003 \001(\001" +
+      "\"\216\001\n\027VirtualFlightRemarkType\022\021\n\tSegmentN" +
+      "o\030\001 \001(\005\022\022\n\nSequenceNo\030\002 \001(\005\022\027\n\017CheckInRe" +
+      "markID\030\003 \001(\t\022\030\n\020PreTransRemarkID\030\004 \001(\t\022\031" +
+      "\n\021NextTransRemarkID\030\005 \001(\t\"\244\001\n\017BaggageInf" +
+      "oType\022\021\n\tBaggageID\030\001 \001(\t\022N\n\013BaggageSize\030" +
+      "\002 \001(\01329.com.ctrip.flight.intl.agg.flight" +
+      "types.v3.BaggageSizeType\022\014\n\004Type\030\003 \001(\005\022\021" +
+      "\n\tSalePrice\030\004 \001(\001\022\r\n\005Token\030\005 \001(\t\"\215\002\n\013Bag" +
+      "gageType\022\021\n\tBaggageID\030\001 \001(\t\022\021\n\tBaggageCN" +
+      "\030\002 \001(\t\022\022\n\nBaggageGLB\030\003 \001(\t\022R\n\rBaggageDet" +
+      "ail\030\004 \003(\0132;.com.ctrip.flight.intl.agg.fl" +
+      "ighttypes.v3.BaggageDetailType\022]\n\017Extent" +
+      "ionFileds\030\005 \001(\0132D.com.ctrip.flight.intl." +
+      "agg.flighttypes.v3.BaggageExtensionFiled" +
+      "sType\022\021\n\tBaggageEN\030\006 \001(\t\"\253\001\n\rPriceUnitTy" +
+      "pe\022@\n\004Fare\030\001 \003(\01322.com.ctrip.flight.intl" +
+      ".agg.flighttypes.v3.FareType\022 \n\030CarrierT" +
+      "icketingDeadline\030\002 \001(\t\022\017\n\007NeedQTE\030\003 \001(\010\022" +
+      "\017\n\007NeedPnr\030\004 \001(\010\022\024\n\014TextRemarkId\030\005 \001(\005\"\317" +
+      "\001\n\016BaggageRefType\022\021\n\tSegmentNo\030\001 \001(\005\022B\n\007" +
+      "AgeType\030\002 \001(\01621.com.ctrip.flight.intl.ag" +
+      "g.flighttypes.v3.AgeType\022\032\n\022ProductDetai" +
+      "lIndex\030\003 \001(\005\022J\n\007Baggage\030\004 \003(\01329.com.ctri" +
+      "p.flight.intl.agg.flighttypes.v3.Baggage" +
+      "InfoType\"\237\005\n\nFlightType\022\020\n\010FlightID\030\001 \001(" +
+      "\t\022\034\n\024MarketingCarrierCode\030\002 \001(\t\022\020\n\010Fligh" +
+      "tNo\030\003 \001(\t\022\034\n\024OperatingCarrierCode\030\004 \001(\t\022" +
+      "\031\n\021OperatingFlightNo\030\005 \001(\t\022\031\n\021DepartureC" +
+      "ityCode\030\006 \001(\t\022\027\n\017ArrivalCityCode\030\007 \001(\t\022\034" +
+      "\n\024DepartureAirportCode\030\010 \001(\t\022\032\n\022ArrivalA" +
+      "irportCode\030\t \001(\t\022\031\n\021DepartureTerminal\030\n " +
+      "\001(\t\022\027\n\017ArrivalTerminal\030\013 \001(\t\022\027\n\017TakeoffD" +
+      "ateTime\030\014 \001(\t\022\027\n\017ArrivalDateTime\030\r \001(\t\022\025" +
+      "\n\rEquipmentCode\030\016 \001(\t\022@\n\004Stop\030\017 \003(\01322.co" +
+      "m.ctrip.flight.intl.agg.flighttypes.v3.S" +
+      "topType\022\020\n\010Duration\030\020 \001(\005\022\023\n\013ArrivalDays" +
+      "\030\021 \001(\005\022G\n\003Tag\030\022 \003(\0132:.com.ctrip.flight.i" +
+      "ntl.agg.flighttypes.v3.KeyValuePairType\022" +
+      "\025\n\rTransportType\030\023 \001(\005\022\020\n\010Supplier\030\024 \001(\t" +
+      "\022P\n\014ExtendFields\030\025 \003(\0132:.com.ctrip.fligh" +
+      "t.intl.agg.flighttypes.v3.KeyValuePairTy" +
+      "pe\"\365\007\n\rPriceInfoType\022\033\n\023TravelerEligibil" +
+      "ity\030\001 \001(\t\022\024\n\014OfficialName\030\003 \001(\t\022\024\n\014Ticke" +
+      "tRemark\030\004 \001(\t\022\\\n\022TicketingTimeLimit\030\005 \001(" +
+      "\0132@.com.ctrip.flight.intl.agg.flighttype" +
+      "s.v3.TicketingTimeLimitType\022`\n\024Passenger" +
+      "Restriction\030\006 \001(\0132B.com.ctrip.flight.int" +
+      "l.agg.flighttypes.v3.PassengerRestrictio" +
+      "nType\022N\n\013PriceDetail\030\007 \001(\01329.com.ctrip.f" +
+      "light.intl.agg.flighttypes.v3.PriceDetai" +
+      "lType\022V\n\023OriginalPriceDetail\030\010 \001(\01329.com" +
+      ".ctrip.flight.intl.agg.flighttypes.v3.Pr" +
+      "iceDetailType\022\022\n\nExpression\030\t \001(\t\022\020\n\010Exc" +
+      "hange\030\n \001(\001\022\020\n\010OfficeNo\030\013 \001(\t\022G\n\003Tag\030\014 \003" +
+      "(\0132:.com.ctrip.flight.intl.agg.flighttyp" +
+      "es.v3.KeyValuePairType\022\025\n\rDiscountPrice\030" +
+      "\r \001(\001\022\024\n\014TextRemarkId\030\016 \001(\005\022\022\n\nIATANumbe" +
+      "r\030\017 \001(\t\022\025\n\rQTECmdPostfix\030\020 \001(\t\022\020\n\010XSFSIC" +
+      "md\030\021 \001(\t\022B\n\007AgeType\030\022 \001(\01621.com.ctrip.fl" +
+      "ight.intl.agg.flighttypes.v3.AgeType\022\020\n\010" +
+      "AgencyID\030\023 \001(\005\022P\n\014ExtendFields\030\024 \003(\0132:.c" +
       "om.ctrip.flight.intl.agg.flighttypes.v3." +
-      "PriceDetailType\022\022\n\nExpression\030\t \001(\t\022\020\n\010E" +
-      "xchange\030\n \001(\001\022\020\n\010OfficeNo\030\013 \001(\t\022G\n\003Tag\030\014" +
-      " \003(\0132:.com.ctrip.flight.intl.agg.flightt" +
-      "ypes.v3.KeyValuePairType\022\025\n\rDiscountPric" +
-      "e\030\r \001(\001\022\024\n\014TextRemarkId\030\016 \001(\005\022\022\n\nIATANum" +
-      "ber\030\017 \001(\t\022\025\n\rQTECmdPostfix\030\020 \001(\t\022\020\n\010XSFS" +
-      "ICmd\030\021 \001(\t\022B\n\007AgeType\030\022 \001(\01621.com.ctrip." +
-      "flight.intl.agg.flighttypes.v3.AgeType\022\020" +
-      "\n\010AgencyID\030\023 \001(\005\"\331\003\n\021ProductDetailType\022\026" +
-      "\n\016BookingChannel\030\001 \001(\t\022J\n\tPriceInfo\030\002 \003(" +
-      "\01327.com.ctrip.flight.intl.agg.flighttype" +
-      "s.v3.PriceInfoType\022\031\n\021ValidatingCarrier\030" +
-      "\003 \001(\t\022\027\n\017ProductCategory\030\005 \001(\005\022\032\n\022SubPro" +
-      "ductCategory\030\006 \001(\005\022\023\n\013InvoiceType\030\007 \001(\t\022" +
-      "\024\n\014PenaltiesKey\030\010 \001(\t\022J\n\tPriceUnit\030\n \001(\013" +
-      "27.com.ctrip.flight.intl.agg.flighttypes" +
-      ".v3.PriceUnitType\022P\n\014PenaltyRules\030\013 \001(\0132" +
-      ":.com.ctrip.flight.intl.agg.flighttypes." +
-      "v3.PenaltyRulesType\022G\n\003Tag\030\014 \003(\0132:.com.c" +
-      "trip.flight.intl.agg.flighttypes.v3.KeyV" +
-      "aluePairType\"\202\001\n\020PenaltyRulesType\022\032\n\022IsR" +
-      "eplaceCtripRule\030\001 \001(\010\022R\n\rPenaltyRemark\030\002" +
-      " \003(\0132;.com.ctrip.flight.intl.agg.flightt" +
-      "ypes.v3.PenaltyRemarkType\"\234\002\n\022FlightCrit" +
-      "eriaType\022\025\n\rOrigDestSeqNo\030\001 \001(\005\022\020\n\010Fligh" +
-      "tNo\030\002 \001(\t\022\030\n\020OperatingCarrier\030\003 \001(\t\022\031\n\021O" +
-      "peratingFlightNo\030\004 \001(\t\022L\n\nCabinClass\030\005 \001" +
-      "(\01628.com.ctrip.flight.intl.agg.flighttyp" +
-      "es.v3.CabinClassType\022\021\n\tSeatClass\030\006 \001(\t\022" +
-      "\030\n\020DepartureAirport\030\007 \001(\t\022\026\n\016ArrivalAirp" +
-      "ort\030\010 \001(\t\022\025\n\rDepartureDate\030\t \001(\t\"\200\003\n\031Ori" +
-      "gDestRequestOptionType\022T\n\016TransferOption" +
-      "\030\001 \001(\0132<.com.ctrip.flight.intl.agg.fligh" +
-      "ttypes.v3.TransferOptionType\022L\n\nCabinCla" +
-      "ss\030\002 \003(\01628.com.ctrip.flight.intl.agg.fli" +
-      "ghttypes.v3.CabinClassType\022N\n\022DepartureT" +
-      "imeRange\030\003 \001(\01322.com.ctrip.flight.intl.a" +
-      "gg.flighttypes.v3.IntRange\022L\n\020ArrivalTim" +
-      "eRange\030\004 \001(\01322.com.ctrip.flight.intl.agg" +
-      ".flighttypes.v3.IntRange\022\017\n\007Carrier\030\005 \001(" +
-      "\t\022\020\n\010FlightNo\030\006 \003(\t\"\217\001\n\022TransferOptionTy" +
-      "pe\022\024\n\014TransferType\030\001 \001(\005\022\024\n\014TransferCity" +
-      "\030\002 \003(\t\022M\n\021TransferTimeRange\030\003 \001(\01322.com." +
-      "ctrip.flight.intl.agg.flighttypes.v3.Int" +
-      "Range\"&\n\010IntRange\022\r\n\005Start\030\001 \001(\005\022\013\n\003End\030" +
+      "KeyValuePairType\022L\n\nRebateInfo\030\025 \003(\01328.c" +
+      "om.ctrip.flight.intl.agg.flighttypes.v3." +
+      "RebateInfoType\022R\n\rCreditCardFee\030\026 \003(\0132;." +
+      "com.ctrip.flight.intl.agg.flighttypes.v3" +
+      ".CreditCardFeeType\"o\n\016RebateInfoType\022\014\n\004" +
+      "Type\030\001 \001(\t\022\016\n\006Amount\030\002 \001(\001\022\020\n\010Currency\030\003" +
+      " \001(\t\022\027\n\017rebatePolicyIDs\030\004 \003(\003\022\024\n\014ActualA" +
+      "mount\030\005 \001(\001\";\n\021CreditCardFeeType\022\026\n\016Cred" +
+      "itCardType\030\001 \001(\t\022\016\n\006Amount\030\002 \001(\001\"\305\005\n\021Pro" +
+      "ductDetailType\022\026\n\016BookingChannel\030\001 \001(\t\022J" +
+      "\n\tPriceInfo\030\002 \003(\01327.com.ctrip.flight.int" +
+      "l.agg.flighttypes.v3.PriceInfoType\022\031\n\021Va" +
+      "lidatingCarrier\030\003 \001(\t\022\027\n\017ProductCategory" +
+      "\030\005 \001(\005\022\032\n\022SubProductCategory\030\006 \001(\005\022\023\n\013In" +
+      "voiceType\030\007 \001(\t\022\024\n\014PenaltiesKey\030\010 \001(\t\022J\n" +
+      "\tPriceUnit\030\n \001(\01327.com.ctrip.flight.intl" +
+      ".agg.flighttypes.v3.PriceUnitType\022P\n\014Pen" +
+      "altyRules\030\013 \001(\0132:.com.ctrip.flight.intl." +
+      "agg.flighttypes.v3.PenaltyRulesType\022G\n\003T" +
+      "ag\030\014 \003(\0132:.com.ctrip.flight.intl.agg.fli" +
+      "ghttypes.v3.KeyValuePairType\022\023\n\013CacheInf" +
+      "oID\030\r \001(\005\022N\n\013Restriction\030\016 \001(\01329.com.ctr" +
+      "ip.flight.intl.agg.flighttypes.v3.Restri" +
+      "ctionType\022P\n\014ExtendFields\030\017 \003(\0132:.com.ct" +
+      "rip.flight.intl.agg.flighttypes.v3.KeyVa" +
+      "luePairType\022\031\n\021NoIdentityCardInd\030\020 \001(\005\022\030" +
+      "\n\020AgencyLicenseUrl\030\021 \001(\t\"\202\001\n\020PenaltyRule" +
+      "sType\022\032\n\022IsReplaceCtripRule\030\001 \001(\010\022R\n\rPen" +
+      "altyRemark\030\002 \003(\0132;.com.ctrip.flight.intl" +
+      ".agg.flighttypes.v3.PenaltyRemarkType\"\236\002" +
+      "\n\022FlightCriteriaType\022\025\n\rOrigDestSeqNo\030\001 " +
+      "\001(\005\022\020\n\010FlightNo\030\002 \001(\t\022\030\n\020OperatingCarrie" +
+      "r\030\003 \001(\t\022\031\n\021OperatingFlightNo\030\004 \001(\t\022\021\n\tSe" +
+      "atClass\030\006 \001(\t\022\030\n\020DepartureAirport\030\007 \001(\t\022" +
+      "\026\n\016ArrivalAirport\030\010 \001(\t\022\025\n\rDepartureDate" +
+      "\030\t \001(\t\022N\n\014CabinClasses\030\n \003(\01628.com.ctrip" +
+      ".flight.intl.agg.flighttypes.v3.CabinCla" +
+      "ssType\"\200\003\n\031OrigDestRequestOptionType\022T\n\016" +
+      "TransferOption\030\001 \001(\0132<.com.ctrip.flight." +
+      "intl.agg.flighttypes.v3.TransferOptionTy" +
+      "pe\022L\n\nCabinClass\030\002 \003(\01628.com.ctrip.fligh" +
+      "t.intl.agg.flighttypes.v3.CabinClassType" +
+      "\022N\n\022DepartureTimeRange\030\003 \001(\01322.com.ctrip" +
+      ".flight.intl.agg.flighttypes.v3.IntRange" +
+      "\022L\n\020ArrivalTimeRange\030\004 \001(\01322.com.ctrip.f" +
+      "light.intl.agg.flighttypes.v3.IntRange\022\017" +
+      "\n\007Carrier\030\005 \001(\t\022\020\n\010FlightNo\030\006 \003(\t\"\217\001\n\022Tr" +
+      "ansferOptionType\022\024\n\014TransferType\030\001 \001(\005\022\024" +
+      "\n\014TransferCity\030\002 \003(\t\022M\n\021TransferTimeRang" +
+      "e\030\003 \001(\01322.com.ctrip.flight.intl.agg.flig" +
+      "httypes.v3.IntRange\"&\n\010IntRange\022\r\n\005Start" +
+      "\030\001 \001(\005\022\013\n\003End\030\002 \001(\005\"O\n\rCacheInfoType\022\023\n\013" +
+      "CacheInfoID\030\001 \001(\005\022\030\n\020AgeInMillisecond\030\002 " +
+      "\001(\005\022\017\n\007traceId\030\003 \001(\t\"\367\001\n\017RestrictionType" +
+      "\022)\n!LanguageOfGovernmentIssuedPhotoId\030\001 " +
+      "\003(\t\022d\n\026PaymentAgencyModelInfo\030\002 \001(\0132D.co" +
+      "m.ctrip.flight.intl.agg.flighttypes.v3.P" +
+      "aymentAgencyModelInfoType\022S\n\023PassengerCo" +
+      "untRange\030\003 \001(\01326.com.ctrip.flight.intl.a" +
+      "gg.flighttypes.v3.IntRangeType\"\233\001\n\032Payme" +
+      "ntAgencyModelInfoType\022\037\n\027CreditCardPayme" +
+      "ntInfoID\030\001 \003(\005\022\\\n\022PaymentDiscountRef\030\002 \003" +
+      "(\0132@.com.ctrip.flight.intl.agg.flighttyp" +
+      "es.v3.PaymentDiscountRefType\"G\n\026PaymentD" +
+      "iscountRefType\022\031\n\021PaymentDiscountID\030\001 \003(" +
+      "\005\022\022\n\nPaymentWay\030\002 \001(\t\"\357\001\n\023PaymentDiscoun" +
+      "tType\022\031\n\021PaymentDiscountID\030\001 \001(\005\022\030\n\020Disc" +
+      "ountTotalFee\030\002 \001(\001\022\020\n\010Currency\030\003 \001(\t\022\026\n\016" +
+      "DiscountSettle\030\004 \001(\005\022\020\n\010BankCode\030\005 \001(\t\022\021" +
+      "\n\tCardLevel\030\006 \001(\t\022T\n\016DiscountDetail\030\007 \003(" +
+      "\0132<.com.ctrip.flight.intl.agg.flighttype" +
+      "s.v3.DiscountDetailType\"?\n\022DiscountDetai" +
+      "lType\022\024\n\014DiscountType\030\001 \001(\t\022\023\n\013DiscountF" +
+      "ee\030\002 \001(\001\"\231\002\n\031CreditCardPaymentInfoType\022\016" +
+      "\n\006RefNum\030\001 \001(\005\022\026\n\016CreditCardType\030\002 \001(\t\022E" +
+      "\n\010AdultFee\030\003 \001(\01323.com.ctrip.flight.intl" +
+      ".agg.flighttypes.v3.ObFeeType\022E\n\010ChildFe" +
+      "e\030\004 \001(\01323.com.ctrip.flight.intl.agg.flig" +
+      "httypes.v3.ObFeeType\022F\n\tInfantFee\030\005 \001(\0132" +
+      "3.com.ctrip.flight.intl.agg.flighttypes." +
+      "v3.ObFeeType\"R\n\tObFeeType\022\r\n\005Payee\030\001 \001(\005" +
+      "\022\021\n\tMinAmount\030\002 \001(\001\022\021\n\tMaxAmount\030\003 \001(\001\022\020" +
+      "\n\010Currency\030\004 \001(\t\"A\n\016ServiceFeeType\022\020\n\010Ca" +
+      "tegory\030\001 \001(\005\022\r\n\005Payee\030\002 \001(\005\022\016\n\006Amount\030\003 " +
+      "\001(\001\"(\n\014IntRangeType\022\013\n\003Min\030\001 \001(\005\022\013\n\003Max\030" +
       "\002 \001(\005*,\n\016CabinClassType\022\005\n\001Y\020\000\022\005\n\001W\020\001\022\005\n" +
       "\001C\020\002\022\005\n\001F\020\003*$\n\007AgeType\022\007\n\003ADT\020\000\022\007\n\003CHD\020\001" +
       "\022\007\n\003INF\020\002B,\n(com.ctrip.flight.intl.agg.f" +
@@ -380,7 +502,7 @@ public final class AggFlighttypesV3 {
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_AirlineInfoType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_AirlineInfoType_descriptor,
-        new java.lang.String[] { "AirlineCode", "AirlineName", "Alliance", "IsLcc", });
+        new java.lang.String[] { "AirlineCode", "AirlineName", "Alliance", "IsLcc", "AirlineNameGLB", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_AirportInfoType_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_AirportInfoType_fieldAccessorTable = new
@@ -416,19 +538,19 @@ public final class AggFlighttypesV3 {
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FareInfoType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FareInfoType_descriptor,
-        new java.lang.String[] { "FareID", "FareBasis", "FareSource", "OwnerCarrier", "FareType", "AccountCode", "TicketDesignator", "TourCode", });
+        new java.lang.String[] { "FareID", "FareBasis", "FareSource", "OwnerCarrier", "FareType", "AccountCode", "TicketDesignator", "TourCode", "Eligibility", "TariffNo", "FareRule", "FareTypeCode", "FareClass", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FareType_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FareType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FareType_descriptor,
-        new java.lang.String[] { "FCSequence", "FareInfo", });
+        new java.lang.String[] { "FCSequence", "FareInfo", "ApplicableAgeType", "PUSequence", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FlightSegmentType_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FlightSegmentType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FlightSegmentType_descriptor,
-        new java.lang.String[] { "ProductDetailIndex", "FCSequence", "SeatClass", "CabinClass", "SeatSource", "SeatCount", "BookingToken", "StockID", });
+        new java.lang.String[] { "ProductDetailIndex", "FCSequence", "SeatClass", "CabinClass", "SeatSource", "SeatCount", "BookingToken", "StockID", "PUSequence", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_KeyValuePairType_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_KeyValuePairType_fieldAccessorTable = new
@@ -458,7 +580,7 @@ public final class AggFlighttypesV3 {
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PriceDetailType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PriceDetailType_descriptor,
-        new java.lang.String[] { "Currency", "SalePrice", "Tax", "PublishPrice", "AccountPrice", "NetPrice", });
+        new java.lang.String[] { "Currency", "SalePrice", "Tax", "PublishPrice", "AccountPrice", "NetPrice", "SalePricePayee", "TaxPayee", "ServiceFee", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_StopType_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_StopType_fieldAccessorTable = new
@@ -470,7 +592,7 @@ public final class AggFlighttypesV3 {
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_TextRemarkType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_TextRemarkType_descriptor,
-        new java.lang.String[] { "RemarkID", "TextCN", "TextGLB", });
+        new java.lang.String[] { "RemarkID", "TextCN", "TextGLB", "TextEN", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_TicketingTimeLimitType_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_TicketingTimeLimitType_fieldAccessorTable = new
@@ -494,7 +616,7 @@ public final class AggFlighttypesV3 {
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_BaggageType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_BaggageType_descriptor,
-        new java.lang.String[] { "BaggageID", "BaggageCN", "BaggageGLB", "BaggageDetail", "ExtentionFileds", });
+        new java.lang.String[] { "BaggageID", "BaggageCN", "BaggageGLB", "BaggageDetail", "ExtentionFileds", "BaggageEN", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PriceUnitType_descriptor =
       getDescriptor().getMessageTypes().get(23);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PriceUnitType_fieldAccessorTable = new
@@ -512,49 +634,121 @@ public final class AggFlighttypesV3 {
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FlightType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FlightType_descriptor,
-        new java.lang.String[] { "FlightID", "MarketingCarrierCode", "FlightNo", "OperatingCarrierCode", "OperatingFlightNo", "DepartureCityCode", "ArrivalCityCode", "DepartureAirportCode", "ArrivalAirportCode", "DepartureTerminal", "ArrivalTerminal", "TakeoffDateTime", "ArrivalDateTime", "EquipmentCode", "Stop", "Duration", "ArrivalDays", "Tag", "TransportType", "Supplier", });
+        new java.lang.String[] { "FlightID", "MarketingCarrierCode", "FlightNo", "OperatingCarrierCode", "OperatingFlightNo", "DepartureCityCode", "ArrivalCityCode", "DepartureAirportCode", "ArrivalAirportCode", "DepartureTerminal", "ArrivalTerminal", "TakeoffDateTime", "ArrivalDateTime", "EquipmentCode", "Stop", "Duration", "ArrivalDays", "Tag", "TransportType", "Supplier", "ExtendFields", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PriceInfoType_descriptor =
       getDescriptor().getMessageTypes().get(26);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PriceInfoType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PriceInfoType_descriptor,
-        new java.lang.String[] { "TravelerEligibility", "OfficialName", "TicketRemark", "TicketingTimeLimit", "PassengerRestriction", "PriceDetail", "OriginalPriceDetail", "Expression", "Exchange", "OfficeNo", "Tag", "DiscountPrice", "TextRemarkId", "IATANumber", "QTECmdPostfix", "XSFSICmd", "AgeType", "AgencyID", });
-    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ProductDetailType_descriptor =
+        new java.lang.String[] { "TravelerEligibility", "OfficialName", "TicketRemark", "TicketingTimeLimit", "PassengerRestriction", "PriceDetail", "OriginalPriceDetail", "Expression", "Exchange", "OfficeNo", "Tag", "DiscountPrice", "TextRemarkId", "IATANumber", "QTECmdPostfix", "XSFSICmd", "AgeType", "AgencyID", "ExtendFields", "RebateInfo", "CreditCardFee", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_RebateInfoType_descriptor =
       getDescriptor().getMessageTypes().get(27);
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_RebateInfoType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_RebateInfoType_descriptor,
+        new java.lang.String[] { "Type", "Amount", "Currency", "RebatePolicyIDs", "ActualAmount", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CreditCardFeeType_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CreditCardFeeType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CreditCardFeeType_descriptor,
+        new java.lang.String[] { "CreditCardType", "Amount", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ProductDetailType_descriptor =
+      getDescriptor().getMessageTypes().get(29);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ProductDetailType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ProductDetailType_descriptor,
-        new java.lang.String[] { "BookingChannel", "PriceInfo", "ValidatingCarrier", "ProductCategory", "SubProductCategory", "InvoiceType", "PenaltiesKey", "PriceUnit", "PenaltyRules", "Tag", });
+        new java.lang.String[] { "BookingChannel", "PriceInfo", "ValidatingCarrier", "ProductCategory", "SubProductCategory", "InvoiceType", "PenaltiesKey", "PriceUnit", "PenaltyRules", "Tag", "CacheInfoID", "Restriction", "ExtendFields", "NoIdentityCardInd", "AgencyLicenseUrl", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PenaltyRulesType_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PenaltyRulesType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PenaltyRulesType_descriptor,
         new java.lang.String[] { "IsReplaceCtripRule", "PenaltyRemark", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FlightCriteriaType_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FlightCriteriaType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_FlightCriteriaType_descriptor,
-        new java.lang.String[] { "OrigDestSeqNo", "FlightNo", "OperatingCarrier", "OperatingFlightNo", "CabinClass", "SeatClass", "DepartureAirport", "ArrivalAirport", "DepartureDate", });
+        new java.lang.String[] { "OrigDestSeqNo", "FlightNo", "OperatingCarrier", "OperatingFlightNo", "SeatClass", "DepartureAirport", "ArrivalAirport", "DepartureDate", "CabinClasses", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_OrigDestRequestOptionType_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_OrigDestRequestOptionType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_OrigDestRequestOptionType_descriptor,
         new java.lang.String[] { "TransferOption", "CabinClass", "DepartureTimeRange", "ArrivalTimeRange", "Carrier", "FlightNo", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_TransferOptionType_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_TransferOptionType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_TransferOptionType_descriptor,
         new java.lang.String[] { "TransferType", "TransferCity", "TransferTimeRange", });
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_IntRange_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_IntRange_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_IntRange_descriptor,
         new java.lang.String[] { "Start", "End", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CacheInfoType_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CacheInfoType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CacheInfoType_descriptor,
+        new java.lang.String[] { "CacheInfoID", "AgeInMillisecond", "TraceId", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_RestrictionType_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_RestrictionType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_RestrictionType_descriptor,
+        new java.lang.String[] { "LanguageOfGovernmentIssuedPhotoId", "PaymentAgencyModelInfo", "PassengerCountRange", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentAgencyModelInfoType_descriptor =
+      getDescriptor().getMessageTypes().get(37);
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentAgencyModelInfoType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentAgencyModelInfoType_descriptor,
+        new java.lang.String[] { "CreditCardPaymentInfoID", "PaymentDiscountRef", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentDiscountRefType_descriptor =
+      getDescriptor().getMessageTypes().get(38);
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentDiscountRefType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentDiscountRefType_descriptor,
+        new java.lang.String[] { "PaymentDiscountID", "PaymentWay", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentDiscountType_descriptor =
+      getDescriptor().getMessageTypes().get(39);
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentDiscountType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_PaymentDiscountType_descriptor,
+        new java.lang.String[] { "PaymentDiscountID", "DiscountTotalFee", "Currency", "DiscountSettle", "BankCode", "CardLevel", "DiscountDetail", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_DiscountDetailType_descriptor =
+      getDescriptor().getMessageTypes().get(40);
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_DiscountDetailType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_DiscountDetailType_descriptor,
+        new java.lang.String[] { "DiscountType", "DiscountFee", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CreditCardPaymentInfoType_descriptor =
+      getDescriptor().getMessageTypes().get(41);
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CreditCardPaymentInfoType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_CreditCardPaymentInfoType_descriptor,
+        new java.lang.String[] { "RefNum", "CreditCardType", "AdultFee", "ChildFee", "InfantFee", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ObFeeType_descriptor =
+      getDescriptor().getMessageTypes().get(42);
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ObFeeType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ObFeeType_descriptor,
+        new java.lang.String[] { "Payee", "MinAmount", "MaxAmount", "Currency", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ServiceFeeType_descriptor =
+      getDescriptor().getMessageTypes().get(43);
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ServiceFeeType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_ServiceFeeType_descriptor,
+        new java.lang.String[] { "Category", "Payee", "Amount", });
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_IntRangeType_descriptor =
+      getDescriptor().getMessageTypes().get(44);
+    internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_IntRangeType_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_ctrip_flight_intl_agg_flighttypes_v3_IntRangeType_descriptor,
+        new java.lang.String[] { "Min", "Max", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

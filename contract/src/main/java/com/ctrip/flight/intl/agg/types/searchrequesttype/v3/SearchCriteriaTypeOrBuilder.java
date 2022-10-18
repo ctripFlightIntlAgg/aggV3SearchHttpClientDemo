@@ -178,4 +178,22 @@ public interface SearchCriteriaTypeOrBuilder extends
    * <code>.com.ctrip.flight.intl.agg.types.searchrequesttype.v3.AdvancedOptionType AdvancedOption = 8;</code>
    */
   com.ctrip.flight.intl.agg.types.searchrequesttype.v3.AdvancedOptionTypeOrBuilder getAdvancedOptionOrBuilder();
+
+  /**
+   * <pre>
+   * 语种(Locale格式)
+   * </pre>
+   *
+   * <code>string Language = 9;</code>
+   */
+  java.lang.String getLanguage();
+  /**
+   * <pre>
+   * 语种(Locale格式)
+   * </pre>
+   *
+   * <code>string Language = 9;</code>
+   */
+  com.google.protobuf.ByteString
+      getLanguageBytes();
 }

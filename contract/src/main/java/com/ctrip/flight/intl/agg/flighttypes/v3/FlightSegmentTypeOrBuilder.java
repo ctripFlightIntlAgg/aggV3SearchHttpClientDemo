@@ -68,4 +68,9 @@ public interface FlightSegmentTypeOrBuilder extends
    * <code>int64 StockID = 8;</code>
    */
   long getStockID();
+
+  /**
+   * <code>int32 PUSequence = 9;</code>
+   */
+  int getPUSequence();
 }

@@ -82,4 +82,38 @@ public interface ServiceTypeOrBuilder extends
    */
   com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getServiceDetailOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 品牌运价对应的权益属性ID
+   * </pre>
+   *
+   * <code>repeated int32 ServiceDetailId = 5;</code>
+   */
+  java.util.List<java.lang.Integer> getServiceDetailIdList();
+  /**
+   * <pre>
+   * 品牌运价对应的权益属性ID
+   * </pre>
+   *
+   * <code>repeated int32 ServiceDetailId = 5;</code>
+   */
+  int getServiceDetailIdCount();
+  /**
+   * <pre>
+   * 品牌运价对应的权益属性ID
+   * </pre>
+   *
+   * <code>repeated int32 ServiceDetailId = 5;</code>
+   */
+  int getServiceDetailId(int index);
+
+  /**
+   * <pre>
+   * 携程品牌运价等级
+   * </pre>
+   *
+   * <code>int32 CtripBrandTier = 6;</code>
+   */
+  int getCtripBrandTier();
 }

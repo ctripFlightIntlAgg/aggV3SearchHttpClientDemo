@@ -18,7 +18,7 @@ public interface XProductPreposeInfoTypeOrBuilder extends
 
   /**
    * <pre>
-   *前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士)
+   *前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士, 18:中转服务, 19:锁价, 20:打折卡)
    * </pre>
    *
    * <code>int32 ProductType = 2;</code>
@@ -111,4 +111,232 @@ public interface XProductPreposeInfoTypeOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAdditionInfoTypeBytes();
+
+  /**
+   * <pre>
+   *透传X前置接口的policyToken
+   * </pre>
+   *
+   * <code>string PolicyToken = 11;</code>
+   */
+  java.lang.String getPolicyToken();
+  /**
+   * <pre>
+   *透传X前置接口的policyToken
+   * </pre>
+   *
+   * <code>string PolicyToken = 11;</code>
+   */
+  com.google.protobuf.ByteString
+      getPolicyTokenBytes();
+
+  /**
+   * <pre>
+   * 航段号
+   * </pre>
+   *
+   * <code>int32 SequenceNo = 12;</code>
+   */
+  int getSequenceNo();
+
+  /**
+   * <pre>
+   * 服务包名称
+   * </pre>
+   *
+   * <code>string ProductName = 13;</code>
+   */
+  java.lang.String getProductName();
+  /**
+   * <pre>
+   * 服务包名称
+   * </pre>
+   *
+   * <code>string ProductName = 13;</code>
+   */
+  com.google.protobuf.ByteString
+      getProductNameBytes();
+
+  /**
+   * <pre>
+   **
+   *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> 
+      getExtensionInfoList();
+  /**
+   * <pre>
+   **
+   *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtensionInfo(int index);
+  /**
+   * <pre>
+   **
+   *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+   */
+  int getExtensionInfoCount();
+  /**
+   * <pre>
+   **
+   *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+      getExtensionInfoOrBuilderList();
+  /**
+   * <pre>
+   **
+   *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtensionInfoOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType> 
+      getProductFeeDetailList();
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+   */
+  com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType getProductFeeDetail(int index);
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+   */
+  int getProductFeeDetailCount();
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailTypeOrBuilder> 
+      getProductFeeDetailOrBuilderList();
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+   */
+  com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailTypeOrBuilder getProductFeeDetailOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType> 
+      getServiceDiscountList();
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+   */
+  com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType getServiceDiscount(int index);
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+   */
+  int getServiceDiscountCount();
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountTypeOrBuilder> 
+      getServiceDiscountOrBuilderList();
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+   */
+  com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountTypeOrBuilder getServiceDiscountOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 过期时间 0表示不限
+   * </pre>
+   *
+   * <code>int32 ExpiryTime = 17;</code>
+   */
+  int getExpiryTime();
+
+  /**
+   * <pre>
+   * 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+   * </pre>
+   *
+   * <code>string ExpiryTimeUnit = 18;</code>
+   */
+  java.lang.String getExpiryTimeUnit();
+  /**
+   * <pre>
+   * 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+   * </pre>
+   *
+   * <code>string ExpiryTimeUnit = 18;</code>
+   */
+  com.google.protobuf.ByteString
+      getExpiryTimeUnitBytes();
+
+  /**
+   * <pre>
+   * 售卖维度：1-到订单，2-到人
+   * </pre>
+   *
+   * <code>int32 BindingType = 19;</code>
+   */
+  int getBindingType();
 }

@@ -177,4 +177,105 @@ public interface ProductDetailTypeOrBuilder extends
    */
   com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getTagOrBuilder(
       int index);
+
+  /**
+   * <code>int32 CacheInfoID = 13;</code>
+   */
+  int getCacheInfoID();
+
+  /**
+   * <pre>
+   * 限制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+   */
+  boolean hasRestriction();
+  /**
+   * <pre>
+   * 限制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType getRestriction();
+  /**
+   * <pre>
+   * 限制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionTypeOrBuilder getRestrictionOrBuilder();
+
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> 
+      getExtendFieldsList();
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtendFields(int index);
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  int getExtendFieldsCount();
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+      getExtendFieldsOrBuilderList();
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtendFieldsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 无证件标识 0:不支持无证件 1:支持无证件
+   * </pre>
+   *
+   * <code>int32 NoIdentityCardInd = 16;</code>
+   */
+  int getNoIdentityCardInd();
+
+  /**
+   * <pre>
+   * 供应商资质信息
+   * </pre>
+   *
+   * <code>string AgencyLicenseUrl = 17;</code>
+   */
+  java.lang.String getAgencyLicenseUrl();
+  /**
+   * <pre>
+   * 供应商资质信息
+   * </pre>
+   *
+   * <code>string AgencyLicenseUrl = 17;</code>
+   */
+  com.google.protobuf.ByteString
+      getAgencyLicenseUrlBytes();
 }

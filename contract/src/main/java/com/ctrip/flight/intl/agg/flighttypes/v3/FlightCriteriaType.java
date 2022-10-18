@@ -20,11 +20,11 @@ private static final long serialVersionUID = 0L;
     flightNo_ = "";
     operatingCarrier_ = "";
     operatingFlightNo_ = "";
-    cabinClass_ = 0;
     seatClass_ = "";
     departureAirport_ = "";
     arrivalAirport_ = "";
     departureDate_ = "";
+    cabinClasses_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -74,12 +74,6 @@ private static final long serialVersionUID = 0L;
             operatingFlightNo_ = s;
             break;
           }
-          case 40: {
-            int rawValue = input.readEnum();
-
-            cabinClass_ = rawValue;
-            break;
-          }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -104,6 +98,29 @@ private static final long serialVersionUID = 0L;
             departureDate_ = s;
             break;
           }
+          case 80: {
+            int rawValue = input.readEnum();
+            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              cabinClasses_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000100;
+            }
+            cabinClasses_.add(rawValue);
+            break;
+          }
+          case 82: {
+            int length = input.readRawVarint32();
+            int oldLimit = input.pushLimit(length);
+            while(input.getBytesUntilLimit() > 0) {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                cabinClasses_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              cabinClasses_.add(rawValue);
+            }
+            input.popLimit(oldLimit);
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,6 +136,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        cabinClasses_ = java.util.Collections.unmodifiableList(cabinClasses_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -136,6 +156,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.intl.agg.flighttypes.v3.FlightCriteriaType.class, com.ctrip.flight.intl.agg.flighttypes.v3.FlightCriteriaType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ORIGDESTSEQNO_FIELD_NUMBER = 1;
   private int origDestSeqNo_;
   /**
@@ -249,23 +270,6 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int CABINCLASS_FIELD_NUMBER = 5;
-  private int cabinClass_;
-  /**
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClass = 5;</code>
-   */
-  public int getCabinClassValue() {
-    return cabinClass_;
-  }
-  /**
-   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClass = 5;</code>
-   */
-  public com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType getCabinClass() {
-    @SuppressWarnings("deprecation")
-    com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType result = com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType.valueOf(cabinClass_);
-    return result == null ? com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType.UNRECOGNIZED : result;
   }
 
   public static final int SEATCLASS_FIELD_NUMBER = 6;
@@ -404,6 +408,72 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CABINCLASSES_FIELD_NUMBER = 10;
+  private java.util.List<java.lang.Integer> cabinClasses_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+      java.lang.Integer, com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType> cabinClasses_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType>() {
+            public com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType convert(java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType result = com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType.valueOf(from);
+              return result == null ? com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType.UNRECOGNIZED : result;
+            }
+          };
+  /**
+   * <pre>
+   * 新的舱等字段，跟总舱等保持一致的list形式
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType> getCabinClassesList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType>(cabinClasses_, cabinClasses_converter_);
+  }
+  /**
+   * <pre>
+   * 新的舱等字段，跟总舱等保持一致的list形式
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+   */
+  public int getCabinClassesCount() {
+    return cabinClasses_.size();
+  }
+  /**
+   * <pre>
+   * 新的舱等字段，跟总舱等保持一致的list形式
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType getCabinClasses(int index) {
+    return cabinClasses_converter_.convert(cabinClasses_.get(index));
+  }
+  /**
+   * <pre>
+   * 新的舱等字段，跟总舱等保持一致的list形式
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+   */
+  public java.util.List<java.lang.Integer>
+  getCabinClassesValueList() {
+    return cabinClasses_;
+  }
+  /**
+   * <pre>
+   * 新的舱等字段，跟总舱等保持一致的list形式
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+   */
+  public int getCabinClassesValue(int index) {
+    return cabinClasses_.get(index);
+  }
+  private int cabinClassesMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -418,6 +488,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (origDestSeqNo_ != 0) {
       output.writeInt32(1, origDestSeqNo_);
     }
@@ -430,9 +501,6 @@ private static final long serialVersionUID = 0L;
     if (!getOperatingFlightNoBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, operatingFlightNo_);
     }
-    if (cabinClass_ != com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType.Y.getNumber()) {
-      output.writeEnum(5, cabinClass_);
-    }
     if (!getSeatClassBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, seatClass_);
     }
@@ -444,6 +512,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDepartureDateBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, departureDate_);
+    }
+    if (getCabinClassesList().size() > 0) {
+      output.writeUInt32NoTag(82);
+      output.writeUInt32NoTag(cabinClassesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < cabinClasses_.size(); i++) {
+      output.writeEnumNoTag(cabinClasses_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -467,10 +542,6 @@ private static final long serialVersionUID = 0L;
     if (!getOperatingFlightNoBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, operatingFlightNo_);
     }
-    if (cabinClass_ != com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType.Y.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(5, cabinClass_);
-    }
     if (!getSeatClassBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, seatClass_);
     }
@@ -482,6 +553,18 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDepartureDateBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, departureDate_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < cabinClasses_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeEnumSizeNoTag(cabinClasses_.get(i));
+      }
+      size += dataSize;
+      if (!getCabinClassesList().isEmpty()) {  size += 1;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }cabinClassesMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -507,7 +590,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getOperatingCarrier());
     result = result && getOperatingFlightNo()
         .equals(other.getOperatingFlightNo());
-    result = result && cabinClass_ == other.cabinClass_;
     result = result && getSeatClass()
         .equals(other.getSeatClass());
     result = result && getDepartureAirport()
@@ -516,6 +598,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getArrivalAirport());
     result = result && getDepartureDate()
         .equals(other.getDepartureDate());
+    result = result && cabinClasses_.equals(other.cabinClasses_);
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -535,8 +618,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getOperatingCarrier().hashCode();
     hash = (37 * hash) + OPERATINGFLIGHTNO_FIELD_NUMBER;
     hash = (53 * hash) + getOperatingFlightNo().hashCode();
-    hash = (37 * hash) + CABINCLASS_FIELD_NUMBER;
-    hash = (53 * hash) + cabinClass_;
     hash = (37 * hash) + SEATCLASS_FIELD_NUMBER;
     hash = (53 * hash) + getSeatClass().hashCode();
     hash = (37 * hash) + DEPARTUREAIRPORT_FIELD_NUMBER;
@@ -545,6 +626,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getArrivalAirport().hashCode();
     hash = (37 * hash) + DEPARTUREDATE_FIELD_NUMBER;
     hash = (53 * hash) + getDepartureDate().hashCode();
+    if (getCabinClassesCount() > 0) {
+      hash = (37 * hash) + CABINCLASSES_FIELD_NUMBER;
+      hash = (53 * hash) + cabinClasses_.hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -686,8 +771,6 @@ private static final long serialVersionUID = 0L;
 
       operatingFlightNo_ = "";
 
-      cabinClass_ = 0;
-
       seatClass_ = "";
 
       departureAirport_ = "";
@@ -696,6 +779,8 @@ private static final long serialVersionUID = 0L;
 
       departureDate_ = "";
 
+      cabinClasses_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -722,15 +807,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.intl.agg.flighttypes.v3.FlightCriteriaType buildPartial() {
       com.ctrip.flight.intl.agg.flighttypes.v3.FlightCriteriaType result = new com.ctrip.flight.intl.agg.flighttypes.v3.FlightCriteriaType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.origDestSeqNo_ = origDestSeqNo_;
       result.flightNo_ = flightNo_;
       result.operatingCarrier_ = operatingCarrier_;
       result.operatingFlightNo_ = operatingFlightNo_;
-      result.cabinClass_ = cabinClass_;
       result.seatClass_ = seatClass_;
       result.departureAirport_ = departureAirport_;
       result.arrivalAirport_ = arrivalAirport_;
       result.departureDate_ = departureDate_;
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        cabinClasses_ = java.util.Collections.unmodifiableList(cabinClasses_);
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.cabinClasses_ = cabinClasses_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -794,9 +886,6 @@ private static final long serialVersionUID = 0L;
         operatingFlightNo_ = other.operatingFlightNo_;
         onChanged();
       }
-      if (other.cabinClass_ != 0) {
-        setCabinClassValue(other.getCabinClassValue());
-      }
       if (!other.getSeatClass().isEmpty()) {
         seatClass_ = other.seatClass_;
         onChanged();
@@ -811,6 +900,16 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDepartureDate().isEmpty()) {
         departureDate_ = other.departureDate_;
+        onChanged();
+      }
+      if (!other.cabinClasses_.isEmpty()) {
+        if (cabinClasses_.isEmpty()) {
+          cabinClasses_ = other.cabinClasses_;
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          ensureCabinClassesIsMutable();
+          cabinClasses_.addAll(other.cabinClasses_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -841,6 +940,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int origDestSeqNo_ ;
     /**
@@ -1083,51 +1183,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       operatingFlightNo_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int cabinClass_ = 0;
-    /**
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClass = 5;</code>
-     */
-    public int getCabinClassValue() {
-      return cabinClass_;
-    }
-    /**
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClass = 5;</code>
-     */
-    public Builder setCabinClassValue(int value) {
-      cabinClass_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClass = 5;</code>
-     */
-    public com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType getCabinClass() {
-      @SuppressWarnings("deprecation")
-      com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType result = com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType.valueOf(cabinClass_);
-      return result == null ? com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClass = 5;</code>
-     */
-    public Builder setCabinClass(com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      cabinClass_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClass = 5;</code>
-     */
-    public Builder clearCabinClass() {
-      
-      cabinClass_ = 0;
       onChanged();
       return this;
     }
@@ -1404,6 +1459,172 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       departureDate_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> cabinClasses_ =
+      java.util.Collections.emptyList();
+    private void ensureCabinClassesIsMutable() {
+      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        cabinClasses_ = new java.util.ArrayList<java.lang.Integer>(cabinClasses_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+    /**
+     * <pre>
+     * 新的舱等字段，跟总舱等保持一致的list形式
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType> getCabinClassesList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType>(cabinClasses_, cabinClasses_converter_);
+    }
+    /**
+     * <pre>
+     * 新的舱等字段，跟总舱等保持一致的list形式
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+     */
+    public int getCabinClassesCount() {
+      return cabinClasses_.size();
+    }
+    /**
+     * <pre>
+     * 新的舱等字段，跟总舱等保持一致的list形式
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType getCabinClasses(int index) {
+      return cabinClasses_converter_.convert(cabinClasses_.get(index));
+    }
+    /**
+     * <pre>
+     * 新的舱等字段，跟总舱等保持一致的list形式
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+     */
+    public Builder setCabinClasses(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCabinClassesIsMutable();
+      cabinClasses_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 新的舱等字段，跟总舱等保持一致的list形式
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+     */
+    public Builder addCabinClasses(com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCabinClassesIsMutable();
+      cabinClasses_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 新的舱等字段，跟总舱等保持一致的list形式
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+     */
+    public Builder addAllCabinClasses(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType> values) {
+      ensureCabinClassesIsMutable();
+      for (com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType value : values) {
+        cabinClasses_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 新的舱等字段，跟总舱等保持一致的list形式
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+     */
+    public Builder clearCabinClasses() {
+      cabinClasses_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 新的舱等字段，跟总舱等保持一致的list形式
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+     */
+    public java.util.List<java.lang.Integer>
+    getCabinClassesValueList() {
+      return java.util.Collections.unmodifiableList(cabinClasses_);
+    }
+    /**
+     * <pre>
+     * 新的舱等字段，跟总舱等保持一致的list形式
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+     */
+    public int getCabinClassesValue(int index) {
+      return cabinClasses_.get(index);
+    }
+    /**
+     * <pre>
+     * 新的舱等字段，跟总舱等保持一致的list形式
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+     */
+    public Builder setCabinClassesValue(
+        int index, int value) {
+      ensureCabinClassesIsMutable();
+      cabinClasses_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 新的舱等字段，跟总舱等保持一致的list形式
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+     */
+    public Builder addCabinClassesValue(int value) {
+      ensureCabinClassesIsMutable();
+      cabinClasses_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 新的舱等字段，跟总舱等保持一致的list形式
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CabinClassType CabinClasses = 10;</code>
+     */
+    public Builder addAllCabinClassesValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureCabinClassesIsMutable();
+      for (int value : values) {
+        cabinClasses_.add(value);
+      }
       onChanged();
       return this;
     }

@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     airlineName_ = "";
     alliance_ = "";
     isLcc_ = false;
+    airlineNameGLB_ = "";
   }
 
   @java.lang.Override
@@ -67,6 +68,12 @@ private static final long serialVersionUID = 0L;
           case 32: {
 
             isLcc_ = input.readBool();
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            airlineNameGLB_ = s;
             break;
           }
           default: {
@@ -212,6 +219,40 @@ private static final long serialVersionUID = 0L;
     return isLcc_;
   }
 
+  public static final int AIRLINENAMEGLB_FIELD_NUMBER = 5;
+  private volatile java.lang.Object airlineNameGLB_;
+  /**
+   * <code>string AirlineNameGLB = 5;</code>
+   */
+  public java.lang.String getAirlineNameGLB() {
+    java.lang.Object ref = airlineNameGLB_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      airlineNameGLB_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string AirlineNameGLB = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getAirlineNameGLBBytes() {
+    java.lang.Object ref = airlineNameGLB_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      airlineNameGLB_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -238,6 +279,9 @@ private static final long serialVersionUID = 0L;
     if (isLcc_ != false) {
       output.writeBool(4, isLcc_);
     }
+    if (!getAirlineNameGLBBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, airlineNameGLB_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -259,6 +303,9 @@ private static final long serialVersionUID = 0L;
     if (isLcc_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, isLcc_);
+    }
+    if (!getAirlineNameGLBBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, airlineNameGLB_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -284,6 +331,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAlliance());
     result = result && (getIsLcc()
         == other.getIsLcc());
+    result = result && getAirlineNameGLB()
+        .equals(other.getAirlineNameGLB());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -304,6 +353,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ISLCC_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsLcc());
+    hash = (37 * hash) + AIRLINENAMEGLB_FIELD_NUMBER;
+    hash = (53 * hash) + getAirlineNameGLB().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -445,6 +496,8 @@ private static final long serialVersionUID = 0L;
 
       isLcc_ = false;
 
+      airlineNameGLB_ = "";
+
       return this;
     }
 
@@ -475,6 +528,7 @@ private static final long serialVersionUID = 0L;
       result.airlineName_ = airlineName_;
       result.alliance_ = alliance_;
       result.isLcc_ = isLcc_;
+      result.airlineNameGLB_ = airlineNameGLB_;
       onBuilt();
       return result;
     }
@@ -537,6 +591,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getIsLcc() != false) {
         setIsLcc(other.getIsLcc());
+      }
+      if (!other.getAirlineNameGLB().isEmpty()) {
+        airlineNameGLB_ = other.airlineNameGLB_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -796,6 +854,75 @@ private static final long serialVersionUID = 0L;
     public Builder clearIsLcc() {
       
       isLcc_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object airlineNameGLB_ = "";
+    /**
+     * <code>string AirlineNameGLB = 5;</code>
+     */
+    public java.lang.String getAirlineNameGLB() {
+      java.lang.Object ref = airlineNameGLB_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        airlineNameGLB_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string AirlineNameGLB = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAirlineNameGLBBytes() {
+      java.lang.Object ref = airlineNameGLB_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        airlineNameGLB_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string AirlineNameGLB = 5;</code>
+     */
+    public Builder setAirlineNameGLB(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      airlineNameGLB_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string AirlineNameGLB = 5;</code>
+     */
+    public Builder clearAirlineNameGLB() {
+      
+      airlineNameGLB_ = getDefaultInstance().getAirlineNameGLB();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string AirlineNameGLB = 5;</code>
+     */
+    public Builder setAirlineNameGLBBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      airlineNameGLB_ = value;
       onChanged();
       return this;
     }

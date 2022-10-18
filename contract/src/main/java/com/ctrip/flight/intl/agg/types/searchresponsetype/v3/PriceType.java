@@ -23,6 +23,9 @@ private static final long serialVersionUID = 0L;
     sortIndicator_ = 0D;
     ticketPackageProduct_ = java.util.Collections.emptyList();
     priceAttributeID_ = java.util.Collections.emptyList();
+    extendFields_ = java.util.Collections.emptyList();
+    priority_ = 0D;
+    offerID_ = 0;
   }
 
   @java.lang.Override
@@ -117,6 +120,25 @@ private static final long serialVersionUID = 0L;
             input.popLimit(limit);
             break;
           }
+          case 90: {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              extendFields_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType>();
+              mutable_bitField0_ |= 0x00000080;
+            }
+            extendFields_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.parser(), extensionRegistry));
+            break;
+          }
+          case 97: {
+
+            priority_ = input.readDouble();
+            break;
+          }
+          case 104: {
+
+            offerID_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -146,6 +168,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
         priceAttributeID_ = java.util.Collections.unmodifiableList(priceAttributeID_);
+      }
+      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        extendFields_ = java.util.Collections.unmodifiableList(extendFields_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -398,6 +423,67 @@ private static final long serialVersionUID = 0L;
   }
   private int priceAttributeIDMemoizedSerializedSize = -1;
 
+  public static final int EXTENDFIELDS_FIELD_NUMBER = 11;
+  private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> extendFields_;
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> getExtendFieldsList() {
+    return extendFields_;
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+      getExtendFieldsOrBuilderList() {
+    return extendFields_;
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+   */
+  public int getExtendFieldsCount() {
+    return extendFields_.size();
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtendFields(int index) {
+    return extendFields_.get(index);
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtendFieldsOrBuilder(
+      int index) {
+    return extendFields_.get(index);
+  }
+
+  public static final int PRIORITY_FIELD_NUMBER = 12;
+  private double priority_;
+  /**
+   * <pre>
+   * 值越小优先级越高
+   * </pre>
+   *
+   * <code>double Priority = 12;</code>
+   */
+  public double getPriority() {
+    return priority_;
+  }
+
+  public static final int OFFERID_FIELD_NUMBER = 13;
+  private int offerID_;
+  /**
+   * <pre>
+   * 运价索引 每次查询唯一
+   * </pre>
+   *
+   * <code>int32 OfferID = 13;</code>
+   */
+  public int getOfferID() {
+    return offerID_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -437,6 +523,15 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < priceAttributeID_.size(); i++) {
       output.writeInt32NoTag(priceAttributeID_.get(i));
+    }
+    for (int i = 0; i < extendFields_.size(); i++) {
+      output.writeMessage(11, extendFields_.get(i));
+    }
+    if (priority_ != 0D) {
+      output.writeDouble(12, priority_);
+    }
+    if (offerID_ != 0) {
+      output.writeInt32(13, offerID_);
     }
     unknownFields.writeTo(output);
   }
@@ -484,6 +579,18 @@ private static final long serialVersionUID = 0L;
       }
       priceAttributeIDMemoizedSerializedSize = dataSize;
     }
+    for (int i = 0; i < extendFields_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, extendFields_.get(i));
+    }
+    if (priority_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(12, priority_);
+    }
+    if (offerID_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(13, offerID_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -516,6 +623,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTicketPackageProductList());
     result = result && getPriceAttributeIDList()
         .equals(other.getPriceAttributeIDList());
+    result = result && getExtendFieldsList()
+        .equals(other.getExtendFieldsList());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getPriority())
+        == java.lang.Double.doubleToLongBits(
+            other.getPriority()));
+    result = result && (getOfferID()
+        == other.getOfferID());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -552,6 +667,15 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PRICEATTRIBUTEID_FIELD_NUMBER;
       hash = (53 * hash) + getPriceAttributeIDList().hashCode();
     }
+    if (getExtendFieldsCount() > 0) {
+      hash = (37 * hash) + EXTENDFIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getExtendFieldsList().hashCode();
+    }
+    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getPriority()));
+    hash = (37 * hash) + OFFERID_FIELD_NUMBER;
+    hash = (53 * hash) + getOfferID();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -684,6 +808,7 @@ private static final long serialVersionUID = 0L;
         getProductDetailFieldBuilder();
         getBaggageRefFieldBuilder();
         getTicketPackageProductFieldBuilder();
+        getExtendFieldsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -719,6 +844,16 @@ private static final long serialVersionUID = 0L;
       }
       priceAttributeID_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      if (extendFieldsBuilder_ == null) {
+        extendFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      } else {
+        extendFieldsBuilder_.clear();
+      }
+      priority_ = 0D;
+
+      offerID_ = 0;
+
       return this;
     }
 
@@ -790,6 +925,17 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.priceAttributeID_ = priceAttributeID_;
+      if (extendFieldsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          extendFields_ = java.util.Collections.unmodifiableList(extendFields_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.extendFields_ = extendFields_;
+      } else {
+        result.extendFields_ = extendFieldsBuilder_.build();
+      }
+      result.priority_ = priority_;
+      result.offerID_ = offerID_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -959,6 +1105,38 @@ private static final long serialVersionUID = 0L;
           priceAttributeID_.addAll(other.priceAttributeID_);
         }
         onChanged();
+      }
+      if (extendFieldsBuilder_ == null) {
+        if (!other.extendFields_.isEmpty()) {
+          if (extendFields_.isEmpty()) {
+            extendFields_ = other.extendFields_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureExtendFieldsIsMutable();
+            extendFields_.addAll(other.extendFields_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.extendFields_.isEmpty()) {
+          if (extendFieldsBuilder_.isEmpty()) {
+            extendFieldsBuilder_.dispose();
+            extendFieldsBuilder_ = null;
+            extendFields_ = other.extendFields_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            extendFieldsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getExtendFieldsFieldBuilder() : null;
+          } else {
+            extendFieldsBuilder_.addAllMessages(other.extendFields_);
+          }
+        }
+      }
+      if (other.getPriority() != 0D) {
+        setPriority(other.getPriority());
+      }
+      if (other.getOfferID() != 0) {
+        setOfferID(other.getOfferID());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2174,6 +2352,322 @@ private static final long serialVersionUID = 0L;
     public Builder clearPriceAttributeID() {
       priceAttributeID_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> extendFields_ =
+      java.util.Collections.emptyList();
+    private void ensureExtendFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        extendFields_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType>(extendFields_);
+        bitField0_ |= 0x00000080;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> extendFieldsBuilder_;
+
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> getExtendFieldsList() {
+      if (extendFieldsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(extendFields_);
+      } else {
+        return extendFieldsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public int getExtendFieldsCount() {
+      if (extendFieldsBuilder_ == null) {
+        return extendFields_.size();
+      } else {
+        return extendFieldsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtendFields(int index) {
+      if (extendFieldsBuilder_ == null) {
+        return extendFields_.get(index);
+      } else {
+        return extendFieldsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public Builder setExtendFields(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (extendFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExtendFieldsIsMutable();
+        extendFields_.set(index, value);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public Builder setExtendFields(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        extendFields_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        extendFieldsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public Builder addExtendFields(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (extendFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExtendFieldsIsMutable();
+        extendFields_.add(value);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public Builder addExtendFields(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (extendFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExtendFieldsIsMutable();
+        extendFields_.add(index, value);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public Builder addExtendFields(
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        extendFields_.add(builderForValue.build());
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public Builder addExtendFields(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        extendFields_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public Builder addAllExtendFields(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> values) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, extendFields_);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public Builder clearExtendFields() {
+      if (extendFieldsBuilder_ == null) {
+        extendFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public Builder removeExtendFields(int index) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        extendFields_.remove(index);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder getExtendFieldsBuilder(
+        int index) {
+      return getExtendFieldsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtendFieldsOrBuilder(
+        int index) {
+      if (extendFieldsBuilder_ == null) {
+        return extendFields_.get(index);  } else {
+        return extendFieldsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+         getExtendFieldsOrBuilderList() {
+      if (extendFieldsBuilder_ != null) {
+        return extendFieldsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(extendFields_);
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder addExtendFieldsBuilder() {
+      return getExtendFieldsFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder addExtendFieldsBuilder(
+        int index) {
+      return getExtendFieldsFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder> 
+         getExtendFieldsBuilderList() {
+      return getExtendFieldsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+        getExtendFieldsFieldBuilder() {
+      if (extendFieldsBuilder_ == null) {
+        extendFieldsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder>(
+                extendFields_,
+                ((bitField0_ & 0x00000080) == 0x00000080),
+                getParentForChildren(),
+                isClean());
+        extendFields_ = null;
+      }
+      return extendFieldsBuilder_;
+    }
+
+    private double priority_ ;
+    /**
+     * <pre>
+     * 值越小优先级越高
+     * </pre>
+     *
+     * <code>double Priority = 12;</code>
+     */
+    public double getPriority() {
+      return priority_;
+    }
+    /**
+     * <pre>
+     * 值越小优先级越高
+     * </pre>
+     *
+     * <code>double Priority = 12;</code>
+     */
+    public Builder setPriority(double value) {
+      
+      priority_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 值越小优先级越高
+     * </pre>
+     *
+     * <code>double Priority = 12;</code>
+     */
+    public Builder clearPriority() {
+      
+      priority_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private int offerID_ ;
+    /**
+     * <pre>
+     * 运价索引 每次查询唯一
+     * </pre>
+     *
+     * <code>int32 OfferID = 13;</code>
+     */
+    public int getOfferID() {
+      return offerID_;
+    }
+    /**
+     * <pre>
+     * 运价索引 每次查询唯一
+     * </pre>
+     *
+     * <code>int32 OfferID = 13;</code>
+     */
+    public Builder setOfferID(int value) {
+      
+      offerID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 运价索引 每次查询唯一
+     * </pre>
+     *
+     * <code>int32 OfferID = 13;</code>
+     */
+    public Builder clearOfferID() {
+      
+      offerID_ = 0;
       onChanged();
       return this;
     }

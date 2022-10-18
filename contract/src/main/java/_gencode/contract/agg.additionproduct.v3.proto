@@ -33,9 +33,9 @@ message RecommendedInfoType
 
 message XProductPreposeInfoType
 {
-    //前置政策ID
+	//前置政策ID
 	int64 PolicyId = 1 ;
-	//前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士)
+	//前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士, 18:中转服务, 19:锁价, 20:打折卡)
 	int32 ProductType = 2 ;
 	//行程号
 	int32 SegmentNo = 3 ;
@@ -58,6 +58,74 @@ message XProductPreposeInfoType
     2，通用券-1：列表页展示；其它：价格维度展示
     */
 	string AdditionInfoType = 10 ;
+
+	/*
+	透传X前置接口的policyToken
+	*/
+	string PolicyToken = 11 ;
+	// 航段号
+	int32 SequenceNo = 12 ;
+	// 服务包名称
+	string ProductName = 13;
+	/**
+   	 原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   	  打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   	  打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+   	 */
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;
+	// 营销信息
+	repeated ProductFeeDetailType ProductFeeDetail = 15;
+	// 折扣相关：机票、X 一般不应该两种折扣项一起出现
+	repeated ServiceDiscountType ServiceDiscount = 16 ;
+	// 过期时间 0表示不限
+	int32 ExpiryTime = 17;
+	// 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+	string ExpiryTimeUnit = 18;
+	// 售卖维度：1-到订单，2-到人
+	int32 BindingType = 19;
+}
+
+message ProductFeeDetailType
+{
+	// 乘客类型
+	repeated com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 1;
+	//营销金额
+	double MarketingAmount = 2 ;
+	// 透传X前置接口的token
+	string PolicyToken = 3;
+	// 服务包关联产品
+	repeated ServicePackageRelatedProductType ServicePackageRelatedProduct = 4;
+}
+
+message ServicePackageRelatedProductType {
+	string ProductType = 1;
+	int32 SubProductType = 2;
+	// 透传onex输出该关联产品的token
+	string Token = 3;
+}
+
+message ServiceDiscountType
+{
+	// 优惠金额的折扣项：1 机票、2 X产品
+	int32 Item = 1;
+	// 折扣金额
+	double DiscountAmount = 2;
+	// 乘客类型
+	com.ctrip.flight.intl.agg.flighttypes.v3.AgeType AgeType = 3;
+	// 打折卡折扣模式
+	int32 DiscountMode = 4;
+	// 打折卡折扣比例
+	double DiscountRate = 5;
+	// 使用次数限制
+	int32 LimitTimes = 6;
+	// 优惠总上限
+	double TotalDiscountAmount = 7;
+	// 单次优惠下限
+	double SingleMinDiscountAmount = 8;
+	// 单次优惠上限
+	double SingleMaxDiscountAmount = 9;
+	// 折扣周期 与使用次数限制相关联 标识周期内的使用次数限制
+	int32 Period = 10 ;
 }
 
 message MemberPointType
@@ -90,6 +158,22 @@ message TicketPackageProductType
     int32 CrossSaleHotel = 11 ;
     repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtraMarketingInfo = 12 ;
     repeated ServiceRefType ServiceRef= 13;
+	MemberPrivilegeType MemberPrivilege = 14;
+	PriceReductionType PriceReduction = 15;
+	int64 RecommendPrdType2 = 16 ;
+}
+
+message MemberPrivilegeType {
+	int64 PromotionId = 1;  // 定投ID
+	string ForUser = 2;  // 使用人群范围
+}
+
+message PriceReductionType {
+	int64 PromotionId = 1;  // 立减ID
+	string ForUser = 2;  // 使用人群范围
+    double DiscountMoney = 3; // 立减金额
+    string CouponCode = 4;  // 券规则code
+    int32 SelectedGroups = 5; // 展示人群
 }
 
 message AncillariesInfoType
@@ -116,6 +200,8 @@ message BrandedFareRefType
 	int32 SegmentNo = 1;
 	// 索引号
 	int32 RefNum = 2;
+	// 航段号
+	int32 SequenceNo = 3;
 }
 
 // 权益详情
@@ -128,6 +214,10 @@ message ServiceType
 	int32 BrandTier  = 3;
 	// 具体权益信息列表
 	repeated com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ServiceDetail = 4;
+	// 品牌运价对应的权益属性ID
+	repeated int32 ServiceDetailId = 5;
+	// 携程品牌运价等级
+	int32 CtripBrandTier = 6;
 
 }
 

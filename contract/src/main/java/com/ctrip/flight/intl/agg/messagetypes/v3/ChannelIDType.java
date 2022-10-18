@@ -180,6 +180,10 @@ public enum ChannelIDType
    * <code>Skyscanner = 42;</code>
    */
   Skyscanner(42),
+  /**
+   * <code>Travix = 43;</code>
+   */
+  Travix(43),
   UNRECOGNIZED(-1),
   ;
 
@@ -355,6 +359,10 @@ public enum ChannelIDType
    * <code>Skyscanner = 42;</code>
    */
   public static final int Skyscanner_VALUE = 42;
+  /**
+   * <code>Travix = 43;</code>
+   */
+  public static final int Travix_VALUE = 43;
 
 
   public final int getNumber() {
@@ -418,6 +426,7 @@ public enum ChannelIDType
       case 40: return THSite;
       case 41: return Qunar;
       case 42: return Skyscanner;
+      case 43: return Travix;
       default: return null;
     }
   }

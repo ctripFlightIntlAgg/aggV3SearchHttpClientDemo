@@ -41,4 +41,14 @@ public interface AirlineInfoTypeOrBuilder extends
    * <code>bool IsLcc = 4;</code>
    */
   boolean getIsLcc();
+
+  /**
+   * <code>string AirlineNameGLB = 5;</code>
+   */
+  java.lang.String getAirlineNameGLB();
+  /**
+   * <code>string AirlineNameGLB = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getAirlineNameGLBBytes();
 }

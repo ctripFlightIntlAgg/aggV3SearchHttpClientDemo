@@ -25,6 +25,15 @@ private static final long serialVersionUID = 0L;
     subProductType_ = 0;
     additionInfoId_ = "";
     additionInfoType_ = "";
+    policyToken_ = "";
+    sequenceNo_ = 0;
+    productName_ = "";
+    extensionInfo_ = java.util.Collections.emptyList();
+    productFeeDetail_ = java.util.Collections.emptyList();
+    serviceDiscount_ = java.util.Collections.emptyList();
+    expiryTime_ = 0;
+    expiryTimeUnit_ = "";
+    bindingType_ = 0;
   }
 
   @java.lang.Override
@@ -98,6 +107,66 @@ private static final long serialVersionUID = 0L;
             additionInfoType_ = s;
             break;
           }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            policyToken_ = s;
+            break;
+          }
+          case 96: {
+
+            sequenceNo_ = input.readInt32();
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            productName_ = s;
+            break;
+          }
+          case 114: {
+            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+              extensionInfo_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType>();
+              mutable_bitField0_ |= 0x00001000;
+            }
+            extensionInfo_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.parser(), extensionRegistry));
+            break;
+          }
+          case 122: {
+            if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+              productFeeDetail_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType>();
+              mutable_bitField0_ |= 0x00002000;
+            }
+            productFeeDetail_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.parser(), extensionRegistry));
+            break;
+          }
+          case 130: {
+            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+              serviceDiscount_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType>();
+              mutable_bitField0_ |= 0x00004000;
+            }
+            serviceDiscount_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.parser(), extensionRegistry));
+            break;
+          }
+          case 136: {
+
+            expiryTime_ = input.readInt32();
+            break;
+          }
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            expiryTimeUnit_ = s;
+            break;
+          }
+          case 152: {
+
+            bindingType_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -113,6 +182,15 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+        extensionInfo_ = java.util.Collections.unmodifiableList(extensionInfo_);
+      }
+      if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+        productFeeDetail_ = java.util.Collections.unmodifiableList(productFeeDetail_);
+      }
+      if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+        serviceDiscount_ = java.util.Collections.unmodifiableList(serviceDiscount_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -130,6 +208,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.intl.agg.additionproduct.v3.XProductPreposeInfoType.class, com.ctrip.flight.intl.agg.additionproduct.v3.XProductPreposeInfoType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int POLICYID_FIELD_NUMBER = 1;
   private long policyId_;
   /**
@@ -147,7 +226,7 @@ private static final long serialVersionUID = 0L;
   private int productType_;
   /**
    * <pre>
-   *前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士)
+   *前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士, 18:中转服务, 19:锁价, 20:打折卡)
    * </pre>
    *
    * <code>int32 ProductType = 2;</code>
@@ -311,6 +390,351 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int POLICYTOKEN_FIELD_NUMBER = 11;
+  private volatile java.lang.Object policyToken_;
+  /**
+   * <pre>
+   *透传X前置接口的policyToken
+   * </pre>
+   *
+   * <code>string PolicyToken = 11;</code>
+   */
+  public java.lang.String getPolicyToken() {
+    java.lang.Object ref = policyToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      policyToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *透传X前置接口的policyToken
+   * </pre>
+   *
+   * <code>string PolicyToken = 11;</code>
+   */
+  public com.google.protobuf.ByteString
+      getPolicyTokenBytes() {
+    java.lang.Object ref = policyToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      policyToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SEQUENCENO_FIELD_NUMBER = 12;
+  private int sequenceNo_;
+  /**
+   * <pre>
+   * 航段号
+   * </pre>
+   *
+   * <code>int32 SequenceNo = 12;</code>
+   */
+  public int getSequenceNo() {
+    return sequenceNo_;
+  }
+
+  public static final int PRODUCTNAME_FIELD_NUMBER = 13;
+  private volatile java.lang.Object productName_;
+  /**
+   * <pre>
+   * 服务包名称
+   * </pre>
+   *
+   * <code>string ProductName = 13;</code>
+   */
+  public java.lang.String getProductName() {
+    java.lang.Object ref = productName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      productName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 服务包名称
+   * </pre>
+   *
+   * <code>string ProductName = 13;</code>
+   */
+  public com.google.protobuf.ByteString
+      getProductNameBytes() {
+    java.lang.Object ref = productName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      productName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EXTENSIONINFO_FIELD_NUMBER = 14;
+  private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> extensionInfo_;
+  /**
+   * <pre>
+   **
+   *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> getExtensionInfoList() {
+    return extensionInfo_;
+  }
+  /**
+   * <pre>
+   **
+   *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+      getExtensionInfoOrBuilderList() {
+    return extensionInfo_;
+  }
+  /**
+   * <pre>
+   **
+   *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+   */
+  public int getExtensionInfoCount() {
+    return extensionInfo_.size();
+  }
+  /**
+   * <pre>
+   **
+   *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtensionInfo(int index) {
+    return extensionInfo_.get(index);
+  }
+  /**
+   * <pre>
+   **
+   *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+   *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+   *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtensionInfoOrBuilder(
+      int index) {
+    return extensionInfo_.get(index);
+  }
+
+  public static final int PRODUCTFEEDETAIL_FIELD_NUMBER = 15;
+  private java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType> productFeeDetail_;
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType> getProductFeeDetailList() {
+    return productFeeDetail_;
+  }
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailTypeOrBuilder> 
+      getProductFeeDetailOrBuilderList() {
+    return productFeeDetail_;
+  }
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+   */
+  public int getProductFeeDetailCount() {
+    return productFeeDetail_.size();
+  }
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+   */
+  public com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType getProductFeeDetail(int index) {
+    return productFeeDetail_.get(index);
+  }
+  /**
+   * <pre>
+   * 营销信息
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+   */
+  public com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailTypeOrBuilder getProductFeeDetailOrBuilder(
+      int index) {
+    return productFeeDetail_.get(index);
+  }
+
+  public static final int SERVICEDISCOUNT_FIELD_NUMBER = 16;
+  private java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType> serviceDiscount_;
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType> getServiceDiscountList() {
+    return serviceDiscount_;
+  }
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountTypeOrBuilder> 
+      getServiceDiscountOrBuilderList() {
+    return serviceDiscount_;
+  }
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+   */
+  public int getServiceDiscountCount() {
+    return serviceDiscount_.size();
+  }
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+   */
+  public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType getServiceDiscount(int index) {
+    return serviceDiscount_.get(index);
+  }
+  /**
+   * <pre>
+   * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+   */
+  public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountTypeOrBuilder getServiceDiscountOrBuilder(
+      int index) {
+    return serviceDiscount_.get(index);
+  }
+
+  public static final int EXPIRYTIME_FIELD_NUMBER = 17;
+  private int expiryTime_;
+  /**
+   * <pre>
+   * 过期时间 0表示不限
+   * </pre>
+   *
+   * <code>int32 ExpiryTime = 17;</code>
+   */
+  public int getExpiryTime() {
+    return expiryTime_;
+  }
+
+  public static final int EXPIRYTIMEUNIT_FIELD_NUMBER = 18;
+  private volatile java.lang.Object expiryTimeUnit_;
+  /**
+   * <pre>
+   * 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+   * </pre>
+   *
+   * <code>string ExpiryTimeUnit = 18;</code>
+   */
+  public java.lang.String getExpiryTimeUnit() {
+    java.lang.Object ref = expiryTimeUnit_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      expiryTimeUnit_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+   * </pre>
+   *
+   * <code>string ExpiryTimeUnit = 18;</code>
+   */
+  public com.google.protobuf.ByteString
+      getExpiryTimeUnitBytes() {
+    java.lang.Object ref = expiryTimeUnit_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      expiryTimeUnit_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BINDINGTYPE_FIELD_NUMBER = 19;
+  private int bindingType_;
+  /**
+   * <pre>
+   * 售卖维度：1-到订单，2-到人
+   * </pre>
+   *
+   * <code>int32 BindingType = 19;</code>
+   */
+  public int getBindingType() {
+    return bindingType_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -351,6 +775,33 @@ private static final long serialVersionUID = 0L;
     }
     if (!getAdditionInfoTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, additionInfoType_);
+    }
+    if (!getPolicyTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, policyToken_);
+    }
+    if (sequenceNo_ != 0) {
+      output.writeInt32(12, sequenceNo_);
+    }
+    if (!getProductNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, productName_);
+    }
+    for (int i = 0; i < extensionInfo_.size(); i++) {
+      output.writeMessage(14, extensionInfo_.get(i));
+    }
+    for (int i = 0; i < productFeeDetail_.size(); i++) {
+      output.writeMessage(15, productFeeDetail_.get(i));
+    }
+    for (int i = 0; i < serviceDiscount_.size(); i++) {
+      output.writeMessage(16, serviceDiscount_.get(i));
+    }
+    if (expiryTime_ != 0) {
+      output.writeInt32(17, expiryTime_);
+    }
+    if (!getExpiryTimeUnitBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, expiryTimeUnit_);
+    }
+    if (bindingType_ != 0) {
+      output.writeInt32(19, bindingType_);
     }
     unknownFields.writeTo(output);
   }
@@ -395,6 +846,39 @@ private static final long serialVersionUID = 0L;
     if (!getAdditionInfoTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, additionInfoType_);
     }
+    if (!getPolicyTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, policyToken_);
+    }
+    if (sequenceNo_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(12, sequenceNo_);
+    }
+    if (!getProductNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, productName_);
+    }
+    for (int i = 0; i < extensionInfo_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, extensionInfo_.get(i));
+    }
+    for (int i = 0; i < productFeeDetail_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, productFeeDetail_.get(i));
+    }
+    for (int i = 0; i < serviceDiscount_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, serviceDiscount_.get(i));
+    }
+    if (expiryTime_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(17, expiryTime_);
+    }
+    if (!getExpiryTimeUnitBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, expiryTimeUnit_);
+    }
+    if (bindingType_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(19, bindingType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -431,6 +915,24 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAdditionInfoId());
     result = result && getAdditionInfoType()
         .equals(other.getAdditionInfoType());
+    result = result && getPolicyToken()
+        .equals(other.getPolicyToken());
+    result = result && (getSequenceNo()
+        == other.getSequenceNo());
+    result = result && getProductName()
+        .equals(other.getProductName());
+    result = result && getExtensionInfoList()
+        .equals(other.getExtensionInfoList());
+    result = result && getProductFeeDetailList()
+        .equals(other.getProductFeeDetailList());
+    result = result && getServiceDiscountList()
+        .equals(other.getServiceDiscountList());
+    result = result && (getExpiryTime()
+        == other.getExpiryTime());
+    result = result && getExpiryTimeUnit()
+        .equals(other.getExpiryTimeUnit());
+    result = result && (getBindingType()
+        == other.getBindingType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -462,6 +964,30 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAdditionInfoId().hashCode();
     hash = (37 * hash) + ADDITIONINFOTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getAdditionInfoType().hashCode();
+    hash = (37 * hash) + POLICYTOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPolicyToken().hashCode();
+    hash = (37 * hash) + SEQUENCENO_FIELD_NUMBER;
+    hash = (53 * hash) + getSequenceNo();
+    hash = (37 * hash) + PRODUCTNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getProductName().hashCode();
+    if (getExtensionInfoCount() > 0) {
+      hash = (37 * hash) + EXTENSIONINFO_FIELD_NUMBER;
+      hash = (53 * hash) + getExtensionInfoList().hashCode();
+    }
+    if (getProductFeeDetailCount() > 0) {
+      hash = (37 * hash) + PRODUCTFEEDETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getProductFeeDetailList().hashCode();
+    }
+    if (getServiceDiscountCount() > 0) {
+      hash = (37 * hash) + SERVICEDISCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceDiscountList().hashCode();
+    }
+    hash = (37 * hash) + EXPIRYTIME_FIELD_NUMBER;
+    hash = (53 * hash) + getExpiryTime();
+    hash = (37 * hash) + EXPIRYTIMEUNIT_FIELD_NUMBER;
+    hash = (53 * hash) + getExpiryTimeUnit().hashCode();
+    hash = (37 * hash) + BINDINGTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getBindingType();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -590,6 +1116,9 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getExtensionInfoFieldBuilder();
+        getProductFeeDetailFieldBuilder();
+        getServiceDiscountFieldBuilder();
       }
     }
     @java.lang.Override
@@ -612,6 +1141,36 @@ private static final long serialVersionUID = 0L;
       additionInfoId_ = "";
 
       additionInfoType_ = "";
+
+      policyToken_ = "";
+
+      sequenceNo_ = 0;
+
+      productName_ = "";
+
+      if (extensionInfoBuilder_ == null) {
+        extensionInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+      } else {
+        extensionInfoBuilder_.clear();
+      }
+      if (productFeeDetailBuilder_ == null) {
+        productFeeDetail_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+      } else {
+        productFeeDetailBuilder_.clear();
+      }
+      if (serviceDiscountBuilder_ == null) {
+        serviceDiscount_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);
+      } else {
+        serviceDiscountBuilder_.clear();
+      }
+      expiryTime_ = 0;
+
+      expiryTimeUnit_ = "";
+
+      bindingType_ = 0;
 
       return this;
     }
@@ -639,6 +1198,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.intl.agg.additionproduct.v3.XProductPreposeInfoType buildPartial() {
       com.ctrip.flight.intl.agg.additionproduct.v3.XProductPreposeInfoType result = new com.ctrip.flight.intl.agg.additionproduct.v3.XProductPreposeInfoType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.policyId_ = policyId_;
       result.productType_ = productType_;
       result.segmentNo_ = segmentNo_;
@@ -648,6 +1209,40 @@ private static final long serialVersionUID = 0L;
       result.subProductType_ = subProductType_;
       result.additionInfoId_ = additionInfoId_;
       result.additionInfoType_ = additionInfoType_;
+      result.policyToken_ = policyToken_;
+      result.sequenceNo_ = sequenceNo_;
+      result.productName_ = productName_;
+      if (extensionInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          extensionInfo_ = java.util.Collections.unmodifiableList(extensionInfo_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.extensionInfo_ = extensionInfo_;
+      } else {
+        result.extensionInfo_ = extensionInfoBuilder_.build();
+      }
+      if (productFeeDetailBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) == 0x00002000)) {
+          productFeeDetail_ = java.util.Collections.unmodifiableList(productFeeDetail_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.productFeeDetail_ = productFeeDetail_;
+      } else {
+        result.productFeeDetail_ = productFeeDetailBuilder_.build();
+      }
+      if (serviceDiscountBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) == 0x00004000)) {
+          serviceDiscount_ = java.util.Collections.unmodifiableList(serviceDiscount_);
+          bitField0_ = (bitField0_ & ~0x00004000);
+        }
+        result.serviceDiscount_ = serviceDiscount_;
+      } else {
+        result.serviceDiscount_ = serviceDiscountBuilder_.build();
+      }
+      result.expiryTime_ = expiryTime_;
+      result.expiryTimeUnit_ = expiryTimeUnit_;
+      result.bindingType_ = bindingType_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -725,6 +1320,105 @@ private static final long serialVersionUID = 0L;
         additionInfoType_ = other.additionInfoType_;
         onChanged();
       }
+      if (!other.getPolicyToken().isEmpty()) {
+        policyToken_ = other.policyToken_;
+        onChanged();
+      }
+      if (other.getSequenceNo() != 0) {
+        setSequenceNo(other.getSequenceNo());
+      }
+      if (!other.getProductName().isEmpty()) {
+        productName_ = other.productName_;
+        onChanged();
+      }
+      if (extensionInfoBuilder_ == null) {
+        if (!other.extensionInfo_.isEmpty()) {
+          if (extensionInfo_.isEmpty()) {
+            extensionInfo_ = other.extensionInfo_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureExtensionInfoIsMutable();
+            extensionInfo_.addAll(other.extensionInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.extensionInfo_.isEmpty()) {
+          if (extensionInfoBuilder_.isEmpty()) {
+            extensionInfoBuilder_.dispose();
+            extensionInfoBuilder_ = null;
+            extensionInfo_ = other.extensionInfo_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            extensionInfoBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getExtensionInfoFieldBuilder() : null;
+          } else {
+            extensionInfoBuilder_.addAllMessages(other.extensionInfo_);
+          }
+        }
+      }
+      if (productFeeDetailBuilder_ == null) {
+        if (!other.productFeeDetail_.isEmpty()) {
+          if (productFeeDetail_.isEmpty()) {
+            productFeeDetail_ = other.productFeeDetail_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+          } else {
+            ensureProductFeeDetailIsMutable();
+            productFeeDetail_.addAll(other.productFeeDetail_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.productFeeDetail_.isEmpty()) {
+          if (productFeeDetailBuilder_.isEmpty()) {
+            productFeeDetailBuilder_.dispose();
+            productFeeDetailBuilder_ = null;
+            productFeeDetail_ = other.productFeeDetail_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+            productFeeDetailBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getProductFeeDetailFieldBuilder() : null;
+          } else {
+            productFeeDetailBuilder_.addAllMessages(other.productFeeDetail_);
+          }
+        }
+      }
+      if (serviceDiscountBuilder_ == null) {
+        if (!other.serviceDiscount_.isEmpty()) {
+          if (serviceDiscount_.isEmpty()) {
+            serviceDiscount_ = other.serviceDiscount_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+          } else {
+            ensureServiceDiscountIsMutable();
+            serviceDiscount_.addAll(other.serviceDiscount_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.serviceDiscount_.isEmpty()) {
+          if (serviceDiscountBuilder_.isEmpty()) {
+            serviceDiscountBuilder_.dispose();
+            serviceDiscountBuilder_ = null;
+            serviceDiscount_ = other.serviceDiscount_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+            serviceDiscountBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getServiceDiscountFieldBuilder() : null;
+          } else {
+            serviceDiscountBuilder_.addAllMessages(other.serviceDiscount_);
+          }
+        }
+      }
+      if (other.getExpiryTime() != 0) {
+        setExpiryTime(other.getExpiryTime());
+      }
+      if (!other.getExpiryTimeUnit().isEmpty()) {
+        expiryTimeUnit_ = other.expiryTimeUnit_;
+        onChanged();
+      }
+      if (other.getBindingType() != 0) {
+        setBindingType(other.getBindingType());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -753,6 +1447,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private long policyId_ ;
     /**
@@ -795,7 +1490,7 @@ private static final long serialVersionUID = 0L;
     private int productType_ ;
     /**
      * <pre>
-     *前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士)
+     *前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士, 18:中转服务, 19:锁价, 20:打折卡)
      * </pre>
      *
      * <code>int32 ProductType = 2;</code>
@@ -805,7 +1500,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士)
+     *前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士, 18:中转服务, 19:锁价, 20:打折卡)
      * </pre>
      *
      * <code>int32 ProductType = 2;</code>
@@ -818,7 +1513,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士)
+     *前置X产品类型(1:接送机，2:休息室，3:机加船，4:机加车，7:通用券，11:机加巴士, 18:中转服务, 19:锁价, 20:打折卡)
      * </pre>
      *
      * <code>int32 ProductType = 2;</code>
@@ -1209,6 +1904,1377 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       additionInfoType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object policyToken_ = "";
+    /**
+     * <pre>
+     *透传X前置接口的policyToken
+     * </pre>
+     *
+     * <code>string PolicyToken = 11;</code>
+     */
+    public java.lang.String getPolicyToken() {
+      java.lang.Object ref = policyToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        policyToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *透传X前置接口的policyToken
+     * </pre>
+     *
+     * <code>string PolicyToken = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPolicyTokenBytes() {
+      java.lang.Object ref = policyToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        policyToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *透传X前置接口的policyToken
+     * </pre>
+     *
+     * <code>string PolicyToken = 11;</code>
+     */
+    public Builder setPolicyToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      policyToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *透传X前置接口的policyToken
+     * </pre>
+     *
+     * <code>string PolicyToken = 11;</code>
+     */
+    public Builder clearPolicyToken() {
+      
+      policyToken_ = getDefaultInstance().getPolicyToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *透传X前置接口的policyToken
+     * </pre>
+     *
+     * <code>string PolicyToken = 11;</code>
+     */
+    public Builder setPolicyTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      policyToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int sequenceNo_ ;
+    /**
+     * <pre>
+     * 航段号
+     * </pre>
+     *
+     * <code>int32 SequenceNo = 12;</code>
+     */
+    public int getSequenceNo() {
+      return sequenceNo_;
+    }
+    /**
+     * <pre>
+     * 航段号
+     * </pre>
+     *
+     * <code>int32 SequenceNo = 12;</code>
+     */
+    public Builder setSequenceNo(int value) {
+      
+      sequenceNo_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 航段号
+     * </pre>
+     *
+     * <code>int32 SequenceNo = 12;</code>
+     */
+    public Builder clearSequenceNo() {
+      
+      sequenceNo_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object productName_ = "";
+    /**
+     * <pre>
+     * 服务包名称
+     * </pre>
+     *
+     * <code>string ProductName = 13;</code>
+     */
+    public java.lang.String getProductName() {
+      java.lang.Object ref = productName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 服务包名称
+     * </pre>
+     *
+     * <code>string ProductName = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getProductNameBytes() {
+      java.lang.Object ref = productName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 服务包名称
+     * </pre>
+     *
+     * <code>string ProductName = 13;</code>
+     */
+    public Builder setProductName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      productName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务包名称
+     * </pre>
+     *
+     * <code>string ProductName = 13;</code>
+     */
+    public Builder clearProductName() {
+      
+      productName_ = getDefaultInstance().getProductName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 服务包名称
+     * </pre>
+     *
+     * <code>string ProductName = 13;</code>
+     */
+    public Builder setProductNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      productName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> extensionInfo_ =
+      java.util.Collections.emptyList();
+    private void ensureExtensionInfoIsMutable() {
+      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+        extensionInfo_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType>(extensionInfo_);
+        bitField0_ |= 0x00001000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> extensionInfoBuilder_;
+
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> getExtensionInfoList() {
+      if (extensionInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(extensionInfo_);
+      } else {
+        return extensionInfoBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public int getExtensionInfoCount() {
+      if (extensionInfoBuilder_ == null) {
+        return extensionInfo_.size();
+      } else {
+        return extensionInfoBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtensionInfo(int index) {
+      if (extensionInfoBuilder_ == null) {
+        return extensionInfo_.get(index);
+      } else {
+        return extensionInfoBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public Builder setExtensionInfo(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (extensionInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExtensionInfoIsMutable();
+        extensionInfo_.set(index, value);
+        onChanged();
+      } else {
+        extensionInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public Builder setExtensionInfo(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (extensionInfoBuilder_ == null) {
+        ensureExtensionInfoIsMutable();
+        extensionInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        extensionInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public Builder addExtensionInfo(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (extensionInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExtensionInfoIsMutable();
+        extensionInfo_.add(value);
+        onChanged();
+      } else {
+        extensionInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public Builder addExtensionInfo(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (extensionInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExtensionInfoIsMutable();
+        extensionInfo_.add(index, value);
+        onChanged();
+      } else {
+        extensionInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public Builder addExtensionInfo(
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (extensionInfoBuilder_ == null) {
+        ensureExtensionInfoIsMutable();
+        extensionInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        extensionInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public Builder addExtensionInfo(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (extensionInfoBuilder_ == null) {
+        ensureExtensionInfoIsMutable();
+        extensionInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        extensionInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public Builder addAllExtensionInfo(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> values) {
+      if (extensionInfoBuilder_ == null) {
+        ensureExtensionInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, extensionInfo_);
+        onChanged();
+      } else {
+        extensionInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public Builder clearExtensionInfo() {
+      if (extensionInfoBuilder_ == null) {
+        extensionInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        extensionInfoBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public Builder removeExtensionInfo(int index) {
+      if (extensionInfoBuilder_ == null) {
+        ensureExtensionInfoIsMutable();
+        extensionInfo_.remove(index);
+        onChanged();
+      } else {
+        extensionInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder getExtensionInfoBuilder(
+        int index) {
+      return getExtensionInfoFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtensionInfoOrBuilder(
+        int index) {
+      if (extensionInfoBuilder_ == null) {
+        return extensionInfo_.get(index);  } else {
+        return extensionInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+         getExtensionInfoOrBuilderList() {
+      if (extensionInfoBuilder_ != null) {
+        return extensionInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(extensionInfo_);
+      }
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder addExtensionInfoBuilder() {
+      return getExtensionInfoFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder addExtensionInfoBuilder(
+        int index) {
+      return getExtensionInfoFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     **
+     *原运价是否还可以销售该X产品  key=SupportSellingPage，value=true 判断取值
+     *打折卡产品版本：key:DiscountCardVersion value:0表示完整（正式）版本，1表示体验版本
+     *打折卡是否自动续费 key: DiscountCardAutoRenewal value: 0表示否；1表示是
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtensionInfo = 14;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder> 
+         getExtensionInfoBuilderList() {
+      return getExtensionInfoFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+        getExtensionInfoFieldBuilder() {
+      if (extensionInfoBuilder_ == null) {
+        extensionInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder>(
+                extensionInfo_,
+                ((bitField0_ & 0x00001000) == 0x00001000),
+                getParentForChildren(),
+                isClean());
+        extensionInfo_ = null;
+      }
+      return extensionInfoBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType> productFeeDetail_ =
+      java.util.Collections.emptyList();
+    private void ensureProductFeeDetailIsMutable() {
+      if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+        productFeeDetail_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType>(productFeeDetail_);
+        bitField0_ |= 0x00002000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType, com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailTypeOrBuilder> productFeeDetailBuilder_;
+
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType> getProductFeeDetailList() {
+      if (productFeeDetailBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(productFeeDetail_);
+      } else {
+        return productFeeDetailBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public int getProductFeeDetailCount() {
+      if (productFeeDetailBuilder_ == null) {
+        return productFeeDetail_.size();
+      } else {
+        return productFeeDetailBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType getProductFeeDetail(int index) {
+      if (productFeeDetailBuilder_ == null) {
+        return productFeeDetail_.get(index);
+      } else {
+        return productFeeDetailBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public Builder setProductFeeDetail(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType value) {
+      if (productFeeDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.set(index, value);
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public Builder setProductFeeDetail(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.Builder builderForValue) {
+      if (productFeeDetailBuilder_ == null) {
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public Builder addProductFeeDetail(com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType value) {
+      if (productFeeDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.add(value);
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public Builder addProductFeeDetail(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType value) {
+      if (productFeeDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.add(index, value);
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public Builder addProductFeeDetail(
+        com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.Builder builderForValue) {
+      if (productFeeDetailBuilder_ == null) {
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.add(builderForValue.build());
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public Builder addProductFeeDetail(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.Builder builderForValue) {
+      if (productFeeDetailBuilder_ == null) {
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public Builder addAllProductFeeDetail(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType> values) {
+      if (productFeeDetailBuilder_ == null) {
+        ensureProductFeeDetailIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, productFeeDetail_);
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public Builder clearProductFeeDetail() {
+      if (productFeeDetailBuilder_ == null) {
+        productFeeDetail_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public Builder removeProductFeeDetail(int index) {
+      if (productFeeDetailBuilder_ == null) {
+        ensureProductFeeDetailIsMutable();
+        productFeeDetail_.remove(index);
+        onChanged();
+      } else {
+        productFeeDetailBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.Builder getProductFeeDetailBuilder(
+        int index) {
+      return getProductFeeDetailFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailTypeOrBuilder getProductFeeDetailOrBuilder(
+        int index) {
+      if (productFeeDetailBuilder_ == null) {
+        return productFeeDetail_.get(index);  } else {
+        return productFeeDetailBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailTypeOrBuilder> 
+         getProductFeeDetailOrBuilderList() {
+      if (productFeeDetailBuilder_ != null) {
+        return productFeeDetailBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(productFeeDetail_);
+      }
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.Builder addProductFeeDetailBuilder() {
+      return getProductFeeDetailFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.Builder addProductFeeDetailBuilder(
+        int index) {
+      return getProductFeeDetailFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 营销信息
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType ProductFeeDetail = 15;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.Builder> 
+         getProductFeeDetailBuilderList() {
+      return getProductFeeDetailFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType, com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailTypeOrBuilder> 
+        getProductFeeDetailFieldBuilder() {
+      if (productFeeDetailBuilder_ == null) {
+        productFeeDetailBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType, com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.ProductFeeDetailTypeOrBuilder>(
+                productFeeDetail_,
+                ((bitField0_ & 0x00002000) == 0x00002000),
+                getParentForChildren(),
+                isClean());
+        productFeeDetail_ = null;
+      }
+      return productFeeDetailBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType> serviceDiscount_ =
+      java.util.Collections.emptyList();
+    private void ensureServiceDiscountIsMutable() {
+      if (!((bitField0_ & 0x00004000) == 0x00004000)) {
+        serviceDiscount_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType>(serviceDiscount_);
+        bitField0_ |= 0x00004000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountTypeOrBuilder> serviceDiscountBuilder_;
+
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType> getServiceDiscountList() {
+      if (serviceDiscountBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(serviceDiscount_);
+      } else {
+        return serviceDiscountBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public int getServiceDiscountCount() {
+      if (serviceDiscountBuilder_ == null) {
+        return serviceDiscount_.size();
+      } else {
+        return serviceDiscountBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType getServiceDiscount(int index) {
+      if (serviceDiscountBuilder_ == null) {
+        return serviceDiscount_.get(index);
+      } else {
+        return serviceDiscountBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public Builder setServiceDiscount(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType value) {
+      if (serviceDiscountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceDiscountIsMutable();
+        serviceDiscount_.set(index, value);
+        onChanged();
+      } else {
+        serviceDiscountBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public Builder setServiceDiscount(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.Builder builderForValue) {
+      if (serviceDiscountBuilder_ == null) {
+        ensureServiceDiscountIsMutable();
+        serviceDiscount_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        serviceDiscountBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public Builder addServiceDiscount(com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType value) {
+      if (serviceDiscountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceDiscountIsMutable();
+        serviceDiscount_.add(value);
+        onChanged();
+      } else {
+        serviceDiscountBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public Builder addServiceDiscount(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType value) {
+      if (serviceDiscountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureServiceDiscountIsMutable();
+        serviceDiscount_.add(index, value);
+        onChanged();
+      } else {
+        serviceDiscountBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public Builder addServiceDiscount(
+        com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.Builder builderForValue) {
+      if (serviceDiscountBuilder_ == null) {
+        ensureServiceDiscountIsMutable();
+        serviceDiscount_.add(builderForValue.build());
+        onChanged();
+      } else {
+        serviceDiscountBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public Builder addServiceDiscount(
+        int index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.Builder builderForValue) {
+      if (serviceDiscountBuilder_ == null) {
+        ensureServiceDiscountIsMutable();
+        serviceDiscount_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        serviceDiscountBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public Builder addAllServiceDiscount(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType> values) {
+      if (serviceDiscountBuilder_ == null) {
+        ensureServiceDiscountIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, serviceDiscount_);
+        onChanged();
+      } else {
+        serviceDiscountBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public Builder clearServiceDiscount() {
+      if (serviceDiscountBuilder_ == null) {
+        serviceDiscount_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+      } else {
+        serviceDiscountBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public Builder removeServiceDiscount(int index) {
+      if (serviceDiscountBuilder_ == null) {
+        ensureServiceDiscountIsMutable();
+        serviceDiscount_.remove(index);
+        onChanged();
+      } else {
+        serviceDiscountBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.Builder getServiceDiscountBuilder(
+        int index) {
+      return getServiceDiscountFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountTypeOrBuilder getServiceDiscountOrBuilder(
+        int index) {
+      if (serviceDiscountBuilder_ == null) {
+        return serviceDiscount_.get(index);  } else {
+        return serviceDiscountBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountTypeOrBuilder> 
+         getServiceDiscountOrBuilderList() {
+      if (serviceDiscountBuilder_ != null) {
+        return serviceDiscountBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(serviceDiscount_);
+      }
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.Builder addServiceDiscountBuilder() {
+      return getServiceDiscountFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.Builder addServiceDiscountBuilder(
+        int index) {
+      return getServiceDiscountFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * 折扣相关：机票、X 一般不应该两种折扣项一起出现
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType ServiceDiscount = 16;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.Builder> 
+         getServiceDiscountBuilderList() {
+      return getServiceDiscountFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountTypeOrBuilder> 
+        getServiceDiscountFieldBuilder() {
+      if (serviceDiscountBuilder_ == null) {
+        serviceDiscountBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountType.Builder, com.ctrip.flight.intl.agg.additionproduct.v3.ServiceDiscountTypeOrBuilder>(
+                serviceDiscount_,
+                ((bitField0_ & 0x00004000) == 0x00004000),
+                getParentForChildren(),
+                isClean());
+        serviceDiscount_ = null;
+      }
+      return serviceDiscountBuilder_;
+    }
+
+    private int expiryTime_ ;
+    /**
+     * <pre>
+     * 过期时间 0表示不限
+     * </pre>
+     *
+     * <code>int32 ExpiryTime = 17;</code>
+     */
+    public int getExpiryTime() {
+      return expiryTime_;
+    }
+    /**
+     * <pre>
+     * 过期时间 0表示不限
+     * </pre>
+     *
+     * <code>int32 ExpiryTime = 17;</code>
+     */
+    public Builder setExpiryTime(int value) {
+      
+      expiryTime_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 过期时间 0表示不限
+     * </pre>
+     *
+     * <code>int32 ExpiryTime = 17;</code>
+     */
+    public Builder clearExpiryTime() {
+      
+      expiryTime_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object expiryTimeUnit_ = "";
+    /**
+     * <pre>
+     * 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+     * </pre>
+     *
+     * <code>string ExpiryTimeUnit = 18;</code>
+     */
+    public java.lang.String getExpiryTimeUnit() {
+      java.lang.Object ref = expiryTimeUnit_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expiryTimeUnit_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+     * </pre>
+     *
+     * <code>string ExpiryTimeUnit = 18;</code>
+     */
+    public com.google.protobuf.ByteString
+        getExpiryTimeUnitBytes() {
+      java.lang.Object ref = expiryTimeUnit_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        expiryTimeUnit_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+     * </pre>
+     *
+     * <code>string ExpiryTimeUnit = 18;</code>
+     */
+    public Builder setExpiryTimeUnit(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      expiryTimeUnit_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+     * </pre>
+     *
+     * <code>string ExpiryTimeUnit = 18;</code>
+     */
+    public Builder clearExpiryTimeUnit() {
+      
+      expiryTimeUnit_ = getDefaultInstance().getExpiryTimeUnit();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 透传x前置过期时间单位 Year, Month, Week, Day, Hour, Minute, Second
+     * </pre>
+     *
+     * <code>string ExpiryTimeUnit = 18;</code>
+     */
+    public Builder setExpiryTimeUnitBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      expiryTimeUnit_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int bindingType_ ;
+    /**
+     * <pre>
+     * 售卖维度：1-到订单，2-到人
+     * </pre>
+     *
+     * <code>int32 BindingType = 19;</code>
+     */
+    public int getBindingType() {
+      return bindingType_;
+    }
+    /**
+     * <pre>
+     * 售卖维度：1-到订单，2-到人
+     * </pre>
+     *
+     * <code>int32 BindingType = 19;</code>
+     */
+    public Builder setBindingType(int value) {
+      
+      bindingType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 售卖维度：1-到订单，2-到人
+     * </pre>
+     *
+     * <code>int32 BindingType = 19;</code>
+     */
+    public Builder clearBindingType() {
+      
+      bindingType_ = 0;
       onChanged();
       return this;
     }

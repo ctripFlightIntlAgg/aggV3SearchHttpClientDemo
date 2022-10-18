@@ -356,4 +356,158 @@ public interface SearchResultTypeOrBuilder extends
    */
   com.ctrip.flight.intl.agg.additionproduct.v3.ServiceTypeOrBuilder getServiceOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * 新增缓存响应Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType> 
+      getCacheInfoList();
+  /**
+   * <pre>
+   * 新增缓存响应Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType getCacheInfo(int index);
+  /**
+   * <pre>
+   * 新增缓存响应Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+   */
+  int getCacheInfoCount();
+  /**
+   * <pre>
+   * 新增缓存响应Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoTypeOrBuilder> 
+      getCacheInfoOrBuilderList();
+  /**
+   * <pre>
+   * 新增缓存响应Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoType CacheInfo = 13;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.CacheInfoTypeOrBuilder getCacheInfoOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 信用卡支付信息Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType> 
+      getCreditCardPaymentInfoList();
+  /**
+   * <pre>
+   * 信用卡支付信息Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType getCreditCardPaymentInfo(int index);
+  /**
+   * <pre>
+   * 信用卡支付信息Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+   */
+  int getCreditCardPaymentInfoCount();
+  /**
+   * <pre>
+   * 信用卡支付信息Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoTypeOrBuilder> 
+      getCreditCardPaymentInfoOrBuilderList();
+  /**
+   * <pre>
+   * 信用卡支付信息Ref
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoType CreditCardPaymentInfo = 14;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.CreditCardPaymentInfoTypeOrBuilder getCreditCardPaymentInfoOrBuilder(
+      int index);
+
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> 
+      getExtendFieldsList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtendFields(int index);
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  int getExtendFieldsCount();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+      getExtendFieldsOrBuilderList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtendFieldsOrBuilder(
+      int index);
+
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType> 
+      getPaymentDiscountList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType getPaymentDiscount(int index);
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+   */
+  int getPaymentDiscountCount();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountTypeOrBuilder> 
+      getPaymentDiscountOrBuilderList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountType PaymentDiscount = 16;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.PaymentDiscountTypeOrBuilder getPaymentDiscountOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+   * </pre>
+   *
+   * <code>string XproductSearchKey = 17;</code>
+   */
+  java.lang.String getXproductSearchKey();
+  /**
+   * <pre>
+   * X产品缓存key，通过本key可调用SearchXproductByKey接口拿到X信息
+   * </pre>
+   *
+   * <code>string XproductSearchKey = 17;</code>
+   */
+  com.google.protobuf.ByteString
+      getXproductSearchKeyBytes();
 }

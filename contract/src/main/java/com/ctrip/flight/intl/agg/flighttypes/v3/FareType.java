@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private FareType() {
     fCSequence_ = 0;
+    applicableAgeType_ = java.util.Collections.emptyList();
+    pUSequence_ = 0;
   }
 
   @java.lang.Override
@@ -61,6 +63,34 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 24: {
+            int rawValue = input.readEnum();
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              applicableAgeType_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            applicableAgeType_.add(rawValue);
+            break;
+          }
+          case 26: {
+            int length = input.readRawVarint32();
+            int oldLimit = input.pushLimit(length);
+            while(input.getBytesUntilLimit() > 0) {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                applicableAgeType_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              applicableAgeType_.add(rawValue);
+            }
+            input.popLimit(oldLimit);
+            break;
+          }
+          case 32: {
+
+            pUSequence_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -76,6 +106,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        applicableAgeType_ = java.util.Collections.unmodifiableList(applicableAgeType_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -93,6 +126,7 @@ private static final long serialVersionUID = 0L;
             com.ctrip.flight.intl.agg.flighttypes.v3.FareType.class, com.ctrip.flight.intl.agg.flighttypes.v3.FareType.Builder.class);
   }
 
+  private int bitField0_;
   public static final int FCSEQUENCE_FIELD_NUMBER = 1;
   private int fCSequence_;
   /**
@@ -123,6 +157,61 @@ private static final long serialVersionUID = 0L;
     return getFareInfo();
   }
 
+  public static final int APPLICABLEAGETYPE_FIELD_NUMBER = 3;
+  private java.util.List<java.lang.Integer> applicableAgeType_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+      java.lang.Integer, com.ctrip.flight.intl.agg.flighttypes.v3.AgeType> applicableAgeType_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.ctrip.flight.intl.agg.flighttypes.v3.AgeType>() {
+            public com.ctrip.flight.intl.agg.flighttypes.v3.AgeType convert(java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.ctrip.flight.intl.agg.flighttypes.v3.AgeType result = com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.valueOf(from);
+              return result == null ? com.ctrip.flight.intl.agg.flighttypes.v3.AgeType.UNRECOGNIZED : result;
+            }
+          };
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.AgeType> getApplicableAgeTypeList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.ctrip.flight.intl.agg.flighttypes.v3.AgeType>(applicableAgeType_, applicableAgeType_converter_);
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+   */
+  public int getApplicableAgeTypeCount() {
+    return applicableAgeType_.size();
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.AgeType getApplicableAgeType(int index) {
+    return applicableAgeType_converter_.convert(applicableAgeType_.get(index));
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+   */
+  public java.util.List<java.lang.Integer>
+  getApplicableAgeTypeValueList() {
+    return applicableAgeType_;
+  }
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+   */
+  public int getApplicableAgeTypeValue(int index) {
+    return applicableAgeType_.get(index);
+  }
+  private int applicableAgeTypeMemoizedSerializedSize;
+
+  public static final int PUSEQUENCE_FIELD_NUMBER = 4;
+  private int pUSequence_;
+  /**
+   * <code>int32 PUSequence = 4;</code>
+   */
+  public int getPUSequence() {
+    return pUSequence_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -137,11 +226,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (fCSequence_ != 0) {
       output.writeInt32(1, fCSequence_);
     }
     if (fareInfo_ != null) {
       output.writeMessage(2, getFareInfo());
+    }
+    if (getApplicableAgeTypeList().size() > 0) {
+      output.writeUInt32NoTag(26);
+      output.writeUInt32NoTag(applicableAgeTypeMemoizedSerializedSize);
+    }
+    for (int i = 0; i < applicableAgeType_.size(); i++) {
+      output.writeEnumNoTag(applicableAgeType_.get(i));
+    }
+    if (pUSequence_ != 0) {
+      output.writeInt32(4, pUSequence_);
     }
     unknownFields.writeTo(output);
   }
@@ -159,6 +259,22 @@ private static final long serialVersionUID = 0L;
     if (fareInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getFareInfo());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < applicableAgeType_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeEnumSizeNoTag(applicableAgeType_.get(i));
+      }
+      size += dataSize;
+      if (!getApplicableAgeTypeList().isEmpty()) {  size += 1;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }applicableAgeTypeMemoizedSerializedSize = dataSize;
+    }
+    if (pUSequence_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, pUSequence_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -183,6 +299,9 @@ private static final long serialVersionUID = 0L;
       result = result && getFareInfo()
           .equals(other.getFareInfo());
     }
+    result = result && applicableAgeType_.equals(other.applicableAgeType_);
+    result = result && (getPUSequence()
+        == other.getPUSequence());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -200,6 +319,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + FAREINFO_FIELD_NUMBER;
       hash = (53 * hash) + getFareInfo().hashCode();
     }
+    if (getApplicableAgeTypeCount() > 0) {
+      hash = (37 * hash) + APPLICABLEAGETYPE_FIELD_NUMBER;
+      hash = (53 * hash) + applicableAgeType_.hashCode();
+    }
+    hash = (37 * hash) + PUSEQUENCE_FIELD_NUMBER;
+    hash = (53 * hash) + getPUSequence();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -341,6 +466,10 @@ private static final long serialVersionUID = 0L;
         fareInfo_ = null;
         fareInfoBuilder_ = null;
       }
+      applicableAgeType_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      pUSequence_ = 0;
+
       return this;
     }
 
@@ -367,12 +496,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.ctrip.flight.intl.agg.flighttypes.v3.FareType buildPartial() {
       com.ctrip.flight.intl.agg.flighttypes.v3.FareType result = new com.ctrip.flight.intl.agg.flighttypes.v3.FareType(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.fCSequence_ = fCSequence_;
       if (fareInfoBuilder_ == null) {
         result.fareInfo_ = fareInfo_;
       } else {
         result.fareInfo_ = fareInfoBuilder_.build();
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        applicableAgeType_ = java.util.Collections.unmodifiableList(applicableAgeType_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.applicableAgeType_ = applicableAgeType_;
+      result.pUSequence_ = pUSequence_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -427,6 +565,19 @@ private static final long serialVersionUID = 0L;
       if (other.hasFareInfo()) {
         mergeFareInfo(other.getFareInfo());
       }
+      if (!other.applicableAgeType_.isEmpty()) {
+        if (applicableAgeType_.isEmpty()) {
+          applicableAgeType_ = other.applicableAgeType_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureApplicableAgeTypeIsMutable();
+          applicableAgeType_.addAll(other.applicableAgeType_);
+        }
+        onChanged();
+      }
+      if (other.getPUSequence() != 0) {
+        setPUSequence(other.getPUSequence());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -455,6 +606,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private int fCSequence_ ;
     /**
@@ -597,6 +749,150 @@ private static final long serialVersionUID = 0L;
         fareInfo_ = null;
       }
       return fareInfoBuilder_;
+    }
+
+    private java.util.List<java.lang.Integer> applicableAgeType_ =
+      java.util.Collections.emptyList();
+    private void ensureApplicableAgeTypeIsMutable() {
+      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        applicableAgeType_ = new java.util.ArrayList<java.lang.Integer>(applicableAgeType_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.AgeType> getApplicableAgeTypeList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.ctrip.flight.intl.agg.flighttypes.v3.AgeType>(applicableAgeType_, applicableAgeType_converter_);
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+     */
+    public int getApplicableAgeTypeCount() {
+      return applicableAgeType_.size();
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.AgeType getApplicableAgeType(int index) {
+      return applicableAgeType_converter_.convert(applicableAgeType_.get(index));
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+     */
+    public Builder setApplicableAgeType(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.AgeType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureApplicableAgeTypeIsMutable();
+      applicableAgeType_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+     */
+    public Builder addApplicableAgeType(com.ctrip.flight.intl.agg.flighttypes.v3.AgeType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureApplicableAgeTypeIsMutable();
+      applicableAgeType_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+     */
+    public Builder addAllApplicableAgeType(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.flighttypes.v3.AgeType> values) {
+      ensureApplicableAgeTypeIsMutable();
+      for (com.ctrip.flight.intl.agg.flighttypes.v3.AgeType value : values) {
+        applicableAgeType_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+     */
+    public Builder clearApplicableAgeType() {
+      applicableAgeType_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+     */
+    public java.util.List<java.lang.Integer>
+    getApplicableAgeTypeValueList() {
+      return java.util.Collections.unmodifiableList(applicableAgeType_);
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+     */
+    public int getApplicableAgeTypeValue(int index) {
+      return applicableAgeType_.get(index);
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+     */
+    public Builder setApplicableAgeTypeValue(
+        int index, int value) {
+      ensureApplicableAgeTypeIsMutable();
+      applicableAgeType_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+     */
+    public Builder addApplicableAgeTypeValue(int value) {
+      ensureApplicableAgeTypeIsMutable();
+      applicableAgeType_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+     */
+    public Builder addAllApplicableAgeTypeValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureApplicableAgeTypeIsMutable();
+      for (int value : values) {
+        applicableAgeType_.add(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private int pUSequence_ ;
+    /**
+     * <code>int32 PUSequence = 4;</code>
+     */
+    public int getPUSequence() {
+      return pUSequence_;
+    }
+    /**
+     * <code>int32 PUSequence = 4;</code>
+     */
+    public Builder setPUSequence(int value) {
+      
+      pUSequence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 PUSequence = 4;</code>
+     */
+    public Builder clearPUSequence() {
+      
+      pUSequence_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

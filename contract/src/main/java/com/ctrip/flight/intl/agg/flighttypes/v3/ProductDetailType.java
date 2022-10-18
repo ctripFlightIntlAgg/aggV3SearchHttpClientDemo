@@ -24,6 +24,10 @@ private static final long serialVersionUID = 0L;
     invoiceType_ = "";
     penaltiesKey_ = "";
     tag_ = java.util.Collections.emptyList();
+    cacheInfoID_ = 0;
+    extendFields_ = java.util.Collections.emptyList();
+    noIdentityCardInd_ = 0;
+    agencyLicenseUrl_ = "";
   }
 
   @java.lang.Override
@@ -128,6 +132,44 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.parser(), extensionRegistry));
             break;
           }
+          case 104: {
+
+            cacheInfoID_ = input.readInt32();
+            break;
+          }
+          case 114: {
+            com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType.Builder subBuilder = null;
+            if (restriction_ != null) {
+              subBuilder = restriction_.toBuilder();
+            }
+            restriction_ = input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(restriction_);
+              restriction_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 122: {
+            if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+              extendFields_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType>();
+              mutable_bitField0_ |= 0x00001000;
+            }
+            extendFields_.add(
+                input.readMessage(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.parser(), extensionRegistry));
+            break;
+          }
+          case 128: {
+
+            noIdentityCardInd_ = input.readInt32();
+            break;
+          }
+          case 138: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            agencyLicenseUrl_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -148,6 +190,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
         tag_ = java.util.Collections.unmodifiableList(tag_);
+      }
+      if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+        extendFields_ = java.util.Collections.unmodifiableList(extendFields_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -480,6 +525,158 @@ private static final long serialVersionUID = 0L;
     return tag_.get(index);
   }
 
+  public static final int CACHEINFOID_FIELD_NUMBER = 13;
+  private int cacheInfoID_;
+  /**
+   * <code>int32 CacheInfoID = 13;</code>
+   */
+  public int getCacheInfoID() {
+    return cacheInfoID_;
+  }
+
+  public static final int RESTRICTION_FIELD_NUMBER = 14;
+  private com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType restriction_;
+  /**
+   * <pre>
+   * 限制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+   */
+  public boolean hasRestriction() {
+    return restriction_ != null;
+  }
+  /**
+   * <pre>
+   * 限制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType getRestriction() {
+    return restriction_ == null ? com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType.getDefaultInstance() : restriction_;
+  }
+  /**
+   * <pre>
+   * 限制
+   * </pre>
+   *
+   * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionTypeOrBuilder getRestrictionOrBuilder() {
+    return getRestriction();
+  }
+
+  public static final int EXTENDFIELDS_FIELD_NUMBER = 15;
+  private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> extendFields_;
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> getExtendFieldsList() {
+    return extendFields_;
+  }
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+      getExtendFieldsOrBuilderList() {
+    return extendFields_;
+  }
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  public int getExtendFieldsCount() {
+    return extendFields_.size();
+  }
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtendFields(int index) {
+    return extendFields_.get(index);
+  }
+  /**
+   * <pre>
+   *ExtendFields
+   * </pre>
+   *
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+   */
+  public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtendFieldsOrBuilder(
+      int index) {
+    return extendFields_.get(index);
+  }
+
+  public static final int NOIDENTITYCARDIND_FIELD_NUMBER = 16;
+  private int noIdentityCardInd_;
+  /**
+   * <pre>
+   * 无证件标识 0:不支持无证件 1:支持无证件
+   * </pre>
+   *
+   * <code>int32 NoIdentityCardInd = 16;</code>
+   */
+  public int getNoIdentityCardInd() {
+    return noIdentityCardInd_;
+  }
+
+  public static final int AGENCYLICENSEURL_FIELD_NUMBER = 17;
+  private volatile java.lang.Object agencyLicenseUrl_;
+  /**
+   * <pre>
+   * 供应商资质信息
+   * </pre>
+   *
+   * <code>string AgencyLicenseUrl = 17;</code>
+   */
+  public java.lang.String getAgencyLicenseUrl() {
+    java.lang.Object ref = agencyLicenseUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      agencyLicenseUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 供应商资质信息
+   * </pre>
+   *
+   * <code>string AgencyLicenseUrl = 17;</code>
+   */
+  public com.google.protobuf.ByteString
+      getAgencyLicenseUrlBytes() {
+    java.lang.Object ref = agencyLicenseUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      agencyLicenseUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -523,6 +720,21 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < tag_.size(); i++) {
       output.writeMessage(12, tag_.get(i));
+    }
+    if (cacheInfoID_ != 0) {
+      output.writeInt32(13, cacheInfoID_);
+    }
+    if (restriction_ != null) {
+      output.writeMessage(14, getRestriction());
+    }
+    for (int i = 0; i < extendFields_.size(); i++) {
+      output.writeMessage(15, extendFields_.get(i));
+    }
+    if (noIdentityCardInd_ != 0) {
+      output.writeInt32(16, noIdentityCardInd_);
+    }
+    if (!getAgencyLicenseUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, agencyLicenseUrl_);
     }
     unknownFields.writeTo(output);
   }
@@ -569,6 +781,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, tag_.get(i));
     }
+    if (cacheInfoID_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(13, cacheInfoID_);
+    }
+    if (restriction_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getRestriction());
+    }
+    for (int i = 0; i < extendFields_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, extendFields_.get(i));
+    }
+    if (noIdentityCardInd_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(16, noIdentityCardInd_);
+    }
+    if (!getAgencyLicenseUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, agencyLicenseUrl_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -611,6 +842,19 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getTagList()
         .equals(other.getTagList());
+    result = result && (getCacheInfoID()
+        == other.getCacheInfoID());
+    result = result && (hasRestriction() == other.hasRestriction());
+    if (hasRestriction()) {
+      result = result && getRestriction()
+          .equals(other.getRestriction());
+    }
+    result = result && getExtendFieldsList()
+        .equals(other.getExtendFieldsList());
+    result = result && (getNoIdentityCardInd()
+        == other.getNoIdentityCardInd());
+    result = result && getAgencyLicenseUrl()
+        .equals(other.getAgencyLicenseUrl());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -650,6 +894,20 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TAG_FIELD_NUMBER;
       hash = (53 * hash) + getTagList().hashCode();
     }
+    hash = (37 * hash) + CACHEINFOID_FIELD_NUMBER;
+    hash = (53 * hash) + getCacheInfoID();
+    if (hasRestriction()) {
+      hash = (37 * hash) + RESTRICTION_FIELD_NUMBER;
+      hash = (53 * hash) + getRestriction().hashCode();
+    }
+    if (getExtendFieldsCount() > 0) {
+      hash = (37 * hash) + EXTENDFIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getExtendFieldsList().hashCode();
+    }
+    hash = (37 * hash) + NOIDENTITYCARDIND_FIELD_NUMBER;
+    hash = (53 * hash) + getNoIdentityCardInd();
+    hash = (37 * hash) + AGENCYLICENSEURL_FIELD_NUMBER;
+    hash = (53 * hash) + getAgencyLicenseUrl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -780,6 +1038,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getPriceInfoFieldBuilder();
         getTagFieldBuilder();
+        getExtendFieldsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -821,6 +1080,24 @@ private static final long serialVersionUID = 0L;
       } else {
         tagBuilder_.clear();
       }
+      cacheInfoID_ = 0;
+
+      if (restrictionBuilder_ == null) {
+        restriction_ = null;
+      } else {
+        restriction_ = null;
+        restrictionBuilder_ = null;
+      }
+      if (extendFieldsBuilder_ == null) {
+        extendFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+      } else {
+        extendFieldsBuilder_.clear();
+      }
+      noIdentityCardInd_ = 0;
+
+      agencyLicenseUrl_ = "";
+
       return this;
     }
 
@@ -883,6 +1160,23 @@ private static final long serialVersionUID = 0L;
       } else {
         result.tag_ = tagBuilder_.build();
       }
+      result.cacheInfoID_ = cacheInfoID_;
+      if (restrictionBuilder_ == null) {
+        result.restriction_ = restriction_;
+      } else {
+        result.restriction_ = restrictionBuilder_.build();
+      }
+      if (extendFieldsBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          extendFields_ = java.util.Collections.unmodifiableList(extendFields_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.extendFields_ = extendFields_;
+      } else {
+        result.extendFields_ = extendFieldsBuilder_.build();
+      }
+      result.noIdentityCardInd_ = noIdentityCardInd_;
+      result.agencyLicenseUrl_ = agencyLicenseUrl_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1011,6 +1305,45 @@ private static final long serialVersionUID = 0L;
             tagBuilder_.addAllMessages(other.tag_);
           }
         }
+      }
+      if (other.getCacheInfoID() != 0) {
+        setCacheInfoID(other.getCacheInfoID());
+      }
+      if (other.hasRestriction()) {
+        mergeRestriction(other.getRestriction());
+      }
+      if (extendFieldsBuilder_ == null) {
+        if (!other.extendFields_.isEmpty()) {
+          if (extendFields_.isEmpty()) {
+            extendFields_ = other.extendFields_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureExtendFieldsIsMutable();
+            extendFields_.addAll(other.extendFields_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.extendFields_.isEmpty()) {
+          if (extendFieldsBuilder_.isEmpty()) {
+            extendFieldsBuilder_.dispose();
+            extendFieldsBuilder_ = null;
+            extendFields_ = other.extendFields_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            extendFieldsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getExtendFieldsFieldBuilder() : null;
+          } else {
+            extendFieldsBuilder_.addAllMessages(other.extendFields_);
+          }
+        }
+      }
+      if (other.getNoIdentityCardInd() != 0) {
+        setNoIdentityCardInd(other.getNoIdentityCardInd());
+      }
+      if (!other.getAgencyLicenseUrl().isEmpty()) {
+        agencyLicenseUrl_ = other.agencyLicenseUrl_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2219,6 +2552,624 @@ private static final long serialVersionUID = 0L;
         tag_ = null;
       }
       return tagBuilder_;
+    }
+
+    private int cacheInfoID_ ;
+    /**
+     * <code>int32 CacheInfoID = 13;</code>
+     */
+    public int getCacheInfoID() {
+      return cacheInfoID_;
+    }
+    /**
+     * <code>int32 CacheInfoID = 13;</code>
+     */
+    public Builder setCacheInfoID(int value) {
+      
+      cacheInfoID_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 CacheInfoID = 13;</code>
+     */
+    public Builder clearCacheInfoID() {
+      
+      cacheInfoID_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType restriction_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType, com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionTypeOrBuilder> restrictionBuilder_;
+    /**
+     * <pre>
+     * 限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+     */
+    public boolean hasRestriction() {
+      return restrictionBuilder_ != null || restriction_ != null;
+    }
+    /**
+     * <pre>
+     * 限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType getRestriction() {
+      if (restrictionBuilder_ == null) {
+        return restriction_ == null ? com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType.getDefaultInstance() : restriction_;
+      } else {
+        return restrictionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * 限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+     */
+    public Builder setRestriction(com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType value) {
+      if (restrictionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        restriction_ = value;
+        onChanged();
+      } else {
+        restrictionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+     */
+    public Builder setRestriction(
+        com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType.Builder builderForValue) {
+      if (restrictionBuilder_ == null) {
+        restriction_ = builderForValue.build();
+        onChanged();
+      } else {
+        restrictionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+     */
+    public Builder mergeRestriction(com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType value) {
+      if (restrictionBuilder_ == null) {
+        if (restriction_ != null) {
+          restriction_ =
+            com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType.newBuilder(restriction_).mergeFrom(value).buildPartial();
+        } else {
+          restriction_ = value;
+        }
+        onChanged();
+      } else {
+        restrictionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+     */
+    public Builder clearRestriction() {
+      if (restrictionBuilder_ == null) {
+        restriction_ = null;
+        onChanged();
+      } else {
+        restriction_ = null;
+        restrictionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * 限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType.Builder getRestrictionBuilder() {
+      
+      onChanged();
+      return getRestrictionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * 限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionTypeOrBuilder getRestrictionOrBuilder() {
+      if (restrictionBuilder_ != null) {
+        return restrictionBuilder_.getMessageOrBuilder();
+      } else {
+        return restriction_ == null ?
+            com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType.getDefaultInstance() : restriction_;
+      }
+    }
+    /**
+     * <pre>
+     * 限制
+     * </pre>
+     *
+     * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType Restriction = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType, com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionTypeOrBuilder> 
+        getRestrictionFieldBuilder() {
+      if (restrictionBuilder_ == null) {
+        restrictionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType, com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.RestrictionTypeOrBuilder>(
+                getRestriction(),
+                getParentForChildren(),
+                isClean());
+        restriction_ = null;
+      }
+      return restrictionBuilder_;
+    }
+
+    private java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> extendFields_ =
+      java.util.Collections.emptyList();
+    private void ensureExtendFieldsIsMutable() {
+      if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+        extendFields_ = new java.util.ArrayList<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType>(extendFields_);
+        bitField0_ |= 0x00001000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> extendFieldsBuilder_;
+
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> getExtendFieldsList() {
+      if (extendFieldsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(extendFields_);
+      } else {
+        return extendFieldsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public int getExtendFieldsCount() {
+      if (extendFieldsBuilder_ == null) {
+        return extendFields_.size();
+      } else {
+        return extendFieldsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtendFields(int index) {
+      if (extendFieldsBuilder_ == null) {
+        return extendFields_.get(index);
+      } else {
+        return extendFieldsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder setExtendFields(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (extendFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExtendFieldsIsMutable();
+        extendFields_.set(index, value);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder setExtendFields(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        extendFields_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        extendFieldsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder addExtendFields(com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (extendFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExtendFieldsIsMutable();
+        extendFields_.add(value);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder addExtendFields(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType value) {
+      if (extendFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExtendFieldsIsMutable();
+        extendFields_.add(index, value);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder addExtendFields(
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        extendFields_.add(builderForValue.build());
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder addExtendFields(
+        int index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder builderForValue) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        extendFields_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder addAllExtendFields(
+        java.lang.Iterable<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> values) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, extendFields_);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder clearExtendFields() {
+      if (extendFieldsBuilder_ == null) {
+        extendFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public Builder removeExtendFields(int index) {
+      if (extendFieldsBuilder_ == null) {
+        ensureExtendFieldsIsMutable();
+        extendFields_.remove(index);
+        onChanged();
+      } else {
+        extendFieldsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder getExtendFieldsBuilder(
+        int index) {
+      return getExtendFieldsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtendFieldsOrBuilder(
+        int index) {
+      if (extendFieldsBuilder_ == null) {
+        return extendFields_.get(index);  } else {
+        return extendFieldsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+         getExtendFieldsOrBuilderList() {
+      if (extendFieldsBuilder_ != null) {
+        return extendFieldsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(extendFields_);
+      }
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder addExtendFieldsBuilder() {
+      return getExtendFieldsFieldBuilder().addBuilder(
+          com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder addExtendFieldsBuilder(
+        int index) {
+      return getExtendFieldsFieldBuilder().addBuilder(
+          index, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     *ExtendFields
+     * </pre>
+     *
+     * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 15;</code>
+     */
+    public java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder> 
+         getExtendFieldsBuilderList() {
+      return getExtendFieldsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+        getExtendFieldsFieldBuilder() {
+      if (extendFieldsBuilder_ == null) {
+        extendFieldsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType.Builder, com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder>(
+                extendFields_,
+                ((bitField0_ & 0x00001000) == 0x00001000),
+                getParentForChildren(),
+                isClean());
+        extendFields_ = null;
+      }
+      return extendFieldsBuilder_;
+    }
+
+    private int noIdentityCardInd_ ;
+    /**
+     * <pre>
+     * 无证件标识 0:不支持无证件 1:支持无证件
+     * </pre>
+     *
+     * <code>int32 NoIdentityCardInd = 16;</code>
+     */
+    public int getNoIdentityCardInd() {
+      return noIdentityCardInd_;
+    }
+    /**
+     * <pre>
+     * 无证件标识 0:不支持无证件 1:支持无证件
+     * </pre>
+     *
+     * <code>int32 NoIdentityCardInd = 16;</code>
+     */
+    public Builder setNoIdentityCardInd(int value) {
+      
+      noIdentityCardInd_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 无证件标识 0:不支持无证件 1:支持无证件
+     * </pre>
+     *
+     * <code>int32 NoIdentityCardInd = 16;</code>
+     */
+    public Builder clearNoIdentityCardInd() {
+      
+      noIdentityCardInd_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object agencyLicenseUrl_ = "";
+    /**
+     * <pre>
+     * 供应商资质信息
+     * </pre>
+     *
+     * <code>string AgencyLicenseUrl = 17;</code>
+     */
+    public java.lang.String getAgencyLicenseUrl() {
+      java.lang.Object ref = agencyLicenseUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        agencyLicenseUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 供应商资质信息
+     * </pre>
+     *
+     * <code>string AgencyLicenseUrl = 17;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAgencyLicenseUrlBytes() {
+      java.lang.Object ref = agencyLicenseUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        agencyLicenseUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 供应商资质信息
+     * </pre>
+     *
+     * <code>string AgencyLicenseUrl = 17;</code>
+     */
+    public Builder setAgencyLicenseUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      agencyLicenseUrl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 供应商资质信息
+     * </pre>
+     *
+     * <code>string AgencyLicenseUrl = 17;</code>
+     */
+    public Builder clearAgencyLicenseUrl() {
+      
+      agencyLicenseUrl_ = getDefaultInstance().getAgencyLicenseUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 供应商资质信息
+     * </pre>
+     *
+     * <code>string AgencyLicenseUrl = 17;</code>
+     */
+    public Builder setAgencyLicenseUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      agencyLicenseUrl_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -46,39 +46,43 @@ public final class AggMessagetypesV3 {
       "\n\031agg.messagetypes.v3.proto\022)com.ctrip.f" +
       "light.intl.agg.messagetypes.v3\"7\n\017ErrorR" +
       "esultType\022\021\n\tErrorCode\030\001 \001(\005\022\021\n\tErrorDes" +
-      "c\030\002 \001(\t\"\346\001\n\021MessageHeaderType\022\021\n\tSession" +
+      "c\030\002 \001(\t\"\356\002\n\021MessageHeaderType\022\021\n\tSession" +
       "ID\030\002 \001(\t\022\025\n\rTransactionID\030\003 \001(\t\022K\n\tChann" +
       "elID\030\004 \001(\01628.com.ctrip.flight.intl.agg.m" +
       "essagetypes.v3.ChannelIDType\022\024\n\014SubChann" +
       "elID\030\005 \001(\005\022\022\n\nCustomerID\030\006 \001(\t\022\020\n\010Client" +
       "IP\030\010 \001(\t\022\013\n\003VID\030\t \001(\t\022\021\n\tRequestID\030\n \001(\t" +
-      "\"\221\001\n\021RequestHeaderType\022S\n\rMessageHeader\030" +
-      "\001 \001(\0132<.com.ctrip.flight.intl.agg.messag" +
-      "etypes.v3.MessageHeaderType\022\024\n\014LoggingLe" +
-      "vel\030\002 \001(\005\022\021\n\tDiagInput\030\003 \001(\t\"\243\001\n\022Respons" +
-      "eHeaderType\022S\n\rMessageHeader\030\001 \001(\0132<.com" +
-      ".ctrip.flight.intl.agg.messagetypes.v3.M" +
-      "essageHeaderType\022\020\n\010ServerIP\030\002 \001(\t\022\022\n\nRe" +
-      "turnCode\030\003 \001(\005\022\022\n\nDiagOutput\030\004 \001(\t*\266\005\n\rC" +
-      "hannelIDType\022\010\n\004None\020\000\022\020\n\014FlightOnline\020\001" +
-      "\022\021\n\rFlightOffline\020\002\022\022\n\016FlightExternal\020\003\022" +
-      "\024\n\020FlightIntlOnline\020\004\022\025\n\021FlightIntlOffli" +
-      "ne\020\005\022\023\n\017FltIntlExternal\020\006\022\027\n\023FlightIntlO" +
-      "nlineSEO\020\007\022\017\n\013Corporation\020\010\022\017\n\013CorpOffli" +
-      "ne\020\t\022\016\n\nCorpMobile\020\n\022\014\n\010Vacation\020\013\022\021\n\rVa" +
-      "cationGroup\020\014\022\026\n\022RestrictedVacation\020\r\022\r\n" +
-      "\tFitTravel\020\016\022\n\n\006Mobile\020\017\022\014\n\010MobileH5\020\020\022\t" +
-      "\n\005Hotel\020\021\022\014\n\010AirHotel\020\022\022\020\n\014AirHotelIntl\020" +
-      "\023\022\022\n\016AirHotelIntlEx\020\024\022\023\n\017AirHotelPackage" +
-      "\020\025\022\017\n\013EnglishSite\020\026\022\014\n\010HighRail\020\027\022\r\n\tAff" +
-      "iliate\020\030\022\n\n\006Luxury\020\031\022\014\n\010Customer\020\032\022\010\n\004Mi" +
-      "ce\020\033\022\r\n\tCommunity\020\034\022\014\n\010EzTravel\020\035\022\n\n\006Win" +
-      "gon\020\036\022\020\n\014Distribution\020\037\022\r\n\tBIChannel\020 \022\013" +
-      "\n\007Finance\020!\022\023\n\017ConfirmCustomer\020\"\022\n\n\006HKSi" +
-      "te\020#\022\n\n\006KRSite\020$\022\n\n\006JPSite\020%\022\n\n\006SGSite\020&" +
-      "\022\n\n\006TWSite\020\'\022\n\n\006THSite\020(\022\t\n\005Qunar\020)\022\016\n\nS" +
-      "kyscanner\020*B-\n)com.ctrip.flight.intl.agg" +
-      ".messagetypes.v3P\001b\006proto3"
+      "\022\026\n\016DevicePlatform\030\013 \001(\t\022\022\n\nDeviceType\030\014" +
+      " \001(\t\022\024\n\014PlatformType\030\r \001(\t\022\035\n\025DevicePlat" +
+      "formVersion\030\016 \001(\t\022\020\n\010ClientID\030\017 \001(\t\022\023\n\013A" +
+      "lliancesID\030\020 \001(\t\"\221\001\n\021RequestHeaderType\022S" +
+      "\n\rMessageHeader\030\001 \001(\0132<.com.ctrip.flight" +
+      ".intl.agg.messagetypes.v3.MessageHeaderT" +
+      "ype\022\024\n\014LoggingLevel\030\002 \001(\005\022\021\n\tDiagInput\030\003" +
+      " \001(\t\"\271\001\n\022ResponseHeaderType\022S\n\rMessageHe" +
+      "ader\030\001 \001(\0132<.com.ctrip.flight.intl.agg.m" +
+      "essagetypes.v3.MessageHeaderType\022\020\n\010Serv" +
+      "erIP\030\002 \001(\t\022\022\n\nReturnCode\030\003 \001(\005\022\022\n\nDiagOu" +
+      "tput\030\004 \001(\t\022\024\n\014NoResultCode\030\005 \001(\005*\302\005\n\rCha" +
+      "nnelIDType\022\010\n\004None\020\000\022\020\n\014FlightOnline\020\001\022\021" +
+      "\n\rFlightOffline\020\002\022\022\n\016FlightExternal\020\003\022\024\n" +
+      "\020FlightIntlOnline\020\004\022\025\n\021FlightIntlOffline" +
+      "\020\005\022\023\n\017FltIntlExternal\020\006\022\027\n\023FlightIntlOnl" +
+      "ineSEO\020\007\022\017\n\013Corporation\020\010\022\017\n\013CorpOffline" +
+      "\020\t\022\016\n\nCorpMobile\020\n\022\014\n\010Vacation\020\013\022\021\n\rVaca" +
+      "tionGroup\020\014\022\026\n\022RestrictedVacation\020\r\022\r\n\tF" +
+      "itTravel\020\016\022\n\n\006Mobile\020\017\022\014\n\010MobileH5\020\020\022\t\n\005" +
+      "Hotel\020\021\022\014\n\010AirHotel\020\022\022\020\n\014AirHotelIntl\020\023\022" +
+      "\022\n\016AirHotelIntlEx\020\024\022\023\n\017AirHotelPackage\020\025" +
+      "\022\017\n\013EnglishSite\020\026\022\014\n\010HighRail\020\027\022\r\n\tAffil" +
+      "iate\020\030\022\n\n\006Luxury\020\031\022\014\n\010Customer\020\032\022\010\n\004Mice" +
+      "\020\033\022\r\n\tCommunity\020\034\022\014\n\010EzTravel\020\035\022\n\n\006Wingo" +
+      "n\020\036\022\020\n\014Distribution\020\037\022\r\n\tBIChannel\020 \022\013\n\007" +
+      "Finance\020!\022\023\n\017ConfirmCustomer\020\"\022\n\n\006HKSite" +
+      "\020#\022\n\n\006KRSite\020$\022\n\n\006JPSite\020%\022\n\n\006SGSite\020&\022\n" +
+      "\n\006TWSite\020\'\022\n\n\006THSite\020(\022\t\n\005Qunar\020)\022\016\n\nSky" +
+      "scanner\020*\022\n\n\006Travix\020+B-\n)com.ctrip.fligh" +
+      "t.intl.agg.messagetypes.v3P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -103,7 +107,7 @@ public final class AggMessagetypesV3 {
     internal_static_com_ctrip_flight_intl_agg_messagetypes_v3_MessageHeaderType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_messagetypes_v3_MessageHeaderType_descriptor,
-        new java.lang.String[] { "SessionID", "TransactionID", "ChannelID", "SubChannelID", "CustomerID", "ClientIP", "VID", "RequestID", });
+        new java.lang.String[] { "SessionID", "TransactionID", "ChannelID", "SubChannelID", "CustomerID", "ClientIP", "VID", "RequestID", "DevicePlatform", "DeviceType", "PlatformType", "DevicePlatformVersion", "ClientID", "AlliancesID", });
     internal_static_com_ctrip_flight_intl_agg_messagetypes_v3_RequestHeaderType_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_ctrip_flight_intl_agg_messagetypes_v3_RequestHeaderType_fieldAccessorTable = new
@@ -115,7 +119,7 @@ public final class AggMessagetypesV3 {
     internal_static_com_ctrip_flight_intl_agg_messagetypes_v3_ResponseHeaderType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_ctrip_flight_intl_agg_messagetypes_v3_ResponseHeaderType_descriptor,
-        new java.lang.String[] { "MessageHeader", "ServerIP", "ReturnCode", "DiagOutput", });
+        new java.lang.String[] { "MessageHeader", "ServerIP", "ReturnCode", "DiagOutput", "NoResultCode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -157,4 +157,46 @@ public interface PriceTypeOrBuilder extends
    * <code>repeated int32 PriceAttributeID = 10;</code>
    */
   int getPriceAttributeID(int index);
+
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType> 
+      getExtendFieldsList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType getExtendFields(int index);
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+   */
+  int getExtendFieldsCount();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+   */
+  java.util.List<? extends com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder> 
+      getExtendFieldsOrBuilderList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairType ExtendFields = 11;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.KeyValuePairTypeOrBuilder getExtendFieldsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * 值越小优先级越高
+   * </pre>
+   *
+   * <code>double Priority = 12;</code>
+   */
+  double getPriority();
+
+  /**
+   * <pre>
+   * 运价索引 每次查询唯一
+   * </pre>
+   *
+   * <code>int32 OfferID = 13;</code>
+   */
+  int getOfferID();
 }

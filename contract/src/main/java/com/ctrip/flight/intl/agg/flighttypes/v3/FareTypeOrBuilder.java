@@ -24,4 +24,31 @@ public interface FareTypeOrBuilder extends
    * <code>.com.ctrip.flight.intl.agg.flighttypes.v3.FareInfoType FareInfo = 2;</code>
    */
   com.ctrip.flight.intl.agg.flighttypes.v3.FareInfoTypeOrBuilder getFareInfoOrBuilder();
+
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+   */
+  java.util.List<com.ctrip.flight.intl.agg.flighttypes.v3.AgeType> getApplicableAgeTypeList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+   */
+  int getApplicableAgeTypeCount();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+   */
+  com.ctrip.flight.intl.agg.flighttypes.v3.AgeType getApplicableAgeType(int index);
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+   */
+  java.util.List<java.lang.Integer>
+  getApplicableAgeTypeValueList();
+  /**
+   * <code>repeated .com.ctrip.flight.intl.agg.flighttypes.v3.AgeType ApplicableAgeType = 3;</code>
+   */
+  int getApplicableAgeTypeValue(int index);
+
+  /**
+   * <code>int32 PUSequence = 4;</code>
+   */
+  int getPUSequence();
 }
